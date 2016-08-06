@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+
+<!-- LET'S GET STARTED -->
+<h2 align="center">Let's get started</h2>
+
+<p id="para">
+	It's easy to make <b>Turn Watcher</b> a valuable tool in
+	your GM arsenal. The basics are:
+</p>
+
+<div id="para">
+	<ol>
+		<li id="steps">Create a character list of each PC involved in combat
+					(you can reuse this list over and over for each encounter)</li>
+		<li id="steps">Create <i>encounter list(s)</i> of opponents</li>
+		<li id="steps">Import the PC and opponent lists for your encounter</li>
+		<li id="steps">Start your combat!</li>
+	</ol>
+</div>
+
+
+
+
+<!-- ADDED PLAYER CHARACTERS -->
+<h3 align="center">Adding Player Characters</h3>
+
+<p id="para">
+	The very first time you start <b>Turn Watcher</b>, you will be presented
+	with a blank slate.
+</p>
+
+<p>
+	<center><img src="../images/tw_main_window_blank.jpg" width="550" height="202"/></center>
+</p>
+
+<p id="para">
+	The very first thing to do is to input the relevant information from each
+	player character (PC) in your campaign (we recommend doing this before
+	starting the game).
+	You only need to enter this information once, since <b>Turn Watcher</b> will
+	remember it all for you. You can also update this information as characters
+	level.
+</p>
+
+<p id="para">
+	<img src="../images/tw_add_toolbar.jpg" border="0" hspace="10" vspace="10" align="right" width="294" height="81"/>
+	To begin your character list, click on the <i>Add</i> button on the toolbar.
+	The <b>Add Character</b> dialog will appear. Enter the character name,
+	initiative modifier, spot and listen modifiers, and the will save modifier.
+	Then enter the character's maximum hit points. Lastly, choose
+	<i>Character</i> from the pull down list and click <i>OK</i>.
+</p>
+
+<p id="para">
+	Repeat these steps until you've entered all the information for all your
+	characters.
+</p>
+
+<p id="tip">
+	<b>Tip:</b> Hit the <b>TAB</b> key to advance to the next field.
+</p>
+
+<p id="para">
+	<center>
+		<img src="../images/tw_add_character.jpg" width="328" height="338"/>
+	</center>
+</p>
+
+<p id="example">
+	Doug enters the stats for Shiena, a human
+	barbarian. He clicks the <i>Add</i> button and types
+	<u>Shiena</u> in the <i>Character Name</i> field. He then
+	advances to the next field by hitting the <b>TAB</b> key
+	and enters Shiena's <i>Initiative</i> modifier, her <i>Spot</i>
+	and <i>Listen</i> modifiers, her <i>Will</i> save, and finally her
+	<i>Maximum Hit Points</i>. He leaves <i>Current Damage</i> at 0,
+	and he makes sure the <i>Character Type</i> is set for
+	<b>Character</b>. Finally, he clicks <i>OK</i>.
+</p>
+
+
+<!-- EXPORTING PLAYER LIST -->
+<h3 align="center">Exporting a Player Character List</h3>
+
+<p id="para">
+	Once you've entered all of the PCs that will be participating in the campaign,
+	you can <b>Export</b> your character list. Choose <span id="menu_ref">Export</span> in the
+	<span id="menu_ref">File</span> menu. Type a filename and click the Save button.
+</p>
+
+<p id="example">
+	<center>
+		<img src="../images/tw_export_dialog.jpg" vspace="10" width="382" height="163"/>
+	</center>
+</p>
+
+<p id="example">
+	Doug is running a campaign for four players. He enters each
+	PC's relevant stats and <b>Exports</b> to a file called
+	<i>Dragon Campaign</i>.
+</p>
+
+
+
+<!-- CREATING ENCOUNTERS -->
+<h3 align="center">Creating Encounters</h3>
+
+<p id="para">
+	Clear out any existing PCs and opponents by selecting <span id="menu_ref">Clear</span> in
+	the <span id="menu_ref">File</span> menu. Make sure you exported any PCs that you added
+	in the previous step.
+</p>
+ 
+<p id="para">
+	<img src="../images/tw_monster_type.jpg" hspace="5" vspace="5" width="283" height="71" align="right"/>
+	Adding opponents to your encounter is similar to adding PCs, but you
+	choose <i>Monster</i> instead of <i>Character</i> at the bottom
+	pull-down menu in the <b>Add Character</b> dialog.
+</p>
+
+<p id="para">
+	For each encounter, add the opponent or opponents that will combat the PCs.
+	<i>Export</i> the newly added opponents to a filename appropriate for your
+	encounter.
+</p>
+
+<p align="center">
+	<img src="../images/tw_duplicate.jpg" hspace="10" width="550" height="118"/>
+</p>
+
+<p id="tip">
+	<b>Tip:</b> For quick duplication of opponents, highlight the
+	opponent you wish to duplicate and select <span id="menu_ref">Duplicate</span> from
+	the <span id="menu_ref">Edit</span> menu. <b>Turn Watcher</b> will ask how
+	many times you want to duplicate the selected character or
+	opponent. You can even do this during combat!
+</p>
+
+<p align="center">
+	<img src="../images/tw_ghoul_example.jpg" width="547" height="149"/>
+</p>
+
+<div id="example">
+	Doug is planning an encounter where the party will run into four
+	ghouls...
+
+	<ul style="list-style-type: circle;">
+		<li>
+			He clicks the <i>Add</i> button and types <b>Ghoul 1</b> in the
+			<i>Character Name</i> field.
+		</li>
+		<li>
+			Then he enters the ghoul's Initiative, Spot, Listen, and Will save
+			modifiers, and its Max Hit Points. He ensures the <i>Character
+			Type</i> is set for <i>Monster</i>. And finally he clicks <i>OK</i>
+			to store the new opponent.
+		</li>
+		<li>
+			Next, he highlights <b>Ghoul 1</b> in the list and selects
+			<span id="menu_ref">Duplicate</span> from the <span id="menu_ref">Edit</span> menu.
+		</li>
+		<li>
+			In the Duplicate window, he enters the number 3 and clicks
+			<i>OK</i>.
+		</li>
+	</ul>
+
+	He now has four ghouls to engage his players.
+</div>
+
+
+<!-- EXPORT OPPONENTS -->
+<h3 align="center">Exporting a List of Opponents for an Encounter</h3>
+
+<p id="para">
+	Now that you have entered the opponents that you want the PC party to face
+	in the encounter, <i>Export</i> your opponent list. Choose <span id="menu_ref">Export</span>
+	in the <span id="menu_ref">File</span> menu and type a filename, then click the <i>Save</i>
+	button.
+</p>
+
+<p id="example">
+	Doug chooses <span id="menu_ref">Export</span> in the
+	<span id="menu_ref">File</span> menu and he exports his
+	list of 4 Ghouls as a file called <u>Ghoul Encounter</u>. He then
+	selects <span id="menu_ref">Clear</span> also in the
+	<span id="menu_ref">File</span> menu, and begins another
+	list of opponents for the next encounter.
+</p>
+
+<p id="para">
+	Repeat the above steps for each encounter you have planned for your game.
+</p>
+
+<p id="tip">
+	<b>Tip:</b> Create a few random encounter lists that you can use in any
+	game in your campaign.
+</p>
+
+
+
+<!--
+	vim: ts=2 sw=2 tw=78
+-->

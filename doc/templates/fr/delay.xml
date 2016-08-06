@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Actions retard&eacute;es et pr&eacute;par&eacute;es</h2>
+
+<p id="para">
+	Quand un personnage choisi de retarder son action, cliquez
+	sur le bouton <i>Retarder</i> de la barre d'outils.
+	L'&eacute;tat du personnage change en <i>Retard&eacute;</i>.
+	Une fois que le personnage d&eacute;cide d'entrer en combat,
+	cliquez sur le bouton <i>Entrer en combat</i>. Si plus
+	d'un personnage est retard&eacute;, alors <b>Turn Watcher</b>
+	vous demande de choisir celui qui entre en combat.
+</p>
+
+<p align="center">
+	<img src="../images/tw_jumpin_dialog.jpg" width="246" height="167"/>
+</p>
+
+<p id="para">
+	Quand un personnage choisi de se pr&eacute;parer pour une
+	action, cliquez sur le bouton <i>Se Pr&eacute;parer</i>
+	de la barre d'outils. L'&eacute;tat du personnage change
+	en <i>Pr&eacute;par&eacute;</i>.
+
+	Quand l'action est d&eacute;clanch&eacute;e, cliquez sur
+	le bouton <i>Entrer en combat</i>. Si plus d'un personnage
+	est en pr&eacute;paration, alors <b>Turn Watcher</b>
+	vous demande de choisir celui qui entre en combat.
+</p>
+
+
+<p id="para">
+	<b>Turn Watcher</b> &eacute;limine de fa&ccedil;on automatique
+	les actions de retardement et de pr&eacute;paration quand c'est
+	&agrave; nouveau le tour d'un personnage et que son action n'a
+	pas eut lieu.
+</p>
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->
+

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//FR"/>
+	<html lang="fr" xml:lang="fr">
+		<head>
+	<title>Gestion des effets</title>
+				<meta content="&#xA9; 2008 &#x2014; Made to Order Software Corporation &#x2014; Tous droits r&#xE9;serv&#xE9;s" name="copyright"/>
+		<meta content="Alexis Wilke" name="author"/>
+		<meta content="Turn Watcher g&#xE8;re les effets pour vous: leur dur&#xE9;e, quand ils sont en attente, la puissance, etc." name="description"/>
+	<meta content="xmlc v1.02" name="generator"/>
+		<meta content="Donjons, Dragons, d20, Turn Watcher, Documentation" name="keywords"/>
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+	<link href="../styles/documentation.css" rel="stylesheet" type="text/css"/>
+		<link href="get_started.html" rel="first" title="Au d&#xE9;but..." type="text/html"/>
+		<link href="hitpoints.html" rel="next" title="G&#xE9;rer les points de vie" type="text/html"/>
+		<link href="start.html" rel="prev" title="Votre premier combat!" type="text/html"/>
+		<link href="player_hud.html" rel="last" title="Affichage pour les joueurs" type="text/html"/>
+	<link href="description.html" rel="chapter" title="&#xC0; propos de Turn Watcher" type="text/html"/>
+	<link href="get_started.html" rel="chapter" title="Au d&#xE9;but..." type="text/html"/>
+	<link href="shortcuts.html" rel="chapter" title="Raccourcis clavier" type="text/html"/>
+	<link href="technical.html" rel="chapter" title="Mat&#xE9;riels et logiciels requis" type="text/html"/>
+		<link href="index.html" rel="contents" title="Sommaire" type="text/html"/>
+		<link href="index.html" rel="toc" title="Sommaire" type="text/html"/>
+		<link href="index.html" rel="start" title="Sommaire" type="text/html"/>
+		<link href="index.html" rel="up" title="Sommaire" type="text/html"/>
+	<link href="copyright.html" rel="copyright" title="Copyright" type="text/html"/>
+	<link href="authors.html" rel="author" title="Auteurs et contributions" type="text/html"/>
+	<link href="license.html" rel="appendix" title="Licence du logiciel de l'utilisateur" type="text/html"/>
+	<link href="copyright.html" rel="appendix" title="Copyright" type="text/html"/>
+	<link href="authors.html" rel="appendix" title="Auteurs et contributions" type="text/html"/>
+	<link href="contact.html" rel="appendix" title="Contacter Made to Order Software" type="text/html"/>
+			<link href="../en/effects_tracking.html" lang="en" medium="Screen" rel="alternate" title="English" type="text/html"/>
+			<link href="../es/effects_tracking.html" lang="es" medium="Screen" rel="alternate" title="Espa&#xF1;ol" type="text/html"/>
+	<script src="../js/overlib/overlib.js" type="text/javascript"><!-- overLIB (c) Erik Bosrup --></script>
+	<script src="../js/m2osw/get_object_position.js" type="text/javascript"><!-- (c) Made to Order Software, Corp. --></script>
+</head>
+		<body>
+			<div id="overDiv" style="position: absolute; visibility: hidden; z-index: 1000;"></div>
+			<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+	<tbody>
+		<tr>
+			<td valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tbody>
+						<tr>
+							<td height="84" valign="middle" width="100%">
+								<div id="title" width="100%">
+									Gestion des effets
+										<br/>
+										<span id="sub_title" width="100%">Documentation de Turn Watcher&#x2122;</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" height="31" valign="middle" width="100%">
+								<script type="text/javascript">
+									if(navigator.appVersion.indexOf("MSIE") > 0) {
+										document.write('<div id="menu_msie">');
+									}
+									else {
+										document.write('<div id="menu">');
+									}
+								</script>
+										&nbsp; <a href="index.html" id="menu_item">Sommaire</a> &nbsp;
+										&nbsp; <a href="shortcuts.html" id="menu_item">Raccourcis clavier</a> &nbsp;
+										&nbsp; <a href="contact.html" id="menu_item">Nous contacter</a> &nbsp;
+										&nbsp; <a href="http://www.turnwatcher.com/fr" id="menu_item">Page d'acceuil</a> &nbsp;
+								<script type="text/javascript">
+									document.write('</div>');
+								</script>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table width="100%">
+					<tbody>
+						<tr>
+							<td align="center">
+								<table width="550">
+									<tbody>
+											<tr>
+												<td align="left"><a href="start.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Votre premier combat!', WRAP, 1)">Page pr&#xE9;c&#xE9;dente</a></td>
+												<td align="right"><a href="hitpoints.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('G&#xE9;rer les points de vie', WRAP, 1)">Page suivante</a></td>
+											</tr>
+										<tr>
+											<td colspan="2">
+												<p style="margin-top: 30px;">&nbsp;</p>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<h2 align="center">Effects Tracking</h2><p id="para">
+	When a combatant either creates an effect or is subject to an effect that
+	lasts more than one round, <b>Turn Watcher</b> can track that effect for you.
+	In fact, many effects on mulitple combatants may be tracked similarly.
+</p>
+<p id="para">
+	To add an effect, make sure the subject of the effect is highlighted in the
+	main window, then click the "plus" button located on the effects panel:
+</p>
+<p align="center">
+	<img src="../images/tw_effect_panel.png"/>
+</p>
+<p id="para">
+	A dialog will appear allowing you to enter the details of the effect.
+</p>
+<p align="center">
+	<img src="../images/tw_effect_add.png"/>
+</p>
+<p id="tip">
+	<b>Tip:</b> Use the shortcut keys &lt;CTRL&gt;&lt;SHIFT&gt;A to quickly add a new effect.
+</p>
+<p id="para">
+	Enter an <i>Effect Name</i>, which will appear in the effect panel on the
+	main window.
+	<i>Effect Description</i> also appears in the effect panel when the current
+	effect is chosen. You may put extra details into the field that will help
+	you to remember what the effect does. For example, "adds a +1 morale bonus
+	to all saves".
+	<i>Total Rounds</i> allows you to specify the number of
+	rounds the effect lasts, including the current round.
+	<i>Start In</i> allows
+	you to put a delay before the effect kicks in.
+	<i>Rounds Used</i> you may
+	leave at "0"&emdash;this gets updated by <b>Turn Watcher</b> automatically
+	each round that the effect is in running.
+</p>
+<p align="center">
+	<img src="../images/tw_effect_entry.png"/>
+</p>
+<p id="para">
+	The <i>Temporary Hit Points</i> field allows you to enter a number of temporary hit points which will
+	be deducted first when the combatant takes damage. As soon as the effect stops, the hit points are
+	removed automatically. <i>Hit Point Boost</i> will boost the combatants maximum hit points for
+	the duration of the effect.
+</p>
+<p id="tip">
+	<b>Tip:</b>You may add and delete multiple effects by highlighting combatants in the main window.
+	Use the &lt;CTRL&gt;&lt;SHIFT&gt;A and &lt;CTRL&gt;&lt;SHIFT&gt;X keys respectively for quick access.
+</p>
+												<br/>
+												<br/>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom" width="100%">
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td align="center">
+									<table width="550">
+										<tbody>
+											<tr>
+												<td align="left"><a href="start.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Votre premier combat!', WRAP, 1)">Page pr&#xE9;c&#xE9;dente</a></td>
+												<td align="right"><a href="hitpoints.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('G&#xE9;rer les points de vie', WRAP, 1)">Page suivante</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<table align="center" border="0" cellpadding="3" cellspacing="3" id="copyright_table" width="550">
+					<tbody>
+						<tr>
+							<td align="right" valign="middle">
+								<a href="http://www.m2osw.com"><img border="0" src="../images/small_m2osw_logo.png"/></a>
+							</td>
+							<td align="center" valign="middle">
+								<div id="bottom_copyright">
+												&nbsp; &#xA9; 2006-2008&nbsp; &#x2014; Made to Order Software Corporation &#x2014; Tous droits r&#xE9;serv&#xE9;s
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table></body>
+	</html>

@@ -1,0 +1,268 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Raccourcis clavier</h2>
+
+<p id="para">
+	Vous pouvez utiliser les <i>raccourcis clavier</i> pour acc&eacute;der
+	&agrave; la plupart des fonctions de <b>Turn Watcher</b>, plut&ocirc;t
+	que d'utiliser les menus ou la barre d'outils.
+</p>
+
+
+
+
+
+<table align="center" cellpadding="0" cellspacing="0" border="0">
+	<tbody>
+
+<!-- File -->
+		<tr>
+			<td colspan="2" id="shortcut_menu">
+				&#151; &nbsp;Fichier&nbsp; &#151;
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Importer
+			</td>
+			<td id="shortcut_key">
+				Ctrl-I
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Exporter
+			</td>
+			<td id="shortcut_key">
+				Ctrl-E
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Quitter
+			</td>
+			<td id="shortcut_key">
+				Ctrl-Q
+			</td>
+		</tr>
+
+<!-- Edit -->
+		<tr>
+			<td colspan="2" id="shortcut_menu">
+				&#151; &nbsp;&Eacute;dition&nbsp; &#151;
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Annuler
+			</td>
+			<td id="shortcut_key">
+				Ctrl-Z
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Refaire
+			</td>
+			<td id="shortcut_key">
+				Ctrl-Y
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Ajouter
+			</td>
+			<td id="shortcut_key">
+				Ctrl-A
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Effacer
+			</td>
+			<td id="shortcut_key">
+				Ctrl-J
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Dupliquer
+			</td>
+			<td id="shortcut_key">
+				Ctrl-L
+			</td>
+		</tr>
+
+<!-- View -->
+		<tr>
+			<td colspan="2" id="shortcut_menu">
+				&#151; &nbsp;Affichage&nbsp; &#151;
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Montrer la barre d'outils
+			</td>
+			<td id="shortcut_key">
+				Ctrl-T
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Barre d'outils en bas
+			</td>
+			<td id="shortcut_key">
+				Ctrl-B
+			</td>
+		</tr>
+
+<!-- Rounds -->
+		<tr>
+			<td colspan="2" id="shortcut_menu">
+				&#151; &nbsp;Rounds&nbsp; &#151;
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				D&eacute;marrer
+			</td>
+			<td id="shortcut_key">
+				G
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Terminer
+			</td>
+			<td id="shortcut_key">
+				E
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Suivant
+			</td>
+			<td id="shortcut_key">
+				Barre d'espace
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				D&eacute;lai
+			</td>
+			<td id="shortcut_key">
+				D
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Pr&eacute;paration
+			</td>
+			<td id="shortcut_key">
+				R
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Entrer en combat
+			</td>
+			<td id="shortcut_key">
+				J
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Dommages/Soins
+			</td>
+			<td id="shortcut_key">
+				M
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Stabiliser
+			</td>
+			<td id="shortcut_key">
+				B
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				D&eacute;placer vers le haut
+			</td>
+			<td id="shortcut_key">
+				Control + Arrow Up
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				D&eacute;placer vers le bas
+			</td>
+			<td id="shortcut_key">
+				Control + Arrow Down
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Initiative &agrave; l'ancienne
+			</td>
+			<td id="shortcut_key">
+				Ctrl-U
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Sauter les personnages morts
+			</td>
+			<td id="shortcut_key">
+				Ctrl-D
+			</td>
+		</tr>
+
+<!-- Roll -->
+		<tr>
+			<td colspan="2" id="shortcut_menu">
+				&#151; &nbsp;Lanc&eacute;s&nbsp; &#151;
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Initiative
+			</td>
+			<td id="shortcut_key">
+				I
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				D&eacute;tecter
+			</td>
+			<td id="shortcut_key">
+				S
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				&Eacute;couter
+			</td>
+			<td id="shortcut_key">
+				L
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Sauvegarde
+			</td>
+			<td id="shortcut_key">
+				W
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->

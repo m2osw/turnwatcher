@@ -1,0 +1,5 @@
+find_file( TAR_INCLUDE_FILE tar.h HINTS /usr/include )
+if( ${TAR_INCLUDE_FILE} STREQUAL TAR_INCLUDE_FILE-NOTFOUND )
+        message( FATAL_ERROR "Cannot locate tar.h. Is tar installed?" )
+endif()
+get_filename_component( TAR_INCLUDE_DIR ${TAR_INCLUDE_FILE} PATH )

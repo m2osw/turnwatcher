@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Changing Characters' Initiative Order</h2>
+
+<p id="para">
+	With <b>Turn watcher</b>, you can add or import characters during active
+	combat. The new characters are placed at the end of the initiative order.
+	You may move one or more characters up or down in initiative order by first
+	highlighting the target characters and clicking <span id="menu_ref">Move Up</span> or
+	<span id="menu_ref">Move Down</span> in the <span id="menu_ref">Rounds</span> menu.
+</p>
+
+<p id="tip">
+	<b>Tip:</b>
+	Use the Control + Up Arrow to move characters up in initiative
+	order. Similarly, Control + Down Arrow moves characters
+	down in initiative order.
+</p>
+
+<p id="para">
+	Many players prefer to roll their own dice for initiative.
+	If that describes your group, then <b>Turn Watcher</b> can oblige!
+</p>
+
+<p id="para">
+	If you select the <span id="menu_ref">Manual Initiative Entry</span> option
+	in the <span id="menu_ref">Roll</span> menu, then each time you tell <b>Turn
+	Watcher</b> to roll initiative, it will allow you to enter the rolls
+	manually by presenting a new dialog. Once you accept the new entries,
+	<b>Turn Watcher</b> will sort the combatants in the correct order.
+	<span id="version_spec">(available since version 1.1)</span>
+</p>
+
+<p id="para">
+	By default, <b>Turn Watcher</b> will automatically roll initiative when you
+	press the <i>Start</i> button. You may turn this off deselecting <span
+	id="menu_ref">Roll Initiative on Start</span> in the <span
+	id="menu_ref">Roll</span> menu. You can either roll initiative by using the
+	<span id="menu_ref">Initiative</span> entry in the <span id="menu_ref">Roll</span>
+	menu, or change the order of the combatants manually (see the <b>Tip</b> above).
+</p>
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->
+

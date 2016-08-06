@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE propbag [
+	<!ELEMENT int EMPTY>
+	<!ATTLIST int name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT longlong EMPTY>
+	<!ATTLIST longlong name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT float EMPTY>
+	<!ATTLIST float name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT double EMPTY>
+	<!ATTLIST double name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT pointer EMPTY>
+	<!ATTLIST pointer name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT string (#PCDATA)>
+	<!ATTLIST string name CDATA #REQUIRED xml:space (preserve) 'preserve'>
+	<!ELEMENT binary (#PCDATA)>
+	<!ATTLIST binary name CDATA #REQUIRED mode (hex|base64) #REQUIRED>
+	<!ELEMENT external EMPTY>
+	<!ATTLIST external name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT int_item EMPTY>
+	<!ATTLIST int_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT longlong_item EMPTY>
+	<!ATTLIST longlong_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT float_item EMPTY>
+	<!ATTLIST float_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT double_item EMPTY>
+	<!ATTLIST double_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT pointer_item EMPTY>
+	<!ATTLIST pointer_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT string_item (#PCDATA)>
+	<!ATTLIST string_item name CDATA #REQUIRED xml:space (preserve) 'preserve' item CDATA #REQUIRED>
+	<!ELEMENT binary_item (#PCDATA)>
+	<!ATTLIST binary_item name CDATA #REQUIRED mode (hex|base64) #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT external_item EMPTY>
+	<!ATTLIST external_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT array_item (array_item|int_item|longlong_item|float_item|double_item|pointer_item|string_item|binary_item|external_item|propbag_item)*>
+	<!ATTLIST array_item name CDATA #REQUIRED item CDATA #REQUIRED type (any|array|int|longlong|float|double|pointer|string|binary|propbag) "any">
+	<!ELEMENT propbag_item (array|int|longlong|float|double|pointer|string|binary|external|propbag)*>
+	<!ATTLIST propbag_item name CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT array (array_item|int_item|longlong_item|float_item|double_item|pointer_item|string_item|binary_item|external_item|propbag_item)*>
+	<!ATTLIST array name CDATA #REQUIRED type (any|array|int|longlong|float|double|pointer|string|binary|propbag) "any">
+	<!ELEMENT propbag (array|int|longlong|float|double|pointer|string|binary|external|propbag)*>
+	<!ATTLIST propbag name CDATA #REQUIRED>
+]>
+<propbag name="CHARACTERS">
+  <array name="CHARACTERS">
+    <propbag_item item="0" name="CHARACTER">
+      <int name="DAMAGE" value="17"/>
+      <array name="STATS">
+        <propbag_item item="0" name="VALUE">
+          <int name="MODIFIER" value="-4"/>
+          <int name="ROLL" value="5"/>
+          <string name="STATID">INIT_ID</string>
+          <string name="NOTES"></string>
+        </propbag_item>
+        <propbag_item item="1" name="VALUE">
+          <int name="MODIFIER" value="0"/>
+          <int name="ROLL" value="3"/>
+          <string name="STATID">HITPOINTS_ID</string>
+          <string name="NOTES"></string>
+        </propbag_item>
+      </array>
+      <string name="NAME">Yolanda</string>
+      <int name="MONSTER" value="0"/>
+      <int name="STATUS" value="0"/>
+      <int name="STABILIZED" value="0"/>
+      <int name="JUSTDROPPED" value="0"/>
+      <int name="POSITION" value="7"/>
+      <int name="TEMPHP" value="0"/>
+      <int name="HITDICE" value="1"/>
+      <int name="BASEHP" value="33"/>
+      <propbag name="EFFECTS">
+        <propbag name="0">
+          <int name="TYPE" value="0"/>
+          <string name="NAME">Bless</string>
+          <string name="DESCRIPTION"></string>
+          <int name="TOTALROUNDS" value="10"/>
+          <int name="STARTIN" value="0"/>
+          <int name="HPBOOST" value="0"/>
+          <int name="ROUNDSUSED" value="0"/>
+          <int name="ACTIVE" value="1"/>
+        </propbag>
+      </propbag>
+      <int name="SUBPOSITION" value="0"/>
+      <int name="MANUALPOS" value="0"/>
+      <string name="PUBLIC_NAME">Yolanda</string>
+      <string name="NOTES"></string>
+    </propbag_item>
+    <propbag_item item="1" name="CHARACTER">
+      <int name="DAMAGE" value="14"/>
+      <array name="STATS">
+        <propbag_item item="0" name="VALUE">
+          <int name="MODIFIER" value="2"/>
+          <int name="ROLL" value="14"/>
+          <string name="STATID">INIT_ID</string>
+          <string name="NOTES"></string>
+        </propbag_item>
+        <propbag_item item="1" name="VALUE">
+          <int name="MODIFIER" value="0"/>
+          <int name="ROLL" value="6"/>
+          <string name="STATID">HITPOINTS_ID</string>
+          <string name="NOTES"></string>
+        </propbag_item>
+      </array>
+      <string name="NAME">Aedra</string>
+      <int name="MONSTER" value="0"/>
+      <int name="STATUS" value="0"/>
+      <int name="STABILIZED" value="0"/>
+      <int name="JUSTDROPPED" value="0"/>
+      <int name="POSITION" value="14"/>
+      <int name="TEMPHP" value="0"/>
+      <int name="HITDICE" value="1"/>
+      <int name="BASEHP" value="34"/>
+      <propbag name="EFFECTS">
+        <propbag name="0">
+          <int name="TYPE" value="0"/>
+          <string name="NAME">Bless</string>
+          <string name="DESCRIPTION"></string>
+          <int name="TOTALROUNDS" value="10"/>
+          <int name="STARTIN" value="0"/>
+          <int name="HPBOOST" value="0"/>
+          <int name="ROUNDSUSED" value="0"/>
+          <int name="ACTIVE" value="1"/>
+        </propbag>
+      </propbag>
+      <int name="SUBPOSITION" value="0"/>
+      <int name="MANUALPOS" value="0"/>
+      <string name="PUBLIC_NAME">Aedra</string>
+      <string name="NOTES"></string>
+    </propbag_item>
+  </array>
+  <string name="VERSION">1.4</string>
+</propbag>

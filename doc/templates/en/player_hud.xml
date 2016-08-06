@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Player HUD</h2>
+
+<p id="para">
+	Some Game Masters use a secondary monitor to show their players pictures of
+	NPCs or the setting to add that extra dimension of realism to
+	their campaigns. If you are one of those GMs, <b>Turn Watcher</b> now has a
+	built-in player heads up display (or HUD for short).
+
+	To activate the player HUD, go to the <i>View</i> menu and make sure "Show
+	HUD Window" is checked. A new window will appear:
+</p>
+
+<p align="center">
+	<img src="../images/tw_player_hud.png" hspace="11" vspace="10"/>
+</p>
+
+<p id="para">
+	Just drag the window over to the secondary monitor so it is visible to your
+	players.  Right clicking on the panel allows you to adjust the font size for the HUD
+	only. Just select the "Change font" menu to do so.
+</p>
+
+<p id="para">
+	A new entry in the edit window allows you to enter a "public" name for the
+	combatant. So for monsters, you can show the players one name, yet have 
+	the real name concealed only for yourself to see.
+	Note that effect counts on monsters are not visible to the players
+</p>
+
+<p id="tip">
+	<b>Tip:</b>
+	Use Ctrl-H to turn on or off the Player HUD.
+</p>
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->
+

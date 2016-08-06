@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//FR"/>
+	<html lang="fr" xml:lang="fr">
+		<head>
+	<title>G&#xE9;rer les points de vie</title>
+				<meta content="&#xA9; 2008 &#x2014; Made to Order Software Corporation &#x2014; Tous droits r&#xE9;serv&#xE9;s" name="copyright"/>
+		<meta content="Alexis Wilke" name="author"/>
+		<meta content="Turn Watcher g&#xE8;re l'initiative mais aussi les points de vie!" name="description"/>
+	<meta content="xmlc v1.02" name="generator"/>
+		<meta content="Donjons, Dragons, d20, Turn Watcher, Documentation" name="keywords"/>
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+	<link href="../styles/documentation.css" rel="stylesheet" type="text/css"/>
+		<link href="get_started.html" rel="first" title="Au d&#xE9;but..." type="text/html"/>
+		<link href="delay.html" rel="next" title="Actions retard&#xE9;es et pr&#xE9;par&#xE9;es" type="text/html"/>
+		<link href="effects_tracking.html" rel="prev" title="Gestion des effets" type="text/html"/>
+		<link href="player_hud.html" rel="last" title="Affichage pour les joueurs" type="text/html"/>
+	<link href="description.html" rel="chapter" title="&#xC0; propos de Turn Watcher" type="text/html"/>
+	<link href="get_started.html" rel="chapter" title="Au d&#xE9;but..." type="text/html"/>
+	<link href="shortcuts.html" rel="chapter" title="Raccourcis clavier" type="text/html"/>
+	<link href="technical.html" rel="chapter" title="Mat&#xE9;riels et logiciels requis" type="text/html"/>
+		<link href="index.html" rel="contents" title="Sommaire" type="text/html"/>
+		<link href="index.html" rel="toc" title="Sommaire" type="text/html"/>
+		<link href="index.html" rel="start" title="Sommaire" type="text/html"/>
+		<link href="index.html" rel="up" title="Sommaire" type="text/html"/>
+	<link href="copyright.html" rel="copyright" title="Copyright" type="text/html"/>
+	<link href="authors.html" rel="author" title="Auteurs et contributions" type="text/html"/>
+	<link href="license.html" rel="appendix" title="Licence du logiciel de l'utilisateur" type="text/html"/>
+	<link href="copyright.html" rel="appendix" title="Copyright" type="text/html"/>
+	<link href="authors.html" rel="appendix" title="Auteurs et contributions" type="text/html"/>
+	<link href="contact.html" rel="appendix" title="Contacter Made to Order Software" type="text/html"/>
+			<link href="../en/hitpoints.html" lang="en" medium="Screen" rel="alternate" title="English" type="text/html"/>
+			<link href="../es/hitpoints.html" lang="es" medium="Screen" rel="alternate" title="Espa&#xF1;ol" type="text/html"/>
+	<script src="../js/overlib/overlib.js" type="text/javascript"><!-- overLIB (c) Erik Bosrup --></script>
+	<script src="../js/m2osw/get_object_position.js" type="text/javascript"><!-- (c) Made to Order Software, Corp. --></script>
+</head>
+		<body>
+			<div id="overDiv" style="position: absolute; visibility: hidden; z-index: 1000;"></div>
+			<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+	<tbody>
+		<tr>
+			<td valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tbody>
+						<tr>
+							<td height="84" valign="middle" width="100%">
+								<div id="title" width="100%">
+									G&#xE9;rer les points de vie
+										<br/>
+										<span id="sub_title" width="100%">Documentation de Turn Watcher&#x2122;</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" height="31" valign="middle" width="100%">
+								<script type="text/javascript">
+									if(navigator.appVersion.indexOf("MSIE") > 0) {
+										document.write('<div id="menu_msie">');
+									}
+									else {
+										document.write('<div id="menu">');
+									}
+								</script>
+										&nbsp; <a href="index.html" id="menu_item">Sommaire</a> &nbsp;
+										&nbsp; <a href="shortcuts.html" id="menu_item">Raccourcis clavier</a> &nbsp;
+										&nbsp; <a href="contact.html" id="menu_item">Nous contacter</a> &nbsp;
+										&nbsp; <a href="http://www.turnwatcher.com/fr" id="menu_item">Page d'acceuil</a> &nbsp;
+								<script type="text/javascript">
+									document.write('</div>');
+								</script>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table width="100%">
+					<tbody>
+						<tr>
+							<td align="center">
+								<table width="550">
+									<tbody>
+											<tr>
+												<td align="left"><a href="effects_tracking.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Gestion des effets', WRAP, 1)">Page pr&#xE9;c&#xE9;dente</a></td>
+												<td align="right"><a href="delay.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Actions retard&#xE9;es et pr&#xE9;par&#xE9;es', WRAP, 1)">Page suivante</a></td>
+											</tr>
+										<tr>
+											<td colspan="2">
+												<p style="margin-top: 30px;">&nbsp;</p>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<h2 align="center">G&eacute;rer les points de vie</h2><p id="para">
+	Quand un personnage re&ccedil;ois des dommages en combat,
+	cliquez sur lui dans la liste, puis cliquez sur le bouton
+	<i>Dommages</i> dans la barre d'outils.
+	Tapez les dommages et cliquez sur le bouton <i>Dommages</i>.
+	Notez que cette action ne change absolument pas l'ordre
+	dans lequel les personnages se trouvent.
+</p>
+<p align="center">
+	<img src="../images/tw_damage_dialog.jpg"/>
+</p>
+<p id="para">
+	Quand un personnage re&ccedil;ois des soins, cliquez
+	&eacute;galement sur le bouton <i>Dommages</i> de la
+	barre d'outils. Ensuite, entrez le nombre de points de
+	vie que les soins prof&egrave;rent et finallement,
+	cliquez sur le bouton <i>Soins</i>.
+	Un personnage peut aussi &ecirc;tre ramen&eacute; &agrave;
+	son nombre maximum de points de vie en cliquant sur le
+	bouton <i>Maximum</i>.
+</p>
+<p id="tip">
+	<b>Id&eacute;e:</b>
+	Vous pouvez soumettre des dommages ou des soins &agrave; un
+	groupe en cliquant sur tous les personnages affect&eacute;s
+	et puis sur le bouton <i>Dommages</i>.
+</p>
+<p id="para">
+	Quand un personnage est <i>Mourant</i> (c'est &agrave; dire que
+	ses points de vie sont entre -1 et -9), <b>Turn Watcher</b>
+	le saigne d'un point de vie &agrave; chaque round, et ce de
+	fa&ccedil;on automatique (jusqu'au moment ou il est
+	<i>Stabilis&eacute;</i> ou meurt &#151; voir ci-dessous).
+</p>
+<p align="center">
+	<img height="79" src="../images/tw_bleedout1.jpg" width="487"/>
+</p>
+<p id="para">
+	Quand un personnage <i>Mourant</i> est stabilis&eacute;,
+	s&eacute;lectionnez <span id="menu_ref">Stabiliser</span>
+	dans le menu <span id="menu_ref">Rounds</span>. Le
+	status sera chang&eacute; de <i>Mourant</i> &agrave;
+	<i>Stabilis&eacute;</i>.
+	<b>Turn Watcher</b> arr&ecirc;tera de saigner le personnage
+	&agrave; moins qu'il subisse &agrave; nouveau des dommages.
+	Vous pouvez &eacute;galement soigner le personnage
+	de sorte &agrave; ce qu'il ait zero (0) ou plus de
+	points de vie de sorte &agrave; &eacute;viter le
+	saignement.
+</p>
+<p align="center">
+	<img height="46" src="../images/tw_stabilize.jpg" width="547"/>
+</p>
+<p id="para">
+	Quand un personnage arrive &agrave; moins dix (-10) points
+	de vie, <b>Turn Watcher</b> le marque comme <i>Mort</i> de
+	fa&ccedil;on automatique et il est gris&eacute;.
+	Notez que par d&eacute;faut, <b>Turn Watcher</b> ne donne
+	pas de tour &agrave; un personnage mort.
+	Vous pouvez &eacute;liminer un personnage mort de votre
+	liste en cliquant dessus et en cliquant sur le bouton
+	<i>Effacer</i> de la barre d'outils.
+</p>
+<p id="tip">
+	<b>Id&eacute;e:</b>
+	Vous pouvez changer <b>Turn Watcher</b> de sorte &agrave;
+	donner un tour aux personnages morts. Ceci fonctionne &agrave;
+	l'aide du drapeau <span id="menu_ref">Sauter les personnages morts</span>
+	dans le menu <span id="menu_ref">Rounds</span>.
+</p>
+<p align="center">
+	<img height="112" src="../images/tw_bleedout2.jpg" width="505"/>
+</p>
+												<br/>
+												<br/>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom" width="100%">
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td align="center">
+									<table width="550">
+										<tbody>
+											<tr>
+												<td align="left"><a href="effects_tracking.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Gestion des effets', WRAP, 1)">Page pr&#xE9;c&#xE9;dente</a></td>
+												<td align="right"><a href="delay.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Actions retard&#xE9;es et pr&#xE9;par&#xE9;es', WRAP, 1)">Page suivante</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<table align="center" border="0" cellpadding="3" cellspacing="3" id="copyright_table" width="550">
+					<tbody>
+						<tr>
+							<td align="right" valign="middle">
+								<a href="http://www.m2osw.com"><img border="0" src="../images/small_m2osw_logo.png"/></a>
+							</td>
+							<td align="center" valign="middle">
+								<div id="bottom_copyright">
+												&nbsp; &#xA9; 2006-2008&nbsp; &#x2014; Made to Order Software Corporation &#x2014; Tous droits r&#xE9;serv&#xE9;s
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table></body>
+	</html>

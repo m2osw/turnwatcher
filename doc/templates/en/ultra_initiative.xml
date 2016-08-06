@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Ultra Initiative (Optional)</h2>
+
+<p id="para">
+	<img src="../images/tw_ultrainit_menu.jpg" hspace="10" vspace="10" align="left"/>
+	If you're one of those Game Masters that likes to mix up the action
+	between rounds, select <span id="menu_ref">Ultra Initiative</span> via the
+	<span id="menu_ref">Rounds</span> menu. <i>Ultra Initiative</i> mode causes
+	<b>Turn Watcher</b> to automatically re-roll initiative
+	at the top of each round.
+</p>
+
+<p id="tip">
+	<b>Tip:</b>
+	Use Ctrl-U to turn on or off Ultra Initiative at any time
+	while in or out of combat rounds!
+</p>
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->
+

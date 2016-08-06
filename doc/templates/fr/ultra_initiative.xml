@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Initiative &agrave; l'ancienne (Optionelle)</h2>
+
+<p id="para">
+	<img src="../images/tw_ultrainit_menu.jpg" hspace="10" vspace="10" align="left"/>
+	Si vous &ecirc;tes un de ces ma&icirc;tre de jeux qui aiment
+	beaucoup quand l'action change &agrave; chaque round, alors
+	s&eacute;lectionnez <span id="menu_ref">Initiative &agrave;
+	l'ancienne</span> dans le menu <span id="menu_ref">Rounds</span>.
+	En mode <i>Initiative &agrave; l'ancienne</i>, <b>Turn Watcher</b>
+	relance l'initiative de fa&ccedil;on automatique au d&eacute;but
+	de chaque round.
+</p>
+
+<p id="tip">
+	<b>Id&eacute;e:</b>
+	Utilisez Ctrl-U pour inverser l'utilisation de l'initiative
+	&agrave; l'ancienne &agrave; tout moment, que ce soit pendant
+	un round de combat ou pas!
+</p>
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->
+

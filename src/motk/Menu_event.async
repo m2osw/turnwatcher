@@ -1,0 +1,65 @@
+//===============================================================================
+// File:		src/snap/menu_event.async
+// Object:		MainWindow
+//
+// Copyright:	Copyright (c) 2005-2008 Made to Order Software Corp.
+//
+//		All Rights Reserved.
+//
+//		This software and its associated documentation contains
+//		proprietary, confidential and trade secret information
+//		of Made to Order Software Corp. and except as provided by
+//		written agreement with Made to Order Software Corp.
+//
+//		a) no part may be disclosed, distributed, reproduced,
+//		   transmitted, transcribed, stored in a retrieval system,
+//		   adapted or translated in any form or by any means
+//		   electronic, mechanical, magnetic, optical, chemical,
+//		   manual or otherwise,
+//
+//		and
+//
+//		b) the recipient is not entitled to discover through reverse
+//		   engineering or reverse compiling or other such techniques
+//		   or processes the trade secrets contained therein or in the
+//		   documentation.
+//
+//===============================================================================
+
+#ifndef __MOTK_MENU_EVENT_H__
+#define __MOTK_MENU_EVENT_H__
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
+// molib
+//
+#include <mo_event.h>
+#include <mo_props.h>
+#include <mo_string.h>
+#include <mo_array.h>
+
+// ************* MENUS **************
+
+class MenuBroadcast
+{
+public:
+	virtual ~MenuBroadcast() {}
+	async DynamicEvent() __attribute__((dynamic_event)) = 0;
+};
+
+
+class MenuManagerEvent
+{
+public:
+	virtual ~MenuManagerEvent() {}
+	async ClearMenus() __attribute__((dynamic)) = 0;
+	async AddMenu( molib::moPropBagRef menuPropBag ) __attribute__((dynamic(DynAddMenu))) = 0;
+	async RemoveMenu( molib::moPropBagRef menuPropBag ) __attribute__((dynamic(DynRemoveMenu))) = 0;
+	async RedrawMenu() __attribute__((dynamic)) = 0;
+};
+
+#endif //__MOTK_MENU_EVENT_H__
+
+// vim: ts=4 syntax=cpp

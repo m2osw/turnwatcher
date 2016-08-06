@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"/>
+	<html lang="en" xml:lang="en">
+		<head>
+	<title>Secret Skill Checks and Saves</title>
+				<meta content="&#xA9; 2008 &#x2014; Made to Order Software Corporation &#x2014; All rights reserved" name="copyright"/>
+		<meta content="Alexis Wilke" name="author"/>
+		<meta content="Turn Watcher lets you rolls dice silently! This offers the capability of making secret skill checks and saves." name="description"/>
+	<meta content="xmlc v1.02" name="generator"/>
+		<meta content="Dungeons, Dragons, d20, Turn Watcher, Documentation" name="keywords"/>
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+	<link href="../styles/documentation.css" rel="stylesheet" type="text/css"/>
+		<link href="get_started.html" rel="first" title="Let's get started!" type="text/html"/>
+		<link href="reorder.html" rel="next" title="Changing Characters' Initative Order" type="text/html"/>
+		<link href="delay.html" rel="prev" title="Delayed and Readied Actions" type="text/html"/>
+		<link href="player_hud.html" rel="last" title="Player Heads Up Display (HUD)" type="text/html"/>
+	<link href="description.html" rel="chapter" title="About Turn Watcher" type="text/html"/>
+	<link href="get_started.html" rel="chapter" title="Let's get started!" type="text/html"/>
+	<link href="shortcuts.html" rel="chapter" title="Keyboard Shortcuts" type="text/html"/>
+	<link href="technical.html" rel="chapter" title="Technical Requirements" type="text/html"/>
+		<link href="index.html" rel="contents" title="Summary" type="text/html"/>
+		<link href="index.html" rel="toc" title="Summary" type="text/html"/>
+		<link href="index.html" rel="start" title="Summary" type="text/html"/>
+		<link href="index.html" rel="up" title="Summary" type="text/html"/>
+	<link href="copyright.html" rel="copyright" title="Copyright" type="text/html"/>
+	<link href="authors.html" rel="author" title="Authors &amp; Contributors" type="text/html"/>
+	<link href="license.html" rel="appendix" title="End-User License Agreement" type="text/html"/>
+	<link href="copyright.html" rel="appendix" title="Copyright" type="text/html"/>
+	<link href="authors.html" rel="appendix" title="Authors &amp; Contributors" type="text/html"/>
+	<link href="contact.html" rel="appendix" title="Contact Information" type="text/html"/>
+			<link href="../fr/checks_n_saves.html" lang="fr" medium="Screen" rel="alternate" title="Fran&#xE7;ais" type="text/html"/>
+			<link href="../es/checks_n_saves.html" lang="es" medium="Screen" rel="alternate" title="Espa&#xF1;ol" type="text/html"/>
+	<script src="../js/overlib/overlib.js" type="text/javascript"><!-- overLIB (c) Erik Bosrup --></script>
+	<script src="../js/m2osw/get_object_position.js" type="text/javascript"><!-- (c) Made to Order Software, Corp. --></script>
+</head>
+		<body>
+			<div id="overDiv" style="position: absolute; visibility: hidden; z-index: 1000;"></div>
+			<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+	<tbody>
+		<tr>
+			<td valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tbody>
+						<tr>
+							<td height="84" valign="middle" width="100%">
+								<div id="title" width="100%">
+									Secret Skill Checks and Saves
+										<br/>
+										<span id="sub_title" width="100%">Turn Watcher&#x2122; Documentation</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" height="31" valign="middle" width="100%">
+								<script type="text/javascript">
+									if(navigator.appVersion.indexOf("MSIE") > 0) {
+										document.write('<div id="menu_msie">');
+									}
+									else {
+										document.write('<div id="menu">');
+									}
+								</script>
+										&nbsp; <a href="index.html" id="menu_item">Summary</a> &nbsp;
+										&nbsp; <a href="shortcuts.html" id="menu_item">Keyboard Shortcuts</a> &nbsp;
+										&nbsp; <a href="contact.html" id="menu_item">Contact</a> &nbsp;
+										&nbsp; <a href="http://www.turnwatcher.com/en" id="menu_item">Home Page</a> &nbsp;
+								<script type="text/javascript">
+									document.write('</div>');
+								</script>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table width="100%">
+					<tbody>
+						<tr>
+							<td align="center">
+								<table width="550">
+									<tbody>
+											<tr>
+												<td align="left"><a href="delay.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Delayed and Readied Actions', WRAP, 1)">Previous Page</a></td>
+												<td align="right"><a href="reorder.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Changing Characters\' Initative Order', WRAP, 1)">Next Page</a></td>
+											</tr>
+										<tr>
+											<td colspan="2">
+												<p style="margin-top: 30px;">&nbsp;</p>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<h2 align="center">Making Secret Skill Checks<br/>and Will Saves</h2><p id="para">
+	Use <b>Turn Watcher</b> to quickly and secretly make separate die rolls
+	for each character by clicking on one of the colored dice icons on the
+	toolbar. The computer will automatically sort the players and monsters
+	on the appropriate column.
+</p>
+<p align="center">
+	<img height="60" src="../images/tw_dice_icons.jpg" width="289"/>
+</p>
+<p id="example">
+	The party moves into a new chamber in the dungeon. Doug
+	wants to secretly roll each players' spot check to see if anyone notices a
+	hidden door in a room. He clicks the <i>Spot</i> button on the toolbar,
+	then clicks the <i>Spot</i> column to sort. The characters with the
+	highest <i>Spot</i> checks are listed first.
+</p>
+<br/>
+<p id="para">
+	When <span id="menu_ref">Get DC on Rolls</span> in the
+	<span id="menu_ref">Roll</span> menu is turned on, each time
+	you make a secret check (Spot/Listen/Will), the computer will
+	prompt you for the success DC of the check. Those characters
+	and monsters that succeed will be highlighted with a green
+	background.
+	<span id="version_spec">(available since version 1.1)</span>
+</p>
+<p align="center">
+	<img height="144" src="../images/tw_dc.png" width="550"/>
+</p>
+<p id="para">
+	<b><i>Customize your secret skill and save checks!</i></b> Tired of only having
+	<i>Spot/Listen/Will</i> fixed column checks? Now you can add your own checks and
+	add informative columns! Access the File menu, and you will see a new menu
+	entry called "Stat Editor".
+	<span id="version_spec">(available since version 1.4)</span>
+</p>
+<p align="center">
+	<img height="289" src="../images/tw_14_file_menu.jpg" width="289"/>
+</p>
+<p id="para">
+	The <i>Stat Editor</i> window allows you to create your own secret checks
+	and information columns in the main screen. <b>Turn Watcher</b> comes stock
+	with predefined <i>Spot/Listen/Will</i> columns, but you can change those to
+	your liking. To rename a column, merely click once on a row and then click a
+	second time on the column name. You may then type the new value then press
+	the <i>ENTER</i> button to accept.
+	<span id="version_spec">(available since version 1.4)</span>
+</p>
+<p align="center">
+	<img height="436" src="../images/tw_14_statwind_new.jpg" width="839"/>
+</p>
+<p id="para">
+	For alternative gaming systems that are not d20-based, you may click the on
+	the <i>Die Faces</i> column and select a new dice value to use (e.g. 2d10+6).
+</p>
+<p align="center">
+	<img height="436" src="../images/tw_14_statwind.jpg" width="839"/>
+</p>
+<p id="para">
+	The <i>Show on Toolbar</i> checkbox creates a button on the toolbar which
+	will, when clicked, make a secret roll for the GM's eyes only. For example,
+	the GM wants the players to make perception checks, so clicks the perception
+	button. After entering the success DC, a new column on the UI appears,
+	called <i>Perception</i>, and the succeeding checks are highlighted:
+	<span id="version_spec">(available since version 1.4)</span>
+</p>
+<p align="center">
+	<img height="729" src="../images/tw_14_percept.jpg" width="1015"/>
+</p>
+<p id="para">
+	However, if you un-check the <i>Show on Toolbar</i> checkbox, your entry will appear
+	in the main screen. The difference is: the entry always appears and
+	contains any text you wish to enter. For example, if you now want <b>Turn
+		Watcher</b> to show combatants' Armor Class, you may create a column
+	called <i>AC</i>.
+	<span id="version_spec">(available since version 1.4)</span>
+</p>
+<p align="center">
+	<img height="348" src="../images/tw_14_editor.jpg" width="600"/>
+</p>
+<p id="para">
+	The <i>Show on Player HUD</i> allows you to insert this new field into the
+	player HUD for viewing by the players. The <i>Show in Monster Stat on
+		HUD</i> will cause the stat to also show for monster entries. Uncheck to
+	keep the value hidden from the players.
+	<span id="version_spec">(available since version 1.4)</span>
+</p>
+												<br/>
+												<br/>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom" width="100%">
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td align="center">
+									<table width="550">
+										<tbody>
+											<tr>
+												<td align="left"><a href="delay.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Delayed and Readied Actions', WRAP, 1)">Previous Page</a></td>
+												<td align="right"><a href="reorder.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Changing Characters\' Initative Order', WRAP, 1)">Next Page</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<table align="center" border="0" cellpadding="3" cellspacing="3" id="copyright_table" width="550">
+					<tbody>
+						<tr>
+							<td align="right" valign="middle">
+								<a href="http://www.m2osw.com"><img border="0" src="../images/small_m2osw_logo.png"/></a>
+							</td>
+							<td align="center" valign="middle">
+								<div id="bottom_copyright">
+												&nbsp; &#xA9; 2006-2008&nbsp; &#x2014; Made to Order Software Corporation &#x2014; All rights reserved
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table></body>
+	</html>

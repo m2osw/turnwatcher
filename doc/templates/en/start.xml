@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+
+<h2 align="center">Start Your Combat!</h2>
+
+<p id="para">
+	Now you are ready to actually start using <b>Turn Watcher</b> in your game!
+</p>
+
+
+<div id="para">
+	<ul>
+	  <li id="steps">
+			Start the application and clear out the list of characters if needed
+			(<span id="menu_ref">Clear</span> is in the
+			<span id="menu_ref">File</span> menu).
+		</li>
+	
+		<li id="steps">
+			Select <span id="menu_ref">Import</span> from the
+			<span id="menu_ref">File</span> menu to load your list of
+			characters for your campaign.
+		</li>
+	
+		<li id="steps">
+			Select <span id="menu_ref">Import</span> again to load your
+			list of opponents for this encounter. <b>Turn Watcher</b>
+			asks you if you want to merge with your existing characters.
+			Click the <b>Yes</b> button.
+		</li>
+	
+		<p align="center">
+			<img src="../images/tw_merge_dialog.jpg"/>
+		</p>
+
+		<li id="steps">
+			<img src="../images/tw_start_toolbar.jpg" vspace="5" hspace="5" align="right"/>
+
+			Start your combat by clicking the <i>Start</i> button (once it has been clicked,
+			the <i>Start</i> button changes to an <i>End</i> button).
+
+			<b>Turn Watcher</b> automatically rolls separate initiative rolls for every
+			PC and monster and lists them in initiative order for you! It also keeps
+			track of rounds in the status bar at the bottom of the main window.
+		</li>
+	</ul>
+</div>
+
+<p id="tip">
+	<b>Tip:</b> Deselect <span id="menu_ref">Roll Initiative on Start</span> in
+	the <span id="menu_ref">Roll</span> menu to avoid the automatic roll of
+	initiative on <i>Start</i>
+	(<a class="anchor" href="reorder.html">read more</a>).
+</p>
+
+<div id="para">
+	<ul>
+		<li id="steps">
+			If <span id="menu_ref">Manual Initiative Entry</span> is selected in
+			the <span id="menu_ref">Roll</span> menu, the manual initiative
+			dialog displays.
+
+			This dialog gives you a chance to enter initiative rolls manually,
+			allowing you to let your players do their own rolling. The combatants
+			are sorted in alphabetical order, and there are two separate columns for
+			PCs and monsters. The values you see at first are computer generated, so
+			you can let <b>Turn Watcher</b> roll for your monsters/NPCs easily.
+			<span id="version_spec">(available since version 1.1)</span>
+		</li>
+
+		<li id="steps">
+			Press the <i>Next</i> button to move from one character to the next after it
+			takes its full action. The character's turn is marked with an arrow (shaped
+			like a sword) to the left of the name.
+		</li>
+	</ul>
+</div>
+
+<p id="tip">
+	<b>Tip:</b> Hit Space Bar to easily advance to the next character.
+</p>
+
+<div id="para">
+	<ul>
+		<li id="steps">
+			To come out of rounds, click the <i>End</i> button.
+		</li>
+	
+		<p align="center">
+			<img src="../images/tw_end_toolbar.jpg"/>
+		</p>
+	</ul>
+</div>
+
+
+<br/>
+
+
+<p id="para">
+	Some game masters and players prefer to reduce the chances for someone
+	to get a 1 or a 20 on their dice. One way to prevent this from happening
+	is to change the dice being rolled from 1d20 to 2d10 or 3d8-2 or some other
+	multi-dice combinaison. By default the system is setup to roll 1d20.
+	To change the default, select
+	<span id="menu_ref">Define Initiative Dice</span> from the
+	<span id="menu_ref">Roll</span> menu. Type in the dice you want to
+	use such as 2d10, 3d8-2 or 1d20+2; then click Accept. Your selection
+	is automatically saved when you exit Turn Watcher so you do not have
+	to set it again and again.
+	<span id="version_spec">(available since version 1.1)</span>
+</p>
+
+
+<br/>
+
+
+<p id="tip">
+	<b>Tip:</b> If at any time you make a mistake and want to undo your
+	action, simply select <span id="menu_ref">Undo</span> in the
+	<span id="menu_ref">Edit</span> menu.
+</p>
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->
+

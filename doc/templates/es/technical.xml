@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+
+<table cellpadding="0" cellspacing="20" width="550">
+	<tbody>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Sistema&nbsp;de&nbsp;explotaci&oacute;n
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					Linux&nbsp;(libc.so.6&nbsp;requerido)
+					<br/>
+					Microsoft&nbsp;Windows&nbsp;(2000&nbsp;&oacute;&nbsp;XP)
+					<br/>
+					(Y&nbsp;pronto&nbsp;Mac&nbsp;OS/X)
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Memoria
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					64Mo de memoria libre
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Disco&nbsp;duro
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					64Mo de espacio libre
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Procesador
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					Pentium
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Carta&nbsp;video
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					800x600, 65 mil colores
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<p id="para">
+	Observe que <b>Turn Watcher</b> funciona en 640x480 con 16
+	colores (&nbsp;a&uacute;n que con justo 16 colores, los iconos no
+	ser&aacute;n verdaderamente bonitos en absoluto&nbsp;).
+	Esto le permite por ejemplo de utilizar un antiguo ordenador
+	reconvertido para utilizar <b>Turn Watcher</b>, a&uacute;n si
+	ese viejo ordenador no soporta tan s&oacute;lo una
+	resoluci&oacute;n de 640x480. Y no lo olvide que
+	<b>Turn Watcher</b> funciona bajo linux...
+</p>
+
+<p id="para">
+	Nosotros recomendamos una resoluci&oacute;n m&iacute;nimo de
+	800x600 y un m&iacute;nimo de 65 mil colores (&nbsp;16 bits&nbsp;).
+</p>
+
+<p id="para">
+	Nosotros sujerimos 1024x768 &oacute; m&aacute;s y una carta video
+	que soporte 16 millones de colores para mejore resultados.
+</p>
+
+<!--
+	vim: ts=2
+-->

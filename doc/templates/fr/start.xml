@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<h2 align="center">Votre premier combat!</h2>
+
+<p id="para">
+	Maintenant vous &ecirc;tes pr&ecirc;t pour d&eacute;marrer
+	votre premier combat avec <b>Turn Watcher</b>!
+</p>
+
+
+<div id="para">
+	<ul>
+	  <li id="steps">
+			D&eacute;marrez le logiciel et abandonner tous les
+			personnages de la liste si n&eacute;cessaire
+			(<span id="menu_ref">Abandonner</span> est dans le menu
+			<span id="menu_ref">Fichier</span>).
+		</li>
+	
+		<li id="steps">
+			S&eacute;lectionnez <span id="menu_ref">Importer</span> du menu
+			<span id="menu_ref">Fichier</span> pour charger votre
+			liste de personnages participant &agrave; votre campagne.
+		</li>
+	
+		<li id="steps">
+			S&eacute;lectionnez <i>Importer</i> &agrave; nouveau pour
+			charger la liste des monstres pour cette rencontre.
+			<b>Turn Watcher</b> vous demandera si vous d&eacute;sirez
+			fusionner avec votre liste existante (les personnages).
+			Cliquez sur <b>Oui</b>.
+		</li>
+	
+		<p align="center">
+			<img src="../images/tw_merge_dialog.jpg"/>
+		</p>
+	
+		<li id="steps">
+			<img src="../images/tw_start_toolbar.jpg" vspace="5" hspace="5" align="right"/>
+	
+			D&eacute;marrez votre combat en cliquant sur le bouton
+			<i>D&eacute;marrer</i> de la barre d'outils (remarquez
+			que quand vous cliquez sur le bouton <i>D&eacute;marrer</i> il
+			se transforme en un bouton <i>Terminer</i>).
+	
+			<b>Turn Watcher</b> lance les d&eacute;s pour l'initiative
+			de fa&ccedil;on automatique et ceci pour tous les personnages
+			dans la liste. Ensuite il trie les personnages pour vous!
+			Enfin, il montre le num&eacute;ro du round en court dans
+			la barre de status au bas de la fen&ecirc;tre.
+		</li>
+	
+		<li id="steps">
+			Pressez sur le bouton <i>Suivant</i> pour d&eacute;placer
+			le curseur d'un personnage &agrave; l'autre quand le
+			personnage actuel &agrave; fini son action. Le personnage
+			dont c'est le tour est point&eacute; par une fl&ecirc;che
+			(en forme d'&eacute;p&eacute;e) sur la gauche du nom du
+			personnage.
+		</li>
+	</ul>
+</div>
+
+<p id="tip">
+	<b>Id&eacute;e:</b>
+	Utilisez la barre d'espace pour facilement avancer d'un
+	personnage &agrave; l'autre.
+</p>
+
+<div id="para">
+	<ul>
+		<li id="steps">
+			Pour arr&ecirc;ter votre combat, cliquez sur le
+			bouton <i>Terminer</i>.
+		</li>
+	
+		<p align="center">
+			<img src="../images/tw_end_toolbar.jpg"/>
+		</p>
+	</ul>
+</div>
+
+<br/>
+
+<p id="tip">
+	<b>Id&eacute;e:</b>
+	&Agrave; n'importe quel moment, si vous faites une erreur,
+	vous pouvez utiliser la fonction
+	<span id="menu_ref">Annuler</span> dans le menu
+	<span id="menu_ref">&Eacute;dition</span>.
+</p>
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->
+

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<h2 align="center">What is Turn Watcher&#x2122;?</h2>
+
+<p id="para">
+	While running a game, you, the Game Master, are expected to run your combat
+	encounters smoothly and efficiently. We know that sometimes encounters are
+	straight-forward and easy to monitor, but what if they become more
+	complicated?  How do you keep track of Orc number 12's hit points? How can you
+	know exactly when a character will bleed out? How do you keep track of a
+	character's new initiative order when they delay their action? How can you
+	keep readied actions straight? Is there a way to do secret skill checks and
+	saves for all your characters at once? Or an easier way to mix up the action
+	by rolling initiative at the top of every round?
+</p>
+
+<p id="para">
+	If you have ever wondered if there was a better way to manage your
+	encounters, then <b>Turn Watcher&#x2122;</b> is the solution for you!
+	<b>Turn Watcher</b> tracks any number of player characters' (PCs) and
+	opponents' initiative order and hit points, freeing you to run your
+	encounters smoothly and efficiently. 
+</p>
+ 
+<p id="para">
+	<b>Turn Watcher</b> can:
+</p>
+
+<div id="para">
+	<ul>
+		<li id="steps">Roll individual initiative die rolls for every PC and opponent
+				and put them into initiative order automatically &#151; all with a single click!</li>
+		<li id="steps">Let you enter the initiative die rolls of your players</li>
+		<li id="steps">Allow for changes in initiative, such as delayed or readied
+				actions, or even extra opponents that enter into combat.</li>
+		<li id="steps">Easily monitor the number of rounds in a combat.</li>
+		<li id="steps">List PC and opponent current hit points.</li>
+		<li id="steps">Automatically bleed out dying PCs and opponents.</li>
+		<li id="steps">Mark PCs and opponents as dead at -10 hit points.</li>
+		<li id="steps">Make secret skill checks and saves for all characters at once
+				and show you who succeeded.</li>
+		<li id="steps">Allow all actions to be undone/redone.</li>
+	</ul>
+</div>
+
+<!--
+	vim: ts=2 sw=2 tw=78
+-->
+

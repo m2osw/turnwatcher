@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+
+<h2 align="center">Administrar los puntos de vida</h2>
+
+<p id="para">
+	Cuando un personaje recibe da&ntilde;os en combate, clique sobre
+	&eacute;l en la lista, despues clique sobre en el bot&oacute;n
+	<i>Da&ntilde;os</i> de la barra de implementos.
+
+	Escriba los da&ntilde;os y clique en el bot&oacute;n de
+	<i>Da&ntilde;os</i>.
+	
+	Note que esta acci&oacute;n no cambia en absoluto el orden
+	en el cual los personajes se encuuentren.
+</p>
+
+<p align="center">
+	<img src="../images/tw_damage_dialog.jpg"/>
+</p>
+
+<p id="para">
+	Cuando un personaje recibe cuidados, clique igualmente en el
+	bot&oacute;n de <i>Da&ntilde;os</i> en la barra de implementos.
+
+	Enseguida entre el cantitad de puntos de vida que los
+	cuidados profieren y finalmente, clique en el bot&oacute;n
+	<i>Cuidados</i>.
+
+	Un personaje puede tambi&eacute;n puede s&eacute;r recuperado a su
+	n&uacute;mero m&aacute;ximo de puntos de viva clicando en
+	el bot&oacute;n <i>M&aacute;ximo</i>.
+</p>
+
+<p id="tip">
+	<b>Idea&nbsp;:</b>
+	Usted puede someter a golpes (da&ntilde;os) &oacute; cuidados
+	a un grupo clicando sobre todos los personajes afectados y
+	despu&eacute;s en el bot&oacute;n golpes (<i>da&ntilde;os</i>).
+</p>
+
+<p id="para">
+	Cuando un personaje est&aacute; <i>Agonisando</i> (quire decir que
+	sus puntos de vida son entre -1 y -9, <b>Turn Watcher</b> la sangrea
+	de un puntos de vida en cada raund, y es de manera autom&aacute;tica 
+	(hasta un momento que se <i>estabiliza</i> &oacute; muere &#151; ver
+	a continuaci&oacute;n).
+</p>
+
+<p align="center">
+	<img src="../images/tw_bleedout1.jpg" width="487" height="79"/>
+</p>
+
+<p id="para">
+	Cuando un personaje <i>Moribundo</i> es estabilizado,
+	seleccione <span id="menu_ref">Estabilizar</span>
+	en el men&uacute; <span id="menu_ref">Raunds</span>. El
+	statuto ser&aacute; cambiado del <i>Moribundo</i> a
+	<i>Estabilizado</i>.
+	
+	<b>Turn Watcher</b> dejar&aacute; de hacer sangrar al personaje
+	a menos que el resista de nuevo a los da&ntilde;os.
+	
+	Usted podra de igual manera sanar al personaje
+	de modo que el tenga cero (0) &oacute; mas
+	puntos de vida y asi evitar el sangrado.
+</p>
+
+<p align="center">
+	<img src="../images/tw_stabilize.jpg" width="547" height="46"/>
+</p>
+
+<p id="para">
+	Cuando un personaje llega a menos de diez (-10) puntos
+	de vida, <b>Turn Watcher</b> lo da por <i>Muerto</i> de
+	manera autom&aacute;tica y el es atontado.
+
+	Note que por defecto, <b>Turn Watcher</b> no d&aacute;
+	el turno a un personaje <i>Muerto</i>.
+
+	Usted puede eliminar un personaje muerto de su
+	lista, clicando encima y clicando en el bot&oacute;n
+	<i>Borrar</i> de la barra de implementos.
+</p>
+
+<p id="tip">
+	<b>Idea&nbsp;:</b>
+	Usted puede cambiar <b>Turn Watcher</b> asi para dar un
+	turno a los personajes muertos.
+	
+	Este funciona con la ayuda de la bandera <span id="menu_ref">Saltar los
+	personajes muertos</span> en el men&uacute;
+	<span id="menu_ref">Raunds</span>.
+</p>
+
+<p align="center">
+	<img src="../images/tw_bleedout2.jpg" width="505" height="112"/>
+</p>
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->

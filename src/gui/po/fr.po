@@ -1,0 +1,1005 @@
+# Turn Watcher messages in French
+# Copyright (C) 2006-2009  Made to Order Software Corporation
+# This file is part of Turn Watcher and is covered by its license.
+# Alexis Wilke <turnwatcher_francais@m2osw.com>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: turnwatcher@m2osw.com\n"
+"POT-Creation-Date: 2006-04-02 22:51-0700\n"
+"PO-Revision-Date: 2009-03-11 00:01-0700\n"
+"Last-Translator: Alexis Wilke <turnwatcher@m2osw.com>\n"
+"Language-Team: French\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: AbilityEditor.cpp:109
+msgid "Strength"
+msgstr "Force"
+
+#: AbilityEditor.cpp:110
+msgid "Dexterity"
+msgstr "Dextérité"
+
+#: AbilityEditor.cpp:111
+msgid "Constitution"
+msgstr "Constitution"
+
+#: AbilityEditor.cpp:112
+msgid "Intelligence"
+msgstr "Intelligence"
+
+#: AbilityEditor.cpp:113
+msgid "Wisdom"
+msgstr "Sagesse"
+
+#: AbilityEditor.cpp:114
+msgid "Charisma"
+msgstr "Charisme"
+
+#: AboutWindow.cpp:55
+msgid "translator-credits"
+msgstr "Alexis Wilke"
+
+#: ActionsManager.cpp:315
+msgid "_File"
+msgstr "_Fichier"
+
+#: ActionsManager.cpp:316
+msgid "_Import"
+msgstr "_Importer"
+
+#: ActionsManager.cpp:317
+msgid "_Export"
+msgstr "_Exporter"
+
+#: ActionsManager.cpp:318
+msgid "_Clear"
+msgstr "_Effacer"
+
+#: ActionsManager.cpp:319
+msgid "_Quit"
+msgstr "_Quitter"
+
+#: ActionsManager.cpp:320
+msgid "_Preferences"
+msgstr "_Préférences"
+
+#: ActionsManager.cpp:321
+msgid "_Stat Editor"
+msgstr "_Éditeur de Statistiques"
+
+#: ActionsManager.cpp:333
+msgid "_Edit"
+msgstr "_Éditer"
+
+#: ActionsManager.cpp:334 MainWindow.cpp:1327 MainWindow.cpp:1332
+#: transaction.cpp:138 transaction.cpp:148 transaction.cpp:234
+msgid "_Undo"
+msgstr "_Annuler"
+
+#: ActionsManager.cpp:335 MainWindow.cpp:1341 MainWindow.cpp:1346
+#: transaction.cpp:158 transaction.cpp:168 transaction.cpp:246
+msgid "_Redo"
+msgstr "_Refaire"
+
+#: ActionsManager.cpp:336
+msgid "_Add"
+msgstr "_Ajouter"
+
+#: ActionsManager.cpp:337
+msgid "Ed_it"
+msgstr "Ed_iter"
+
+#: ActionsManager.cpp:338
+msgid "_Delete"
+msgstr "_Effacer"
+
+#: ActionsManager.cpp:339
+msgid "Duplica_te"
+msgstr "_Cloner"
+
+#: ActionsManager.cpp:340
+msgid "_Purge Dead Characters"
+msgstr "Eliminer les personnages _morts"
+
+#: ActionsManager.cpp:343
+msgid "Add E_ffect"
+msgstr "Ajouter un e_ffet"
+
+#: ActionsManager.cpp:344
+msgid "Edit Effe_ct"
+msgstr "Éditer _un effet"
+
+#: ActionsManager.cpp:345
+msgid "De_lete Effect"
+msgstr "Effacer un effet"
+
+#: ActionsManager.cpp:351
+msgid "_View"
+msgstr "Afficha_ge"
+
+#: ActionsManager.cpp:352
+msgid "Show _Toolbar"
+msgstr "_Montrer la barre d'outils"
+
+#: ActionsManager.cpp:353
+msgid "Toolbar on _Bottom"
+msgstr "_Barre d'outils en bas"
+
+#: ActionsManager.cpp:355
+msgid "Show _Effects Pane"
+msgstr "Montrer les e_ffets"
+
+#: ActionsManager.cpp:358
+msgid "Show _Info Window"
+msgstr "Montrer les _infos"
+
+#: ActionsManager.cpp:360
+msgid "Show _HUD Window"
+msgstr "Montrer la fenêtre des joueurs"
+
+#: ActionsManager.cpp:366
+msgid "_Roll"
+msgstr "_Lancés"
+
+#: ActionsManager.cpp:369 ActionsManager.cpp:371
+msgid "_Initiative"
+msgstr "_Initiative"
+
+#: ActionsManager.cpp:395
+msgid "R_ounds"
+msgstr "R_ounds"
+
+#: ActionsManager.cpp:397 ActionsManager.cpp:407
+msgid "_Start"
+msgstr "Déma_rrer"
+
+#: ActionsManager.cpp:398 ActionsManager.cpp:408
+msgid "_End"
+msgstr "_Terminer"
+
+#: ActionsManager.cpp:399 ActionsManager.cpp:409
+msgid "_Next"
+msgstr "_Suivant"
+
+#: ActionsManager.cpp:400 ActionsManager.cpp:410
+msgid "_Delay"
+msgstr "_Délai"
+
+#: ActionsManager.cpp:401 ActionsManager.cpp:411
+msgid "_Ready"
+msgstr "_Préparation"
+
+#: ActionsManager.cpp:402 ActionsManager.cpp:412
+msgid "_Jump In"
+msgstr "_Entrer en combat"
+
+#: ActionsManager.cpp:403 ActionsManager.cpp:413
+msgid "Da_mage"
+msgstr "Doma_ges"
+
+#: ActionsManager.cpp:405 ActionsManager.cpp:415
+msgid "Stabili_ze"
+msgstr "Stab_iliser"
+
+#: ActionsManager.cpp:418
+msgid "Move _Up"
+msgstr "Déplacer vers le haut"
+
+#: ActionsManager.cpp:419
+msgid "Move _Down"
+msgstr "Déplacer vers le bas"
+
+#: ActionsManager.cpp:427
+msgid "_Help"
+msgstr "_Aide"
+
+#: ActionsManager.cpp:428
+msgid "_About"
+msgstr "À _propos"
+
+#: ActionsManager.cpp:429
+msgid "_Documentation"
+msgstr "_Documentation"
+
+#: ActionsManager.cpp:430
+msgid "_Tutorial"
+msgstr "_Instructions détaillées"
+
+#: ActionsManager.cpp:431
+msgid "_Contact"
+msgstr "_Coordonnées"
+
+#: ActionsManager.cpp:432
+msgid "_License"
+msgstr "_Licence"
+
+#: ActionsManager.cpp:433
+msgid "Turn Watcher _Home Page"
+msgstr "La page web de Turn Watcher"
+
+#: ActionsManager.cpp:439
+msgid "Heads _Up Display"
+msgstr "_Fenêtre des joueurs"
+
+#: ActionsManager.cpp:440
+msgid "Change _Font"
+msgstr "Changer de police de caractères"
+
+#: AppSettings.cpp:380
+msgid " (copy)"
+msgstr " (copier)"
+
+#: character.cpp:808
+msgid "Dead"
+msgstr "Mort"
+
+#: character.cpp:809
+msgid "Dying"
+msgstr "Mourant"
+
+#: character.cpp:810
+msgid "Stabilized"
+msgstr "Stabilisé"
+
+#: character.cpp:811
+msgid "Disabled"
+msgstr "Neutralisé"
+
+#: CharacterListUI.cpp:388 CharacterListUI.cpp:431
+msgid "Order"
+msgstr "Ordre"
+
+#: CharacterListUI.cpp:391 CharacterListUI.cpp:434 EditWindow.cpp:296
+#: EditWindow.cpp:398 EditWindow.cpp:419 EditWindow.cpp:451 EffectsList.cpp:67
+#: SettingsWindow.cpp:134
+msgid "Name"
+msgstr "Nom"
+
+#: CharacterListUI.cpp:392 CharacterListUI.cpp:435 EffectEditor.cpp:210
+#: EffectsList.cpp:70
+msgid "Type"
+msgstr "Type"
+
+#: CharacterListUI.cpp:393 StatManager.cpp:103
+msgid "Init"
+msgstr "Init"
+
+#: CharacterListUI.cpp:395
+msgid "Position"
+msgstr "Position"
+
+#: CharacterListUI.cpp:397 EditWindow.cpp:213 StatManager.cpp:104
+msgid "Hit Points"
+msgstr "Points de vie"
+
+#: CharacterListUI.cpp:398 CharacterListUI.cpp:437
+msgid "Status"
+msgstr "État"
+
+#: CharacterListUI.cpp:400 CharacterListUI.cpp:439 EditWindow.cpp:590
+#: EffectsEditor.cpp:93
+msgid "Effects"
+msgstr "Effets"
+
+#: CharacterListUI.cpp:446
+msgid "Right click for more options"
+msgstr "Cliquez avec le bouton de droite pour d'autres options"
+
+#: DamageWindow.cpp:55 EditWindow.cpp:325
+msgid "Character Name"
+msgstr "Nom du personnage"
+
+#: DamageWindow.cpp:60
+msgid "Current Hit Points"
+msgstr "Points de vie actuels"
+
+#: DamageWindow.cpp:65 EditWindow.cpp:220 EditWindow.cpp:352
+#: EffectEditor.cpp:195
+msgid "Temporary Hit Points"
+msgstr "Points de vie temporaires"
+
+#: DamageWindow.cpp:71
+msgid "Enter new damage/health"
+msgstr "Entrez les nouveaux dommages ou soins"
+
+#: DamageWindow.cpp:88
+msgid "Bring to _Full"
+msgstr "Porter au maximum"
+
+#: DamageWindow.cpp:89
+msgid "Add _Health"
+msgstr "Soigner"
+
+#: DamageWindow.cpp:90
+msgid "Add _Damage"
+msgstr "Dommages"
+
+#: DamageWindow.cpp:137
+msgid "Multiple Characters Selected!"
+msgstr "Plusieurs personnages sont sélectionnés"
+
+#: DefineInitWindow.cpp:88 SettingsWindow.cpp:108
+msgid "Initiative Dice (default: 1d20)"
+msgstr "Dés d'initiative (défaut: 1d20)"
+
+#: DuplicateWindow.cpp:51
+msgid "Enter number of duplicates:"
+msgstr "Entrez le nombre de clones:"
+
+#: EditWindow.cpp:181
+msgid "Combatant Name"
+msgstr "Nom du combatant"
+
+#: EditWindow.cpp:182 EditWindow.cpp:326
+msgid "A unique name for the character or monster."
+msgstr "Un nom unique pour le personnage ou le monstre"
+
+#: EditWindow.cpp:185
+msgid "Public Name"
+msgstr "Nom public"
+
+#: EditWindow.cpp:186
+msgid ""
+"This is the name shown on the HUD display. Be careful what you put here as "
+"your players can see it!"
+msgstr ""
+"Ceci est le nom montré dans la fenêtre des joueurs. Attention à ce que vous "
+"entrez ici étant donné que vos joueurs peuvent le voir."
+
+#: EditWindow.cpp:190 EditWindow.cpp:330
+msgid "Character"
+msgstr "Personnage"
+
+#: EditWindow.cpp:191 EditWindow.cpp:331
+msgid "Monster"
+msgstr "Monstre"
+
+#: EditWindow.cpp:193 EditWindow.cpp:333
+msgid "Character Type"
+msgstr "Type de personnage"
+
+#: EditWindow.cpp:206 EditWindow.cpp:338
+msgid "Initiative"
+msgstr "Initiative"
+
+#: EditWindow.cpp:208 EditWindow.cpp:340
+msgid "The initiative modifier for the character."
+msgstr "Le modifieur d'initiative pour le personnage."
+
+#: EditWindow.cpp:215
+msgid "The character's total hit points."
+msgstr "Le nombre total des points de vie du personnage."
+
+#: EditWindow.cpp:222 EditWindow.cpp:354
+msgid ""
+"Temporary hit points. These are used first, then damage is added to the "
+"damage column above."
+msgstr ""
+"Points de vie temporaires. Ces points sont utilisés en premier, ensuite "
+"les dommages sont ajoutés à la colonnes ci-dessus."
+
+#: EditWindow.cpp:227 EditWindow.cpp:359
+msgid "Current Damage"
+msgstr "Dommages actuels"
+
+#: EditWindow.cpp:229 EditWindow.cpp:361
+msgid "The current damage sustained in melee (or other ways)."
+msgstr "Les dommages reçus en mêlée (ou autrement)."
+
+#: EditWindow.cpp:234 StatManager.cpp:106
+msgid "Level"
+msgstr "Niveau"
+
+#: EditWindow.cpp:236
+msgid ""
+"The level of the combatant. This can be used optionally with the Alternate "
+"Death Rule where the combatant is not considered dead until he is at -(10"
+"+level) hitpoints."
+msgstr ""
+"Le niveau du combatant. Celui-ci peut être utilisé avec la règle optionelle "
+"de la mort d'un combatant que quand il atteind un nombre de points de vie "
+"égal à (-10 - niveau)."
+
+#: EditWindow.cpp:254
+msgid "The character's Spot skill modifier. Used in secret Spot checks."
+msgstr "Ajustement de Détection du personnage. Utilisé pour les lancés secrets."
+
+#: EditWindow.cpp:260
+msgid "The character's Listen skill modifier. Used in secret Listen checks."
+msgstr "Ajustement d'Écoute du personnage. Utilisé pour les lancés secrets."
+
+#: EditWindow.cpp:266
+msgid "The character's Will save modifier. Used in secret Will saves."
+msgstr "Ajustement de Sauvegarde du personnage. Utilisé pour les lancés secrets."
+
+#: EditWindow.cpp:280
+msgid "Add a modifier to boost (or lower) the result."
+msgstr "Ajouter un ajustement pour augmenter (ou réduire) le résultat."
+
+#: EditWindow.cpp:289
+msgid "Add a note to appear on the grid."
+msgstr "Ajouter une note sur la grille."
+
+#: EditWindow.cpp:296 EditWindow.cpp:398 EditWindow.cpp:419 EditWindow.cpp:451
+msgid "Mod"
+msgstr "Adj"
+
+#: EditWindow.cpp:345
+msgid "Base Hit Points"
+msgstr "Points de vie de base"
+
+#: EditWindow.cpp:347
+msgid "The character's base hit points (without Con boost)."
+msgstr "Les points de vie du personnage (sans l'adjustement de la constitution)"
+
+#: EditWindow.cpp:366
+msgid "Hit Dice"
+msgstr "Dés des points de vie"
+
+#: EditWindow.cpp:368
+msgid "The character's hit dice."
+msgstr "Dés des points de vie du personnage."
+
+#: EditWindow.cpp:389
+msgid "The base stat."
+msgstr "Les statistiques de base."
+
+#: EditWindow.cpp:391
+msgid "A modifier added to the stat."
+msgstr "Un modifieur ajouté aux statistiques."
+
+#: EditWindow.cpp:398
+msgid "Stat"
+msgstr "Stat"
+
+#: EditWindow.cpp:419 EditWindow.cpp:518 EditWindow.cpp:539 EditWindow.cpp:586
+msgid "Base"
+msgstr "Base"
+
+#: EditWindow.cpp:437
+msgid "The base save."
+msgstr "Sauvegarde de base."
+
+#: EditWindow.cpp:439
+msgid "An optional modifier to the save."
+msgstr "Ajustement optionel de sauvegarde."
+
+#: EditWindow.cpp:451
+msgid "Ranks"
+msgstr "Rangs"
+
+#: EditWindow.cpp:469
+msgid "The base skill."
+msgstr "Habilité de base."
+
+#: EditWindow.cpp:471
+msgid "An optional modifier to the skill."
+msgstr "Ajustement optionel pour l'habilité."
+
+#: EditWindow.cpp:524
+msgid "Combat"
+msgstr "Combat"
+
+#: EditWindow.cpp:535
+msgid "Stats"
+msgstr "Stats"
+
+#: EditWindow.cpp:540
+msgid "Columns"
+msgstr "Colonnes"
+
+#: EditWindow.cpp:564
+msgid "Saves"
+msgstr "Sauvegardes"
+
+#: EditWindow.cpp:568
+msgid "Skills"
+msgstr "Habilités"
+
+#: EditWindow.cpp:587
+msgid "Abilities"
+msgstr "Habilités"
+
+#: EditWindow.cpp:588
+msgid "Modifiers"
+msgstr "Modifieurs"
+
+#: EditWindow.cpp:589 MainWindow.cpp:101
+msgid "Notes"
+msgstr "Notes"
+
+#: EffectEditor.cpp:58
+msgid "Error!"
+msgstr "Erreur!"
+
+#: EffectEditor.cpp:156
+msgid "Accept changes to the effect"
+msgstr "Accepter les changements à l'effet"
+
+#: EffectEditor.cpp:157
+msgid "Cancel changes to the effect"
+msgstr "Annuler les changements à l'effet"
+
+#: EffectEditor.cpp:170
+msgid "Effect Name"
+msgstr "Nom de l'effet"
+
+#: EffectEditor.cpp:171
+msgid "A unique name for the effect"
+msgstr "Un nom unique poue l'effet"
+
+#: EffectEditor.cpp:172
+msgid "Effect Description"
+msgstr "Description de l'effet"
+
+#: EffectEditor.cpp:173
+msgid "A more detailed description of the effect. Shows in the Effects Pane."
+msgstr "Une description détaillé de l'effet. Affichée dans le panneau d'effets."
+
+#: EffectEditor.cpp:177 EffectsList.cpp:68
+msgid "Total Rounds"
+msgstr "Nombre de rounds"
+
+#: EffectEditor.cpp:179
+msgid "The total number of rounds the effect will last."
+msgstr "La durée totale de l'effet en nombre de rounds"
+
+#: EffectEditor.cpp:183
+msgid "Start In"
+msgstr "Commencer dans"
+
+#: EffectEditor.cpp:185
+msgid ""
+"The number of rounds before the effect will start. Note: Rounds Used below "
+"will be reset to 0."
+msgstr ""
+"Le nombre de rounds avant que l'effet ne commence. Note: Le nombre de "
+"'Rounds utilisés' définis ci-dessous sera mis à zéro."
+
+#: EffectEditor.cpp:189
+msgid "Rounds Used"
+msgstr "Rounds utilisés"
+
+#: EffectEditor.cpp:191
+msgid "The number of rounds the effect has been active."
+msgstr "Le nombre de rounds pendant lesquels l'effet était déjà actif."
+
+#: EffectEditor.cpp:197
+msgid ""
+"Hit points to add to the character's temporary hit point pool. These points "
+"are used first, then hit points come off of the regular pool."
+msgstr ""
+"Points de vie à ajouter aux points de vie temporaire du personnage. Ces "
+"points sont utilisés en premier. Ensuite les vrais points de vie du personnage "
+"seront décrémentés."
+
+#: EffectEditor.cpp:201
+msgid "Hit Point Boost"
+msgstr "Augmentation des points de vie"
+
+#: EffectEditor.cpp:203
+msgid ""
+"Hit points to add to the character's main hit point pool. When the effect "
+"expires, however, the character's real hit points will drop by this value as "
+"well. This works well for a constitution boost."
+msgstr ""
+"Les points de vie à ajouter aux vrais points de vie du personnage. Quand l'effet "
+"vient à ça fin, ces points de vie extra seront perdus à nouveau. Ceci fonctionne "
+"parfaitement pour des augmentations duent à la constitution."
+
+#: EffectEditor.cpp:206 EffectsBook.cpp:292 EffectsList.cpp:90
+msgid "Spell"
+msgstr "Sort"
+
+#: EffectEditor.cpp:207 EffectsBook.cpp:293 EffectsList.cpp:89
+msgid "Ability"
+msgstr "Characteristique"
+
+#: EffectEditor.cpp:208 EffectsBook.cpp:294 EffectsList.cpp:91
+msgid "Other"
+msgstr "Autre"
+
+#: EffectEditor.cpp:211
+msgid "The type of effect--either Spell, Ability or Other (user-defined)."
+msgstr "Le type de l'effet--Sort, Characteristique ou Autre."
+
+#: EffectEditor.cpp:229
+msgid "You must type a name for the effect!"
+msgstr "Vous devez entrer un nom pour cet effet!"
+
+#: EffectsBook.cpp:62 EffectsBook.cpp:103 EffectsEditor.cpp:125
+msgid "Add New Effect"
+msgstr "Ajouter un nouvel effet"
+
+#: EffectsBook.cpp:73
+msgid "Add New Effect to Multiple Characters"
+msgstr "Ajouter un nouvel effet pour plusieurs personnages"
+
+#: EffectsBook.cpp:139 EffectsEditor.cpp:125
+msgid "Edit Effect"
+msgstr "Éditer un effet"
+
+#: EffectsBook.cpp:172
+msgid "Delete Effect"
+msgstr "Effacer un effet"
+
+#: EffectsBook.cpp:210
+msgid "Delete All Effects"
+msgstr "Effacer tous les effets"
+
+#: EffectsBook.cpp:303
+#, c-format
+msgid " Effect starts in %d %s, Total rounds: %d, Type: %s, Description: %s"
+msgstr " L'effet commence dans %d %s, Rounds au total: %d, Type: %s, Description: %s"
+
+#: EffectsBook.cpp:312
+#, c-format
+msgid " %sRounds left: %d, Type: %s, Description: %s"
+msgstr " %sRounds restants: %d, Type: %s, Description: %s"
+
+#: EffectsBook.cpp:313
+msgid "**** Expired ****"
+msgstr "**** Expiré ****"
+
+#: EffectsEditor.cpp:43
+msgid "Add"
+msgstr "Ajouter"
+
+#: EffectsEditor.cpp:44
+msgid "Delete"
+msgstr "Effacer"
+
+#: EffectsEditor.cpp:45
+msgid "Edit"
+msgstr "Éditer"
+
+#: EffectsEditor.cpp:80
+msgid "Add a new effect"
+msgstr "Ajouter un nouvel effet"
+
+#: EffectsEditor.cpp:81
+msgid "Delete selected effect"
+msgstr "Effacer l'effet sélectionné"
+
+#: EffectsEditor.cpp:82
+msgid "Edit selected effect"
+msgstr "Éditer l'effet sélectionné"
+
+#: EffectsEditor.cpp:165
+msgid "Duplicate effect name--use another one!"
+msgstr "Nom d'effet existant--utilisez-en un autre!"
+
+#: EffectsList.cpp:69
+msgid "Rounds Left"
+msgstr "Rounds restants"
+
+#: HUDWindow.cpp:64
+msgid "Player HUD Window"
+msgstr "Fenêtre des personnages"
+
+#: InitWindow.cpp:90
+msgid "Characters"
+msgstr "Personnages"
+
+#: InitWindow.cpp:96
+msgid "Monsters"
+msgstr "Monstres"
+
+#: JumpInWindow.cpp:124
+msgid "Character Waiting"
+msgstr "Personnages attendant"
+
+#: MainWindow.cpp:97
+msgid "Running Effects"
+msgstr "Effets actifs"
+
+#: MainWindow.cpp:127
+msgid "Turn Watcher (tm)"
+msgstr "Turn Watcher (tm)"
+
+#: MainWindow.cpp:130 StatusBox.cpp:80
+msgid "Ready"
+msgstr "Prêt"
+
+#: MainWindow.cpp:283
+msgid "Clear out all characters"
+msgstr "Effacer tous les personnages"
+
+#: MainWindow.cpp:299
+msgid "Select Turn Watcher file to import"
+msgstr "Sélectionnez le fichier Turn Watcher à importer"
+
+#: MainWindow.cpp:307 MainWindow.cpp:387
+msgid "Turn Watcher v1 files"
+msgstr "Fichier Turn Watcher v1"
+
+#: MainWindow.cpp:314 MainWindow.cpp:394
+msgid "Any files"
+msgstr "Tous les fichiers"
+
+#: MainWindow.cpp:378
+msgid "Select file to export to"
+msgstr "Sélectionnez le fichier à exporter"
+
+#: MainWindow.cpp:444
+msgid "Preferences"
+msgstr "Préférences"
+
+#: MainWindow.cpp:462
+msgid "Manage Stats"
+msgstr "Gerer les statistiques"
+
+#: MainWindow.cpp:642
+msgid "New Character"
+msgstr "Nouveau personnage"
+
+#: MainWindow.cpp:655 MainWindow.cpp:1592
+msgid "Add Character"
+msgstr "Ajouter un personnage"
+
+#: MainWindow.cpp:679 MainWindow.cpp:735
+msgid "Character \""
+msgstr "Personnage \""
+
+#: MainWindow.cpp:681 MainWindow.cpp:737
+msgid "\" already exists! Please choose a different name."
+msgstr "\" déjà existant! Merci de choisir un autre nom."
+
+#: MainWindow.cpp:713 MainWindow.cpp:750
+msgid "Edit Character"
+msgstr "Éditer le personnage"
+
+#: MainWindow.cpp:772
+msgid "Delete Character(s)"
+msgstr "Effacer les personnages"
+
+#: MainWindow.cpp:790
+msgid "Enter Number of Duplicates"
+msgstr "Entrer le nombre de clones"
+
+#: MainWindow.cpp:834
+msgid "Add Duplicate Character(s)"
+msgstr "Cloner les personnages"
+
+#: MainWindow.cpp:871
+msgid "Purge Dead Characters"
+msgstr "Eliminer les personnages morts"
+
+#: MainWindow.cpp:958
+msgid "Start Rounds"
+msgstr "Démarrer"
+
+#: MainWindow.cpp:983
+msgid "End Rounds"
+msgstr "Terminer"
+
+#: MainWindow.cpp:999
+msgid "Next In Initiative Order"
+msgstr "Suivant dans l'ordre de l'initiative"
+
+#: MainWindow.cpp:1011
+msgid "Delay Character"
+msgstr "Delai le personnage"
+
+#: MainWindow.cpp:1024
+msgid "Ready an Action"
+msgstr "Préparer une action"
+
+#: MainWindow.cpp:1067
+msgid "Roll Initiative"
+msgstr "Lancer l'initiative"
+
+#: MainWindow.cpp:1084
+msgid "Roll Spot"
+msgstr "Jet Détection"
+
+#: MainWindow.cpp:1090
+msgid "Roll Listen"
+msgstr "Jet Entendre"
+
+#: MainWindow.cpp:1096
+msgid "Roll Will"
+msgstr "Jet Sauvegarde"
+
+#: MainWindow.cpp:1609 MainWindow.cpp:1648
+msgid "Jump In"
+msgstr "Combattre"
+
+#: MainWindow.cpp:1674
+msgid "Damage Window"
+msgstr "Fenêtre de dommages"
+
+#: MainWindow.cpp:1675
+msgid "Enter Damage / Health"
+msgstr "Entrez les dommages ou soins"
+
+#: MainWindow.cpp:1675
+msgid "Enter Mass Damage / Health"
+msgstr "Entrez les dommages ou soins en masse"
+
+#: MainWindow.cpp:1703
+msgid "Damage"
+msgstr "Dommages"
+
+#: MainWindow.cpp:1708
+msgid "Health"
+msgstr "Soins"
+
+#: MainWindow.cpp:1713
+msgid "Full Health"
+msgstr "Maximum"
+
+#: MainWindow.cpp:1740
+msgid "Stabilize selected characters"
+msgstr "Stabiliser les personnages sélectionnés"
+
+#: MainWindow.cpp:2104
+msgid "The following effects have become active this round:\n"
+msgstr "Les effets suivant ont été activés au début de ce round:\n"
+
+#: MainWindow.cpp:2148
+msgid "Expired effects"
+msgstr "Effet expiré"
+
+#: MainWindow.cpp:2219
+msgid "Input Initiative Rolls"
+msgstr "Entrer les lancers d'initiative"
+
+#: MainWindow.cpp:2285
+msgid "Enter DC"
+msgstr "Entrez le lancé"
+
+#: MainWindow.cpp:2286
+msgid "Enter DC:"
+msgstr "Entrez le lancé:"
+
+#: NagWindow.cpp:51
+msgid "Get Turn Watcher Now!"
+msgstr "Achetez Turn Watcher maintenant!"
+
+#: SettingsWindow.cpp:109
+msgid ""
+"Die value used to roll Initiative internally. 1d20 is the default, but you "
+"may enter other values such as 2d10."
+msgstr ""
+
+#: SettingsWindow.cpp:114
+msgid "Death Threshold"
+msgstr "Limite avant de mourrir"
+
+#: SettingsWindow.cpp:116
+msgid ""
+"Hitpoint threshold value below 0 that indicates combatant death (default is -"
+"10)."
+msgstr "Limite des points en dessous de zéro qui indique que le combatant "
+"est mort (par défaut, ont utilise -10)."
+
+#: SettingsWindow.cpp:119
+msgid "Main Combatant List Font"
+msgstr "Police de caractères pour les combatants dans la liste principale"
+
+#: SettingsWindow.cpp:120
+msgid ""
+"Select the font to use for the main combatant list. Requires application "
+"restart."
+msgstr ""
+"Sélectionnez la police de caractères pour la liste principale des combatants. "
+"Il vous faudra redémarrer l'application pour que le changement prenne effet."
+
+#: SettingsWindow.cpp:123
+msgid "Alternate Combatant List Font (for players)"
+msgstr "Police de caractères pour la liste des combantant dans la fenêtre des joueurs."
+
+#: SettingsWindow.cpp:124
+msgid ""
+"Select the font to use for the player view combatant list. Requires "
+"application restart."
+msgstr ""
+"Selectionnez la police de caractères à utiliser pour la fenêtre des joueurs. "
+"Il vous faudra redémarrer l'application pour que le changement prenne effet."
+
+#: SettingsWindow.cpp:135
+msgid "Active"
+msgstr "Active"
+
+#: SettingsWindow.cpp:142
+msgid "Use Ulta Initiative (roll initiative each round)"
+msgstr "Utiliser l'initiative à l'ancienne (lancer les dés à chaque round)"
+
+#: SettingsWindow.cpp:147
+msgid "Bleed Out Dying Combatants"
+msgstr "Saigner les combatants mourrant"
+
+#: SettingsWindow.cpp:152
+msgid "Skip Dead Combatants"
+msgstr "Sauter les personnages morts"
+
+#: SettingsWindow.cpp:157
+msgid "Use Alternate Death Rule (death at threshold minus character level)"
+msgstr "Sustraire le niveau du personnage au minimum de points de vie avant que le personnage ne meurt."
+
+#: SettingsWindow.cpp:163
+msgid "Notify when effects expire on combatant's turn"
+msgstr "Previent quand un effet s'arrete pendant le tour d'un combatant"
+
+#: SettingsWindow.cpp:169
+msgid "Roll Initiative on Start"
+msgstr "Lancer l'initiative au démarrage"
+
+#: SettingsWindow.cpp:174
+msgid "Manual Initiative Entry"
+msgstr "Entrer l'initiative manuellement"
+
+#: SettingsWindow.cpp:179
+msgid "Get DC on Rolls"
+msgstr "Demander le niveau de difficulté sur les lancer d'habilité"
+
+#: SettingsWindow.cpp:193
+msgid "Misc Options"
+msgstr "Autres options"
+
+#: SettingsWindow.cpp:199
+msgid "Settings"
+msgstr "Préférences"
+
+#: splash.cpp:87
+msgid "Turn Watcher Splashscreen"
+msgstr "Présentation de Turn Watcher"
+
+#: StatEditor.cpp:488
+msgid "N/A"
+msgstr "Non Disp."
+
+#: StatManager.cpp:81
+msgid "Str"
+msgstr "For"
+
+#: StatManager.cpp:82
+msgid "Dex"
+msgstr "Dex"
+
+#: StatManager.cpp:83
+msgid "Con"
+msgstr "Con"
+
+#: StatManager.cpp:84
+msgid "Int"
+msgstr "Int"
+
+#: StatManager.cpp:85
+msgid "Wis"
+msgstr "Sag"
+
+#: StatManager.cpp:86
+msgid "Cha"
+msgstr "Cha"
+
+#: StatManager.cpp:126
+msgid "Spot"
+msgstr "Détecter"
+
+#: StatManager.cpp:127
+msgid "Listen"
+msgstr "Écouter"
+
+#: StatManager.cpp:128
+msgid "Will"
+msgstr "Sauvegarde"
+
+#: StatusBox.cpp:75
+msgid "Round: "
+msgstr "Round: "
+
+#: StatusBox.cpp:83
+msgid "Ultra"
+msgstr "Ancienne"
+
+#: StatusBox.cpp:83
+msgid "Normal"
+msgstr "Normal"

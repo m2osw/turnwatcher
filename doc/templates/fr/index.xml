@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<h2 align="center">Sommaire</h2>
+
+<ul>
+	<p>
+		<li id="summary"><a id="anchor" href="description.html">&Agrave; propos de <b>Turn Watcher&#x2122;</b>?</a></li>
+	</p>
+	<p>
+		<li id="summary">Instructions d'utilisation</li>
+		<ul>
+			<li id="summary"><a id="anchor" href="get_started.html">Au d&eacute;but</a></li>
+			<li id="summary"><a id="anchor" href="start.html">Votre premier combat!</a></li>
+			<li id="summary"><a id="anchor" href="hitpoints.html">G&eacute;rer les points de vie</a></li>
+			<li id="summary"><a id="anchor" href="delay.html">Actions Retard&eacute;es et Pr&eacute;par&eacute;es</a></li>
+			<li id="summary"><a id="anchor" href="checks_n_saves.html">Lanc&eacute;s d'habilit&eacute; et de sauvegarde secrets</a></li>
+			<li id="summary"><a id="anchor" href="reorder.html">Changer l'ordre des personnages</a></li>
+			<li id="summary"><a id="anchor" href="ultra_initiative.html">Initiative &agrave; l'ancienne (Optionelle)</a></li>
+		</ul>
+	</p>
+	<p>
+		<li id="summary"><a id="anchor" href="shortcuts.html">Raccourcis clavier</a></li>
+		<li id="summary"><a id="anchor" href="technical.html">Mat&eacute;riels et logiciels requis</a></li>
+	</p>
+	<p>
+		<li id="summary"><a id="anchor" href="license.html">Licence</a></li>
+		<li id="summary"><a id="anchor" href="copyright.html">Copyright</a></li>
+		<li id="summary"><a id="anchor" href="authors.html">Auteurs et contributions</a></li>
+		<li id="summary"><a id="anchor" href="contact.html">Contacter Made to Order Software</a></li>
+	</p>
+</ul>
+
+<!--
+vim: ts=2
+-->

@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+
+<h2 align="center">G&eacute;rer les points de vie</h2>
+
+<p id="para">
+	Quand un personnage re&ccedil;ois des dommages en combat,
+	cliquez sur lui dans la liste, puis cliquez sur le bouton
+	<i>Dommages</i> dans la barre d'outils.
+
+	Tapez les dommages et cliquez sur le bouton <i>Dommages</i>.
+
+	Notez que cette action ne change absolument pas l'ordre
+	dans lequel les personnages se trouvent.
+</p>
+
+<p align="center">
+	<img src="../images/tw_damage_dialog.jpg"/>
+</p>
+
+<p id="para">
+	Quand un personnage re&ccedil;ois des soins, cliquez
+	&eacute;galement sur le bouton <i>Dommages</i> de la
+	barre d'outils. Ensuite, entrez le nombre de points de
+	vie que les soins prof&egrave;rent et finallement,
+	cliquez sur le bouton <i>Soins</i>.
+
+	Un personnage peut aussi &ecirc;tre ramen&eacute; &agrave;
+	son nombre maximum de points de vie en cliquant sur le
+	bouton <i>Maximum</i>.
+</p>
+
+<p id="tip">
+	<b>Id&eacute;e:</b>
+	Vous pouvez soumettre des dommages ou des soins &agrave; un
+	groupe en cliquant sur tous les personnages affect&eacute;s
+	et puis sur le bouton <i>Dommages</i>.
+</p>
+
+<p id="para">
+	Quand un personnage est <i>Mourant</i> (c'est &agrave; dire que
+	ses points de vie sont entre -1 et -9), <b>Turn Watcher</b>
+	le saigne d'un point de vie &agrave; chaque round, et ce de
+	fa&ccedil;on automatique (jusqu'au moment ou il est
+	<i>Stabilis&eacute;</i> ou meurt &#151; voir ci-dessous).
+</p>
+
+<p align="center">
+	<img src="../images/tw_bleedout1.jpg" width="487" height="79"/>
+</p>
+
+<p id="para">
+	Quand un personnage <i>Mourant</i> est stabilis&eacute;,
+	s&eacute;lectionnez <span id="menu_ref">Stabiliser</span>
+	dans le menu <span id="menu_ref">Rounds</span>. Le
+	status sera chang&eacute; de <i>Mourant</i> &agrave;
+	<i>Stabilis&eacute;</i>.
+
+	<b>Turn Watcher</b> arr&ecirc;tera de saigner le personnage
+	&agrave; moins qu'il subisse &agrave; nouveau des dommages.
+
+	Vous pouvez &eacute;galement soigner le personnage
+	de sorte &agrave; ce qu'il ait zero (0) ou plus de
+	points de vie de sorte &agrave; &eacute;viter le
+	saignement.
+</p>
+
+<p align="center">
+	<img src="../images/tw_stabilize.jpg" width="547" height="46"/>
+</p>
+
+<p id="para">
+	Quand un personnage arrive &agrave; moins dix (-10) points
+	de vie, <b>Turn Watcher</b> le marque comme <i>Mort</i> de
+	fa&ccedil;on automatique et il est gris&eacute;.
+
+	Notez que par d&eacute;faut, <b>Turn Watcher</b> ne donne
+	pas de tour &agrave; un personnage mort.
+
+	Vous pouvez &eacute;liminer un personnage mort de votre
+	liste en cliquant dessus et en cliquant sur le bouton
+	<i>Effacer</i> de la barre d'outils.
+</p>
+
+<p id="tip">
+	<b>Id&eacute;e:</b>
+	Vous pouvez changer <b>Turn Watcher</b> de sorte &agrave;
+	donner un tour aux personnages morts. Ceci fonctionne &agrave;
+	l'aide du drapeau <span id="menu_ref">Sauter les personnages morts</span>
+	dans le menu <span id="menu_ref">Rounds</span>.
+</p>
+
+<p align="center">
+	<img src="../images/tw_bleedout2.jpg" width="505" height="112"/>
+</p>
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->

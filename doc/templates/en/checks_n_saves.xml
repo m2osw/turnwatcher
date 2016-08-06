@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Making Secret Skill Checks<br/>and Will Saves</h2>
+
+<p id="para">
+	Use <b>Turn Watcher</b> to quickly and secretly make separate die rolls
+	for each character by clicking on one of the colored dice icons on the
+	toolbar. The computer will automatically sort the players and monsters
+	on the appropriate column.
+</p>
+
+<p align="center">
+	<img src="../images/tw_dice_icons.jpg" width="289" height="60"/>
+</p>
+
+<p id="example">
+	The party moves into a new chamber in the dungeon. Doug
+	wants to secretly roll each players' spot check to see if anyone notices a
+	hidden door in a room. He clicks the <i>Spot</i> button on the toolbar,
+	then clicks the <i>Spot</i> column to sort. The characters with the
+	highest <i>Spot</i> checks are listed first.
+</p>
+
+<br/>
+
+<p id="para">
+	When <span id="menu_ref">Get DC on Rolls</span> in the
+	<span id="menu_ref">Roll</span> menu is turned on, each time
+	you make a secret check (Spot/Listen/Will), the computer will
+	prompt you for the success DC of the check. Those characters
+	and monsters that succeed will be highlighted with a green
+	background.
+	<span id="version_spec">(available since version 1.1)</span>
+</p>
+
+<p align="center">
+	<img src="../images/tw_dc.png" width="550" height="144"/>
+</p>
+
+
+<p id="para">
+	<b><i>Customize your secret skill and save checks!</i></b> Tired of only having
+	<i>Spot/Listen/Will</i> fixed column checks? Now you can add your own checks and
+	add informative columns! Access the File menu, and you will see a new menu
+	entry called "Stat Editor".
+	<span id="version_spec">(available since version 1.4)</span>
+</p>
+
+<p align="center">
+	<img src="../images/tw_14_file_menu.jpg" width="289" height="289"/>
+</p>
+
+<p id="para">
+	The <i>Stat Editor</i> window allows you to create your own secret checks
+	and information columns in the main screen. <b>Turn Watcher</b> comes stock
+	with predefined <i>Spot/Listen/Will</i> columns, but you can change those to
+	your liking. To rename a column, merely click once on a row and then click a
+	second time on the column name. You may then type the new value then press
+	the <i>ENTER</i> button to accept.
+	<span id="version_spec">(available since version 1.4)</span>
+</p>
+
+<p align="center">
+	<img src="../images/tw_14_statwind_new.jpg" width="839" height="436"/>
+</p>
+
+<p id="para">
+	For alternative gaming systems that are not d20-based, you may click the on
+	the <i>Die Faces</i> column and select a new dice value to use (e.g. 2d10+6).
+</p>
+
+<p align="center">
+	<img src="../images/tw_14_statwind.jpg" width="839" height="436"/>
+</p>
+
+<p id="para">
+	The <i>Show on Toolbar</i> checkbox creates a button on the toolbar which
+	will, when clicked, make a secret roll for the GM's eyes only. For example,
+	the GM wants the players to make perception checks, so clicks the perception
+	button. After entering the success DC, a new column on the UI appears,
+	called <i>Perception</i>, and the succeeding checks are highlighted:
+	<span id="version_spec">(available since version 1.4)</span>
+</p>
+
+<p align="center">
+	<img src="../images/tw_14_percept.jpg" width="1015" height="729"/>
+</p>
+
+<p id="para">
+	However, if you un-check the <i>Show on Toolbar</i> checkbox, your entry will appear
+	in the main screen. The difference is: the entry always appears and
+	contains any text you wish to enter. For example, if you now want <b>Turn
+		Watcher</b> to show combatants' Armor Class, you may create a column
+	called <i>AC</i>.
+	<span id="version_spec">(available since version 1.4)</span>
+</p>
+
+<p align="center">
+	<img src="../images/tw_14_editor.jpg" width="600" height="348"/>
+</p>
+
+<p id="para">
+	The <i>Show on Player HUD</i> allows you to insert this new field into the
+	player HUD for viewing by the players. The <i>Show in Monster Stat on
+		HUD</i> will cause the stat to also show for monster entries. Uncheck to
+	keep the value hidden from the players.
+	<span id="version_spec">(available since version 1.4)</span>
+</p>
+
+<!--
+	vim: ts=2 sw=2 tw=78
+-->

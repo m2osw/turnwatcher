@@ -1,0 +1,12 @@
+syntax: glob
+
+.hgignore
+tags
+build/
+debian/turnwatcher/
+debian/files
+debian/turnwatcher.debhelper.log
+debian/turnwatcher.substvars
+CMakeLists.txt.user*
+*.swp
+*.autosave

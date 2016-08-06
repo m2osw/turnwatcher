@@ -1,0 +1,850 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ABOUT_IMAGE	AboutWindow.h	30;"	d
+ABOUT_IMAGE	AboutWindow.h	32;"	d
+AbilityEditor	AbilityEditor.cpp	/^AbilityEditor::AbilityEditor()$/;"	f	class:UI::AbilityEditor
+AboutWindow	AboutWindow.cpp	/^AboutWindow::AboutWindow()$/;"	f	class:UI::AboutWindow
+AboutWindow	AboutWindow.h	/^class AboutWindow : public Gtk::AboutDialog$/;"	c	namespace:UI
+AddAbility	AbilityEditor.cpp	/^void AbilityEditor::AddAbility( const Glib::ustring& name, Stat::pointer_t stat )$/;"	f	class:UI::AbilityEditor
+AddAccelKey	StatEditor.cpp	/^void StatEditor::AddAccelKey( const Glib::ustring& value )$/;"	f	class:UI::StatEditor
+AddAccelKeyColumn	StatEditor.cpp	/^void StatEditor::AddAccelKeyColumn()$/;"	f	class:UI::StatEditor
+AddAttribute	InfoBox.cpp	/^void InfoBox::AddAttribute( const Glib::ustring& name, const Glib::ustring& value )$/;"	f	class:UI::InfoBox
+AddAttribute	InfoBox.cpp	/^void InfoBox::AddAttribute( const Glib::ustring& name, const int value )$/;"	f	class:UI::InfoBox
+AddCR	InfoBox.cpp	/^void InfoBox::AddCR()$/;"	f	class:UI::InfoBox
+AddCharacter	JumpInWindow.cpp	/^void JumpInWindow::AddCharacter( Combatant::Character::pointer_t ch )$/;"	f	class:UI::JumpInWindow
+AddComma	InfoBox.cpp	/^void InfoBox::AddComma()$/;"	f	class:UI::InfoBox
+AddDefaultColumns	CharacterView.cpp	/^void CharacterView::AddDefaultColumns()$/;"	f	class:UI::CharacterView
+AddDieFace	StatEditor.cpp	/^void StatEditor::AddDieFace( const Glib::ustring& value )$/;"	f	class:UI::StatEditor
+AddDieFacesColumn	StatEditor.cpp	/^void StatEditor::AddDieFacesColumn()$/;"	f	class:UI::StatEditor
+AddEffect	EffectsBook.cpp	/^void EffectsBook::AddEffect( Combatant::Character::pointer_t ch, Effect::pointer_t new_effect )$/;"	f	class:UI::EffectsBook
+AddEffect	EffectsBook.cpp	/^void EffectsBook::AddEffect( Effect::pointer_t effect )$/;"	f	class:UI::EffectsBook
+AddEffect	EffectsBook.h	/^	void AddEffect()	{ OnAddClick();     }$/;"	f	class:UI::EffectsBook
+AddEffectToMultiple	EffectsBook.cpp	/^void EffectsBook::AddEffectToMultiple( Effect::pointer_t new_effect )$/;"	f	class:UI::EffectsBook
+AddEffects	EffectsEditor.cpp	/^void EffectsEditor::AddEffects( Combatant::Character::pointer_t ch )$/;"	f	class:UI::EffectsEditor
+AddEffects	EffectsList.cpp	/^void EffectsList::AddEffects( Combatant::Character::pointer_t ch )$/;"	f	class:UI::EffectsList
+AddEmptyPage	EffectsBook.cpp	/^void EffectsBook::AddEmptyPage()$/;"	f	class:UI::EffectsBook
+AddEntry	EffectsList.cpp	/^void EffectsList::AddEntry( const Effect::pointer_t effect )$/;"	f	class:UI::EffectsList
+AddExpiredEffects	ExpiredEffectsWindow.cpp	/^bool ExpiredEffectsWindow::AddExpiredEffects( Combatant::Character::pointer_t ch )$/;"	f	class:UI::ExpiredEffectsWindow
+AddHUDColumns	CharacterView.cpp	/^void CharacterView::AddHUDColumns()$/;"	f	class:UI::CharacterView
+AddModifier	InfoBox.cpp	/^void InfoBox::AddModifier( const Glib::ustring& value )$/;"	f	class:UI::InfoBox
+AddModifier	InfoBox.cpp	/^void InfoBox::AddModifier( const int value )$/;"	f	class:UI::InfoBox
+AddMultiCharPage	EffectsBook.cpp	/^void EffectsBook::AddMultiCharPage()$/;"	f	class:UI::EffectsBook
+AddNewStat	StatEditor.cpp	/^void StatEditor::AddNewStat()$/;"	f	class:UI::StatEditor
+AddNotesString	InfoBox.cpp	/^void InfoBox::AddNotesString()$/;"	f	class:UI::InfoBox
+AddPercentage	InfoBox.cpp	/^void InfoBox::AddPercentage( const Glib::ustring& value )$/;"	f	class:UI::InfoBox
+AddPercentage	InfoBox.cpp	/^void InfoBox::AddPercentage( const int value )$/;"	f	class:UI::InfoBox
+AddStat	StatEditor.cpp	/^void StatEditor::AddStat( Attribute::Stat::pointer_t stat )$/;"	f	class:UI::StatEditor
+AddStatEntry	EditWindow.cpp	/^void EditWindow::AddStatEntry( const char* name, const mo_name_t id )$/;"	f	class:UI::EditWindow
+AddStatNotes	EditWindow.cpp	/^void EditWindow::AddStatNotes( const char* name, const mo_name_t id )$/;"	f	class:UI::EditWindow
+AddStats	StatEditor.cpp	/^void StatEditor::AddStats()$/;"	f	class:UI::StatEditor
+AddTooltips	EffectsEditor.cpp	/^void EffectsEditor::AddTooltips()$/;"	f	class:UI::EffectsEditor
+AddTooltips	EffectsList.cpp	/^void EffectsList::AddTooltips()$/;"	f	class:UI::EffectsList
+AddTransactCharacter	save/MainWindow.cpp	/^void MainWindow::AddTransactCharacter( Combatant::Character::pointer_t ch, TransactionGroup::pointer_t group )$/;"	f	class:UI::MainWindow
+AdjConnections	TableConnections.h	/^	typedef std::vector<AdjustmentConnection>	AdjConnections;$/;"	t	namespace:UI
+AdjustmentConnection	TableConnections.h	/^		AdjustmentConnection( Gtk::Adjustment* adj ) : f_adj(adj) {}$/;"	f	struct:UI::AdjustmentConnection
+AdjustmentConnection	TableConnections.h	/^		AdjustmentConnection() : f_adj(0) {}$/;"	f	struct:UI::AdjustmentConnection
+AdjustmentConnection	TableConnections.h	/^	struct AdjustmentConnection$/;"	s	namespace:UI
+Apply	AbilityEditor.cpp	/^void AbilityEditor::Apply()$/;"	f	class:UI::AbilityEditor
+Apply	StatEditor.cpp	/^void StatEditor::Apply()$/;"	f	class:UI::StatEditor
+Char	DamageWindow.h	/^	void	Char( Combatant::Character::pointer_t ch ) { f_character = ch; }$/;"	f	class:UI::DamageWindow
+CharSignal	InfoBox.h	/^	typedef sigc::signal1<void,Combatant::Character::pointer_t> CharSignal;$/;"	t	class:UI::InfoBox
+CharSignal	InfoWindow.h	/^	typedef sigc::signal1<void,Combatant::Character::pointer_t> CharSignal;$/;"	t	class:UI::InfoWindow
+CharacterPair	InitWindow.h	/^		CharacterPair( Combatant::Character::pointer_t orig ) : f_origChar(orig) {}$/;"	f	struct:UI::InitWindow::CharacterPair
+CharacterPair	InitWindow.h	/^	struct CharacterPair$/;"	s	class:UI::InitWindow
+CharacterSignal	EditWindow.h	/^	typedef sigc::signal<void>	CharacterSignal;$/;"	t	class:UI::EditWindow
+CharacterView	CharacterView.cpp	/^CharacterView::CharacterView()$/;"	f	class:UI::CharacterView
+CharacterView	CharacterView.h	/^class CharacterView$/;"	c	namespace:UI
+Clear	EditWindow.h	/^	void	Clear()	{ f_char = 0; }$/;"	f	class:UI::EditWindow
+Clear	EffectsBook.cpp	/^void EffectsBook::Clear()$/;"	f	class:UI::EffectsBook
+Clear	JumpInWindow.h	/^	void Clear()           { f_listStore->clear(); }$/;"	f	class:UI::JumpInWindow
+Clear	StatEditor.cpp	/^void StatEditor::Clear()$/;"	f	class:UI::StatEditor
+ClearDialog	AbilityEditor.cpp	/^void AbilityEditor::ClearDialog()$/;"	f	class:UI::AbilityEditor
+ClearEffects	EffectsEditor.cpp	/^void EffectsEditor::ClearEffects()$/;"	f	class:UI::EffectsEditor
+ClearEffects	EffectsList.cpp	/^void EffectsList::ClearEffects()$/;"	f	class:UI::EffectsList
+ClearMainBox	DefineInitWindow.cpp	/^void DefineInitWindow::ClearMainBox()$/;"	f	class:UI::DefineInitWindow
+ClearMainBox	EditWindow.cpp	/^void EditWindow::ClearMainBox()$/;"	f	class:UI::EditWindow
+Columns	EffectsList.h	/^		Columns()$/;"	f	struct:UI::EffectsList::Columns
+Columns	EffectsList.h	/^	struct Columns : public Gtk::TreeModel::ColumnRecord$/;"	s	class:UI::EffectsList
+Columns	JumpInWindow.h	/^		Columns()$/;"	f	class:UI::JumpInWindow::Columns
+Columns	JumpInWindow.h	/^	class Columns : public Gtk::TreeModel::ColumnRecord$/;"	c	class:UI::JumpInWindow
+Columns	StatEditor.h	/^		Columns()$/;"	f	class:UI::StatEditor::Columns
+Columns	StatEditor.h	/^	class Columns : public Gtk::TreeModel::ColumnRecord$/;"	c	class:UI::StatEditor
+ComboColumns	StatEditor.h	/^		ComboColumns()$/;"	f	class:UI::StatEditor::ComboColumns
+ComboColumns	StatEditor.h	/^	class ComboColumns : public Gtk::TreeModel::ColumnRecord$/;"	c	class:UI::StatEditor
+ConnectAdjustments	EffectEditor.cpp	/^void EffectEditor::ConnectAdjustments()$/;"	f	class:UI::EffectEditor
+ConnectEvents	save/MainWindow.cpp	/^void MainWindow::ConnectEvents()$/;"	f	class:UI::MainWindow
+ConnectNagEvent	save/MainWindow.cpp	/^void MainWindow::ConnectNagEvent( const bool connect_it )$/;"	f	class:UI::MainWindow
+ConnectTables	EffectEditor.cpp	/^void EffectEditor::ConnectTables()$/;"	f	class:UI::EffectEditor
+CopyStats	StatEditor.cpp	/^void StatEditor::CopyStats()$/;"	f	class:UI::StatEditor
+CreateEffectsFrame	save/MainWindow.cpp	/^void MainWindow::CreateEffectsFrame()$/;"	f	class:UI::MainWindow
+CreateNextInIntiativeTransaction	RoundsHelper.cpp	/^bool RoundsHelper::CreateNextInIntiativeTransaction( TransactionGroup::pointer_t group )$/;"	f	class:UI::RoundsHelper
+CreateScroller	InfoWindow.cpp	/^Gtk::ScrolledWindow* InfoWindow::CreateScroller( const int id )$/;"	f	class:UI::InfoWindow
+Damage	RoundsHelper.cpp	/^void RoundsHelper::Damage()$/;"	f	class:UI::RoundsHelper
+DamageWindow	DamageWindow.cpp	/^DamageWindow::DamageWindow( Glib::ustring title, Gtk::Window& parent ) :$/;"	f	class:UI::DamageWindow
+DamageWindow	DamageWindow.h	/^class DamageWindow :$/;"	c	namespace:UI
+DefineInitWindow	DefineInitWindow.cpp	/^DefineInitWindow::DefineInitWindow( Glib::ustring title, Gtk::Window& parent )$/;"	f	class:UI::DefineInitWindow
+DefineInitWindow	DefineInitWindow.h	/^class DefineInitWindow$/;"	c	namespace:UI
+Delay	RoundsHelper.cpp	/^void RoundsHelper::Delay()$/;"	f	class:UI::RoundsHelper
+DeleteEffect	EffectsBook.h	/^	void DeleteEffect()	{ OnDismissClick(); }$/;"	f	class:UI::EffectsBook
+DeleteSelected	EffectsList.cpp	/^void EffectsList::DeleteSelected()$/;"	f	class:UI::EffectsList
+DeleteSelected	StatEditor.cpp	/^void StatEditor::DeleteSelected()$/;"	f	class:UI::StatEditor
+DisconnectAdjustments	EffectEditor.cpp	/^void EffectEditor::DisconnectAdjustments()$/;"	f	class:UI::EffectEditor
+DisconnectEvents	save/MainWindow.cpp	/^void MainWindow::DisconnectEvents()$/;"	f	class:UI::MainWindow
+DisconnectTables	EffectEditor.cpp	/^void EffectEditor::DisconnectTables()$/;"	f	class:UI::EffectEditor
+DismissAllEffects	EffectsBook.cpp	/^void EffectsBook::DismissAllEffects()$/;"	f	class:UI::EffectsBook
+DismissCurrentEffect	EffectsBook.cpp	/^void EffectsBook::DismissCurrentEffect( Combatant::Character::pointer_t ch )$/;"	f	class:UI::EffectsBook
+DisplayPendingEffects	RoundsHelper.cpp	/^void RoundsHelper::DisplayPendingEffects()$/;"	f	class:UI::RoundsHelper
+DuplicateWindow	DuplicateWindow.cpp	/^DuplicateWindow::DuplicateWindow( Glib::ustring title, Gtk::Window& parent )$/;"	f	class:UI::DuplicateWindow
+DuplicateWindow	DuplicateWindow.h	/^class DuplicateWindow$/;"	c	namespace:UI
+EditAdd	save/MainWindow.cpp	/^void MainWindow::EditAdd()$/;"	f	class:UI::MainWindow
+EditAddEffect	save/MainWindow.cpp	/^void MainWindow::EditAddEffect()$/;"	f	class:UI::MainWindow
+EditCharacter	save/MainWindow.cpp	/^void MainWindow::EditCharacter( Combatant::Character::pointer_t _char )$/;"	f	class:UI::MainWindow
+EditDelete	save/MainWindow.cpp	/^void MainWindow::EditDelete()$/;"	f	class:UI::MainWindow
+EditDeleteEffect	save/MainWindow.cpp	/^void MainWindow::EditDeleteEffect()$/;"	f	class:UI::MainWindow
+EditDuplicate	save/MainWindow.cpp	/^void MainWindow::EditDuplicate()$/;"	f	class:UI::MainWindow
+EditEdit	save/MainWindow.cpp	/^void MainWindow::EditEdit()$/;"	f	class:UI::MainWindow
+EditEditEffect	save/MainWindow.cpp	/^void MainWindow::EditEditEffect()$/;"	f	class:UI::MainWindow
+EditEffect	EffectsBook.h	/^	void EditEffect()	{ OnEditClick();    }$/;"	f	class:UI::EffectsBook
+EditPurgeDead	save/MainWindow.cpp	/^void MainWindow::EditPurgeDead()$/;"	f	class:UI::MainWindow
+EditRedo	save/MainWindow.cpp	/^void MainWindow::EditRedo()$/;"	f	class:UI::MainWindow
+EditUndo	save/MainWindow.cpp	/^void MainWindow::EditUndo()$/;"	f	class:UI::MainWindow
+EditWindow	EditWindow.cpp	/^EditWindow::EditWindow( const Glib::ustring& title, Gtk::Window& parent )$/;"	f	class:UI::EditWindow
+EditWindow	EditWindow.h	/^class EditWindow$/;"	c	namespace:UI
+EffectEditor	EffectEditor.cpp	/^EffectEditor::EffectEditor( const Glib::ustring& title ) :$/;"	f	class:UI::EffectEditor
+EffectEditor	EffectEditor.h	/^class EffectEditor$/;"	c	namespace:UI
+EffectsBook	EffectsBook.cpp	/^EffectsBook::EffectsBook( Gtk::Window* parent ) :$/;"	f	class:UI::EffectsBook
+EffectsBook	EffectsBook.h	/^class EffectsBook : $/;"	c	namespace:UI
+EffectsEditor	EffectsEditor.cpp	/^EffectsEditor::EffectsEditor()$/;"	f	class:UI::EffectsEditor
+EffectsEditor	EffectsEditor.h	/^class EffectsEditor$/;"	c	namespace:UI
+EffectsList	EffectsList.cpp	/^EffectsList::EffectsList()$/;"	f	class:UI::EffectsList
+EffectsList	EffectsList.h	/^class EffectsList$/;"	c	namespace:UI
+End	RoundsHelper.cpp	/^void RoundsHelper::End()$/;"	f	class:UI::RoundsHelper
+EventDisabler	save/MainWindow.h	/^	    EventDisabler( MainWindow* wnd) : f_mainWindow(wnd)$/;"	f	class:UI::MainWindow::EventDisabler
+EventDisabler	save/MainWindow.h	/^	class EventDisabler$/;"	c	class:UI::MainWindow
+ExpiredEffectsWindow	ExpiredEffectsWindow.cpp	/^ExpiredEffectsWindow::ExpiredEffectsWindow( Glib::ustring title, Gtk::Window& parent )$/;"	f	class:UI::ExpiredEffectsWindow
+ExpiredEffectsWindow	ExpiredEffectsWindow.h	/^class ExpiredEffectsWindow :$/;"	c	namespace:UI
+FileClear	save/MainWindow.cpp	/^void MainWindow::FileClear()$/;"	f	class:UI::MainWindow
+FileExport	save/MainWindow.cpp	/^void MainWindow::FileExport()$/;"	f	class:UI::MainWindow
+FileImport	save/MainWindow.cpp	/^void MainWindow::FileImport()$/;"	f	class:UI::MainWindow
+FilePreferences	save/MainWindow.cpp	/^void MainWindow::FilePreferences()$/;"	f	class:UI::MainWindow
+FileQuit	save/MainWindow.cpp	/^void MainWindow::FileQuit()$/;"	f	class:UI::MainWindow
+FileStatManager	save/MainWindow.cpp	/^void MainWindow::FileStatManager()$/;"	f	class:UI::MainWindow
+FillMainBox	DefineInitWindow.cpp	/^void DefineInitWindow::FillMainBox()$/;"	f	class:UI::DefineInitWindow
+FillMainBox	EditWindow.cpp	/^void EditWindow::FillMainBox()$/;"	f	class:UI::EditWindow
+FillMainBox	EffectEditor.cpp	/^void EffectEditor::FillMainBox()$/;"	f	class:UI::EffectEditor
+FillMainBox	EffectsEditor.cpp	/^void EffectsEditor::FillMainBox()$/;"	f	class:UI::EffectsEditor
+FillMainBox	EffectsList.cpp	/^void EffectsList::FillMainBox()$/;"	f	class:UI::EffectsList
+FillMainBox	InfoWindow.cpp	/^void InfoWindow::FillMainBox()$/;"	f	class:UI::InfoWindow
+FillMainBox	InitWindow.cpp	/^void InitWindow::FillMainBox()$/;"	f	class:UI::InitWindow
+FillMainBox	JumpInWindow.cpp	/^void JumpInWindow::FillMainBox()$/;"	f	class:UI::JumpInWindow
+FillMainBox	SettingsWindow.cpp	/^void SettingsWindow::FillMainBox()$/;"	f	class:UI::SettingsWindow
+FillMainBox	save/MainWindow.cpp	/^void MainWindow::FillMainBox()$/;"	f	class:UI::MainWindow
+FindCharacter	JumpInWindow.cpp	/^Gtk::TreeIter JumpInWindow::FindCharacter( Combatant::Character::pointer_t ch ) const$/;"	f	class:UI::JumpInWindow
+FindDuplicates	EffectsList.cpp	/^bool EffectsList::FindDuplicates( const Effect::pointer_t effect )$/;"	f	class:UI::EffectsList
+FindDuplicates	JumpInWindow.cpp	/^bool JumpInWindow::FindDuplicates( Combatant::Character::pointer_t ch ) const$/;"	f	class:UI::JumpInWindow
+FixOrderings	StatEditor.cpp	/^void StatEditor::FixOrderings()$/;"	f	class:UI::StatEditor
+GenerateAbilityString	InfoBox.cpp	/^void InfoBox::GenerateAbilityString()$/;"	f	class:UI::InfoBox
+GenerateBuiltinString	InfoBox.cpp	/^void InfoBox::GenerateBuiltinString()$/;"	f	class:UI::InfoBox
+GenerateStatString	InfoBox.cpp	/^void InfoBox::GenerateStatString()$/;"	f	class:UI::InfoBox
+GetAction	save/MainWindow.cpp	/^motk::ActionPtr MainWindow::GetAction( Attribute::Stat::pointer_t stat )$/;"	f	class:UI::MainWindow
+GetChoice	EditWindow.cpp	/^	int GetChoice( LabelTable& tbl, const moName& id )$/;"	f	namespace:UI::__anon14
+GetChoice	EffectEditor.cpp	/^	Effect::Type GetChoice( LabelTable& tbl, const moName& id )$/;"	f	namespace:UI::__anon6
+GetClassName	Splash.cpp	/^const char *SplashScreen::GetClassName(void) const$/;"	f	class:UI::SplashScreen
+GetData	DefineInitWindow.cpp	/^void DefineInitWindow::GetData()$/;"	f	class:UI::DefineInitWindow
+GetData	EditWindow.cpp	/^void EditWindow::GetData( Combatant::Character::pointer_t ch )$/;"	f	class:UI::EditWindow
+GetDieFace	SettingsWindow.cpp	/^void SettingsWindow::GetDieFace()$/;"	f	class:UI::SettingsWindow
+GetEffects	EffectsEditor.cpp	/^void EffectsEditor::GetEffects( Combatant::Character::pointer_t ch )$/;"	f	class:UI::EffectsEditor
+GetEffects	EffectsList.cpp	/^void EffectsList::GetEffects( Combatant::Character::pointer_t ch )$/;"	f	class:UI::EffectsList
+GetFirstSelected	EffectsList.cpp	/^Effects::Effect::pointer_t EffectsList::GetFirstSelected()$/;"	f	class:UI::EffectsList
+GetFocusEntry	EditWindow.h	/^	int		GetFocusEntry() const		{ return f_focusEntry;	}$/;"	f	class:UI::EditWindow
+GetFontName	SettingsWindow.cpp	/^	Glib::ustring GetFontName( motk::LabelTable& tbl, const moName& id )$/;"	f	namespace:UI::__anon3
+GetNotes	EditWindow.cpp	/^	void GetNotes( LabelTable& tbl, const moName& id, Combatant::Character& ch )$/;"	f	namespace:UI::__anon14
+GetOrCreateStat	StatEditor.cpp	/^Attribute::Stat::pointer_t StatEditor::GetOrCreateStat( const Gtk::TreeModel::Row& row )$/;"	f	class:UI::StatEditor
+GetSelected	JumpInWindow.cpp	/^Combatant::Character::pointer_t JumpInWindow::GetSelected()$/;"	f	class:UI::JumpInWindow
+GetStat	EditWindow.cpp	/^	void GetStat( LabelTable& tbl, const moName& id, Combatant::Character& ch )$/;"	f	namespace:UI::__anon14
+GetStats	EditWindow.cpp	/^void EditWindow::GetStats()$/;"	f	class:UI::EditWindow
+GetText	DefineInitWindow.cpp	/^	Glib::ustring GetText( LabelTable& tbl, const molib::moName& id )$/;"	f	namespace:UI::__anon8
+GetText	EditWindow.cpp	/^	Glib::ustring GetText( LabelTable& tbl, const moName& id )$/;"	f	namespace:UI::__anon14
+GetText	EffectEditor.cpp	/^	Glib::ustring GetText( LabelTable& tbl, const moName& id )$/;"	f	namespace:UI::__anon6
+GetText	SettingsWindow.cpp	/^	Glib::ustring GetText( motk::LabelTable& tbl, const moName& id )$/;"	f	namespace:UI::__anon3
+GetValue	EditWindow.cpp	/^	int GetValue( LabelTable& tbl, const moName& id )$/;"	f	namespace:UI::__anon14
+GetValue	EffectEditor.cpp	/^	int GetValue( LabelTable& tbl, const moName& id )$/;"	f	namespace:UI::__anon6
+GetValue	InitWindow.cpp	/^	int GetValue( LabelTable& tbl, const molib::moName& id )$/;"	f	namespace:UI::__anon11
+GetValue	SettingsWindow.cpp	/^	int GetValue( motk::LabelTable& tbl, const moName& id )$/;"	f	namespace:UI::__anon3
+HUDWindow	HUDWindow.cpp	/^HUDWindow::HUDWindow()$/;"	f	class:UI::HUDWindow
+HUDWindow	HUDWindow.h	/^class HUDWindow$/;"	c	namespace:UI
+HelpAbout	save/MainWindow.cpp	/^void MainWindow::HelpAbout()$/;"	f	class:UI::MainWindow
+HelpContact	save/MainWindow.cpp	/^void MainWindow::HelpContact()$/;"	f	class:UI::MainWindow
+HelpDocumentation	save/MainWindow.cpp	/^void MainWindow::HelpDocumentation()$/;"	f	class:UI::MainWindow
+HelpHomePage	save/MainWindow.cpp	/^void MainWindow::HelpHomePage()$/;"	f	class:UI::MainWindow
+HelpLicense	save/MainWindow.cpp	/^void MainWindow::HelpLicense()$/;"	f	class:UI::MainWindow
+HelpTutorial	save/MainWindow.cpp	/^void MainWindow::HelpTutorial()$/;"	f	class:UI::MainWindow
+InfoBox	InfoBox.cpp	/^InfoBox::InfoBox()$/;"	f	class:UI::InfoBox
+InfoBox	InfoBox.h	/^class InfoBox$/;"	c	namespace:UI
+InfoWindow	InfoWindow.cpp	/^InfoWindow::InfoWindow( Glib::ustring title, Gtk::Window& parent ) :$/;"	f	class:UI::InfoWindow
+InfoWindow	InfoWindow.h	/^class InfoWindow :$/;"	c	namespace:UI
+InitActions	save/MainWindow.cpp	/^void MainWindow::InitActions()$/;"	f	class:UI::MainWindow
+InitBaseTable	EditWindow.cpp	/^void EditWindow::InitBaseTable()$/;"	f	class:UI::EditWindow
+InitCombatTable	EditWindow.cpp	/^void EditWindow::InitCombatTable()$/;"	f	class:UI::EditWindow
+InitDialog	AbilityEditor.cpp	/^void AbilityEditor::InitDialog()$/;"	f	class:UI::AbilityEditor
+InitStatTable	EditWindow.cpp	/^void EditWindow::InitStatTable()$/;"	f	class:UI::EditWindow
+InitTable	EffectEditor.cpp	/^void EffectEditor::InitTable()$/;"	f	class:UI::EffectEditor
+InitTable	InitWindow.cpp	/^void InitWindow::InitTable()$/;"	f	class:UI::InitWindow
+InitTable	SettingsWindow.cpp	/^void SettingsWindow::InitTable()$/;"	f	class:UI::SettingsWindow
+InitTreeView	SettingsWindow.cpp	/^void SettingsWindow::InitTreeView()$/;"	f	class:UI::SettingsWindow
+InitWindow	InitWindow.cpp	/^InitWindow::InitWindow( const Glib::ustring& title, const bool allowCancel ) :$/;"	f	class:UI::InitWindow
+InitWindow	InitWindow.h	/^class InitWindow$/;"	c	namespace:UI
+InputWindow	InputWindow.cpp	/^InputWindow::InputWindow( Glib::ustring title, Gtk::Window& parent )$/;"	f	class:UI::InputWindow
+InputWindow	InputWindow.h	/^class InputWindow$/;"	c	namespace:UI
+InstallMenu	save/MainWindow.cpp	/^void MainWindow::InstallMenu()$/;"	f	class:UI::MainWindow
+JumpIn	RoundsHelper.cpp	/^void RoundsHelper::JumpIn()$/;"	f	class:UI::RoundsHelper
+JumpInWindow	JumpInWindow.cpp	/^JumpInWindow::JumpInWindow( Glib::ustring title, Gtk::Window& parent )$/;"	f	class:UI::JumpInWindow
+JumpInWindow	JumpInWindow.h	/^class JumpInWindow$/;"	c	namespace:UI
+Label	InputWindow.cpp	/^void InputWindow::Label( const std::string& val )$/;"	f	class:UI::InputWindow
+ListColumns	SettingsWindow.h	/^		ListColumns()$/;"	f	class:UI::SettingsWindow::ListColumns
+ListColumns	SettingsWindow.h	/^	class ListColumns : public Gtk::TreeModel::ColumnRecord$/;"	c	class:UI::SettingsWindow
+ListStorePtr	EffectsList.h	/^	typedef Glib::RefPtr<Gtk::ListStore>		ListStorePtr;$/;"	t	class:UI::EffectsList
+ListStorePtr	StatEditor.h	/^	typedef Glib::RefPtr<Gtk::ListStore>		ListStorePtr;$/;"	t	class:UI::StatEditor
+Load	save/MainWindow.cpp	/^void MainWindow::Load()$/;"	f	class:UI::MainWindow
+MAX_PANES	InfoWindow.h	49;"	d
+MainWindow	MainWindow.cpp	/^MainWindow::MainWindow(QWidget *p_parent)$/;"	f	class:UI::MainWindow
+MainWindow	MainWindow.h	/^class MainWindow$/;"	c	namespace:UI
+MainWindow	save/MainWindow.cpp	/^MainWindow::MainWindow()$/;"	f	class:UI::MainWindow
+MainWindow	save/MainWindow.h	/^class MainWindow :$/;"	c	namespace:UI
+Modified	EffectEditor.h	/^	bool Modified() const { return f_modified; }$/;"	f	class:UI::EffectEditor
+MoveCharacters	RoundsHelper.cpp	/^void RoundsHelper::MoveCharacters( const bool up )$/;"	f	class:UI::RoundsHelper
+MoveSelected	StatEditor.cpp	/^void StatEditor::MoveSelected( const bool up )$/;"	f	class:UI::StatEditor
+NAG_EXIT	NagWindow.h	/^	typedef enum { NAG_EXIT, NAG_FEATURE, NAG_TIMEOUT, NAG_MAXCHARS, NAG_NOSAVE } NagType;$/;"	e	enum:UI::NagWindow::__anon9
+NAG_FEATURE	NagWindow.h	/^	typedef enum { NAG_EXIT, NAG_FEATURE, NAG_TIMEOUT, NAG_MAXCHARS, NAG_NOSAVE } NagType;$/;"	e	enum:UI::NagWindow::__anon9
+NAG_MAXCHARS	NagWindow.h	/^	typedef enum { NAG_EXIT, NAG_FEATURE, NAG_TIMEOUT, NAG_MAXCHARS, NAG_NOSAVE } NagType;$/;"	e	enum:UI::NagWindow::__anon9
+NAG_NOSAVE	NagWindow.h	/^	typedef enum { NAG_EXIT, NAG_FEATURE, NAG_TIMEOUT, NAG_MAXCHARS, NAG_NOSAVE } NagType;$/;"	e	enum:UI::NagWindow::__anon9
+NAG_TIMEOUT	NagWindow.h	/^	typedef enum { NAG_EXIT, NAG_FEATURE, NAG_TIMEOUT, NAG_MAXCHARS, NAG_NOSAVE } NagType;$/;"	e	enum:UI::NagWindow::__anon9
+NAG_WINDOW_GOTO_SITE	NagWindow.h	24;"	d
+NagType	NagWindow.h	/^	typedef enum { NAG_EXIT, NAG_FEATURE, NAG_TIMEOUT, NAG_MAXCHARS, NAG_NOSAVE } NagType;$/;"	t	class:UI::NagWindow	typeref:enum:UI::NagWindow::__anon9
+NagWindow	NagWindow.cpp	/^NagWindow::NagWindow(Gtk::Window& parent)$/;"	f	class:UI::NagWindow
+NagWindow	NagWindow.h	/^class NagWindow : public Gtk::AboutDialog$/;"	c	namespace:UI
+Next	RoundsHelper.cpp	/^void RoundsHelper::Next()$/;"	f	class:UI::RoundsHelper
+NextTab	EffectsBook.cpp	/^void EffectsBook::NextTab()$/;"	f	class:UI::EffectsBook
+OnAccelKeyEdited	StatEditor.cpp	/^void StatEditor::OnAccelKeyEdited( const Glib::ustring& path, const Glib::ustring& new_text )$/;"	f	class:UI::StatEditor
+OnAcceptButton	EffectEditor.cpp	/^void EffectEditor::OnAcceptButton()$/;"	f	class:UI::EffectEditor
+OnAcceptButton	InitWindow.cpp	/^void InitWindow::OnAcceptButton()$/;"	f	class:UI::InitWindow
+OnAddClick	EffectsBook.cpp	/^void EffectsBook::OnAddClick()$/;"	f	class:UI::EffectsBook
+OnChanged	EffectEditor.cpp	/^void EffectEditor::OnChanged()$/;"	f	class:UI::EffectEditor
+OnCharListChanged	save/MainWindow.cpp	/^void MainWindow::OnCharListChanged()$/;"	f	class:UI::MainWindow
+OnClear	InfoWindow.cpp	/^void InfoWindow::OnClear()$/;"	f	class:UI::InfoWindow
+OnDeleteButton	EffectsEditor.cpp	/^void EffectsEditor::OnDeleteButton()$/;"	f	class:UI::EffectsEditor
+OnDieFacesEdited	StatEditor.cpp	/^void StatEditor::OnDieFacesEdited( const Glib::ustring& path, const Glib::ustring& new_text )$/;"	f	class:UI::StatEditor
+OnDismissClick	EffectsBook.cpp	/^void EffectsBook::OnDismissClick()$/;"	f	class:UI::EffectsBook
+OnDoubleClick	save/MainWindow.cpp	/^void MainWindow::OnDoubleClick()$/;"	f	class:UI::MainWindow
+OnEditButton	EffectsEditor.cpp	/^void EffectsEditor::OnEditButton( const bool add )$/;"	f	class:UI::EffectsEditor
+OnEditCharacter	InfoBox.cpp	/^void InfoBox::OnEditCharacter()$/;"	f	class:UI::InfoBox
+OnEditCharacter	InfoWindow.cpp	/^void InfoWindow::OnEditCharacter( Character::pointer_t ch )$/;"	f	class:UI::InfoWindow
+OnEditCharacter	save/MainWindow.cpp	/^void MainWindow::OnEditCharacter( Combatant::Character::pointer_t _char )$/;"	f	class:UI::MainWindow
+OnEditClick	EffectsBook.cpp	/^void EffectsBook::OnEditClick()$/;"	f	class:UI::EffectsBook
+OnHUDChangeFont	HUDWindow.cpp	/^void HUDWindow::OnHUDChangeFont()$/;"	f	class:UI::HUDWindow
+OnNagEvent	save/MainWindow.cpp	/^bool MainWindow::OnNagEvent()$/;"	f	class:UI::MainWindow
+OnNameEdited	StatEditor.cpp	/^void StatEditor::OnNameEdited( const Glib::ustring& path, const Glib::ustring& new_text )$/;"	f	class:UI::StatEditor
+OnOrderEdited	StatEditor.cpp	/^void StatEditor::OnOrderEdited( const Glib::ustring& path, const Glib::ustring& new_text )$/;"	f	class:UI::StatEditor
+OnReload	InfoBox.cpp	/^void InfoBox::OnReload()$/;"	f	class:UI::InfoBox
+OnReload	InfoWindow.cpp	/^void InfoWindow::OnReload()$/;"	f	class:UI::InfoWindow
+OnReloadTables	EditWindow.cpp	/^void EditWindow::OnReloadTables()$/;"	f	class:UI::EditWindow
+OnReloadTables	InfoBox.cpp	/^void InfoBox::OnReloadTables()$/;"	f	class:UI::InfoBox
+OnResetButton	InitWindow.cpp	/^void InitWindow::OnResetButton()$/;"	f	class:UI::InitWindow
+OnScrollChange	InitWindow.cpp	/^bool InitWindow::OnScrollChange( Gtk::ScrollType type, double value, bool is_char )$/;"	f	class:UI::InitWindow
+OnSelected	EffectsEditor.cpp	/^void EffectsEditor::OnSelected()$/;"	f	class:UI::EffectsEditor
+OnSelected	EffectsList.cpp	/^void EffectsList::OnSelected()$/;"	f	class:UI::EffectsList
+OnSelectionChanged	EffectsBook.cpp	/^void EffectsBook::OnSelectionChanged( const Combatant::Character::list_t& selected_list )$/;"	f	class:UI::EffectsBook
+OnSelectionChanged	InfoBox.cpp	/^void InfoBox::OnSelectionChanged( Combatant::Character::pointer_t ch )$/;"	f	class:UI::InfoBox
+OnSelectionChanged	InfoBox.cpp	/^void InfoBox::OnSelectionChanged( const Combatant::Character::list_t& selected_list )$/;"	f	class:UI::InfoBox
+OnSelectionChanged	InfoWindow.cpp	/^void InfoWindow::OnSelectionChanged( const Character::list_t& selected_list )$/;"	f	class:UI::InfoWindow
+OnSelectionChanged	StatWindow.cpp	/^void StatWindow::OnSelectionChanged()$/;"	f	class:UI::StatWindow
+OnSelectionChanged	save/MainWindow.cpp	/^void MainWindow::OnSelectionChanged( Combatant::Character::list_t selection_list )$/;"	f	class:UI::MainWindow
+OnSetFocus	EditWindow.cpp	/^void EditWindow::OnSetFocus( LabelTable* table )$/;"	f	class:UI::EditWindow
+OnSettingsChanged	save/MainWindow.cpp	/^void MainWindow::OnSettingsChanged()$/;"	f	class:UI::MainWindow
+OnShowMonsterOnHUDToggled	StatEditor.cpp	/^void StatEditor::OnShowMonsterOnHUDToggled( const Glib::ustring& path )$/;"	f	class:UI::StatEditor
+OnShowOnHUDToggled	StatEditor.cpp	/^void StatEditor::OnShowOnHUDToggled( const Glib::ustring& path )$/;"	f	class:UI::StatEditor
+OnShowOnToolbarToggled	StatEditor.cpp	/^void StatEditor::OnShowOnToolbarToggled( const Glib::ustring& path )$/;"	f	class:UI::StatEditor
+OnSwitchPage	EffectsBook.cpp	/^void EffectsBook::OnSwitchPage( GtkNotebookPage*, guint )$/;"	f	class:UI::EffectsBook
+OnTimer	save/MainWindow.cpp	/^bool MainWindow::OnTimer()$/;"	f	class:UI::MainWindow
+OnToggled	EditWindow.cpp	/^void EditWindow::OnToggled()$/;"	f	class:UI::EditWindow
+OnUpdateCharacter	EffectsBook.cpp	/^void EffectsBook::OnUpdateCharacter( Combatant::Character::pointer_t ch )$/;"	f	class:UI::EffectsBook
+OnUpdateEffects	EffectsBook.cpp	/^void EffectsBook::OnUpdateEffects()$/;"	f	class:UI::EffectsBook
+OnValueChanged	DamageWindow.cpp	/^void DamageWindow::OnValueChanged()$/;"	f	class:UI::DamageWindow
+OnValueChanged	DuplicateWindow.cpp	/^void DuplicateWindow::OnValueChanged()$/;"	f	class:UI::DuplicateWindow
+PopMessage	StatusBox.cpp	/^void StatusBox::PopMessage()$/;"	f	class:UI::StatusBox
+PopulateRow	StatEditor.cpp	/^bool StatEditor::PopulateRow( const Gtk::TreeModel::iterator& iter )$/;"	f	class:UI::StatEditor
+PositionWindow	HUDWindow.cpp	/^void HUDWindow::PositionWindow()$/;"	f	class:UI::HUDWindow
+PrevTab	EffectsBook.cpp	/^void EffectsBook::PrevTab()$/;"	f	class:UI::EffectsBook
+PushMessage	StatusBox.cpp	/^void StatusBox::PushMessage( const char* msg )$/;"	f	class:UI::StatusBox
+RESPONSE_EFFECTS	EditWindow.h	48;"	d
+RESPONSE_EFFECTS	StatWindow.h	44;"	d
+RESPONSE_FULLHEATH	DamageWindow.h	37;"	d
+RESPONSE_HEALTH	DamageWindow.h	36;"	d
+Ready	RoundsHelper.cpp	/^void RoundsHelper::Ready()$/;"	f	class:UI::RoundsHelper
+RemoveCharacter	JumpInWindow.cpp	/^void JumpInWindow::RemoveCharacter( Combatant::Character::pointer_t ch )$/;"	f	class:UI::JumpInWindow
+Revert	AbilityEditor.cpp	/^void AbilityEditor::Revert()$/;"	f	class:UI::AbilityEditor
+RollInitiative	RoundsHelper.cpp	/^bool RoundsHelper::RollInitiative( TransactionGroup::pointer_t group, bool allowCancel )$/;"	f	class:UI::RoundsHelper
+RollInitiative	RoundsHelper.cpp	/^void RoundsHelper::RollInitiative()$/;"	f	class:UI::RoundsHelper
+RollInitiative	save/MainWindow.cpp	/^void MainWindow::RollInitiative()$/;"	f	class:UI::MainWindow
+RollOther	RoundsHelper.cpp	/^void RoundsHelper::RollOther( const std::string& transact_desc, const molib::mo_name_t statId )$/;"	f	class:UI::RoundsHelper
+RollSoftColumns	save/MainWindow.cpp	/^void MainWindow::RollSoftColumns( Attribute::Stat::pointer_t stat )$/;"	f	class:UI::MainWindow
+RoundsDamage	save/MainWindow.cpp	/^void MainWindow::RoundsDamage()$/;"	f	class:UI::MainWindow
+RoundsDelay	save/MainWindow.cpp	/^void MainWindow::RoundsDelay()$/;"	f	class:UI::MainWindow
+RoundsEnd	save/MainWindow.cpp	/^void MainWindow::RoundsEnd()$/;"	f	class:UI::MainWindow
+RoundsHelper	RoundsHelper.cpp	/^RoundsHelper::RoundsHelper	( Gtk::Window* 		parent$/;"	f	class:UI::RoundsHelper
+RoundsHelper	RoundsHelper.h	/^class RoundsHelper : private Application::ManagerBase$/;"	c	namespace:UI
+RoundsJumpIn	save/MainWindow.cpp	/^void MainWindow::RoundsJumpIn()$/;"	f	class:UI::MainWindow
+RoundsMoveDown	save/MainWindow.cpp	/^void MainWindow::RoundsMoveDown()$/;"	f	class:UI::MainWindow
+RoundsMoveUp	save/MainWindow.cpp	/^void MainWindow::RoundsMoveUp()$/;"	f	class:UI::MainWindow
+RoundsNext	save/MainWindow.cpp	/^void MainWindow::RoundsNext()$/;"	f	class:UI::MainWindow
+RoundsReady	save/MainWindow.cpp	/^void MainWindow::RoundsReady()$/;"	f	class:UI::MainWindow
+RoundsStabilize	save/MainWindow.cpp	/^void MainWindow::RoundsStabilize()$/;"	f	class:UI::MainWindow
+RoundsStart	save/MainWindow.cpp	/^void MainWindow::RoundsStart()$/;"	f	class:UI::MainWindow
+SAVE_TIMEOUT_SECS	save/MainWindow.cpp	51;"	d	file:
+SPLASH_IMAGE	Splash.h	34;"	d
+SPLASH_IMAGE	Splash.h	36;"	d
+Save	save/MainWindow.cpp	/^void MainWindow::Save()$/;"	f	class:UI::MainWindow
+SaveValues	SettingsWindow.cpp	/^void SettingsWindow::SaveValues()$/;"	f	class:UI::SettingsWindow
+SaveWindow	SaveWindow.h	/^	SaveWindow( Glib::ustring title, Gtk::Window& parent ) :$/;"	f	class:UI::SaveWindow
+SaveWindow	SaveWindow.h	/^class SaveWindow :$/;"	c	namespace:UI
+SelectedCount	EffectsList.cpp	/^int EffectsList::SelectedCount() const$/;"	f	class:UI::EffectsList
+SelectedPaths	EffectsList.h	/^	typedef Gtk::TreeSelection::ListHandle_Path	SelectedPaths;$/;"	t	class:UI::EffectsList
+SetCharacters	InitWindow.cpp	/^void InitWindow::SetCharacters( pair_t& charPairList )$/;"	f	class:UI::InitWindow
+SetChoice	EditWindow.cpp	/^	void SetChoice( LabelTable& tbl, const moName& id, const bool value )$/;"	f	namespace:UI::__anon14
+SetChoice	EffectEditor.cpp	/^	void SetChoice( LabelTable& tbl, const moName& id, const Effect::Type value )$/;"	f	namespace:UI::__anon6
+SetData	EditWindow.cpp	/^void EditWindow::SetData( Combatant::Character::pointer_t ch )$/;"	f	class:UI::EditWindow
+SetDefaultSort	HUDWindow.cpp	/^void HUDWindow::SetDefaultSort()$/;"	f	class:UI::HUDWindow
+SetDieFace	SettingsWindow.cpp	/^void SettingsWindow::SetDieFace()$/;"	f	class:UI::SettingsWindow
+SetEffect	EffectEditor.cpp	/^void EffectEditor::SetEffect( Effect::pointer_t effect )$/;"	f	class:UI::EffectEditor
+SetFocusEntry	EditWindow.h	/^	void	SetFocusEntry( int val )	{ f_focusEntry = val;	}$/;"	f	class:UI::EditWindow
+SetFontName	SettingsWindow.cpp	/^	void SetFontName( motk::LabelTable& tbl, const moName& id, const Glib::ustring& text )$/;"	f	namespace:UI::__anon3
+SetNotes	EditWindow.cpp	/^	void SetNotes( LabelTable& tbl, const moName& id, Combatant::Character& ch )$/;"	f	namespace:UI::__anon14
+SetParent	EffectsBook.h	/^	void SetParent( Gtk::Window* parent )			{ f_parent = parent; }$/;"	f	class:UI::EffectsBook
+SetStat	EditWindow.cpp	/^	void SetStat( LabelTable& tbl, const moName& id, Combatant::Character& ch )$/;"	f	namespace:UI::__anon14
+SetStatActionsSensitivity	save/MainWindow.cpp	/^void MainWindow::SetStatActionsSensitivity( const bool sensitive )$/;"	f	class:UI::MainWindow
+SetText	DefineInitWindow.cpp	/^	void SetText( LabelTable& tbl, const molib::moName& id, const Glib::ustring& text )$/;"	f	namespace:UI::__anon8
+SetText	EditWindow.cpp	/^	void SetText( LabelTable& tbl, const moName& id, const Glib::ustring& text )$/;"	f	namespace:UI::__anon14
+SetText	EffectEditor.cpp	/^	void SetText( LabelTable& tbl, const moName& id, const Glib::ustring& text )$/;"	f	namespace:UI::__anon6
+SetText	SettingsWindow.cpp	/^	void SetText( motk::LabelTable& tbl, const moName& id, const Glib::ustring& text )$/;"	f	namespace:UI::__anon3
+SetValue	EditWindow.cpp	/^	void SetValue( LabelTable& tbl, const moName& id, int value )$/;"	f	namespace:UI::__anon14
+SetValue	EffectEditor.cpp	/^	void SetValue( LabelTable& tbl, const moName& id, int value )$/;"	f	namespace:UI::__anon6
+SetValue	InitWindow.cpp	/^	void SetValue( LabelTable& tbl, const molib::moName& id, int value )$/;"	f	namespace:UI::__anon11
+SetValue	SettingsWindow.cpp	/^	void SetValue( motk::LabelTable& tbl, const moName& id, int value )$/;"	f	namespace:UI::__anon3
+SettingsWindow	SettingsWindow.cpp	/^SettingsWindow::SettingsWindow( Glib::ustring title, Gtk::Window& parent ) :$/;"	f	class:UI::SettingsWindow
+SettingsWindow	SettingsWindow.h	/^class SettingsWindow$/;"	c	namespace:UI
+ShowDocumentation	save/MainWindow.cpp	/^void MainWindow::ShowDocumentation(const char *index)$/;"	f	class:UI::MainWindow
+ShowNagWindow	save/MainWindow.cpp	/^void MainWindow::ShowNagWindow( const NagWindow::NagType type )$/;"	f	class:UI::MainWindow
+Size	JumpInWindow.h	/^	const int Size() const { return f_listStore->children().size(); }$/;"	f	class:UI::JumpInWindow
+SplashScreen	Splash.cpp	/^SplashScreen::SplashScreen(Gtk::Window *parent) :$/;"	f	class:UI::SplashScreen
+SplashScreen	Splash.h	/^class SplashScreen : public Gtk::Window$/;"	c	namespace:UI
+Stabilize	RoundsHelper.cpp	/^void RoundsHelper::Stabilize( const bool stabilize )$/;"	f	class:UI::RoundsHelper
+Start	RoundsHelper.cpp	/^void RoundsHelper::Start()$/;"	f	class:UI::RoundsHelper
+StatEditor	StatEditor.cpp	/^StatEditor::StatEditor()$/;"	f	class:UI::StatEditor
+StatEditor	StatEditor.h	/^class StatEditor :$/;"	c	namespace:UI
+StatList	StatEditor.h	/^	typedef std::vector<Attribute::Stat::pointer_t>	StatList;$/;"	t	class:UI::StatEditor
+StatMap	EditWindow.h	/^	typedef std::map<int,Attribute::Stat::pointer_t> StatMap;$/;"	t	class:UI::EditWindow
+StatWindow	StatWindow.cpp	/^StatWindow::StatWindow( Glib::ustring title, Gtk::Window& parent )$/;"	f	class:UI::StatWindow
+StatWindow	StatWindow.h	/^class StatWindow$/;"	c	namespace:UI
+StatusBox	StatusBox.cpp	/^StatusBox::StatusBox()$/;"	f	class:UI::StatusBox
+StatusBox	StatusBox.h	/^class StatusBox$/;"	c	namespace:UI
+Strings	NagWindow.cpp	/^	typedef std::vector<Glib::ustring>	Strings;$/;"	t	namespace:UI::__anon12	file:
+TableConnection	TableConnections.h	/^		TableConnection( motk::LabelTable* tbl ) : f_table(tbl) {}$/;"	f	struct:UI::TableConnection
+TableConnection	TableConnections.h	/^		TableConnection() : f_table(0) {}$/;"	f	struct:UI::TableConnection
+TableConnection	TableConnections.h	/^	struct TableConnection$/;"	s	namespace:UI
+TableConnections	TableConnections.h	/^	typedef std::vector<TableConnection>	TableConnections;$/;"	t	namespace:UI
+TreeModelPtr	StatEditor.h	/^	typedef Glib::RefPtr<Gtk::TreeModel>		TreeModelPtr;$/;"	t	class:UI::StatEditor
+TreeModelSortPtr	StatEditor.h	/^	typedef Glib::RefPtr<Gtk::TreeModelSort>	TreeModelSortPtr;$/;"	t	class:UI::StatEditor
+TreeSelectionPtr	EffectsList.h	/^	typedef Glib::RefPtr<Gtk::TreeSelection>	TreeSelectionPtr;$/;"	t	class:UI::EffectsList
+TreeStorePtr	StatEditor.h	/^	typedef Glib::RefPtr<Gtk::TreeStore>		TreeStorePtr;$/;"	t	class:UI::StatEditor
+UI	AbilityEditor.cpp	/^namespace UI$/;"	n	file:
+UI	AboutWindow.cpp	/^namespace UI$/;"	n	file:
+UI	AboutWindow.h	/^namespace UI$/;"	n
+UI	CharacterView.cpp	/^namespace UI$/;"	n	file:
+UI	CharacterView.h	/^namespace UI$/;"	n
+UI	DamageWindow.cpp	/^namespace UI$/;"	n	file:
+UI	DamageWindow.h	/^namespace UI$/;"	n
+UI	DefineInitWindow.cpp	/^namespace UI$/;"	n	file:
+UI	DefineInitWindow.h	/^namespace UI$/;"	n
+UI	DuplicateWindow.cpp	/^namespace UI$/;"	n	file:
+UI	DuplicateWindow.h	/^namespace UI$/;"	n
+UI	EditWindow.cpp	/^namespace UI$/;"	n	file:
+UI	EditWindow.h	/^namespace UI$/;"	n
+UI	EffectEditor.cpp	/^namespace UI$/;"	n	file:
+UI	EffectEditor.h	/^namespace UI$/;"	n
+UI	EffectsBook.cpp	/^namespace UI$/;"	n	file:
+UI	EffectsBook.h	/^namespace UI$/;"	n
+UI	EffectsEditor.cpp	/^namespace UI$/;"	n	file:
+UI	EffectsEditor.h	/^namespace UI$/;"	n
+UI	EffectsList.cpp	/^namespace UI$/;"	n	file:
+UI	EffectsList.h	/^namespace UI$/;"	n
+UI	ExpiredEffectsWindow.cpp	/^namespace UI$/;"	n	file:
+UI	ExpiredEffectsWindow.h	/^namespace UI$/;"	n
+UI	HUDWindow.cpp	/^namespace UI$/;"	n	file:
+UI	HUDWindow.h	/^namespace UI$/;"	n
+UI	InfoBox.cpp	/^namespace UI$/;"	n	file:
+UI	InfoBox.h	/^namespace UI$/;"	n
+UI	InfoWindow.cpp	/^namespace UI$/;"	n	file:
+UI	InfoWindow.h	/^namespace UI$/;"	n
+UI	InitWindow.cpp	/^namespace UI$/;"	n	file:
+UI	InitWindow.h	/^namespace UI$/;"	n
+UI	InputWindow.cpp	/^namespace UI$/;"	n	file:
+UI	InputWindow.h	/^namespace UI$/;"	n
+UI	JumpInWindow.cpp	/^namespace UI$/;"	n	file:
+UI	JumpInWindow.h	/^namespace UI$/;"	n
+UI	MainWindow.cpp	/^namespace UI$/;"	n	file:
+UI	MainWindow.h	/^namespace UI$/;"	n
+UI	NagWindow.cpp	/^namespace UI$/;"	n	file:
+UI	NagWindow.h	/^namespace UI$/;"	n
+UI	RoundsHelper.cpp	/^namespace UI$/;"	n	file:
+UI	RoundsHelper.h	/^namespace UI$/;"	n
+UI	SaveWindow.h	/^namespace UI$/;"	n
+UI	SettingsWindow.cpp	/^namespace UI$/;"	n	file:
+UI	SettingsWindow.h	/^namespace UI$/;"	n
+UI	Splash.cpp	/^namespace UI$/;"	n	file:
+UI	Splash.h	/^namespace UI$/;"	n
+UI	StatEditor.cpp	/^namespace UI$/;"	n	file:
+UI	StatEditor.h	/^namespace UI$/;"	n
+UI	StatWindow.cpp	/^namespace UI$/;"	n	file:
+UI	StatWindow.h	/^namespace UI$/;"	n
+UI	StatusBox.cpp	/^namespace UI$/;"	n	file:
+UI	StatusBox.h	/^namespace UI$/;"	n
+UI	TableConnections.h	/^namespace UI$/;"	n
+UI	save/MainWindow.cpp	/^namespace UI$/;"	n	file:
+UI	save/MainWindow.h	/^namespace UI$/;"	n
+Update	NagWindow.cpp	/^void NagWindow::Update( const NagType nagType )$/;"	f	class:UI::NagWindow
+Update	StatusBox.cpp	/^void StatusBox::Update()$/;"	f	class:UI::StatusBox
+UpdateCharFromDlg	EditWindow.cpp	/^void EditWindow::UpdateCharFromDlg()$/;"	f	class:UI::EditWindow
+UpdateDialog	EditWindow.cpp	/^void EditWindow::UpdateDialog()$/;"	f	class:UI::EditWindow
+UpdateDialog	InfoBox.cpp	/^void InfoBox::UpdateDialog()$/;"	f	class:UI::InfoBox
+UpdateDialog	SettingsWindow.cpp	/^void SettingsWindow::UpdateDialog()$/;"	f	class:UI::SettingsWindow
+UpdateDlgFromChar	EditWindow.cpp	/^void EditWindow::UpdateDlgFromChar()$/;"	f	class:UI::EditWindow
+UpdateDlgFromInit	DefineInitWindow.cpp	/^void DefineInitWindow::UpdateDlgFromInit()$/;"	f	class:UI::DefineInitWindow
+UpdateEffect	EffectsList.cpp	/^void EffectsList::UpdateEffect( Effects::Effect::pointer_t effect_to_find )$/;"	f	class:UI::EffectsList
+UpdateEffects	EffectsBook.cpp	/^void EffectsBook::UpdateEffects()$/;"	f	class:UI::EffectsBook
+UpdateInitFromDlg	DefineInitWindow.cpp	/^void DefineInitWindow::UpdateInitFromDlg()$/;"	f	class:UI::DefineInitWindow
+UpdateMenus	save/MainWindow.cpp	/^void MainWindow::UpdateMenus()$/;"	f	class:UI::MainWindow
+UpdateRow	EffectsList.cpp	/^void EffectsList::UpdateRow( Gtk::TreeModel::Row& row, const Effect::pointer_t effect )$/;"	f	class:UI::EffectsList
+UpdateUI	save/MainWindow.cpp	/^void MainWindow::UpdateUI( const bool changeToolbar \/*, const bool updateInit*\/ )$/;"	f	class:UI::MainWindow
+Value	DamageWindow.cpp	/^void DamageWindow::Value( int val )$/;"	f	class:UI::DamageWindow
+Value	DamageWindow.h	/^	int		Value() const 	{ return f_value; }$/;"	f	class:UI::DamageWindow
+Value	DuplicateWindow.cpp	/^void DuplicateWindow::Value( int val )$/;"	f	class:UI::DuplicateWindow
+Value	DuplicateWindow.h	/^	int Value() const 	{ return f_value; }$/;"	f	class:UI::DuplicateWindow
+Value	InputWindow.cpp	/^void InputWindow::Value( const std::string& val )$/;"	f	class:UI::InputWindow
+Value	InputWindow.h	/^	std::string Value() const 		{ return f_value; }$/;"	f	class:UI::InputWindow
+ViewShowEffects	save/MainWindow.cpp	/^void MainWindow::ViewShowEffects()$/;"	f	class:UI::MainWindow
+ViewShowHUD	save/MainWindow.cpp	/^void MainWindow::ViewShowHUD()$/;"	f	class:UI::MainWindow
+ViewShowInfo	save/MainWindow.cpp	/^void MainWindow::ViewShowInfo()$/;"	f	class:UI::MainWindow
+ViewShowToolbar	save/MainWindow.cpp	/^void MainWindow::ViewShowToolbar()$/;"	f	class:UI::MainWindow
+ViewToolbarOnBottom	save/MainWindow.cpp	/^void MainWindow::ViewToolbarOnBottom()$/;"	f	class:UI::MainWindow
+VoidSignal	EffectsList.h	/^	typedef sigc::signal<void> VoidSignal;$/;"	t	class:UI::EffectsList
+WidgetList	EditWindow.h	/^	typedef std::vector<Gtk::Widget*> WidgetList;$/;"	t	class:UI::EditWindow
+__SAVEWINDOW_H__	SaveWindow.h	23;"	d
+addHUDSoftColumns	CharacterView.cpp	/^void CharacterView::addHUDSoftColumns()$/;"	f	class:UI::CharacterView
+addIconColumn	CharacterView.cpp	/^Gtk::TreeView::Column* CharacterView::addIconColumn( const Glib::ustring& name, Gtk::TreeModelColumnBase& column )$/;"	f	class:UI::CharacterView
+addInitColumn	CharacterView.cpp	/^Gtk::TreeView::Column* CharacterView::addInitColumn( const Glib::ustring& name )$/;"	f	class:UI::CharacterView
+addNameColumn	CharacterView.cpp	/^Gtk::TreeView::Column* CharacterView::addNameColumn( const Glib::ustring& name )$/;"	f	class:UI::CharacterView
+addSoftColumn	CharacterView.cpp	/^int CharacterView::addSoftColumn( Attribute::Stat::pointer_t stat )$/;"	f	class:UI::CharacterView
+addSoftColumns	CharacterView.cpp	/^void CharacterView::addSoftColumns( const bool onHud )$/;"	f	class:UI::CharacterView
+addTextColumn	CharacterView.cpp	/^Gtk::TreeView::Column* CharacterView::addTextColumn( const Glib::ustring& name, Gtk::TreeModelColumnBase& column, const bool render_colors )$/;"	f	class:UI::CharacterView
+addTextColumn	CharacterView.cpp	/^Gtk::TreeView::Column* CharacterView::addTextColumn( const Glib::ustring& name, Gtk::TreeModelColumnBase& column,$/;"	f	class:UI::CharacterView
+addToggleColumn	CharacterView.cpp	/^Gtk::TreeView::Column* CharacterView::addToggleColumn( const Glib::ustring& name, Gtk::TreeModelColumnBase& column )$/;"	f	class:UI::CharacterView
+character	JumpInWindow.h	/^		Gtk::TreeModelColumn<Combatant::Character::pointer_t>	character;$/;"	m	class:UI::JumpInWindow::Columns
+character_list_t	CharacterView.h	/^	typedef Combatant::Character::list_t		character_list_t;$/;"	t	class:UI::CharacterView
+character_list_t	InitWindow.h	/^	typedef std::vector<Combatant::Character::pointer_t>               character_list_t;$/;"	t	class:UI::InitWindow
+character_pointer_t	CharacterView.h	/^	typedef Combatant::Character::pointer_t		character_pointer_t;$/;"	t	class:UI::CharacterView
+character_signal_t	CharacterView.h	/^	typedef sigc::signal<void,character_list_t>	character_signal_t;$/;"	t	class:UI::CharacterView
+connection_list_t	save/MainWindow.h	/^	typedef std::vector<sigc::connection>	connection_list_t;$/;"	t	class:UI::MainWindow
+do_tab	CharacterView.cpp	/^void CharacterView::do_tab( const bool forward )$/;"	f	class:UI::CharacterView
+emitSelectionSignal	CharacterView.cpp	/^void CharacterView::emitSelectionSignal()$/;"	f	class:UI::CharacterView
+f_accelKey	StatEditor.h	/^		Gtk::TreeModelColumn<Glib::ustring>			f_accelKey;$/;"	m	class:UI::StatEditor::Columns
+f_accelKeyColumns	StatEditor.h	/^	ComboColumns				f_accelKeyColumns;$/;"	m	class:UI::StatEditor
+f_accelKeyStore	StatEditor.h	/^	ListStorePtr				f_accelKeyStore;$/;"	m	class:UI::StatEditor
+f_acceptButton	EffectEditor.h	/^	Gtk::Button*             f_acceptButton;$/;"	m	class:UI::EffectEditor
+f_acceptButton	InitWindow.h	/^	Gtk::Button*             f_acceptButton;$/;"	m	class:UI::InitWindow
+f_actionEditAdd	save/MainWindow.h	/^	motk::ActionPtr       f_actionEditAdd;$/;"	m	class:UI::MainWindow
+f_actionEditAddEffect	save/MainWindow.h	/^	motk::ActionPtr       f_actionEditAddEffect;$/;"	m	class:UI::MainWindow
+f_actionEditDelete	save/MainWindow.h	/^	motk::ActionPtr       f_actionEditDelete;$/;"	m	class:UI::MainWindow
+f_actionEditDeleteEffect	save/MainWindow.h	/^	motk::ActionPtr       f_actionEditDeleteEffect;$/;"	m	class:UI::MainWindow
+f_actionEditDuplicate	save/MainWindow.h	/^	motk::ActionPtr       f_actionEditDuplicate;$/;"	m	class:UI::MainWindow
+f_actionEditEdit	save/MainWindow.h	/^	motk::ActionPtr       f_actionEditEdit;$/;"	m	class:UI::MainWindow
+f_actionEditEditEffect	save/MainWindow.h	/^	motk::ActionPtr       f_actionEditEditEffect;$/;"	m	class:UI::MainWindow
+f_actionEditPurgeDead	save/MainWindow.h	/^	motk::ActionPtr       f_actionEditPurgeDead;$/;"	m	class:UI::MainWindow
+f_actionEditRedo	save/MainWindow.h	/^	motk::ActionPtr       f_actionEditRedo;$/;"	m	class:UI::MainWindow
+f_actionEditUndo	save/MainWindow.h	/^	motk::ActionPtr       f_actionEditUndo;$/;"	m	class:UI::MainWindow
+f_actionFileClear	save/MainWindow.h	/^	motk::ActionPtr       f_actionFileClear;$/;"	m	class:UI::MainWindow
+f_actionFileExport	save/MainWindow.h	/^	motk::ActionPtr       f_actionFileExport;$/;"	m	class:UI::MainWindow
+f_actionFileImport	save/MainWindow.h	/^	motk::ActionPtr       f_actionFileImport;$/;"	m	class:UI::MainWindow
+f_actionFilePreferences	save/MainWindow.h	/^	motk::ActionPtr       f_actionFilePreferences;$/;"	m	class:UI::MainWindow
+f_actionFileQuit	save/MainWindow.h	/^	motk::ActionPtr       f_actionFileQuit;$/;"	m	class:UI::MainWindow
+f_actionFileStatManager	save/MainWindow.h	/^	motk::ActionPtr       f_actionFileStatManager;$/;"	m	class:UI::MainWindow
+f_actionHelpAbout	save/MainWindow.h	/^	motk::ActionPtr       f_actionHelpAbout;$/;"	m	class:UI::MainWindow
+f_actionHelpContact	save/MainWindow.h	/^	motk::ActionPtr       f_actionHelpContact;$/;"	m	class:UI::MainWindow
+f_actionHelpDocumentation	save/MainWindow.h	/^	motk::ActionPtr       f_actionHelpDocumentation;$/;"	m	class:UI::MainWindow
+f_actionHelpHomePage	save/MainWindow.h	/^	motk::ActionPtr       f_actionHelpHomePage;$/;"	m	class:UI::MainWindow
+f_actionHelpLicense	save/MainWindow.h	/^	motk::ActionPtr       f_actionHelpLicense;$/;"	m	class:UI::MainWindow
+f_actionHelpTutorial	save/MainWindow.h	/^	motk::ActionPtr       f_actionHelpTutorial;$/;"	m	class:UI::MainWindow
+f_actionRollGetDC	save/MainWindow.h	/^	motk::ToggleActionPtr f_actionRollGetDC;$/;"	m	class:UI::MainWindow
+f_actionRollInitiative	save/MainWindow.h	/^	motk::ActionPtr       f_actionRollInitiative;$/;"	m	class:UI::MainWindow
+f_actionRoundsDamage	save/MainWindow.h	/^	motk::ActionPtr       f_actionRoundsDamage;$/;"	m	class:UI::MainWindow
+f_actionRoundsDelay	save/MainWindow.h	/^	motk::ActionPtr       f_actionRoundsDelay;$/;"	m	class:UI::MainWindow
+f_actionRoundsEnd	save/MainWindow.h	/^	motk::ActionPtr       f_actionRoundsEnd;$/;"	m	class:UI::MainWindow
+f_actionRoundsJumpIn	save/MainWindow.h	/^	motk::ActionPtr       f_actionRoundsJumpIn;$/;"	m	class:UI::MainWindow
+f_actionRoundsMoveDown	save/MainWindow.h	/^	motk::ActionPtr       f_actionRoundsMoveDown;$/;"	m	class:UI::MainWindow
+f_actionRoundsMoveUp	save/MainWindow.h	/^	motk::ActionPtr       f_actionRoundsMoveUp;$/;"	m	class:UI::MainWindow
+f_actionRoundsNext	save/MainWindow.h	/^	motk::ActionPtr       f_actionRoundsNext;$/;"	m	class:UI::MainWindow
+f_actionRoundsReady	save/MainWindow.h	/^	motk::ActionPtr       f_actionRoundsReady;$/;"	m	class:UI::MainWindow
+f_actionRoundsStabilize	save/MainWindow.h	/^	motk::ToggleActionPtr f_actionRoundsStabilize;$/;"	m	class:UI::MainWindow
+f_actionRoundsStart	save/MainWindow.h	/^	motk::ActionPtr       f_actionRoundsStart;$/;"	m	class:UI::MainWindow
+f_actionViewShowEffects	save/MainWindow.h	/^	motk::ToggleActionPtr f_actionViewShowEffects;$/;"	m	class:UI::MainWindow
+f_actionViewShowHUD	save/MainWindow.h	/^	motk::ToggleActionPtr f_actionViewShowHUD;$/;"	m	class:UI::MainWindow
+f_actionViewShowInfo	save/MainWindow.h	/^	motk::ToggleActionPtr f_actionViewShowInfo;$/;"	m	class:UI::MainWindow
+f_actionViewShowToolbar	save/MainWindow.h	/^	motk::ToggleActionPtr f_actionViewShowToolbar;$/;"	m	class:UI::MainWindow
+f_actionViewToolbarOnBottom	save/MainWindow.h	/^	motk::ToggleActionPtr f_actionViewToolbarOnBottom;$/;"	m	class:UI::MainWindow
+f_active	SettingsWindow.h	/^		Gtk::TreeModelColumn<bool>		f_active;$/;"	m	class:UI::SettingsWindow::ListColumns
+f_addButton	EffectsEditor.h	/^	Gtk::Button		f_addButton;$/;"	m	class:UI::EffectsEditor
+f_addButton	StatWindow.h	/^	Gtk::Button			f_addButton;$/;"	m	class:UI::StatWindow
+f_adj	TableConnections.h	/^		Gtk::Adjustment*	f_adj;$/;"	m	struct:UI::AdjustmentConnection
+f_adjConnections	EditWindow.h	/^	AdjConnections		f_adjConnections;$/;"	m	class:UI::EditWindow
+f_adjConnections	EffectEditor.h	/^	AdjConnections           f_adjConnections;$/;"	m	class:UI::EffectEditor
+f_allowCancel	InitWindow.h	/^	bool                     f_allowCancel;$/;"	m	class:UI::InitWindow
+f_baseTable	DefineInitWindow.h	/^	motk::LabelTable		f_baseTable;$/;"	m	class:UI::DefineInitWindow
+f_baseTable	EditWindow.h	/^	motk::LabelTable			  f_baseTable;$/;"	m	class:UI::EditWindow
+f_bottomBox	save/MainWindow.h	/^	Gtk::VBox				f_bottomBox;$/;"	m	class:UI::MainWindow
+f_box	Splash.h	/^	Gtk::EventBox			f_box;$/;"	m	class:UI::SplashScreen
+f_buttons	EffectsEditor.h	/^	Gtk::HButtonBox		f_buttons;$/;"	m	class:UI::EffectsEditor
+f_cancelButton	EffectEditor.h	/^	Gtk::Button*             f_cancelButton;$/;"	m	class:UI::EffectEditor
+f_cancelButton	InitWindow.h	/^	Gtk::Button*             f_cancelButton;$/;"	m	class:UI::InitWindow
+f_changedSignal	EditWindow.h	/^	CharacterSignal				  f_changedSignal;$/;"	m	class:UI::EditWindow
+f_changedSignal	EffectsList.h	/^	VoidSignal		f_changedSignal;$/;"	m	class:UI::EffectsList
+f_char	EditWindow.h	/^	Combatant::Character::pointer_t f_char;$/;"	m	class:UI::EditWindow
+f_char	InfoBox.h	/^	Combatant::Character::pointer_t		f_char;$/;"	m	class:UI::InfoBox
+f_charConnection	EditWindow.h	/^	sigc::connection	f_charConnection;$/;"	m	class:UI::EditWindow
+f_charNameMap	InitWindow.h	/^	name_map_t				 f_charNameMap;$/;"	m	class:UI::InitWindow
+f_charTable	InitWindow.h	/^	motk::LabelTable         f_charTable;$/;"	m	class:UI::InitWindow
+f_charTableScroller	InitWindow.h	/^	motk::LabelTableScroller f_charTableScroller;$/;"	m	class:UI::InitWindow
+f_charView	HUDWindow.h	/^	CharacterView			f_charView;$/;"	m	class:UI::HUDWindow
+f_charView	MainWindow.h	/^	CharacterView			f_charView;$/;"	m	class:UI::MainWindow
+f_charView	RoundsHelper.h	/^    CharacterView*	f_charView;$/;"	m	class:UI::RoundsHelper
+f_charView	save/MainWindow.h	/^	CharacterView			f_charView;$/;"	m	class:UI::MainWindow
+f_character	DamageWindow.h	/^	Combatant::Character::pointer_t	f_character;$/;"	m	class:UI::DamageWindow
+f_chars	InitWindow.h	/^	character_list_t         f_chars;$/;"	m	class:UI::InitWindow
+f_columns	EffectsList.h	/^	Columns			f_columns;$/;"	m	class:UI::EffectsList
+f_columns	JumpInWindow.h	/^	Columns					f_columns;$/;"	m	class:UI::JumpInWindow
+f_columns	SettingsWindow.h	/^	ListColumns			f_columns;$/;"	m	class:UI::SettingsWindow
+f_columns	StatEditor.h	/^	Columns						f_columns;$/;"	m	class:UI::StatEditor
+f_combatTable	EditWindow.h	/^	motk::LabelTable			  f_combatTable;$/;"	m	class:UI::EditWindow
+f_comboBox	SettingsWindow.h	/^	Gtk::ComboBoxEntryText		f_comboBox;$/;"	m	class:UI::SettingsWindow
+f_connect	TableConnections.h	/^		sigc::connection	f_connect;$/;"	m	struct:UI::AdjustmentConnection
+f_connectChangeFont	HUDWindow.h	/^	sigc::connection		f_connectChangeFont;$/;"	m	class:UI::HUDWindow
+f_connection	EffectsBook.h	/^	sigc::connection           f_connection;$/;"	m	class:UI::EffectsBook
+f_connection	InfoBox.h	/^	sigc::connection			f_connection;$/;"	m	class:UI::InfoBox
+f_connection	InfoWindow.h	/^	sigc::connection	f_connection;$/;"	m	class:UI::InfoWindow
+f_connections	save/MainWindow.h	/^	connection_list_t		f_connections;$/;"	m	class:UI::MainWindow
+f_currentCol	CharacterView.h	/^	Gtk::TreeViewColumn*					f_currentCol;$/;"	m	class:UI::CharacterView
+f_currentPage	EffectsBook.h	/^	int                        f_currentPage;$/;"	m	class:UI::EffectsBook
+f_deleteButton	EffectsEditor.h	/^	Gtk::Button		f_deleteButton;$/;"	m	class:UI::EffectsEditor
+f_deleteButton	StatWindow.h	/^	Gtk::Button			f_deleteButton;$/;"	m	class:UI::StatWindow
+f_dieFaces	StatEditor.h	/^		Gtk::TreeModelColumn<Glib::ustring>			f_dieFaces;$/;"	m	class:UI::StatEditor::Columns
+f_dieFacesColumns	StatEditor.h	/^	ComboColumns				f_dieFacesColumns;$/;"	m	class:UI::StatEditor
+f_dieFacesStore	StatEditor.h	/^	ListStorePtr				f_dieFacesStore;$/;"	m	class:UI::StatEditor
+f_doubleClickSignal	CharacterView.h	/^	void_signal_t							f_doubleClickSignal;$/;"	m	class:UI::CharacterView
+f_downButton	StatWindow.h	/^	Gtk::Button			f_downButton;$/;"	m	class:UI::StatWindow
+f_editButton	EffectsEditor.h	/^	Gtk::Button		f_editButton;$/;"	m	class:UI::EffectsEditor
+f_editingStarted	CharacterView.h	/^	bool									f_editingStarted;$/;"	m	class:UI::CharacterView
+f_effect	EffectEditor.h	/^	Effects::Effect::pointer_t f_effect;$/;"	m	class:UI::EffectEditor
+f_effect	EffectsList.h	/^		Gtk::TreeModelColumn<Effects::Effect::pointer_t>	f_effect;$/;"	m	struct:UI::EffectsList::Columns
+f_effectsBook	InfoWindow.h	/^	EffectsBook		f_effectsBook[MAX_PANES];$/;"	m	class:UI::InfoWindow
+f_effectsBook	save/MainWindow.h	/^	EffectsBook				f_effectsBook;$/;"	m	class:UI::MainWindow
+f_effectsBox	save/MainWindow.h	/^	Gtk::HBox				f_effectsBox;$/;"	m	class:UI::MainWindow
+f_effectsColumn	CharacterView.h	/^	Gtk::TreeView::Column*					f_effectsColumn;$/;"	m	class:UI::CharacterView
+f_effectsFrame	save/MainWindow.h	/^	Gtk::Frame				f_effectsFrame;$/;"	m	class:UI::MainWindow
+f_effectsList	ExpiredEffectsWindow.h	/^	EffectsList	f_effectsList;$/;"	m	class:UI::ExpiredEffectsWindow
+f_effectsToolBar	save/MainWindow.h	/^	Gtk::Widget*			f_effectsToolBar;$/;"	m	class:UI::MainWindow
+f_entry	InputWindow.h	/^	Gtk::Entry		f_entry;$/;"	m	class:UI::InputWindow
+f_entryWidgets	EditWindow.h	/^	WidgetList                    f_entryWidgets;$/;"	m	class:UI::EditWindow
+f_eventMap	save/MainWindow.h	/^	stat_map_t				f_eventMap;$/;"	m	class:UI::MainWindow
+f_focusConn	TableConnections.h	/^		sigc::connection	f_focusConn;$/;"	m	struct:UI::TableConnection
+f_focusEntry	EditWindow.h	/^	int                           f_focusEntry;$/;"	m	class:UI::EditWindow
+f_hpColumn	CharacterView.h	/^	Gtk::TreeView::Column*					f_hpColumn;$/;"	m	class:UI::CharacterView
+f_hudView	MainWindow.h	/^	HUDWindow				f_hudView;$/;"	m	class:UI::MainWindow
+f_hudView	RoundsHelper.h	/^    HUDWindow*		f_hudView;$/;"	m	class:UI::RoundsHelper
+f_hudView	save/MainWindow.h	/^	HUDWindow				f_hudView;$/;"	m	class:UI::MainWindow
+f_id	SettingsWindow.h	/^		Gtk::TreeModelColumn<molib::mo_name_t>	f_id;$/;"	m	class:UI::SettingsWindow::ListColumns
+f_infoBox	InfoWindow.h	/^	InfoBox			f_infoBox[MAX_PANES];$/;"	m	class:UI::InfoWindow
+f_infoBuffer	InfoBox.h	/^	Glib::RefPtr<Gtk::TextBuffer>		f_infoBuffer;$/;"	m	class:UI::InfoBox
+f_infoWindow	save/MainWindow.h	/^	InfoWindow				f_infoWindow;$/;"	m	class:UI::MainWindow
+f_initColumn	CharacterView.h	/^	Gtk::TreeView::Column*					f_initColumn;$/;"	m	class:UI::CharacterView
+f_initStat	DefineInitWindow.h	/^	Attribute::Stat::pointer_t	f_initStat;$/;"	m	class:UI::DefineInitWindow
+f_initStat	SettingsWindow.h	/^	Attribute::Stat::pointer_t	f_initStat;$/;"	m	class:UI::SettingsWindow
+f_initializing	CharacterView.h	/^	bool									f_initializing;$/;"	m	class:UI::CharacterView
+f_isHUD	CharacterView.h	/^	bool									f_isHUD;$/;"	m	class:UI::CharacterView
+f_isSaving	MainWindow.h	/^	bool					f_isSaving;$/;"	m	class:UI::MainWindow
+f_isSaving	save/MainWindow.h	/^	bool					f_isSaving;$/;"	m	class:UI::MainWindow
+f_label	ExpiredEffectsWindow.h	/^	Gtk::Label	f_label;$/;"	m	class:UI::ExpiredEffectsWindow
+f_label	InputWindow.h	/^	Gtk::Label		f_label;$/;"	m	class:UI::InputWindow
+f_label	SaveWindow.h	/^	Gtk::Label		f_label;$/;"	m	class:UI::SaveWindow
+f_lastCharNum	save/MainWindow.h	/^	int						f_lastCharNum;$/;"	m	class:UI::MainWindow
+f_lastDupInput	save/MainWindow.h	/^	int						f_lastDupInput;$/;"	m	class:UI::MainWindow
+f_lastEditFocus	save/MainWindow.h	/^	int						f_lastEditFocus;$/;"	m	class:UI::MainWindow
+f_listStore	JumpInWindow.h	/^	Glib::RefPtr<Gtk::ListStore>		f_listStore;$/;"	m	class:UI::JumpInWindow
+f_logo	Splash.h	/^	molib::moImage			f_logo;$/;"	m	class:UI::SplashScreen
+f_logo_height	Splash.h	/^	molib::zuint32_t		f_logo_height;$/;"	m	class:UI::SplashScreen
+f_mainBox	HUDWindow.h	/^	Gtk::VBox				f_mainBox;$/;"	m	class:UI::HUDWindow
+f_mainBox	save/MainWindow.h	/^	Gtk::VBox				f_mainBox;$/;"	m	class:UI::MainWindow
+f_mainMenuBar	save/MainWindow.h	/^	Gtk::Widget*			f_mainMenuBar;$/;"	m	class:UI::MainWindow
+f_mainToolBar	save/MainWindow.h	/^	Gtk::Widget*			f_mainToolBar;$/;"	m	class:UI::MainWindow
+f_mainWindow	save/MainWindow.h	/^	    MainWindow* f_mainWindow;$/;"	m	class:UI::MainWindow::EventDisabler
+f_menubarId	save/MainWindow.h	/^	motk::MergeId			f_menubarId;$/;"	m	class:UI::MainWindow
+f_model	SettingsWindow.h	/^	Glib::RefPtr<Gtk::ListStore>	f_model;$/;"	m	class:UI::SettingsWindow
+f_modified	EffectEditor.h	/^	bool                     f_modified;$/;"	m	class:UI::EffectEditor
+f_monsterNameMap	InitWindow.h	/^	name_map_t				 f_monsterNameMap;$/;"	m	class:UI::InitWindow
+f_monsterTable	InitWindow.h	/^	motk::LabelTable         f_monsterTable;$/;"	m	class:UI::InitWindow
+f_monsterTableScroller	InitWindow.h	/^	motk::LabelTableScroller f_monsterTableScroller;$/;"	m	class:UI::InitWindow
+f_monsters	InitWindow.h	/^	character_list_t         f_monsters;$/;"	m	class:UI::InitWindow
+f_nagEvent	save/MainWindow.h	/^	sigc::connection		f_nagEvent;$/;"	m	class:UI::MainWindow
+f_nagWindow	save/MainWindow.h	/^	NagWindow				f_nagWindow;$/;"	m	class:UI::MainWindow
+f_name	EffectsList.h	/^		Gtk::TreeModelColumn<Glib::ustring>		f_name;$/;"	m	struct:UI::EffectsList::Columns
+f_name	SettingsWindow.h	/^		Gtk::TreeModelColumn<Glib::ustring>	f_name;$/;"	m	class:UI::SettingsWindow::ListColumns
+f_name	StatEditor.h	/^		Gtk::TreeModelColumn<Glib::ustring>			f_name;$/;"	m	class:UI::StatEditor::Columns
+f_name	StatEditor.h	/^		Gtk::TreeModelColumn<Glib::ustring>	f_name;$/;"	m	class:UI::StatEditor::ComboColumns
+f_nameColumn	CharacterView.h	/^	Gtk::TreeView::Column*					f_nameColumn;$/;"	m	class:UI::CharacterView
+f_nameColumn	StatEditor.h	/^	Gtk::TreeView::Column*		f_nameColumn;$/;"	m	class:UI::StatEditor
+f_newChar	InitWindow.h	/^		Combatant::Character::pointer_t	f_newChar;$/;"	m	struct:UI::InitWindow::CharacterPair
+f_order	StatEditor.h	/^		Gtk::TreeModelColumn<int>					f_order;$/;"	m	class:UI::StatEditor::Columns
+f_orderColumn	CharacterView.h	/^	Gtk::TreeView::Column*					f_orderColumn;$/;"	m	class:UI::CharacterView
+f_origChar	InitWindow.h	/^		Combatant::Character::pointer_t	f_origChar;$/;"	m	struct:UI::InitWindow::CharacterPair
+f_pane	InfoWindow.h	/^	Gtk::VPaned		f_pane;$/;"	m	class:UI::InfoWindow
+f_parent	EffectsBook.h	/^	Gtk::Window*               f_parent;$/;"	m	class:UI::EffectsBook
+f_parent	RoundsHelper.h	/^    Gtk::Window*	f_parent;$/;"	m	class:UI::RoundsHelper
+f_parent	Splash.h	/^	Gtk::Window*			f_parent;$/;"	m	class:UI::SplashScreen
+f_positionColumn	CharacterView.h	/^	Gtk::TreeView::Column*					f_positionColumn;$/;"	m	class:UI::CharacterView
+f_publicNameColumn	CharacterView.h	/^	Gtk::TreeView::Column*					f_publicNameColumn;$/;"	m	class:UI::CharacterView
+f_resetButton	InitWindow.h	/^	Gtk::Button*             f_resetButton;$/;"	m	class:UI::InitWindow
+f_roundsHelper	save/MainWindow.h	/^	RoundsHelper::pointer_t	f_roundsHelper;$/;"	m	class:UI::MainWindow
+f_roundsLeft	EffectsList.h	/^		Gtk::TreeModelColumn<int>			f_roundsLeft;$/;"	m	struct:UI::EffectsList::Columns
+f_scrolledWindow	HUDWindow.h	/^	Gtk::ScrolledWindow		f_scrolledWindow;$/;"	m	class:UI::HUDWindow
+f_scrolledWindow	save/MainWindow.h	/^	Gtk::ScrolledWindow		f_scrolledWindow;$/;"	m	class:UI::MainWindow
+f_scroller	EffectsEditor.h	/^	Gtk::ScrolledWindow	f_scroller;$/;"	m	class:UI::EffectsEditor
+f_scroller	InfoWindow.h	/^	Gtk::ScrolledWindow	f_scroller[MAX_PANES];$/;"	m	class:UI::InfoWindow
+f_scroller	StatWindow.h	/^	Gtk::ScrolledWindow	f_scroller;$/;"	m	class:UI::StatWindow
+f_selectedChars	EffectsBook.h	/^	Combatant::Character::list_t f_selectedChars;$/;"	m	class:UI::EffectsBook
+f_selection	CharacterView.h	/^	tree_selection_t						f_selection;$/;"	m	class:UI::CharacterView
+f_selection	EffectsList.h	/^	TreeSelectionPtr	f_selection;$/;"	m	class:UI::EffectsList
+f_selection	JumpInWindow.h	/^	Glib::RefPtr<Gtk::TreeSelection>	f_selection;$/;"	m	class:UI::JumpInWindow
+f_selectionChangedSignal	CharacterView.h	/^	character_signal_t						f_selectionChangedSignal;$/;"	m	class:UI::CharacterView
+f_selectionConnection	EffectsList.h	/^	sigc::connection	f_selectionConnection;$/;"	m	class:UI::EffectsList
+f_showInfoAction	InfoWindow.h	/^	motk::ToggleActionPtr	f_showInfoAction;$/;"	m	class:UI::InfoWindow
+f_showMonsterOnHUD	StatEditor.h	/^		Gtk::TreeModelColumn<bool>					f_showMonsterOnHUD;$/;"	m	class:UI::StatEditor::Columns
+f_showOnHUD	StatEditor.h	/^		Gtk::TreeModelColumn<bool>					f_showOnHUD;$/;"	m	class:UI::StatEditor::Columns
+f_showOnToolbar	StatEditor.h	/^		Gtk::TreeModelColumn<bool>					f_showOnToolbar;$/;"	m	class:UI::StatEditor::Columns
+f_showing	EditWindow.h	/^	bool						  f_showing;$/;"	m	class:UI::EditWindow
+f_signalEdit	InfoBox.h	/^	CharSignal				f_signalEdit;$/;"	m	class:UI::InfoBox
+f_signalEdit	InfoWindow.h	/^	CharSignal		f_signalEdit;$/;"	m	class:UI::InfoWindow
+f_softColumns	CharacterView.h	/^	soft_columns_map_t						f_softColumns;$/;"	m	class:UI::CharacterView
+f_sortStore	JumpInWindow.h	/^	Glib::RefPtr<Gtk::TreeModelSort>	f_sortStore;$/;"	m	class:UI::JumpInWindow
+f_spinButton	DamageWindow.h	/^	Gtk::SpinButton*				f_spinButton;$/;"	m	class:UI::DamageWindow
+f_spinConnection	DamageWindow.h	/^	sigc::connection				f_spinConnection;$/;"	m	class:UI::DamageWindow
+f_splash	MainWindow.h	/^    SplashScreen		    f_splash;$/;"	m	class:UI::MainWindow
+f_splash	Splash.h	/^	Gtk::Image				f_splash;$/;"	m	class:UI::SplashScreen
+f_splash	save/MainWindow.h	/^    SplashScreen		    f_splash;$/;"	m	class:UI::MainWindow
+f_splash_auto_hide	MainWindow.h	/^	sigc::connection		f_splash_auto_hide;$/;"	m	class:UI::MainWindow
+f_splash_auto_hide	save/MainWindow.h	/^	sigc::connection		f_splash_auto_hide;$/;"	m	class:UI::MainWindow
+f_startTime	save/MainWindow.h	/^	time_t					f_startTime;$/;"	m	class:UI::MainWindow
+f_stat	StatEditor.h	/^		Gtk::TreeModelColumn<Attribute::Stat::pointer_t>	f_stat;$/;"	m	class:UI::StatEditor::Columns
+f_statEditor	StatWindow.h	/^	StatEditor			f_statEditor;$/;"	m	class:UI::StatWindow
+f_statMap	EditWindow.h	/^	StatMap				f_statMap;$/;"	m	class:UI::EditWindow
+f_statTable	EditWindow.h	/^	motk::LabelTable			  f_statTable;$/;"	m	class:UI::EditWindow
+f_statsCopy	StatEditor.h	/^	StatList					f_statsCopy;$/;"	m	class:UI::StatEditor
+f_statusBar	StatusBox.h	/^	Gtk::Statusbar			f_statusBar;$/;"	m	class:UI::StatusBox
+f_statusBox	HUDWindow.h	/^	StatusBox				f_statusBox;$/;"	m	class:UI::HUDWindow
+f_statusBox	save/MainWindow.h	/^	StatusBox				f_statusBox;$/;"	m	class:UI::MainWindow
+f_statusColumn	CharacterView.h	/^	Gtk::TreeView::Column*					f_statusColumn;$/;"	m	class:UI::CharacterView
+f_statusInit	StatusBox.h	/^	Gtk::Statusbar			f_statusInit;$/;"	m	class:UI::StatusBox
+f_statusRounds	StatusBox.h	/^	Gtk::Statusbar			f_statusRounds;$/;"	m	class:UI::StatusBox
+f_store	EffectsList.h	/^	ListStorePtr		f_store;$/;"	m	class:UI::EffectsList
+f_store	StatEditor.h	/^	ListStorePtr				f_store;$/;"	m	class:UI::StatEditor
+f_table	DamageWindow.h	/^	motk::LabelTable				f_table;$/;"	m	class:UI::DamageWindow
+f_table	DuplicateWindow.h	/^	motk::LabelTable	f_table;$/;"	m	class:UI::DuplicateWindow
+f_table	EffectEditor.h	/^	motk::LabelTable         f_table;$/;"	m	class:UI::EffectEditor
+f_table	SettingsWindow.h	/^	motk::LabelTable		f_table;$/;"	m	class:UI::SettingsWindow
+f_table	TableConnections.h	/^		motk::LabelTable*	f_table;$/;"	m	struct:UI::TableConnection
+f_tableConn	TableConnections.h	/^		sigc::connection	f_tableConn;$/;"	m	struct:UI::TableConnection
+f_tableConnections	EditWindow.h	/^	TableConnections	f_tableConnections;$/;"	m	class:UI::EditWindow
+f_tableConnections	EffectEditor.h	/^	TableConnections         f_tableConnections;$/;"	m	class:UI::EffectEditor
+f_toggleConn	TableConnections.h	/^		sigc::connection	f_toggleConn;$/;"	m	struct:UI::TableConnection
+f_toolbarId	save/MainWindow.h	/^	motk::MergeId			f_toolbarId;$/;"	m	class:UI::MainWindow
+f_tooltips	CharacterView.h	/^	Gtk::Tooltips							f_tooltips;$/;"	m	class:UI::CharacterView
+f_tooltips	EditWindow.h	/^	Gtk::Tooltips		f_tooltips;$/;"	m	class:UI::EditWindow
+f_tooltips	EffectEditor.h	/^	Gtk::Tooltips            f_tooltips;$/;"	m	class:UI::EffectEditor
+f_tooltips	EffectsEditor.h	/^	Gtk::Tooltips		f_tooltips;$/;"	m	class:UI::EffectsEditor
+f_tooltips	EffectsList.h	/^	Gtk::Tooltips		f_tooltips;$/;"	m	class:UI::EffectsList
+f_tooltips	SettingsWindow.h	/^	Gtk::Tooltips			f_tooltips;$/;"	m	class:UI::SettingsWindow
+f_totalRounds	EffectsList.h	/^		Gtk::TreeModelColumn<int>			f_totalRounds;$/;"	m	struct:UI::EffectsList::Columns
+f_treeView	EffectsEditor.h	/^	EffectsList		f_treeView;$/;"	m	class:UI::EffectsEditor
+f_treeView	JumpInWindow.h	/^	Gtk::TreeView				f_treeView;$/;"	m	class:UI::JumpInWindow
+f_treeView	SettingsWindow.h	/^	Gtk::TreeView			f_treeView;$/;"	m	class:UI::SettingsWindow
+f_type	EffectsList.h	/^		Gtk::TreeModelColumn<Glib::ustring>		f_type;$/;"	m	struct:UI::EffectsList::Columns
+f_typeColumn	CharacterView.h	/^    Gtk::TreeView::Column*					f_typeColumn;$/;"	m	class:UI::CharacterView
+f_upButton	StatWindow.h	/^	Gtk::Button			f_upButton;$/;"	m	class:UI::StatWindow
+f_value	DamageWindow.h	/^	int								f_value;$/;"	m	class:UI::DamageWindow
+f_value	DuplicateWindow.h	/^	int			f_value;$/;"	m	class:UI::DuplicateWindow
+f_value	InputWindow.h	/^	std::string		f_value;$/;"	m	class:UI::InputWindow
+f_warnNoSave	save/MainWindow.h	/^	bool                    f_warnNoSave;$/;"	m	class:UI::MainWindow
+g_app_ext	save/MainWindow.cpp	/^	const char*	g_app_ext	= ".turnwatcher";$/;"	m	namespace:UI::__anon10	file:
+g_lower_range	EditWindow.cpp	/^	const double g_lower_range	= -1000.0;$/;"	m	namespace:UI::__anon13	file:
+g_lower_range	EffectEditor.cpp	/^	const double g_lower_range	= -100000.0;$/;"	m	namespace:UI::__anon6	file:
+g_lower_range	InitWindow.cpp	/^	const double g_lower_range	= -100000.0;$/;"	m	namespace:UI::__anon11	file:
+g_lower_range	SettingsWindow.cpp	/^	const double g_lower_range	= -1000.0;$/;"	m	namespace:UI::__anon2	file:
+g_upper_range	EditWindow.cpp	/^	const double g_upper_range	= 1000.0;$/;"	m	namespace:UI::__anon13	file:
+g_upper_range	EffectEditor.cpp	/^	const double g_upper_range	= 100000.0;$/;"	m	namespace:UI::__anon6	file:
+g_upper_range	InitWindow.cpp	/^	const double g_upper_range	= 100000.0;$/;"	m	namespace:UI::__anon11	file:
+g_upper_range	SettingsWindow.cpp	/^	const double g_upper_range	= 1000.0;$/;"	m	namespace:UI::__anon2	file:
+getFirstSelected	CharacterView.cpp	/^CharacterView::character_pointer_t CharacterView::getFirstSelected()$/;"	f	class:UI::CharacterView
+getSelected	CharacterView.cpp	/^CharacterView::character_list_t CharacterView::getSelected()$/;"	f	class:UI::CharacterView
+internalClear	CharacterView.cpp	/^void CharacterView::internalClear()$/;"	f	class:UI::CharacterView
+name	JumpInWindow.h	/^		Gtk::TreeModelColumn<Glib::ustring>			name;$/;"	m	class:UI::JumpInWindow::Columns
+name_map_t	InitWindow.h	/^	typedef std::map<molib::mo_name_t,Combatant::Character::pointer_t> name_map_t;$/;"	t	class:UI::InitWindow
+onAppSettingsChanged	CharacterView.cpp	/^void CharacterView::onAppSettingsChanged()$/;"	f	class:UI::CharacterView
+onEndRounds	CharacterView.cpp	/^void CharacterView::onEndRounds()$/;"	f	class:UI::CharacterView
+onModelChange	CharacterView.cpp	/^void CharacterView::onModelChange()$/;"	f	class:UI::CharacterView
+onSelectionChanged	CharacterView.cpp	/^void CharacterView::onSelectionChanged()$/;"	f	class:UI::CharacterView
+onStartRounds	CharacterView.cpp	/^void CharacterView::onStartRounds()$/;"	f	class:UI::CharacterView
+onTurnChanged	CharacterView.cpp	/^void CharacterView::onTurnChanged( const int index )$/;"	f	class:UI::CharacterView
+on_action_Edit_AddEffect_triggered	MainWindow.cpp	/^void MainWindow::on_action_Edit_AddEffect_triggered()$/;"	f	class:UI::MainWindow
+on_action_Edit_Add_triggered	MainWindow.cpp	/^void MainWindow::on_action_Edit_Add_triggered()$/;"	f	class:UI::MainWindow
+on_action_Edit_DeleteEffect_triggered	MainWindow.cpp	/^void MainWindow::on_action_Edit_DeleteEffect_triggered()$/;"	f	class:UI::MainWindow
+on_action_Edit_Delete_triggered	MainWindow.cpp	/^void MainWindow::on_action_Edit_Delete_triggered()$/;"	f	class:UI::MainWindow
+on_action_Edit_Duplicate_triggered	MainWindow.cpp	/^void MainWindow::on_action_Edit_Duplicate_triggered()$/;"	f	class:UI::MainWindow
+on_action_Edit_EditEffect_triggered	MainWindow.cpp	/^void MainWindow::on_action_Edit_EditEffect_triggered()$/;"	f	class:UI::MainWindow
+on_action_Edit_Edit_triggered	MainWindow.cpp	/^void MainWindow::on_action_Edit_Edit_triggered()$/;"	f	class:UI::MainWindow
+on_action_Edit_PurgeDeadCharacters_triggered	MainWindow.cpp	/^void MainWindow::on_action_Edit_PurgeDeadCharacters_triggered()$/;"	f	class:UI::MainWindow
+on_action_Edit_Redo_triggered	MainWindow.cpp	/^void MainWindow::on_action_Edit_Redo_triggered()$/;"	f	class:UI::MainWindow
+on_action_Edit_Undo_triggered	MainWindow.cpp	/^void MainWindow::on_action_Edit_Undo_triggered()$/;"	f	class:UI::MainWindow
+on_action_File_Clear_triggered	MainWindow.cpp	/^void MainWindow::on_action_File_Clear_triggered()$/;"	f	class:UI::MainWindow
+on_action_File_Export_triggered	MainWindow.cpp	/^void MainWindow::on_action_File_Export_triggered()$/;"	f	class:UI::MainWindow
+on_action_File_Import_triggered	MainWindow.cpp	/^void MainWindow::on_action_File_Import_triggered()$/;"	f	class:UI::MainWindow
+on_action_File_Preferences_triggered	MainWindow.cpp	/^void MainWindow::on_action_File_Preferences_triggered()$/;"	f	class:UI::MainWindow
+on_action_File_Quit_triggered	MainWindow.cpp	/^void MainWindow::on_action_File_Quit_triggered()$/;"	f	class:UI::MainWindow
+on_action_File_StatEditor_triggered	MainWindow.cpp	/^void MainWindow::on_action_File_StatEditor_triggered()$/;"	f	class:UI::MainWindow
+on_action_Help_Contact_triggered	MainWindow.cpp	/^void MainWindow::on_action_Help_Contact_triggered()$/;"	f	class:UI::MainWindow
+on_action_Help_Documentation_triggered	MainWindow.cpp	/^void MainWindow::on_action_Help_Documentation_triggered()$/;"	f	class:UI::MainWindow
+on_action_Help_HomePage_triggered	MainWindow.cpp	/^void MainWindow::on_action_Help_HomePage_triggered()$/;"	f	class:UI::MainWindow
+on_action_Help_License_triggered	MainWindow.cpp	/^void MainWindow::on_action_Help_License_triggered()$/;"	f	class:UI::MainWindow
+on_action_Help_Tutorial_triggered	MainWindow.cpp	/^void MainWindow::on_action_Help_Tutorial_triggered()$/;"	f	class:UI::MainWindow
+on_action_Roll_Initiative_triggered	MainWindow.cpp	/^void MainWindow::on_action_Roll_Initiative_triggered()$/;"	f	class:UI::MainWindow
+on_action_Rounds_Damage_triggered	MainWindow.cpp	/^void MainWindow::on_action_Rounds_Damage_triggered()$/;"	f	class:UI::MainWindow
+on_action_Rounds_Delay_triggered	MainWindow.cpp	/^void MainWindow::on_action_Rounds_Delay_triggered()$/;"	f	class:UI::MainWindow
+on_action_Rounds_End_triggered	MainWindow.cpp	/^void MainWindow::on_action_Rounds_End_triggered()$/;"	f	class:UI::MainWindow
+on_action_Rounds_Jump_triggered	MainWindow.cpp	/^void MainWindow::on_action_Rounds_Jump_triggered()$/;"	f	class:UI::MainWindow
+on_action_Rounds_MoveDown_triggered	MainWindow.cpp	/^void MainWindow::on_action_Rounds_MoveDown_triggered()$/;"	f	class:UI::MainWindow
+on_action_Rounds_MoveUp_triggered	MainWindow.cpp	/^void MainWindow::on_action_Rounds_MoveUp_triggered()$/;"	f	class:UI::MainWindow
+on_action_Rounds_Next_triggered	MainWindow.cpp	/^void MainWindow::on_action_Rounds_Next_triggered()$/;"	f	class:UI::MainWindow
+on_action_Rounds_Ready_triggered	MainWindow.cpp	/^void MainWindow::on_action_Rounds_Ready_triggered()$/;"	f	class:UI::MainWindow
+on_action_Rounds_Stabilize_triggered	MainWindow.cpp	/^void MainWindow::on_action_Rounds_Stabilize_triggered()$/;"	f	class:UI::MainWindow
+on_action_Rounds_Start_triggered	MainWindow.cpp	/^void MainWindow::on_action_Rounds_Start_triggered()$/;"	f	class:UI::MainWindow
+on_action_View_ShowEffectPane_triggered	MainWindow.cpp	/^void MainWindow::on_action_View_ShowEffectPane_triggered()$/;"	f	class:UI::MainWindow
+on_action_View_ShowHUDWindow_triggered	MainWindow.cpp	/^void MainWindow::on_action_View_ShowHUDWindow_triggered()$/;"	f	class:UI::MainWindow
+on_action_View_ShowToolbar_triggered	MainWindow.cpp	/^void MainWindow::on_action_View_ShowToolbar_triggered()$/;"	f	class:UI::MainWindow
+on_button_press_event	CharacterView.cpp	/^bool CharacterView::on_button_press_event( GdkEventButton* event )$/;"	f	class:UI::CharacterView
+on_button_press_event	Splash.cpp	/^bool SplashScreen::on_button_press_event(GdkEventButton *event)$/;"	f	class:UI::SplashScreen
+on_cursor_changed	CharacterView.cpp	/^void CharacterView::on_cursor_changed()$/;"	f	class:UI::CharacterView
+on_delete_event	HUDWindow.cpp	/^bool HUDWindow::on_delete_event( GdkEventAny* event )$/;"	f	class:UI::HUDWindow
+on_delete_event	InfoWindow.cpp	/^bool InfoWindow::on_delete_event(GdkEventAny* event)$/;"	f	class:UI::InfoWindow
+on_delete_event	save/MainWindow.cpp	/^bool MainWindow::on_delete_event(GdkEventAny* event)$/;"	f	class:UI::MainWindow
+on_editing_canceled	CharacterView.cpp	/^void CharacterView::on_editing_canceled()$/;"	f	class:UI::CharacterView
+on_editing_started	CharacterView.cpp	/^void CharacterView::on_editing_started( Gtk::CellEditable*, const Glib::ustring& )$/;"	f	class:UI::CharacterView
+on_event	save/MainWindow.cpp	/^bool MainWindow::on_event( GdkEvent* event )$/;"	f	class:UI::MainWindow
+on_hide	DamageWindow.cpp	/^void DamageWindow::on_hide()$/;"	f	class:UI::DamageWindow
+on_hide	DefineInitWindow.cpp	/^void DefineInitWindow::on_hide()$/;"	f	class:UI::DefineInitWindow
+on_hide	EditWindow.cpp	/^void EditWindow::on_hide()$/;"	f	class:UI::EditWindow
+on_hide	HUDWindow.cpp	/^void HUDWindow::on_hide()$/;"	f	class:UI::HUDWindow
+on_hide	InfoWindow.cpp	/^void InfoWindow::on_hide()$/;"	f	class:UI::InfoWindow
+on_hide	SettingsWindow.cpp	/^void SettingsWindow::on_hide()$/;"	f	class:UI::SettingsWindow
+on_hide	Splash.cpp	/^void SplashScreen::on_hide()$/;"	f	class:UI::SplashScreen
+on_hide	StatWindow.cpp	/^void StatWindow::on_hide()$/;"	f	class:UI::StatWindow
+on_hide	save/MainWindow.cpp	/^void MainWindow::on_hide()$/;"	f	class:UI::MainWindow
+on_key_press_event	CharacterView.cpp	/^bool CharacterView::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::CharacterView
+on_key_press_event	DamageWindow.cpp	/^bool DamageWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::DamageWindow
+on_key_press_event	DefineInitWindow.cpp	/^bool DefineInitWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::DefineInitWindow
+on_key_press_event	DuplicateWindow.cpp	/^bool DuplicateWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::DuplicateWindow
+on_key_press_event	EditWindow.cpp	/^bool EditWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::EditWindow
+on_key_press_event	EffectEditor.cpp	/^bool EffectEditor::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::EffectEditor
+on_key_press_event	EffectsBook.cpp	/^bool EffectsBook::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::EffectsBook
+on_key_press_event	ExpiredEffectsWindow.cpp	/^bool ExpiredEffectsWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::ExpiredEffectsWindow
+on_key_press_event	HUDWindow.cpp	/^bool HUDWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::HUDWindow
+on_key_press_event	InfoWindow.cpp	/^bool InfoWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::InfoWindow
+on_key_press_event	InitWindow.cpp	/^bool InitWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::InitWindow
+on_key_press_event	InputWindow.cpp	/^bool InputWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::InputWindow
+on_key_press_event	JumpInWindow.cpp	/^bool JumpInWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::JumpInWindow
+on_key_press_event	SettingsWindow.cpp	/^bool SettingsWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::SettingsWindow
+on_key_press_event	Splash.cpp	/^bool SplashScreen::on_key_press_event(GdkEventKey* event)$/;"	f	class:UI::SplashScreen
+on_key_press_event	StatEditor.cpp	/^bool StatEditor::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::StatEditor
+on_key_press_event	StatWindow.cpp	/^bool StatWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::StatWindow
+on_key_press_event	save/MainWindow.cpp	/^bool MainWindow::on_key_press_event( GdkEventKey* event )$/;"	f	class:UI::MainWindow
+on_response	EffectEditor.cpp	/^void EffectEditor::on_response( int response_id )$/;"	f	class:UI::EffectEditor
+on_response	ExpiredEffectsWindow.cpp	/^void ExpiredEffectsWindow::on_response( int response_id )$/;"	f	class:UI::ExpiredEffectsWindow
+on_response	InitWindow.cpp	/^void InitWindow::on_response( int response_id )$/;"	f	class:UI::InitWindow
+on_response	InputWindow.cpp	/^void InputWindow::on_response( int response_id )$/;"	f	class:UI::InputWindow
+on_response	SettingsWindow.cpp	/^void SettingsWindow::on_response( int response_id )$/;"	f	class:UI::SettingsWindow
+on_response	StatWindow.cpp	/^void StatWindow::on_response( int response_id )$/;"	f	class:UI::StatWindow
+on_show	DamageWindow.cpp	/^void DamageWindow::on_show()$/;"	f	class:UI::DamageWindow
+on_show	DefineInitWindow.cpp	/^void DefineInitWindow::on_show()$/;"	f	class:UI::DefineInitWindow
+on_show	DuplicateWindow.cpp	/^void DuplicateWindow::on_show()$/;"	f	class:UI::DuplicateWindow
+on_show	EditWindow.cpp	/^void EditWindow::on_show()$/;"	f	class:UI::EditWindow
+on_show	HUDWindow.cpp	/^void HUDWindow::on_show()$/;"	f	class:UI::HUDWindow
+on_show	InfoWindow.cpp	/^void InfoWindow::on_show()$/;"	f	class:UI::InfoWindow
+on_show	JumpInWindow.cpp	/^void JumpInWindow::on_show()$/;"	f	class:UI::JumpInWindow
+on_show	SettingsWindow.cpp	/^void SettingsWindow::on_show()$/;"	f	class:UI::SettingsWindow
+on_show	Splash.cpp	/^void SplashScreen::on_show()$/;"	f	class:UI::SplashScreen
+on_show	StatWindow.cpp	/^void StatWindow::on_show()$/;"	f	class:UI::StatWindow
+on_splash_auto_hide	save/MainWindow.cpp	/^bool MainWindow::on_splash_auto_hide(void)$/;"	f	class:UI::MainWindow
+pair_t	InitWindow.h	/^	typedef std::vector<CharacterPair> pair_t;$/;"	t	class:UI::InitWindow
+pointer_t	RoundsHelper.h	/^	typedef std::shared_ptr<RoundsHelper> pointer_t;$/;"	t	class:UI::RoundsHelper
+selected_paths_t	CharacterView.h	/^	typedef Gtk::TreeSelection::ListHandle_Path selected_paths_t;$/;"	t	class:UI::CharacterView
+selection_changed	JumpInWindow.cpp	/^void JumpInWindow::selection_changed()$/;"	f	class:UI::JumpInWindow
+setSelected	CharacterView.cpp	/^void CharacterView::setSelected( character_list_t chars )$/;"	f	class:UI::CharacterView
+setSelected	CharacterView.cpp	/^void CharacterView::setSelected( character_pointer_t ch )$/;"	f	class:UI::CharacterView
+setSelected	CharacterView.cpp	/^void CharacterView::setSelected( const Combatant::CharacterModel::iterator_t iter )$/;"	f	class:UI::CharacterView
+signal_changed	EditWindow.h	/^	CharacterSignal	signal_changed() { return f_changedSignal; }$/;"	f	class:UI::EditWindow
+signal_changed	EffectsList.h	/^	VoidSignal	signal_changed() { return f_changedSignal; }$/;"	f	class:UI::EffectsList
+signal_double_click	CharacterView.cpp	/^CharacterView::void_signal_t CharacterView::signal_double_click()$/;"	f	class:UI::CharacterView
+signal_edit	InfoBox.h	/^	CharSignal signal_edit() { return f_signalEdit; }$/;"	f	class:UI::InfoBox
+signal_edit	InfoWindow.h	/^	CharSignal	signal_edit() { return f_signalEdit; }$/;"	f	class:UI::InfoWindow
+signal_selection_changed	CharacterView.cpp	/^CharacterView::character_signal_t CharacterView::signal_selection_changed()$/;"	f	class:UI::CharacterView
+soft_columns_map_t	CharacterView.h	/^	typedef std::map<molib::mo_name_t,int>      soft_columns_map_t;$/;"	t	class:UI::CharacterView
+stat_map_t	save/MainWindow.h	/^	typedef std::map<Glib::ustring, Attribute::Stat::pointer_t>	stat_map_t;$/;"	t	class:UI::MainWindow
+tree_selection_t	CharacterView.h	/^	typedef Glib::RefPtr<Gtk::TreeSelection>    tree_selection_t;$/;"	t	class:UI::CharacterView
+updateNewColumns	CharacterView.cpp	/^void CharacterView::updateNewColumns()$/;"	f	class:UI::CharacterView
+void_signal_t	CharacterView.h	/^	typedef sigc::signal<void>					void_signal_t;$/;"	t	class:UI::CharacterView
+~AbilityEditor	AbilityEditor.cpp	/^AbilityEditor::~AbilityEditor()$/;"	f	class:UI::AbilityEditor
+~AboutWindow	AboutWindow.cpp	/^AboutWindow::~AboutWindow()$/;"	f	class:UI::AboutWindow
+~CharacterView	CharacterView.cpp	/^CharacterView::~CharacterView()$/;"	f	class:UI::CharacterView
+~DamageWindow	DamageWindow.cpp	/^DamageWindow::~DamageWindow()$/;"	f	class:UI::DamageWindow
+~DefineInitWindow	DefineInitWindow.cpp	/^DefineInitWindow::~DefineInitWindow()$/;"	f	class:UI::DefineInitWindow
+~DuplicateWindow	DuplicateWindow.cpp	/^DuplicateWindow::~DuplicateWindow()$/;"	f	class:UI::DuplicateWindow
+~EditWindow	EditWindow.cpp	/^EditWindow::~EditWindow()$/;"	f	class:UI::EditWindow
+~EffectEditor	EffectEditor.cpp	/^EffectEditor::~EffectEditor()$/;"	f	class:UI::EffectEditor
+~EffectsBook	EffectsBook.h	/^	~EffectsBook() {}$/;"	f	class:UI::EffectsBook
+~EffectsEditor	EffectsEditor.cpp	/^EffectsEditor::~EffectsEditor()$/;"	f	class:UI::EffectsEditor
+~EffectsList	EffectsList.cpp	/^EffectsList::~EffectsList()$/;"	f	class:UI::EffectsList
+~EventDisabler	save/MainWindow.h	/^	    ~EventDisabler()$/;"	f	class:UI::MainWindow::EventDisabler
+~ExpiredEffectsWindow	ExpiredEffectsWindow.cpp	/^ExpiredEffectsWindow::~ExpiredEffectsWindow()$/;"	f	class:UI::ExpiredEffectsWindow
+~HUDWindow	HUDWindow.cpp	/^HUDWindow::~HUDWindow()$/;"	f	class:UI::HUDWindow
+~InfoBox	InfoBox.cpp	/^InfoBox::~InfoBox()$/;"	f	class:UI::InfoBox
+~InfoWindow	InfoWindow.cpp	/^InfoWindow::~InfoWindow()$/;"	f	class:UI::InfoWindow
+~InitWindow	InitWindow.cpp	/^InitWindow::~InitWindow()$/;"	f	class:UI::InitWindow
+~InputWindow	InputWindow.cpp	/^InputWindow::~InputWindow()$/;"	f	class:UI::InputWindow
+~JumpInWindow	JumpInWindow.cpp	/^JumpInWindow::~JumpInWindow()$/;"	f	class:UI::JumpInWindow
+~MainWindow	MainWindow.cpp	/^MainWindow::~MainWindow()$/;"	f	class:UI::MainWindow
+~MainWindow	save/MainWindow.cpp	/^MainWindow::~MainWindow()$/;"	f	class:UI::MainWindow
+~NagWindow	NagWindow.cpp	/^NagWindow::~NagWindow()$/;"	f	class:UI::NagWindow
+~RoundsHelper	RoundsHelper.cpp	/^RoundsHelper::~RoundsHelper()$/;"	f	class:UI::RoundsHelper
+~SettingsWindow	SettingsWindow.cpp	/^SettingsWindow::~SettingsWindow()$/;"	f	class:UI::SettingsWindow
+~SplashScreen	Splash.cpp	/^SplashScreen::~SplashScreen()$/;"	f	class:UI::SplashScreen
+~StatEditor	StatEditor.cpp	/^StatEditor::~StatEditor()$/;"	f	class:UI::StatEditor
+~StatWindow	StatWindow.cpp	/^StatWindow::~StatWindow()$/;"	f	class:UI::StatWindow
+~StatusBox	StatusBox.h	/^	virtual ~StatusBox()	{}$/;"	f	class:UI::StatusBox

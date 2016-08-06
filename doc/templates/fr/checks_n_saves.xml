@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Lanc&eacute;s d'habilit&eacute;s et de sauvegardes secrets</h2>
+
+<p id="para">
+	Utilisez <b>Turn Watcher</b> pour rapidement lancer un d&eacute;s pour
+	chaque personnage avec un seul clique sur l'un des d&eacute;s de la
+	barre d'outils, et tout ceci en secret.
+
+	Vous pouvez m&ecirc;me trier les joueurs en fonction de ces jets de
+	d&eacute;s en cliquant sur la colonne correspondante.
+</p>
+
+<p align="center">
+	<img src="../images/tw_dice_icons.jpg" width="289" height="60"/>
+</p>
+
+<p id="example">
+	L'&eacute;quipe se d&eacute;place dans une nouvelle pi&egrave;ce du
+	donjon. Douglas veut lancer les d&eacute;s en secret pour savoir si
+	un des joueurs d&eacute;couvre une porte cach&eacute;e. Il clique
+	sur le bouton <i>D&eacute;tecter</i> de la barre d'outils, et
+	ensuite sur la colonne <i>D&eacute;tecter</i> pour trier les
+	personnages. Ceux avec la plus grande valeur se retrouvent en
+	t&ecirc;te de liste (ou en queue avec 2 cliques sur la colonne).
+</p>
+
+
+
+<!--
+	vim: ts=2 sw=2 tw=78
+-->

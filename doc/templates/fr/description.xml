@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<h2 align="center"><b>Turn Watcher&#x2122;</b>, qu'est-ce c'est?</h2>
+
+<p id="para">
+	Pendant que vous menez un jeu, vous, le ma&icirc;tre de jeu, &ecirc;tes
+	suppos&eacute; g&eacute;rer les combats sans difficult&eacute; et avec
+	abilit&eacute;.
+
+	Nous savons tous que certaines rencontres sont plut&ocirc;t simples
+	&agrave; jouer, mais que ce passe-t-il quand elles deviennent plus
+	compliqu&eacute;es?
+
+	Comment savez-vous o&ugrave; vous en &ecirc;tes avec les points de vie de
+	l'orc num&eacute;ro 12?
+
+	Comment savez-vous qu'un personnage va mourir d'une saign&eacute;e dans
+	3 rounds?
+
+	Comment vous rapellez-vous de l'ordre des personnages et des monstres
+	quand plusieurs d'entre eux veulent un d&eacute;lai?
+
+	Comment gardez-vous les informations &agrave; propos des actions de d&eacute;lai?
+
+	Avez-vous un bon moyen pour lancer les d&eacute;s en secret pour tester
+	une abilit&eacute; ou une sauvegarde pour tous vos joueurs d'un seul coup?
+
+	Ou une fa&ccedil;on simple de relancer les d&eacute;s d'initiative
+	pour tout le monde au d&eacute;but de chaque round?
+</p>
+
+<p id="para">
+	Si vous vous &ecirc;tes d&eacute;j&agrave; demand&eacute; s'il y
+	avait un meilleur moyen pour g&eacute;rer vos combats, alors
+	<b>Turn Watcher</b> est la solution que vous cherchiez!
+	<b>Turn Watcher</b> accepte un nombre illimit&eacute; de
+	personnages et de monstres et g&egrave;re leurs initiatives
+	et leurs points de vie, vous lib&eacute;rant de sorte &agrave;
+	ce que vous puissiez jouer pleinement et sans difficult&eacute;
+	inutile.
+</p>
+
+<p id="para">
+	<b>Turn Watcher</b>:
+</p>
+
+<div id="para">
+	<ul>
+		<li id="steps">Lance les d&eacute;s d'initiative pour tous les joueurs
+			et les monstres, r&eacute;sout les ex &aelig;quo et ordonne la liste en
+			fonction des r&eacute;sultats &#151; et tout ceci d'un seul clic!</li>
+		<li id="steps">Vous permet de changer l'ordre des personnages et des
+			monstres du point de vue de l'initiative en vous laissant les marquer
+			pour un d&eacute;lai ou une pr&eacute;paration; vous pouvez aussi
+			r&eacute;arranger l'ordre quand vous ajoutez un autre combattant
+			sans avoir &agrave; arr&ecirc;ter le combat.</li>
+		<li id="steps">Compte les rounds de combat pour vous.</li>
+		<li id="steps">Liste les point de vie et le status des personnages et
+			des monstres, et saigne les personnages mourrant de fa&ccedil;on
+			automatique jusqu'au moment o&ugrave; ils sont marqu&eacute;s morts
+			&agrave; -10 points de vie.</li>
+		<li id="steps">Lance les d&eacute;s en secret pour tester les
+			abilit&eacute;s et les sauvegardes de vos joueurs.</li>
+		<li id="steps">vous permet d'annuler et de refaire toutes les actions.</li>
+	</ul>
+</div>
+
+
+<!--
+	vim: ts=2 sw=2 tw=78
+-->
+

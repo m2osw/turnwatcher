@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Delayed and Readied Actions</h2>
+
+<p id="para">
+	When a character chooses to delay his action, click on the
+	<i>Delay</i> button on the toolbar. The character status
+	changes to <i>Delayed</i>.
+	Once the character is ready to jump in, click on the <i>Jump
+	In</i> button. If more than one combat participant is delayed,
+	<b>Turn Watcher</b> will ask you which one is jumping in.
+</p>
+
+<p align="center">
+	<img src="../images/tw_jumpin_dialog.jpg" width="246" height="167"/>
+</p>
+
+<p id="para">
+	When a character chooses to ready an action, click on the
+	<i>Ready</i> button on the toolbar. The character status
+	changes to <i>Readied</i>. Once the PC or monster action
+	is triggered, click on the <i>Jump In</i> button. If more
+	than one combat participant has a readied action, <b>Turn
+	Watcher</b> will ask you which one is jumping in.
+</p>
+
+
+<p id="para">
+	<b>Turn Watcher</b> automatically expires readied actions and
+	delays when a character or opponent's turn comes up in the
+	next round.
+</p>
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->
+

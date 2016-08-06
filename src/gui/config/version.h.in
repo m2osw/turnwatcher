@@ -1,0 +1,10 @@
+#ifndef VERSION_H
+#define VERSION_H
+
+#define turnwatcher_VERSION_MAJOR   @turnwatcher_VERSION_MAJOR@
+#define turnwatcher_VERSION_MINOR   @turnwatcher_VERSION_MINOR@
+#define turnwatcher_VERSION_PATCH   @turnwatcher_VERSION_PATCH@
+
+#define turnwatcher_PACKAGE_NAME    "@turnwatcher_PACKAGE_NAME@"
+#define turnwatcher_PACKAGE_VERSION	"@turnwatcher_VERSION_MAJOR@.@turnwatcher_VERSION_MINOR@.@turnwatcher_VERSION_PATCH@"
+#endif //VERSION_H

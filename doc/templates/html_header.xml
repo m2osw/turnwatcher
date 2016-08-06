@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+
+<!-- The HTML header defines the <head> ... </head> of all
+     the pages. We assume that all the pages are defined
+     in UTF-8 format (which is pretty well compressed in
+     most cases for us). -->
+
+<head>
+	<base href="$(BASE)$(LANG)/$(PAGE).html"/>
+	<title><mo:db:select query="$(PAGE).title"/></title>
+	<mo:db:order query="SELECT EXTRACT(YEAR FROM NOW()) AS year;" name="date">
+		<mo:db:select query="copyright" name="copyright">
+			<mo:if is_empty="$(copyright_field)">
+				<meta name="copyright" content="&#xA9; $(date_year) $(copyright)"/>
+			</mo:if>
+		<mo:db:whenempty/>
+			<!-- no copyright -->
+		</mo:db:select>
+	</mo:db:order>
+	<mo:db:select query="author" name="author">
+		<meta name="author" content="$(author)"/>
+	<mo:db:whenempty/>
+		<!-- no authors -->
+	</mo:db:select>
+	<mo:db:select query="$(PAGE).description" name="description">
+		<meta name="description" content="$(description)"/>
+	<mo:db:whenempty/>
+		<!-- no description -->
+	</mo:db:select>
+	<meta name="generator" content="$(generator)"/>
+	<mo:set name="/keywords" value=""/>
+	<mo:db:select query="keywords" name="keyword">
+		<mo:if is_not_empty="$(keywords)">
+			<mo:set name="/keywords" value="$(keywords), $(keyword)"/>
+		<mo:else/>
+			<mo:set name="/keywords" value="$(keyword)"/>
+		</mo:if>
+	<mo:db:whenempty/>
+		<!-- no keywords -->
+	</mo:db:select>
+	<mo:if is_not_empty="$(keywords)">
+		<meta name="keywords" content="$(keywords)"/>
+	</mo:if>
+	<!-- expires about 24h from now (really it's between 3h 1m and 11h 59m)
+
+		The Expire: header entry is now set by the server to 1 day ahead of the
+		last modification date of the files. This should suffice since we are
+		supposed to update these files about once a day.
+
+		<mo:set name="year" value="#(shell date +%Y)"/>
+		<mo:set name="month" value="#(shell date +%m)"/>
+		<mo:set name="day" value="#(shell date +%d)"/>
+		<mo:set name="date" value="#(expr &quot;#(year)&quot;[..-1])-#(expr &quot;#(month)&quot;[..-1])-#(expr #(day) + 1)"/>
+		<mo:set name="rfc822" value="#(shell date -d #(date) +&quot;%a, %d %b %Y 03:00:00 %Z&quot;)"/>
+		<meta http-equiv="expires" content="#(expr &quot;#(rfc822)&quot;[..-1])"/>
+	-->
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+
+	<!-- everyone gets the default style sheet -->
+	<link rel="stylesheet" href="../styles/documentation.css" type="text/css"/>
+	<mo:db:select query="$(PAGE).stylesheet" name="stylesheet">
+		<link rel="stylesheet" href="../styles/$(stylesheet).css" type="text/css"/>
+	<mo:db:whenempty/>
+		<!-- no specific stylesheet -->
+	</mo:db:select>
+
+	<mo:db:select query="$(PAGE).first" name="first"/>
+	<mo:if is_not_empty="$(first)">
+		<mo:db:select query="$(first).title" name="first_page_title"/>
+		<link rel="first" type="text/html" title="$(first_page_title)" href="$(first).html"/>
+	</mo:if>
+
+	<mo:db:select query="$(PAGE).next" name="next"/>
+	<mo:if is_not_empty="$(next)">
+		<mo:db:select query="$(next).title" name="next_page_title"/>
+		<link rel="next" type="text/html" title="$(next_page_title)" href="$(next).html"/>
+	</mo:if>
+
+	<mo:db:select query="$(PAGE).previous" name="previous"/>
+	<mo:if is_not_empty="$(previous)">
+		<mo:db:select query="$(previous).title" name="previous_page_title"/>
+		<link rel="prev" type="text/html" title="$(previous_page_title)" href="$(previous).html"/>
+	</mo:if>
+
+	<mo:db:select query="$(PAGE).last" name="last"/>
+	<mo:if is_not_empty="$(last)">
+		<mo:db:select query="$(last).title" name="last_page_title"/>
+		<link rel="last" type="text/html" title="$(last_page_title)" href="$(last).html"/>
+	</mo:if>
+
+	<mo:db:select query="description.title" name="description_title"/>
+	<mo:db:select query="get_started.title" name="get_started"/>
+	<mo:db:select query="shortcuts.title" name="shortcuts"/>
+	<mo:db:select query="technical.title" name="technical"/>
+
+	<link rel="chapter" type="text/html" title="$(description_title)" href="description.html"/>
+	<link rel="chapter" type="text/html" title="$(get_started)" href="get_started.html"/>
+	<link rel="chapter" type="text/html" title="$(shortcuts)" href="shortcuts.html"/>
+	<link rel="chapter" type="text/html" title="$(technical)" href="technical.html"/>
+
+	<mo:if cond="$(expr &quot;$(PAGE)&quot; != &quot;index&quot;)">
+		<mo:db:select query="main_menu[1].label" name="summary"/>
+		<link rel="contents" type="text/html" title="$(summary)" href="index.html"/>
+		<link rel="toc" type="text/html" title="$(summary)" href="index.html"/>
+		<link rel="start" type="text/html" title="$(summary)" href="index.html"/>
+		<link rel="up" type="text/html" title="$(summary)" href="index.html"/>
+	</mo:if>
+
+	<mo:db:select query="license.title" name="license"/>
+	<mo:db:select query="copyright.title" name="copyright_title"/>
+	<mo:db:select query="authors.title" name="authors"/>
+	<mo:db:select query="contact.title" name="contact"/>
+
+	<link rel="copyright" type="text/html" title="$(copyright_title)" href="copyright.html"/>
+	<link rel="author" type="text/html" title="$(authors)" href="authors.html"/>
+	<link rel="appendix" type="text/html" title="$(license)" href="license.html"/>
+	<link rel="appendix" type="text/html" title="$(copyright_title)" href="copyright.html"/>
+	<link rel="appendix" type="text/html" title="$(authors)" href="authors.html"/>
+	<link rel="appendix" type="text/html" title="$(contact)" href="contact.html"/>
+
+	<!-- the same page in different languages are alternates -->
+	<mo:db:select var="client" name="client"/>
+	<mo:db:select var="language" name="language"/>
+	<mo:db:string name="client"/>
+	<mo:db:order query="SELECT name, native, abbr2, abbr3t FROM languages, site_languages
+							WHERE language_no = language_ref
+							  AND client_ref IN (SELECT company_no FROM companies
+																		WHERE name = $(client) OR abbr ILIKE $(client))
+																				ORDER BY native, name;" name="lang">
+		<mo:if is_empty="$(lang_abbr2)">
+			<mo:set name="dir" value="$(lang_abbr3t)"/>
+		<mo:else/>
+			<mo:set name="dir" value="$(lang_abbr2)"/>
+		</mo:if>
+		<mo:if is_empty="$(lang_native)">
+			<mo:set name="tongue" value="$(lang_name)"/>
+		<mo:else/>
+			<mo:set name="tongue" value="$(lang_native)"/>
+		</mo:if>
+		<mo:if cond="$(expr &quot;$(lowercase $(language))&quot; != &quot;$(lowercase $(lang_name))&quot;
+									&&  &quot;$(lowercase $(language))&quot; != &quot;$(lowercase $(dir))&quot;)">
+			<link rel="alternate" type="text/html" title="$(capitalize $(tongue))" href="../$(lowercase $(dir))/$(lowercase $(LINK_PAGE)).html" lang="$(lowercase $(dir))" medium="Screen"/>
+		</mo:if>
+	</mo:db:order>
+
+	<script type="text/javascript" src="../js/overlib/overlib.js"><!-- overLIB (c) Erik Bosrup --></script>
+	<script type="text/javascript" src="../js/m2osw/get_object_position.js"><!-- (c) Made to Order Software, Corp. --></script>
+</head>
+
+<!--
+vim: ts=2
+-->

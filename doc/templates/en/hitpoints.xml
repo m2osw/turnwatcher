@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+
+<h2 align="center">Keeping Track of Hit Points</h2>
+
+<p id="para">
+	When a PC or monster takes damage in combat, highlight the
+	appropriate character and click on the <i>Damage</i> button.
+	Enter the amount of damage and press the <i>Add Damage</i>
+	button. Note that this does not change the initiative order
+	as the arrow does not change.
+</p>
+
+<p align="center">
+	<img src="../images/tw_damage_dialog.jpg"/>
+</p>
+
+<p id="para">
+	If a character receives healing, click on the <i>Damage</i> button
+	as well enter the amount of healing and press the <i>Add Health</i>
+	button instead. A character can also be brought up to its full
+	health automatically by clicking <i>Bring to Full</i>.
+</p>
+
+<p id="tip">
+	<b>Tip:</b> You may also apply mass damage or healing by
+	highlighting those characters you wish to effect and clicking on
+	the <i>Damage</i> button.
+</p>
+
+<p id="para">
+	If a character is <i>Dying</i> (i.e. the hit points have fallen
+	below zero (0) but has not yet reached negative ten (-10), <b>Turn
+	Watcher</b> will automatically bleed the character out one (1) hit
+	point at the end of each of the creature's turns (until he is
+	<i>Stabilized</i> or dead &#151; see below).
+</p>
+
+<p align="center">
+	<img src="../images/tw_bleedout1.jpg" width="487" height="79"/>
+</p>
+
+<p id="para">
+	If a <i>Dying</i> character becomes stabilized, then select
+	<span id="menu_ref">Stabilize</span> in the <span id="menu_ref">Rounds</span> menu and the status
+	will change from <i>Dying</i> to <i>Stabilized</i>.
+	<b>Turn Watcher</b> will no longer bleed the character out after
+	his turn unless he sustains more damage.
+	You can also heal the character back to zero (0) or more hit
+	points to prevent the bleeding.
+</p>
+
+<p align="center">
+	<img src="../images/tw_stabilize.jpg" width="547" height="46"/>
+</p>
+
+<p id="para">
+	When a character reaches negative ten (-10) hit points,
+	<b>Turn Watcher</b>
+	automatically marks the character <i>Dead</i> and grays it out.
+
+	Note that, by default, <b>Turn Watcher</b> doesn't give turns
+	to a dead character.
+
+	You can purge dead characters and monsters by highlighting
+	them and clicking the <i>Delete</i> button on the toolbar.
+</p>
+
+<p id="tip">
+	<b>Tip:</b>
+	You can disable the skip feature by unselecting the
+	check mark <span id="menu_ref">Skip Dead Characters</span>
+	in the <span id="menu_ref">Rounds</span> menu.
+</p>
+
+<p align="center">
+	<img src="../images/tw_bleedout2.jpg" width="505" height="112"/>
+</p>
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->

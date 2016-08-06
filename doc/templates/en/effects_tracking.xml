@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+
+<h2 align="center">Effects Tracking</h2>
+<p id="para">
+	When a combatant either creates an effect or is subject to an effect that
+	lasts more than one round, <b>Turn Watcher</b> can track that effect for you.
+	In fact, many effects on mulitple combatants may be tracked similarly.
+</p>
+<p id="para">
+	To add an effect, make sure the subject of the effect is highlighted in the
+	main window, then click the "plus" button located on the effects panel:
+</p>
+<p align="center">
+	<img src="../images/tw_effect_panel.png"/>
+</p>
+<p id="para">
+	A dialog will appear allowing you to enter the details of the effect.
+</p>
+<p align="center">
+	<img src="../images/tw_effect_add.png"/>
+</p>
+<p id="tip">
+	<b>Tip:</b> Use the shortcut keys &lt;CTRL&gt;&lt;SHIFT&gt;A to quickly add a new effect.
+</p>
+
+<p id="para">
+	Enter an <i>Effect Name</i>, which will appear in the effect panel on the
+	main window.
+	<i>Effect Description</i> also appears in the effect panel when the current
+	effect is chosen. You may put extra details into the field that will help
+	you to remember what the effect does. For example, "adds a +1 morale bonus
+	to all saves".
+	<i>Total Rounds</i> allows you to specify the number of
+	rounds the effect lasts, including the current round.
+	<i>Start In</i> allows
+	you to put a delay before the effect kicks in.
+	<i>Rounds Used</i> you may
+	leave at "0"&emdash;this gets updated by <b>Turn Watcher</b> automatically
+	each round that the effect is in running.
+</p>
+<p align="center">
+	<img src="../images/tw_effect_entry.png"/>
+</p>
+<p id="para">
+	The <i>Temporary Hit Points</i> field allows you to enter a number of temporary hit points which will
+	be deducted first when the combatant takes damage. As soon as the effect stops, the hit points are
+	removed automatically. <i>Hit Point Boost</i> will boost the combatants maximum hit points for
+	the duration of the effect.
+</p>
+<p id="tip">
+	<b>Tip:</b>You may add and delete multiple effects by highlighting combatants in the main window.
+	Use the &lt;CTRL&gt;&lt;SHIFT&gt;A and &lt;CTRL&gt;&lt;SHIFT&gt;X keys respectively for quick access.
+</p>
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->
+
+

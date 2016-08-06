@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Changer l'ordre des personnages</h2>
+
+<p id="para">
+	Avec <b>Turn watcher</b> vous pouvez ajouter ou importer des personnages
+	pendant un combat. Les nouveaux personnages se trouveront &agrave; la fin
+	de la liste du point de vue initiative.
+
+	Vous pouvez d&eacute;placer un ou plusieurs de ces personnages en haut
+	ou en bas de la liste d'initiative en cliquant sur les personnages
+	puis en s&eacute;lectionnant <span id="menu_ref">D&eacute;placer vers le
+	haut</span> ou <span id="menu_ref">D&eacute;placer vers le bas</span>
+	dans le menu <span id="menu_ref">Rounds</span>.
+</p>
+
+<p id="tip">
+	<b>Id&eacute;e&nbsp;:</b>
+	Utilisez les touches fl&ecirc;ch&eacute;es vers le haut ou vers
+	le bas avec une des touches de contr&ocirc;le appuy&eacute;e pour
+	d&eacute;placer les personnages dans la liste d'initiative vers
+	le haut ou vers le bas.
+</p>
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->
+

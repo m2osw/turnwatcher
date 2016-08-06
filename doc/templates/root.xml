@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<!-- the root defines the main structure of all the pages.
+     Thus everything which is common to all pages is
+     defined here (header, title, footer, menus) -->
+
+<mo:file>
+	<!-- to be correct, the connection needs to happen before
+			 the <html> start which is why we use mo:file -->
+	<mo:db:connect db="postgres://$(env_USER)@/xmlc" client="turnwatcher_documentation" lang="$(LANG)"/>
+
+	<mo:db:select query="xml_open"/> version="1.0" encoding="utf-8" <mo:db:select query="xml_close"/>
+	<mo:db:select query="doctype"/>
+
+	<html xml:lang="$(LANG)" lang="$(LANG)">
+		<mo:include src="html_header"/>
+		<mo:db:select query="$(PAGE).white_logo" name="white_logo"/>
+		<mo:if is_empty="$(white_logo)">
+			<mo:set name="white_logo" value="large_helmet.png"/>
+		</mo:if>
+		<body>
+			<div id="overDiv" style="position: absolute; visibility: hidden; z-index: 1000;"></div>
+			<mo:include src="structure"/>
+		</body>
+	</html>
+
+<!--
+vim: ts=2
+-->
+</mo:file>

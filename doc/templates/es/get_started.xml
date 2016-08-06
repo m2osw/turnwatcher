@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+
+<!-- LET'S GET STARTED -->
+<h2 align="center">&iexcl;&nbsp;Comencemos&nbsp;!</h2>
+
+<p id="para">
+	Es f&aacute;cil de ver como <b>Turn Watcher</b> es un
+	implemento muy &uacute;til en su armeria como maestro de
+	juego.
+
+	Las bases son&nbsp;:
+</p>
+
+<div id="para">
+	<ol>
+		<li id="steps">Crear una lista de personajes jugadores implicados en
+					el combate (usted puede volver a utilizar esta lista m&aacute;s
+					y m&aacute;s a medida que sus encuentros se realizan.)</li>
+		<li id="steps">Crear las listas de monstruos.</li>
+		<li id="steps">Traer la lista de PJs y una de las listas de monstruos para su encuentro.</li>
+		<li id="steps">&iexcl;&nbsp;Comience su combate&nbsp;!</li>
+	</ol>
+</div>
+
+
+
+
+<!-- ADDED PLAYER CHARACTERS -->
+<h3 align="center">Aumente los personaje jugadores</h3>
+
+<p id="para">
+	La primera vez que comience <b>Turn Watcher</b>, usted ver&aacute; una
+	lista vac&iacute;a.
+</p>
+
+<p>
+	<center><img src="../images/tw_main_window_blank.jpg" width="550" height="202"/></center>
+</p>
+
+<p id="para">
+	Lo primero que debe hacer es de entrar las estadisticas por cada uno
+	de sus personaje jugadores (PJs).
+
+	Nosotros le recomendados de prepararse (de crear sus listas) antes de su partido.
+
+	El no le es necesario de entrar las estadisticas en cada partido ya que
+	<b>Turn Watcher</b> se acuarda de ma&ntilde;era autom&aacute;tica.
+
+	Usted puede tambien poner al dia esta informaci&oacute;n cuando los
+	personajes cambien de nivel.
+</p>
+
+<p id="para">
+	<img src="../images/tw_add_toolbar.jpg" border="0" hspace="10" vspace="10" align="right" width="294" height="81"/>
+	Para comenzar su lista de personajes, clique en el bot&oacute;n y <b>Agregar</b>
+	aparece. Entre su nombre, sus ajustes de iniciativa, de
+	detecci&oacute;n, de escucha y de seguridad.
+
+	Enseguida, escriba el n&uacute;mero m&aacute;ximo de puntos de vida.
+
+	Por fin, escoja <i>Personaje</i> en el menu y clique en <i>Aceptar</i>.
+</p>
+
+
+<p id="para">
+	Repita estas etapas hasta la que usted haga entrar todos los
+	personajes en <b>Turn Watcher</b>.
+</p>
+
+<p id="tip">
+	<b>Idea&nbsp;:</b> Escriba la techa <b>TAB</b> para avanzar de un campo al otro.
+</p>
+
+<p id="para">
+	<center>
+		<img src="../images/tw_add_character.jpg" width="328" height="338"/>
+	</center>
+</p>
+
+<p id="example">
+	Doug entra las estadisticas para Shiena, una b&aacute;rbari humana
+	il clique sobre el bot&oacute;n aumentar y escriba <u>Shiena</u> en
+	el campo reservado para el nombre del personaje.
+
+	El avanza dentro de la casilla siguiente con la tecla TAB y escriba
+	los ahustes por su <i>Iniciativa</i>, su <i>Detecci&oacute;n</i>,
+	su <i>Escucha</i>, su <i>Seguridad</i> y por fin su puntos de vida.
+
+	El deja los <i>Da&ntilde;os actuales</i> a o y se asegura que el
+	<i>Tipo de personajes</i> es bien <i>Personaje</i>. Para terminar,
+	el clica en <i>Aceptar</i>.
+</p>
+
+
+<!-- EXPORTING PLAYER LIST -->
+<h3 align="center">Exportar una lista de personnaje jugadores</h3>
+
+<p id="para">
+	Una vez que usted ha entrado todos les PJs quienes intervienen con su
+	compa&ntilde;era en <b>Turn Watcher</b>, usted puede exportar su lista.
+
+	Escoga <span id="menu_ref">Exportar</span> con el men&uacute;
+	<span id="menu_ref">Fichero</span>.
+
+	Escriba un nombre del fichero y clique en el bot&oacute;n Salvar.
+</p>
+
+<p id="example">
+	<center>
+		<img src="../images/tw_export_dialog.jpg" vspace="10" width="382" height="163"/>
+	</center>
+</p>
+
+<p id="example">
+	Doug domina una campa&ntilde;a con cuatro jugadores.
+	El entra las estatiticas de cada uno de los cuatro personajes
+	y <b>Exporta</b> en un fichero llamado <u>Campa&ntilde;a del Dragon</u>.
+</p>
+
+
+
+<!-- CREATING ENCOUNTERS -->
+<h3 align="center">Crear los encuentros</h3>
+
+<p id="para">
+	Borra todos los personajes y monstruos de su lista seleccionando
+	<span id="menu_ref">Abandonar</span> en el menu
+	<span id="menu_ref">Fichero</span>.
+
+	Aseg&uacute;rse de exportar bien sus personajes jugadores antes de barrar
+	todo.
+</p>
+ 
+<p id="para">
+	<img src="../images/tw_monster_type.jpg" hspace="5" vspace="5" width="283" height="71" align="right"/>
+	Aumente los monstruos para sus encuentros es la mismo que aumantar los PJs.
+	Pero es necesario escoger <i>Monstruos</i> en lugar de <i>Personajes</i>
+	en el men&uacute; abajo.
+</p>
+
+<p id="para">
+	Por cada encuentro, aumentar &eacute;l &oacute; los diferentes montruos
+	quienes atacar&aacute;n los PJs.
+
+	<i>Exportar</i> cada grupo de monstruos en un fichero con un nombre
+	apropriado para este encuentro.
+</p>
+
+<p align="center">
+	<img src="../images/tw_duplicate.jpg" hspace="10" width="550" height="118"/>
+</p>
+
+<p id="tip">
+	<b>Idea&nbsp;:</b> Para duplicar r&aacute;pidamente un monstruo, clique en
+	&eacute;l en la lista y seleccione <span id="menu_ref">Duplicar</span>
+	en el men&uacute; <span id="menu_ref">Edici&oacute;n</span>.
+
+	<b>Turn Watcher</b> le pedira cu&aacute;ntas veces desea duplicar este
+	monstruo. &iexcl;&nbsp;Y usted podri&aacute; incluso hacer eso durante
+	un combate&nbsp;!
+</p>
+
+<p align="center">
+	<img src="../images/tw_ghoul_example.jpg" width="547" height="149"/>
+</p>
+
+<div id="example">
+	Doug ha previsto un encuentro con cuatro Ghouls...
+
+	<ul style="list-style-type: circle;">
+		<li>
+			El clica el bot&oacute;n <i>Aumentar</i> y tipo <b>Ghoul 1</b>
+			en el campo <i>Nombre del personaje</i>.
+		</li>
+		<li>
+			El entra los ajustes de un Ghoul&nbsp;: Iniciativa, Detectar, Escuchar
+			y Seguridad&nbsp;; despu&eacute;s los puntos de vida maximos.
+
+			El se agura que el <i>Tipo de personaje</i> est&eacute; bien metido
+			en el <i>Monstruo</i>.
+
+			Y para terminar &eacute;l clica en <i>Aceptar</i> para poner la <b>Ghoul</b> en
+			la lista.
+		</li>
+		<li>
+			El selecciona <b>Ghoul 1</b> en la lista clicando encima y elije
+			<span id="menu_ref">Duplicar</span> en el men&uacute;
+			<span id="menu_ref">Editar</span>.
+		</li>
+		<li>
+			En la ventana, &eacute;l entra el n&uacute;mero 3 y clica en <i>Aceptar</i>.
+		</li>
+	</ul>
+
+	Ahora, &eacute;l tiene cuatro <b>Ghouls</b> para atacar sus jugadores.
+</div>
+
+
+<!-- EXPORT OPPONENTS -->
+<h3 align="center">Exportar una lista de montruos para un encuentro</h3>
+
+<p id="para">
+	Ahora que usted tiene una lista de monstruos usted puede salvarla en un
+	fichero utilizando <span id="menu_ref">Exportar</span> en el menu
+	<span id="menu_ref">Fichero</span>.
+
+	En el di&aacute;logo de seguridad escriba un nombre de fichero y clique
+	en <i>Salvar</i>.
+</p>
+
+<p id="example">
+	Doug escoge <span id="menu_ref">Exportar</span> en el men&uacute;
+	<span id="menu_ref">Fichero</span> y el exporta su lista de cuatro
+	Ghouls en una fila llamado <u>Ghoul Encuentro</u>.
+
+	Enseguida el selecciona <span id="menu_ref">Abandonar</span>
+	en el men&uacute; <span id="menu_ref">Fichero</span>, y el vuelve
+	a commenzar con los monstruos del encuentro sigiente.
+</p>
+
+<p id="para">
+	Repita estos asombrosos para cada encuentro que usted ha previsto en
+	su pr&oacute;ximo partido.
+</p>
+
+<p id="tip">
+	<b>Idea&nbsp;:</b> Cree algunas listas de monstruos para los encuentros
+	improvisados a utilizar para amenizar sus partidos.
+</p>
+
+
+
+<!--
+	vim: ts=2 sw=2 tw=78
+-->

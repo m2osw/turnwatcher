@@ -1,0 +1,51 @@
+Source: turnwatcher
+Priority: optional
+Maintainer: R. Douglas Barbieri <doug@m2osw.com>
+Build-Depends: debhelper (>= 8.0.0), cmake
+Standards-Version: 3.6.1
+Section: x11
+
+Package: turnwatcher
+Section: x11
+Architecture: i386
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: turnwatcher-beta, turnwatcher-demo
+Conflicts: turnwatcher-beta, turnwatcher-demo
+Description: Turn Watcher (tm) RPG GM Initiative Tracker
+ Turn Watcher (tm) is a friend to RPG Game Masters. It helps the GM track
+ initiative rounds during combat, keeping track of the current turn. It also
+ tracks current hit points, keeps track of characters and monsters who delay or
+ ready an action and shows the current round number. Turn Watcher is not a free
+ application; a license from Made to Order Software Corporation must be
+ purchased in order to use this software.
+
+Package: turnwatcher-demo
+Section: x11
+Architecture: i386
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: turnwatcher-beta, turnwatcher
+Conflicts: turnwatcher-beta, turnwatcher
+Description: Turn Watcher (tm) RPG GM Initiative Tracker (Demo)
+ Turn Watcher (tm) is a friend to RPG Game Masters. It helps the GM track
+ initiative rounds during combat, keeping track of the current turn. It also
+ tracks current hit points, keeps track of characters and monsters who delay or
+ ready an action and shows the current round number. Turn Watcher is not a free
+ application; a license from Made to Order Software Corporation must be
+ purchased in order to use this software.
+ This is a demo version of Turn Watcher, with limited functionality and nag screens.
+
+Package: turnwatcher-beta
+Section: x11
+Architecture: i386
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Replaces: turnwatcher-demo, turnwatcher
+Conflicts: turnwatcher-demo, turnwatcher
+Description: Turn Watcher (tm) RPG GM Initiative Tracker (Beta)
+ Turn Watcher (tm) is a friend to RPG Game Masters. It helps the GM track
+ initiative rounds during combat, keeping track of the current turn. It also
+ tracks current hit points, keeps track of characters and monsters who delay or
+ ready an action and shows the current round number. Turn Watcher is not a free
+ application; a license from Made to Order Software Corporation must be
+ purchased in order to use this software.
+ This is a beta version of Turn Watcher, fully functional, but pre-release code.
+

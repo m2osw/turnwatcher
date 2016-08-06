@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Iniciativa a la antig&uuml;a (&nbsp;Optional&nbsp;)</h2>
+
+<p id="para">
+	<img src="../images/tw_ultrainit_menu.jpg" hspace="10" vspace="10" align="left"/>
+	Si usted es uno de esos maestro de juegos que le gusta mucho cuando la
+	acci&oacute;n cambia a cada raund, entonces seleccion
+	<span id="menu_ref">Iniciativa a la antig&uuml;a</span> en el men&uacute;
+	<span id="menu_ref">Raunds</span>.
+
+	En moda Iniciativa a la manera antig&uuml;a, <b>Turn Watcher</b> relanza la
+	iniciativa de manera autom&aacute;tica al comienzo de cada raund.
+</p>
+
+<p id="tip">
+	<b>Idea&nbsp;:</b>
+	Utilice Ctr-U para invertir la utilizaci&oacute;n de la iniciativa a la
+	manera antig&uuml;a en todo momento, que ja sea durante el combate
+	&oacute; fuera de &eacute;l.
+</p>
+
+
+
+<!--
+	vim: ts=2 sw=2 tw=78
+-->

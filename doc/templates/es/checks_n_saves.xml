@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Lances de habilidad<br/>y de salvaguardo secretos</h2>
+
+<p id="para">
+	Utilise <b>Turn Watcher</b> para lanzar r&aacute;pidamente un dado por
+	cada personaje con un s&oacute;lo clique sobre uno dados de la barra de
+	implementos, y todos esto en secreto.
+
+	Usted puede incluso seleccionar los jugadores en funci&oacute;n de sus
+	tiros de dados clicando sobre la columna correspondiente.
+</p>
+
+<p align="center">
+	<img src="../images/tw_dice_icons.jpg" width="289" height="60"/>
+</p>
+
+<p id="example">
+	El equipo se desplaza dentro de una nueva sala del torreon.
+	Douglas desea tirar los dados en secreto para saber si uno de
+	los jugadores descubre una puerta escondida. El clica en el
+	bot&oacute;n <i>Detector</i> de la barra de implementes, y
+	enseguida sobre la columna <i>Detectar</i> para seleccionar
+	los personajes. Esos de m&aacute;s valor se encuentran en
+	cabeza de lista (&oacute; en cola con 2 clicadas sobre la columna).
+</p>
+
+
+
+<!--
+	vim: ts=2 sw=2 tw=78
+-->

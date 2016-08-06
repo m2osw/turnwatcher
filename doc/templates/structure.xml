@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+
+<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
+	<tbody>
+		<tr>
+			<td valign="top">
+
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tbody>
+						<tr>
+							<td width="100%" height="84" valign="middle">
+								<div id="title" width="100%">
+									<mo:db:select query="$(PAGE).title"/>
+									<mo:if cond="$(expr &quot;$(PAGE)&quot; != &quot;index&quot;)">
+										<br/>
+										<span id="sub_title" width="100%"><mo:db:select query="index.title"/></span>
+									</mo:if>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" valign="middle" width="100%" height="31">
+								<script type="text/javascript">
+									if(navigator.appVersion.indexOf("MSIE") > 0) {
+										document.write('<div id="menu_msie">');
+									}
+									else {
+										document.write('<div id="menu">');
+									}
+								</script>
+									<mo:db:select query="main_menu.link" name="menu">
+										<mo:replace name="menu" format="vn"/>
+										&nbsp; <a id="menu_item" href="$(menu)"><mo:db:select query="main_menu[$(menu_index)].label"/></a> &nbsp;
+									</mo:db:select>
+								<!-- too bad, but our XML parser cannot know that the 1st script generates a <div ...> -->
+								<script type="text/javascript">
+									document.write('</div>');
+								</script>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<mo:db:select query="$(PAGE).width" name="width"/>
+				<mo:if is_empty="$(width)">
+					<mo:set name="width" value="550"/>
+				</mo:if>
+
+				<mo:set name="np" value="0"/>
+
+				<mo:db:select query="$(PAGE).next" name="next"/>
+				<mo:if is_not_empty="$(next)">
+					<mo:db:select query="$(next).title" name="next_page_title"/>
+					<mo:replace name="next_page_title" format="qn"/>
+					<mo:set name="next"><a id="next_previous" href="$(next).html"
+							onmouseover="javascript: return overlib('$(next_page_title)', WRAP, 1)"
+							onmouseout="javascript: return nd();"><mo:db:select query="next_page"/></a></mo:set>
+					<mo:set name="np" value="1"/>
+				</mo:if>
+
+				<mo:db:select query="$(PAGE).previous" name="previous"/>
+				<mo:if is_not_empty="$(previous)">
+					<mo:db:select query="$(previous).title" name="previous_page_title"/>
+					<mo:replace name="previous_page_title" format="qn"/>
+					<mo:set name="previous"><a id="next_previous" href="$(previous).html"
+							onmouseover="javascript: return overlib('$(previous_page_title)', WRAP, 1)"
+							onmouseout="javascript: return nd();"><mo:db:select query="previous_page"/></a></mo:set>
+					<mo:set name="np" value="1"/>
+				</mo:if>
+
+				<table width="100%">
+					<tbody>
+						<tr>
+							<td align="center">
+								<table width="$(width)">
+									<tbody>
+										<mo:if cond="$(np)">
+											<tr>
+												<td align="left">$(previous)</td>
+												<td align="right">$(next)</td>
+											</tr>
+										</mo:if>
+										<tr>
+											<td colspan="2">
+												<!-- that is the height of the title we want to skip! -->
+												<p style="margin-top: 30px;">&nbsp;</p>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<mo:include src="$(PAGE)"/>
+												<br/>
+												<br/>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom" width="100%">
+				<mo:if cond="$(np)">
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td align="center">
+									<table width="$(width)">
+										<tbody>
+											<tr>
+												<td align="left">$(previous)</td>
+												<td align="right">$(next)</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</mo:if>
+
+				<mo:if cond="$(expr &quot;$(PAGE)&quot; == &quot;index&quot;)">
+					<mo:db:select var="client" name="client"/>
+					<mo:db:select var="language" name="language"/>
+					<mo:db:string name="client"/>
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td align="center" style="font-size: 60%;">
+									<mo:db:select query="languages_available" client="m2osw"/>
+									<mo:db:order query="SELECT name, native, abbr2, abbr3t FROM languages, site_languages
+															WHERE language_no = language_ref
+															  AND client_ref IN (SELECT company_no FROM companies
+																										WHERE name = $(client) OR abbr ILIKE $(client))
+																												ORDER BY native, name;" name="lang">
+										<mo:if is_empty="$(lang_abbr2)">
+											<mo:set name="dir" value="$(lang_abbr3t)"/>
+										<mo:else/>
+											<mo:set name="dir" value="$(lang_abbr2)"/>
+										</mo:if>
+										<mo:if is_empty="$(lang_native)">
+											<mo:set name="tongue" value="$(lang_name)"/>
+										<mo:else/>
+											<mo:set name="tongue" value="$(lang_native)"/>
+										</mo:if>
+										<mo:if cond="$(expr &quot;$(lowercase $(language))&quot; != &quot;$(lowercase $(lang_name))&quot;
+																	&&  &quot;$(lowercase $(language))&quot; != &quot;$(lowercase $(dir))&quot;)">
+											&nbsp; <a href="../$(lowercase $(dir))/$(lowercase $(LINK_PAGE)).html" lang="$(lowercase $(dir))">$(tongue)</a>
+										</mo:if>
+									</mo:db:order>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</mo:if>
+
+				<table id="copyright_table" align="center" width="550" cellpadding="3" cellspacing="3" border="0">
+					<tbody>
+						<tr>
+							<td valign="middle" align="right">
+								<a href="http://www.m2osw.com"><img src="../images/small_m2osw_logo.png" border="0"/></a>
+							</td>
+							<td align="center" valign="middle">
+								<div id="bottom_copyright">
+									<mo:db:order query="SELECT EXTRACT(YEAR FROM NOW()) AS year;" name="date">
+										<mo:db:select query="copyright" name="copyright">
+											<mo:if is_empty="$(copyright_field)">
+												&nbsp; &#xA9; 2006-$(date_year)&nbsp; $(copyright)
+											</mo:if>
+										</mo:db:select>
+									</mo:db:order>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<!--
+vim: ts=2
+-->

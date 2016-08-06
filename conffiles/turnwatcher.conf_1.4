@@ -1,0 +1,2043 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE propbag [
+	<!ELEMENT int EMPTY>
+	<!ATTLIST int name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT longlong EMPTY>
+	<!ATTLIST longlong name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT float EMPTY>
+	<!ATTLIST float name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT double EMPTY>
+	<!ATTLIST double name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT pointer EMPTY>
+	<!ATTLIST pointer name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT string (#PCDATA)>
+	<!ATTLIST string name CDATA #REQUIRED xml:space (preserve) 'preserve'>
+	<!ELEMENT binary (#PCDATA)>
+	<!ATTLIST binary name CDATA #REQUIRED mode (hex|base64) #REQUIRED>
+	<!ELEMENT external EMPTY>
+	<!ATTLIST external name CDATA #REQUIRED value CDATA #REQUIRED>
+	<!ELEMENT int_item EMPTY>
+	<!ATTLIST int_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT longlong_item EMPTY>
+	<!ATTLIST longlong_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT float_item EMPTY>
+	<!ATTLIST float_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT double_item EMPTY>
+	<!ATTLIST double_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT pointer_item EMPTY>
+	<!ATTLIST pointer_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT string_item (#PCDATA)>
+	<!ATTLIST string_item name CDATA #REQUIRED xml:space (preserve) 'preserve' item CDATA #REQUIRED>
+	<!ELEMENT binary_item (#PCDATA)>
+	<!ATTLIST binary_item name CDATA #REQUIRED mode (hex|base64) #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT external_item EMPTY>
+	<!ATTLIST external_item name CDATA #REQUIRED value CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT array_item (array_item|int_item|longlong_item|float_item|double_item|pointer_item|string_item|binary_item|external_item|propbag_item)*>
+	<!ATTLIST array_item name CDATA #REQUIRED item CDATA #REQUIRED type (any|array|int|longlong|float|double|pointer|string|binary|propbag) "any">
+	<!ELEMENT propbag_item (array|int|longlong|float|double|pointer|string|binary|external|propbag)*>
+	<!ATTLIST propbag_item name CDATA #REQUIRED item CDATA #REQUIRED>
+	<!ELEMENT array (array_item|int_item|longlong_item|float_item|double_item|pointer_item|string_item|binary_item|external_item|propbag_item)*>
+	<!ATTLIST array name CDATA #REQUIRED type (any|array|int|longlong|float|double|pointer|string|binary|propbag) "any">
+	<!ELEMENT propbag (array|int|longlong|float|double|pointer|string|binary|external|propbag)*>
+	<!ATTLIST propbag name CDATA #REQUIRED>
+]>
+<propbag name="TURNWATCHER">
+  <propbag name="STATS">
+    <array name="STATS">
+      <propbag_item item="0" name="STAT">
+        <string name="STAT_ID">INIT_ID</string>
+        <string name="ABILITY_ID">NONE</string>
+        <string name="NAME">Init</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL"></string>
+        <int name="SHOW_ON_TOOLBAR" value="0"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="1"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="-1"/>
+      </propbag_item>
+      <propbag_item item="1" name="STAT">
+        <string name="STAT_ID">HITPOINTS_ID</string>
+        <string name="ABILITY_ID">NONE</string>
+        <string name="NAME">Hit Points</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL"></string>
+        <int name="SHOW_ON_TOOLBAR" value="0"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="1"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="-1"/>
+      </propbag_item>
+      <propbag_item item="2" name="STAT">
+        <string name="STAT_ID">SPOT_ID</string>
+        <string name="ABILITY_ID">NONE</string>
+        <string name="NAME">Spot</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL">s</string>
+        <int name="SHOW_ON_TOOLBAR" value="1"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="0"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="1"/>
+      </propbag_item>
+      <propbag_item item="3" name="STAT">
+        <string name="STAT_ID">LISTEN_ID</string>
+        <string name="ABILITY_ID">NONE</string>
+        <string name="NAME">Listen</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL">l</string>
+        <int name="SHOW_ON_TOOLBAR" value="1"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="0"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="2"/>
+      </propbag_item>
+      <propbag_item item="4" name="STAT">
+        <string name="STAT_ID">WILL_ID</string>
+        <string name="ABILITY_ID">NONE</string>
+        <string name="NAME">Will</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL">w</string>
+        <int name="SHOW_ON_TOOLBAR" value="1"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="0"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="3"/>
+      </propbag_item>
+      <propbag_item item="5" name="STAT">
+        <string name="STAT_ID">LEVEL_ID</string>
+        <string name="ABILITY_ID">NONE</string>
+        <string name="NAME">Level</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL"></string>
+        <int name="SHOW_ON_TOOLBAR" value="0"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="1"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="-1"/>
+      </propbag_item>
+      <propbag_item item="6" name="STAT">
+        <string name="STAT_ID">STR_ID</string>
+        <string name="ABILITY_ID">UNNAMED</string>
+        <string name="NAME">STR_ID</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL"></string>
+        <int name="SHOW_ON_TOOLBAR" value="1"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="0"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="4"/>
+      </propbag_item>
+      <propbag_item item="7" name="STAT">
+        <string name="STAT_ID">DEX_ID</string>
+        <string name="ABILITY_ID">UNNAMED</string>
+        <string name="NAME">DEX_ID</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL"></string>
+        <int name="SHOW_ON_TOOLBAR" value="1"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="0"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="5"/>
+      </propbag_item>
+      <propbag_item item="8" name="STAT">
+        <string name="STAT_ID">CON_ID</string>
+        <string name="ABILITY_ID">UNNAMED</string>
+        <string name="NAME">CON_ID</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL"></string>
+        <int name="SHOW_ON_TOOLBAR" value="1"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="0"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="6"/>
+      </propbag_item>
+      <propbag_item item="9" name="STAT">
+        <string name="STAT_ID">INT_ID</string>
+        <string name="ABILITY_ID">UNNAMED</string>
+        <string name="NAME">INT_ID</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL"></string>
+        <int name="SHOW_ON_TOOLBAR" value="1"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="0"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="7"/>
+      </propbag_item>
+      <propbag_item item="10" name="STAT">
+        <string name="STAT_ID">WIS_ID</string>
+        <string name="ABILITY_ID">UNNAMED</string>
+        <string name="NAME">WIS_ID</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL"></string>
+        <int name="SHOW_ON_TOOLBAR" value="1"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="0"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="8"/>
+      </propbag_item>
+      <propbag_item item="11" name="STAT">
+        <string name="STAT_ID">CHA_ID</string>
+        <string name="ABILITY_ID">UNNAMED</string>
+        <string name="NAME">CHA_ID</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL"></string>
+        <int name="SHOW_ON_TOOLBAR" value="1"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="0"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="9"/>
+      </propbag_item>
+      <propbag_item item="12" name="STAT">
+        <string name="STAT_ID">FORTITUDE_ID</string>
+        <string name="ABILITY_ID">UNNAMED</string>
+        <string name="NAME">FORTITUDE_ID</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL"></string>
+        <int name="SHOW_ON_TOOLBAR" value="1"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="0"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="10"/>
+      </propbag_item>
+      <propbag_item item="13" name="STAT">
+        <string name="STAT_ID">REFLEX_ID</string>
+        <string name="ABILITY_ID">UNNAMED</string>
+        <string name="NAME">REFLEX_ID</string>
+        <int name="DICE" value="1"/>
+        <int name="FACES" value="20"/>
+        <int name="MODIFIER" value="0"/>
+        <int name="DELETED" value="0"/>
+        <string name="ACCEL"></string>
+        <int name="SHOW_ON_TOOLBAR" value="1"/>
+        <int name="SHOW_ON_HUD" value="0"/>
+        <int name="SHOW_MONSTER_ON_HUD" value="0"/>
+        <int name="IS_INTERNAL" value="0"/>
+        <int name="IS_ABILITY" value="0"/>
+        <int name="ORDER" value="11"/>
+      </propbag_item>
+    </array>
+  </propbag>
+  <propbag name="CHARACTERS">
+    <array name="CHARACTERS">
+      <propbag_item item="0" name="CHARACTER">
+        <int name="DAMAGE" value="17"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="-4"/>
+            <int name="ROLL" value="5"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="3"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="11"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="6"/>
+            <int name="ROLL" value="10"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="24"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="4"/>
+            <int name="ROLL" value="21"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="4"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="10"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="8"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="7"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="3"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="3"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">Yolanda</string>
+        <int name="MONSTER" value="0"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="7"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="33"/>
+        <propbag name="EFFECTS">
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Yolanda</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="1" name="CHARACTER">
+        <int name="DAMAGE" value="14"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="2"/>
+            <int name="ROLL" value="14"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="7"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="4"/>
+            <int name="ROLL" value="11"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="17"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="16"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="11"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="16"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="16"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="1"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="4"/>
+            <int name="ROLL" value="24"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="13"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">Aedra</string>
+        <int name="MONSTER" value="0"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="14"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="34"/>
+        <propbag name="EFFECTS">
+          <propbag name="0">
+            <int name="TYPE" value="0"/>
+            <string name="NAME">Bless</string>
+            <string name="DESCRIPTION"></string>
+            <int name="TOTALROUNDS" value="10"/>
+            <int name="STARTIN" value="0"/>
+            <int name="HPBOOST" value="0"/>
+            <int name="ROUNDSUSED" value="0"/>
+            <int name="ACTIVE" value="1"/>
+          </propbag>
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Aedra</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="2" name="CHARACTER">
+        <int name="DAMAGE" value="0"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="2"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="-1"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="-1"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="4"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="8"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="3"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="20"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="5"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="16"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="3"/>
+            <int name="ROLL" value="4"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="16"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">Savome</string>
+        <int name="MONSTER" value="0"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="9"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="32"/>
+        <propbag name="EFFECTS">
+          <propbag name="0">
+            <int name="TYPE" value="0"/>
+            <string name="NAME">Bulls Strength</string>
+            <string name="DESCRIPTION"></string>
+            <int name="TOTALROUNDS" value="100"/>
+            <int name="STARTIN" value="0"/>
+            <int name="HPBOOST" value="4"/>
+            <int name="ROUNDSUSED" value="0"/>
+            <int name="ACTIVE" value="1"/>
+          </propbag>
+          <propbag name="1">
+            <int name="TYPE" value="0"/>
+            <string name="NAME">Bears Endurance</string>
+            <string name="DESCRIPTION"></string>
+            <int name="TOTALROUNDS" value="100"/>
+            <int name="STARTIN" value="0"/>
+            <int name="HPBOOST" value="0"/>
+            <int name="ROUNDSUSED" value="0"/>
+            <int name="ACTIVE" value="1"/>
+          </propbag>
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Savome</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="3" name="CHARACTER">
+        <int name="DAMAGE" value="0"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="11"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="3"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="8"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="17"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="2"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="5"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="17"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="4"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">City Guard</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="5"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="25"/>
+        <propbag name="EFFECTS">
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Male Guard in Scale Mail</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="4" name="CHARACTER">
+        <int name="DAMAGE" value="12"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="10"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="19"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="20"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="19"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="16"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="22"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="7"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="14"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="7"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="9"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="1"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">Cleric Guard Captain</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="3"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="32"/>
+        <propbag name="EFFECTS">
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Femail Guard, Breastplate</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="5" name="CHARACTER">
+        <int name="DAMAGE" value="22"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="21"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="16"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="22"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="8"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="23"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="3"/>
+            <int name="ROLL" value="21"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="2"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="7"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="4"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="2"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="19"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="11"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="14"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="10"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">City Guard 2</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="8"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="25"/>
+        <propbag name="EFFECTS">
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Male Guard in Scale Mail</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="6" name="CHARACTER">
+        <int name="DAMAGE" value="0"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="5"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="8"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="25"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="11"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="24"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="3"/>
+            <int name="ROLL" value="10"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="16"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="4"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="13"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="13"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="10"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="2"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="14"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="19"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">City Guard 3</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="2"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="25"/>
+        <propbag name="EFFECTS">
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Male Guard in Scale Mail</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="7" name="CHARACTER">
+        <int name="DAMAGE" value="0"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="8"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="13"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="25"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="24"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="3"/>
+            <int name="ROLL" value="22"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="8"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="17"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="20"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="10"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="14"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="13"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="8"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">City Guard 4</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="1"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="25"/>
+        <propbag name="EFFECTS">
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Male Guard in Scale Mail</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="8" name="CHARACTER">
+        <int name="DAMAGE" value="0"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="20"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="3"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="11"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="25"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="3"/>
+            <int name="ROLL" value="20"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="13"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="9"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="9"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="13"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="14"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="10"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">City Guard 5</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="12"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="25"/>
+        <propbag name="EFFECTS">
+          <propbag name="0">
+            <int name="TYPE" value="0"/>
+            <string name="NAME">Bless</string>
+            <string name="DESCRIPTION"></string>
+            <int name="TOTALROUNDS" value="15"/>
+            <int name="STARTIN" value="0"/>
+            <int name="HPBOOST" value="0"/>
+            <int name="ROUNDSUSED" value="0"/>
+            <int name="ACTIVE" value="1"/>
+          </propbag>
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Male Guard in Scale Mail</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="9" name="CHARACTER">
+        <int name="DAMAGE" value="0"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="20"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="19"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="16"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="10"/>
+            <int name="ROLL" value="21"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="5"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="1"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="19"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="2"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="20"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="19"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">Duhaven</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="4"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="41"/>
+        <propbag name="EFFECTS">
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Monster</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="10" name="CHARACTER">
+        <int name="DAMAGE" value="0"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="3"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="24"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="22"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="3"/>
+            <int name="ROLL" value="21"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="5"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="10"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="17"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="14"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">City Guard (copy)</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="6"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="25"/>
+        <propbag name="EFFECTS">
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Male Guard in Scale Mail</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="11" name="CHARACTER">
+        <int name="DAMAGE" value="0"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="5"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="16"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="13"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="8"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="3"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="19"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="20"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="7"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="7"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="2"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">Cleric Guard Captain (copy)</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="13"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="32"/>
+        <propbag name="EFFECTS">
+          <propbag name="0">
+            <int name="TYPE" value="0"/>
+            <string name="NAME">Bless</string>
+            <string name="DESCRIPTION"></string>
+            <int name="TOTALROUNDS" value="15"/>
+            <int name="STARTIN" value="0"/>
+            <int name="HPBOOST" value="0"/>
+            <int name="ROUNDSUSED" value="0"/>
+            <int name="ACTIVE" value="1"/>
+          </propbag>
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Femail Guard, Breastplate</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="12" name="CHARACTER">
+        <int name="DAMAGE" value="0"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="2"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="14"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="3"/>
+            <int name="ROLL" value="23"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="3"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="3"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="12"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="7"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="9"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="14"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="20"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">City Guard (copy) (copy)</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="11"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="25"/>
+        <propbag name="EFFECTS">
+          <propbag name="0">
+            <int name="TYPE" value="0"/>
+            <string name="NAME">Bless</string>
+            <string name="DESCRIPTION"></string>
+            <int name="TOTALROUNDS" value="15"/>
+            <int name="STARTIN" value="0"/>
+            <int name="HPBOOST" value="0"/>
+            <int name="ROUNDSUSED" value="0"/>
+            <int name="ACTIVE" value="1"/>
+          </propbag>
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Male Guard in Scale Mail</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="13" name="CHARACTER">
+        <int name="DAMAGE" value="0"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="20"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="20"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="21"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="10"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="23"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="17"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="6"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="17"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="15"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="19"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="10"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="14"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="8"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">Cleric Guard Captain (copy) (copy)</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="10"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="32"/>
+        <propbag name="EFFECTS">
+          <propbag name="0">
+            <int name="TYPE" value="0"/>
+            <string name="NAME">Bless</string>
+            <string name="DESCRIPTION"></string>
+            <int name="TOTALROUNDS" value="15"/>
+            <int name="STARTIN" value="0"/>
+            <int name="HPBOOST" value="0"/>
+            <int name="ROUNDSUSED" value="0"/>
+            <int name="ACTIVE" value="1"/>
+          </propbag>
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Femail Guard, Breastplate</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+      <propbag_item item="14" name="CHARACTER">
+        <int name="DAMAGE" value="0"/>
+        <array name="STATS">
+          <propbag_item item="0" name="VALUE">
+            <int name="MODIFIER" value="1"/>
+            <int name="ROLL" value="13"/>
+            <string name="STATID">INIT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="1" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="7"/>
+            <string name="STATID">HITPOINTS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="2" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="21"/>
+            <string name="STATID">SPOT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="3" name="VALUE">
+            <int name="MODIFIER" value="5"/>
+            <int name="ROLL" value="13"/>
+            <string name="STATID">LISTEN_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="4" name="VALUE">
+            <int name="MODIFIER" value="7"/>
+            <int name="ROLL" value="19"/>
+            <string name="STATID">WILL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="5" name="VALUE">
+            <int name="MODIFIER" value="10"/>
+            <int name="ROLL" value="28"/>
+            <string name="STATID">LEVEL_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="6" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="4"/>
+            <string name="STATID">STR_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="7" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="13"/>
+            <string name="STATID">DEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="8" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="18"/>
+            <string name="STATID">CON_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="9" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="4"/>
+            <string name="STATID">INT_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="10" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="9"/>
+            <string name="STATID">WIS_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="11" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="16"/>
+            <string name="STATID">CHA_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="12" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="3"/>
+            <string name="STATID">FORTITUDE_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+          <propbag_item item="13" name="VALUE">
+            <int name="MODIFIER" value="0"/>
+            <int name="ROLL" value="9"/>
+            <string name="STATID">REFLEX_ID</string>
+            <string name="NOTES"></string>
+          </propbag_item>
+        </array>
+        <string name="NAME">Duhaven (copy)</string>
+        <int name="MONSTER" value="1"/>
+        <int name="STATUS" value="0"/>
+        <int name="STABILIZED" value="0"/>
+        <int name="JUSTDROPPED" value="0"/>
+        <int name="POSITION" value="0"/>
+        <int name="TEMPHP" value="0"/>
+        <int name="HITDICE" value="1"/>
+        <int name="BASEHP" value="41"/>
+        <propbag name="EFFECTS">
+        </propbag>
+        <int name="SUBPOSITION" value="0"/>
+        <int name="MANUALPOS" value="0"/>
+        <string name="PUBLIC_NAME">Monster</string>
+        <string name="NOTES"></string>
+      </propbag_item>
+    </array>
+  </propbag>
+  <int name="TOOLBAR_POS" value="1"/>
+  <int name="ROLL_INIT_ON_START" value="1"/>
+  <int name="MANUAL_INIT" value="1"/>
+  <int name="WINDOW_X" value="262"/>
+  <int name="WINDOW_Y" value="63"/>
+  <int name="WINDOW_HEIGHT" value="834"/>
+  <int name="WINDOW_WIDTH" value="1032"/>
+  <int name="HUD_X" value="520"/>
+  <int name="HUD_Y" value="219"/>
+  <int name="HUD_HEIGHT" value="480"/>
+  <int name="HUD_WIDTH" value="640"/>
+  <string name="CURRENT_FOLDER">/home/doug/turnwatcher</string>
+  <int name="ULTRA_INITIATIVE" value="0"/>
+  <int name="SHOW_TOOLBAR" value="1"/>
+  <int name="BLEED_OUT_DYING" value="1"/>
+  <int name="SKIP_DEAD" value="1"/>
+  <int name="ALTERNATE_DEATH_RULE" value="0"/>
+  <int name="NOTIFY_EXPIRED_EFFECTS" value="1"/>
+  <int name="PANE_POSITION" value="100"/>
+  <int name="GET_DC" value="1"/>
+  <int name="LAST_DC" value="-1"/>
+  <string name="VERSION">1.4</string>
+  <int name="SHOW_EFFECTS" value="1"/>
+  <int name="SHOW_INFO" value="1"/>
+  <int name="SHOW_HUD" value="0"/>
+  <int name="DEATH_THRESHOLD" value="-10"/>
+  <propbag name="INIT_DIE_STRINGS">
+    <array name="INITDIESTRINGS">
+      <string_item item="0" name="DIEVAL">1d20</string_item>
+      <string_item item="1" name="DIEVAL">1d6</string_item>
+      <string_item item="2" name="DIEVAL">2d6</string_item>
+      <string_item item="3" name="DIEVAL">2d10</string_item>
+    </array>
+  </propbag>
+  <string name="COMBATANT_LIST_FONT_NAME">Sans Serif 12</string>
+  <string name="ALT_COMBATANT_LIST_FONT_NAME">Sans Serif 12</string>
+  <int name="IN_ROUNDS" value="1"/>
+  <int name="ROUND_NUMBER" value="3"/>
+  <int name="CURRENT_INIT" value="0"/>
+  <propbag name="INITIATIVE">
+    <propbag name="RESOLVER_BAG">
+      <array name="INIT_RESOLVER">
+        <propbag_item item="0" name="DUP_ROLL">
+          <propbag name="RESOLVER_BAG">
+            <array name="INIT_RESOLVER">
+              <propbag_item item="0" name="DUP_ROLL">
+                <string name="CHARACTER">Duhaven (copy)</string>
+                <int name="SORT_ROLL" value="327681"/>
+              </propbag_item>
+              <propbag_item item="1" name="DUP_ROLL">
+                <string name="CHARACTER">City Guard 4</string>
+                <int name="SORT_ROLL" value="1114113"/>
+              </propbag_item>
+            </array>
+          </propbag>
+          <int name="SORT_ROLL" value="131073"/>
+        </propbag_item>
+        <propbag_item item="1" name="DUP_ROLL">
+          <propbag name="RESOLVER_BAG">
+            <array name="INIT_RESOLVER">
+              <propbag_item item="0" name="DUP_ROLL">
+                <string name="CHARACTER">City Guard 3</string>
+                <int name="SORT_ROLL" value="196609"/>
+              </propbag_item>
+              <propbag_item item="1" name="DUP_ROLL">
+                <string name="CHARACTER">Duhaven</string>
+                <int name="SORT_ROLL" value="655361"/>
+              </propbag_item>
+              <propbag_item item="2" name="DUP_ROLL">
+                <string name="CHARACTER">Cleric Guard Captain</string>
+                <int name="SORT_ROLL" value="1245185"/>
+              </propbag_item>
+            </array>
+          </propbag>
+          <int name="SORT_ROLL" value="393217"/>
+        </propbag_item>
+        <propbag_item item="2" name="DUP_ROLL">
+          <propbag name="RESOLVER_BAG">
+            <array name="INIT_RESOLVER">
+              <propbag_item item="0" name="DUP_ROLL">
+                <string name="CHARACTER">City Guard</string>
+                <int name="SORT_ROLL" value="720897"/>
+              </propbag_item>
+              <propbag_item item="1" name="DUP_ROLL">
+                <string name="CHARACTER">City Guard (copy)</string>
+                <int name="SORT_ROLL" value="786433"/>
+              </propbag_item>
+            </array>
+          </propbag>
+          <int name="SORT_ROLL" value="720897"/>
+        </propbag_item>
+        <propbag_item item="3" name="DUP_ROLL">
+          <string name="CHARACTER">City Guard 2</string>
+          <int name="SORT_ROLL" value="786433"/>
+        </propbag_item>
+        <propbag_item item="4" name="DUP_ROLL">
+          <string name="CHARACTER">Savome</string>
+          <int name="SORT_ROLL" value="851970"/>
+        </propbag_item>
+        <propbag_item item="5" name="DUP_ROLL">
+          <string name="CHARACTER">Cleric Guard Captain (copy) (copy)</string>
+          <int name="SORT_ROLL" value="983041"/>
+        </propbag_item>
+        <propbag_item item="6" name="DUP_ROLL">
+          <string name="CHARACTER">Yolanda</string>
+          <int name="SORT_ROLL" value="1048572"/>
+        </propbag_item>
+        <propbag_item item="7" name="DUP_ROLL">
+          <string name="CHARACTER">City Guard (copy) (copy)</string>
+          <int name="SORT_ROLL" value="1048577"/>
+        </propbag_item>
+        <propbag_item item="8" name="DUP_ROLL">
+          <string name="CHARACTER">City Guard 5</string>
+          <int name="SORT_ROLL" value="1310721"/>
+        </propbag_item>
+        <propbag_item item="9" name="DUP_ROLL">
+          <string name="CHARACTER">Cleric Guard Captain (copy)</string>
+          <int name="SORT_ROLL" value="1376257"/>
+        </propbag_item>
+        <propbag_item item="10" name="DUP_ROLL">
+          <string name="CHARACTER">Aedra</string>
+          <int name="SORT_ROLL" value="1376258"/>
+        </propbag_item>
+      </array>
+    </propbag>
+    <array name="MOVES">
+      <propbag_item item="0" name="CHARACTER">
+        <string name="NAME">Cleric Guard Captain</string>
+        <int name="NEWPOS" value="3"/>
+      </propbag_item>
+      <propbag_item item="1" name="CHARACTER">
+        <string name="NAME">Yolanda</string>
+        <int name="NEWPOS" value="7"/>
+      </propbag_item>
+    </array>
+  </propbag>
+</propbag>

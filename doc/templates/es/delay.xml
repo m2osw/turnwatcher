@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Acciones retradadas y preparadas</h2>
+
+<p id="para">
+	Cuando un personajes escope atrasar su acci&oacute;n, clique
+	en el bot&oacute;n <i>Retrasar</i> enla barra de implementos.
+
+	El estado del personaje cambia al <i>Retrazaz</i>.
+
+	Una vez que el personaje decide de entrar en combate,
+	clique en el bot&oacute;n <i>Entrar en combate</i>.
+
+	Si m&aacute;s de un personaje est&aacute;n en retraso, entoces
+	<b>Turn Watcher</b> le pide esgoger aquel que entre en combate.
+</p>
+
+<p align="center">
+	<img src="../images/tw_jumpin_dialog.jpg" width="246" height="167"/>
+</p>
+
+<p id="para">
+	Cuando un personaje escoge prepararse para un acci&oacute;n,
+	clique en el bot&oacute;n <i>Prepararse</i> en la barra de implementos.
+	El estado del personaje cambia al preparar.
+
+	Cuando la acci&oacute;n es inicia, clique en el bot&oacute;n
+	<i>Entrar en combate</i>. Si m&aacute;s de un personaje
+	est&aacute;n en preparaci&oacute;n entonces <b>Turn Watcher</b>
+	le pide escoger aquel que entrar en combate.
+</p>
+
+
+<p id="para">
+	<b>Turn Watcher</b> elimina de manera autim&aacute;tica las
+	acciones de retraso y de preparaci&oacute;n, cuando es de nuevo
+	el turno de un personaje y que su acci&oacute;n no ha tenido lugar.
+</p>
+
+
+
+<!--
+	vim: ts=2 sw=2 tw=78
+-->
+

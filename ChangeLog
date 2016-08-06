@@ -1,0 +1,17 @@
+- Beta, Demo, Full 98, 99, 100
+  * Changed the icons of the Help menu
+  * Put the newer description.html from the documentation (new tutorial)
+
+- Full 94
+  * Loads of stuff has changed, and I've been a bad boy and not updated
+    this list...
+  * Added stabilization/bleed-out logic
+  * Added duplicate character entry
+  * Added initiative move up/down
+  * Plenty more stuff plus bug fixes
+  * We are ready to release, perhaps just one more beta test round
+
+- Demo 72
+  * Fixed the damage when Add is clicked and another character was selected
+    (i.e. damage is set to zero)
+

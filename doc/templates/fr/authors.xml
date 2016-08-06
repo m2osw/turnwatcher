@@ -1,0 +1,162 @@
+<?xml version="1.0"?>
+
+<table cellpadding="0" cellspacing="20" width="550">
+	<tbody>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Producteur
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					Made&nbsp;to&nbsp;Order&nbsp;Software&nbsp;Corp.
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Ing&eacute;nieurs&nbsp;logiciel
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					Doug&nbsp;Barbieri
+					<br/>
+					Alexis&nbsp;Wilke
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Artiste
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					Nik&nbsp;Lokteff
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Documentation
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					Alexis&nbsp;Wilke
+					<br/>
+					Doug&nbsp;Barbieri
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Traduction
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					Alexis&nbsp;Wilke (Fran&ccedil;ais)
+					<br/>
+					Miryam&nbsp;Chevrier (Espa&ntilde;ol)
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Nombres&nbsp;al&eacute;atoires
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					M.&nbsp;Matsumoto
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Librairie&nbsp;graphique
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					<a href="http://www.gtk.org/">gtk</a>
+					<br/>
+					<a href="http://www.gtkmm.org/">gtkmm</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Librairies&nbsp;d'images
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					<a href="http://www.libpng.org/">libpng</a>
+					<br/>
+					<a href="http://www.zlib.net/">zlib</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Internationalization
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					<a href="http://www.gnu.org/software/libiconv/">iconv</a>
+					<br/>
+					<a href="http://www.gnu.org/software/gettext/gettext.html">intl</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Installeur&nbsp;MS-Windows
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					<a href="http://nsis.sourceforge.net">NSIS</a>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td align="right" valign="top" width="50%">
+				<div id="author_id">
+					Et&nbsp;tous&nbsp;nos<br/>
+					remerciements&nbsp;&agrave;
+				</div>
+			</td>
+			<td valign="top" width="50%">
+				<div id="author_names">
+					<a href="http://www.mingw.org">MinGW</a> pour
+					l'environnement de d&eacute;veloppement vraiment
+					extra sous Microsoft Windows.
+					<br/>
+					<br/>
+					<a href="http://www.gnu.org">La fondation de GNU</a>
+					pour tous les outils de d&eacute;veloppement
+					et les librairies libres.
+				</div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<!--
+vim: ts=2
+-->

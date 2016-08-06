@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<mo:db:order query="SELECT EXTRACT(YEAR FROM NOW()) AS year;" name="date">
+	<p align="center">
+		La <b>Documentaci&oacute;n de Turn Watcher&#x2122;</b> es
+		<br/>
+		un copyright 2005-$(date_year) de Made to Order Software Corp.
+	</p>
+	
+	<hr id="copyright_hr"/>
+	
+	<p align="center">
+		El programa <b>Turn Watcher&#x2122;</b>  es
+		<br/>
+		un copyright 2005-$(date_year) de Made to Order Software Corp.
+	</p>
+	
+	<hr id="copyright_hr"/>
+	
+	<p align="center">
+		El nombre <b>Turn Watcher&#x2122;</b> es una marca declarada 2005-$(date_year)
+		<br/>
+		de Made to Order Software Corp.
+	</p>
+	
+	<hr id="copyright_hr"/>
+	
+	<p align="center">
+		<img src="../images/helmet_logo.png" style="border: 1px solid black;"
+			alt="El logo de Turn Watcher" title="El logo de Turn Watcher"/>
+		<br/>
+		El casco de <b>Turn Watcher&#x2122;</b> es
+		<br/>
+		 un copyright 2005-$(date_year) de Made to Order Software Corp.
+	</p>
+	
+	<hr id="copyright_hr"/>
+	
+	<p align="center">
+		<img src="../images/m2osw_logo.png" style="border: 1px solid black;"
+			alt="El logo de Made to Order Software Corporation" title="El logo de Made to Order Software Corporation"/>
+		<br/>
+		El logo de Made to Order Software Corp. es un
+		<br/>
+		copyright 2005-$(date_year) de Made to Order Software Corp.
+	</p>
+</mo:db:order>
+
+<!--
+vim: ts=2
+-->

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+
+<p id="para">
+	&iquest;&nbsp;Usted no ha encuentrado la informaci&oacute;n que busca&nbsp;?
+</p>
+
+<p id="para">
+	Vaya a ver la
+	<a id="anchor" href="http://www.turnwatcher.com/$(LANG)">site web de Turn Watcher</a>.
+</p>
+
+<p id="para">
+	En la site web principal, la documentaci&oacute;n es revisada regularmente
+	y tambien tenemos nuestra
+	<a id="anchor" href="http://www.turnwatcher.com/$(LANG)/support.html">p&aacute;gina de soporte</a>
+	que cambia cada vez que un cliente no hace una pregunta pertinente.
+</p>
+
+<p id="para">
+	Si usted no llega a encuentrar f&aacute;cilamente la informaci&oacute;n,
+	entonces no dude un momento en contactonos a:
+</p>
+
+<div id="para">
+	<ul>
+		<li>por correo electr&oacute;nico a
+		<a id="anchor" href="mailto:support@m2osw.com">soporte@m2osw.com</a>;</li>
+		<li>echando un mensaje a 
+		<a id="anchor" href="http://www.m2osw.com/$(LANG)/forum/turnwatcher/index.php?product=turnwatcher">nuestros foros</a>;</li>
+		<li>telefone&aacute;ndonos al +1 (916) 988 1450; &oacute;</li>
+		<li>por carta postal a la direcci&oacute;n siguiente&nbsp;:</li>
+		<p style="margin-left: 20px; font-weight: bold;">
+			Made to Order Software<br/>
+			9275 Blue Oak Drive<br/>
+			Orangevale, CA 95662
+		</p>
+	</ul>
+</div>
+
+
+<p id="para">
+	Si usted ha comprado <b>Turn Watcher&#x2122;</b> hace ya un buen tiempo,
+	usted deber&aacute; quiz&aacute;s visitar la site web de
+	<a id="anchor" href="http://www.turnwatcher.com/$(LANG)">Turn Watcher</a>
+	para tener nuestros datos actualizados.
+</p>
+
+<p id="para">
+	Gracias.
+</p>
+
+<!--
+vim: ts=2
+-->

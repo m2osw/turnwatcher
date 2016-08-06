@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<mo:db:order query="SELECT EXTRACT(YEAR FROM NOW()) AS year;" name="date">
+	<p align="center">
+		The <b>Turn Watcher&#x2122; Documentation</b> is
+		<br/>
+		a copyright 2005-$(date_year) by Made to Order Software Corp.
+	</p>
+	
+	<hr id="copyright_hr"/>
+	
+	<p align="center">
+		The <b>Turn Watcher&#x2122;</b> software product is
+		<br/>
+		a copyright 2005-$(date_year) by Made to Order Software Corp.
+	</p>
+	
+	<hr id="copyright_hr"/>
+	
+	<p align="center">
+		The name <b>Turn Watcher&#x2122;</b> is a trademark 2005-$(date_year)
+		<br/>
+		by Made to Order Software Corp.
+	</p>
+	
+	<hr id="copyright_hr"/>
+	
+	<p align="center">
+		<img src="../images/helmet_logo.png" style="border: 1px solid black;"
+			alt="Turn Watcher Logo" title="Turn Watcher Logo"/>
+		<br/>
+		The <b>Turn Watcher&#x2122;</b> helmet is a copyright 2005-$(date_year)
+		<br/>
+		by Made to Order Software Corp.
+	</p>
+	
+	<hr id="copyright_hr"/>
+	
+	<p align="center">
+		<img src="../images/m2osw_logo.png" style="border: 1px solid black;"
+			alt="Made to Order Software Corporation Logo" title="Made to Order Software Corporation Logo"/>
+		<br/>
+		The Made to Order Software Corp. logo is a
+		<br/>
+		copyright 2005-$(date_year) of Made to Order Software Corp.
+	</p>
+</mo:db:order>
+
+<!--
+vim: ts=2
+-->

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"/>
+	<html lang="en" xml:lang="en">
+		<head>
+	<title>Keeping Track of Hit Points</title>
+				<meta content="&#xA9; 2008 &#x2014; Made to Order Software Corporation &#x2014; All rights reserved" name="copyright"/>
+		<meta content="Alexis Wilke" name="author"/>
+		<meta content="Turn Watcher manages the initiative and also the hit points!" name="description"/>
+	<meta content="xmlc v1.02" name="generator"/>
+		<meta content="Dungeons, Dragons, d20, Turn Watcher, Documentation" name="keywords"/>
+	<link href="/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+	<link href="../styles/documentation.css" rel="stylesheet" type="text/css"/>
+		<link href="get_started.html" rel="first" title="Let's get started!" type="text/html"/>
+		<link href="delay.html" rel="next" title="Delayed and Readied Actions" type="text/html"/>
+		<link href="effects_tracking.html" rel="prev" title="Effects Tracking" type="text/html"/>
+		<link href="player_hud.html" rel="last" title="Player Heads Up Display (HUD)" type="text/html"/>
+	<link href="description.html" rel="chapter" title="About Turn Watcher" type="text/html"/>
+	<link href="get_started.html" rel="chapter" title="Let's get started!" type="text/html"/>
+	<link href="shortcuts.html" rel="chapter" title="Keyboard Shortcuts" type="text/html"/>
+	<link href="technical.html" rel="chapter" title="Technical Requirements" type="text/html"/>
+		<link href="index.html" rel="contents" title="Summary" type="text/html"/>
+		<link href="index.html" rel="toc" title="Summary" type="text/html"/>
+		<link href="index.html" rel="start" title="Summary" type="text/html"/>
+		<link href="index.html" rel="up" title="Summary" type="text/html"/>
+	<link href="copyright.html" rel="copyright" title="Copyright" type="text/html"/>
+	<link href="authors.html" rel="author" title="Authors &amp; Contributors" type="text/html"/>
+	<link href="license.html" rel="appendix" title="End-User License Agreement" type="text/html"/>
+	<link href="copyright.html" rel="appendix" title="Copyright" type="text/html"/>
+	<link href="authors.html" rel="appendix" title="Authors &amp; Contributors" type="text/html"/>
+	<link href="contact.html" rel="appendix" title="Contact Information" type="text/html"/>
+			<link href="../fr/hitpoints.html" lang="fr" medium="Screen" rel="alternate" title="Fran&#xE7;ais" type="text/html"/>
+			<link href="../es/hitpoints.html" lang="es" medium="Screen" rel="alternate" title="Espa&#xF1;ol" type="text/html"/>
+	<script src="../js/overlib/overlib.js" type="text/javascript"><!-- overLIB (c) Erik Bosrup --></script>
+	<script src="../js/m2osw/get_object_position.js" type="text/javascript"><!-- (c) Made to Order Software, Corp. --></script>
+</head>
+		<body>
+			<div id="overDiv" style="position: absolute; visibility: hidden; z-index: 1000;"></div>
+			<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+	<tbody>
+		<tr>
+			<td valign="top">
+				<table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tbody>
+						<tr>
+							<td height="84" valign="middle" width="100%">
+								<div id="title" width="100%">
+									Keeping Track of Hit Points
+										<br/>
+										<span id="sub_title" width="100%">Turn Watcher&#x2122; Documentation</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td align="center" height="31" valign="middle" width="100%">
+								<script type="text/javascript">
+									if(navigator.appVersion.indexOf("MSIE") > 0) {
+										document.write('<div id="menu_msie">');
+									}
+									else {
+										document.write('<div id="menu">');
+									}
+								</script>
+										&nbsp; <a href="index.html" id="menu_item">Summary</a> &nbsp;
+										&nbsp; <a href="shortcuts.html" id="menu_item">Keyboard Shortcuts</a> &nbsp;
+										&nbsp; <a href="contact.html" id="menu_item">Contact</a> &nbsp;
+										&nbsp; <a href="http://www.turnwatcher.com/en" id="menu_item">Home Page</a> &nbsp;
+								<script type="text/javascript">
+									document.write('</div>');
+								</script>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table width="100%">
+					<tbody>
+						<tr>
+							<td align="center">
+								<table width="550">
+									<tbody>
+											<tr>
+												<td align="left"><a href="effects_tracking.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Effects Tracking', WRAP, 1)">Previous Page</a></td>
+												<td align="right"><a href="delay.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Delayed and Readied Actions', WRAP, 1)">Next Page</a></td>
+											</tr>
+										<tr>
+											<td colspan="2">
+												<p style="margin-top: 30px;">&nbsp;</p>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2">
+												<h2 align="center">Keeping Track of Hit Points</h2><p id="para">
+	When a PC or monster takes damage in combat, highlight the
+	appropriate character and click on the <i>Damage</i> button.
+	Enter the amount of damage and press the <i>Add Damage</i>
+	button. Note that this does not change the initiative order
+	as the arrow does not change.
+</p>
+<p align="center">
+	<img src="../images/tw_damage_dialog.jpg"/>
+</p>
+<p id="para">
+	If a character receives healing, click on the <i>Damage</i> button
+	as well enter the amount of healing and press the <i>Add Health</i>
+	button instead. A character can also be brought up to its full
+	health automatically by clicking <i>Bring to Full</i>.
+</p>
+<p id="tip">
+	<b>Tip:</b> You may also apply mass damage or healing by
+	highlighting those characters you wish to effect and clicking on
+	the <i>Damage</i> button.
+</p>
+<p id="para">
+	If a character is <i>Dying</i> (i.e. the hit points have fallen
+	below zero (0) but has not yet reached negative ten (-10), <b>Turn
+	Watcher</b> will automatically bleed the character out one (1) hit
+	point at the end of each of the creature's turns (until he is
+	<i>Stabilized</i> or dead &#151; see below).
+</p>
+<p align="center">
+	<img height="79" src="../images/tw_bleedout1.jpg" width="487"/>
+</p>
+<p id="para">
+	If a <i>Dying</i> character becomes stabilized, then select
+	<span id="menu_ref">Stabilize</span> in the <span id="menu_ref">Rounds</span> menu and the status
+	will change from <i>Dying</i> to <i>Stabilized</i>.
+	<b>Turn Watcher</b> will no longer bleed the character out after
+	his turn unless he sustains more damage.
+	You can also heal the character back to zero (0) or more hit
+	points to prevent the bleeding.
+</p>
+<p align="center">
+	<img height="46" src="../images/tw_stabilize.jpg" width="547"/>
+</p>
+<p id="para">
+	When a character reaches negative ten (-10) hit points,
+	<b>Turn Watcher</b>
+	automatically marks the character <i>Dead</i> and grays it out.
+	Note that, by default, <b>Turn Watcher</b> doesn't give turns
+	to a dead character.
+	You can purge dead characters and monsters by highlighting
+	them and clicking the <i>Delete</i> button on the toolbar.
+</p>
+<p id="tip">
+	<b>Tip:</b>
+	You can disable the skip feature by unselecting the
+	check mark <span id="menu_ref">Skip Dead Characters</span>
+	in the <span id="menu_ref">Rounds</span> menu.
+</p>
+<p align="center">
+	<img height="112" src="../images/tw_bleedout2.jpg" width="505"/>
+</p>
+												<br/>
+												<br/>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td valign="bottom" width="100%">
+					<table width="100%">
+						<tbody>
+							<tr>
+								<td align="center">
+									<table width="550">
+										<tbody>
+											<tr>
+												<td align="left"><a href="effects_tracking.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Effects Tracking', WRAP, 1)">Previous Page</a></td>
+												<td align="right"><a href="delay.html" id="next_previous" onmouseout="javascript: return nd();" onmouseover="javascript: return overlib('Delayed and Readied Actions', WRAP, 1)">Next Page</a></td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				<table align="center" border="0" cellpadding="3" cellspacing="3" id="copyright_table" width="550">
+					<tbody>
+						<tr>
+							<td align="right" valign="middle">
+								<a href="http://www.m2osw.com"><img border="0" src="../images/small_m2osw_logo.png"/></a>
+							</td>
+							<td align="center" valign="middle">
+								<div id="bottom_copyright">
+												&nbsp; &#xA9; 2006-2008&nbsp; &#x2014; Made to Order Software Corporation &#x2014; All rights reserved
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+		</tr>
+	</tbody>
+</table></body>
+	</html>

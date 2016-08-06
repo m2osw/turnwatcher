@@ -1,0 +1,373 @@
+<?xml version="1.0"?>
+
+
+<h2 align="center">Keyboard Shortcuts</h2>
+
+<p id="para">
+	You can use <i>keyboard shortcuts</i> to access <b>Turn Watcher</b>'s many
+	features, instead of using the menus and toolbar.
+</p>
+
+
+
+
+
+<table align="center" cellpadding="0" cellspacing="0" border="0">
+	<tbody>
+
+<!-- File -->
+		<tr>
+			<td colspan="2" id="shortcut_menu">
+				&#151; &nbsp;File&nbsp; &#151;
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Import
+			</td>
+			<td id="shortcut_key">
+				Ctrl-I
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Export
+			</td>
+			<td id="shortcut_key">
+				Ctrl-E
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Preferences
+			</td>
+			<td id="shortcut_key">
+				Ctrl-P
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Quit
+			</td>
+			<td id="shortcut_key">
+				Ctrl-Q
+			</td>
+		</tr>
+
+<!-- Edit -->
+		<tr>
+			<td colspan="2" id="shortcut_menu">
+				&#151; &nbsp;Edit&nbsp; &#151;
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Undo
+			</td>
+			<td id="shortcut_key">
+				Ctrl-Z
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Redo
+			</td>
+			<td id="shortcut_key">
+				Ctrl-Y
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Add
+			</td>
+			<td id="shortcut_key">
+				Ctrl-A
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Edit
+			</td>
+			<td id="shortcut_key">
+				Ctrl-J
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Delete
+			</td>
+			<td id="shortcut_key">
+				Ctrl-X
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Duplicate
+			</td>
+			<td id="shortcut_key">
+				Ctrl-L
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Purge&nbsp;Dead&nbsp;Characters
+			</td>
+			<td id="shortcut_key">
+				Shift-Ctrl-P
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Add&nbsp;Effect
+			</td>
+			<td id="shortcut_key">
+				Shift-Ctrl-A
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Edit&nbsp;Effect
+			</td>
+			<td id="shortcut_key">
+				Shift-Ctrl-E
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Delete&nbsp;Effect
+			</td>
+			<td id="shortcut_key">
+				Shift-Ctrl-X
+			</td>
+		</tr>
+
+<!-- View -->
+		<tr>
+			<td colspan="2" id="shortcut_menu">
+				&#151; &nbsp;View&nbsp; &#151;
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Show&nbsp;Toolbar
+			</td>
+			<td id="shortcut_key">
+				Ctrl-T
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Show&nbsp;on&nbsp;Bottom
+			</td>
+			<td id="shortcut_key">
+				Ctrl-B
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Show&nbsp;Effect&nbsp;Pane
+			</td>
+			<td id="shortcut_key">
+				Ctrl-F
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Show&nbsp;HUD&nbsp;Window
+			</td>
+			<td id="shortcut_key">
+				Ctrl-H
+			</td>
+		</tr>
+
+<!-- Rounds -->
+		<tr>
+			<td colspan="2" id="shortcut_menu">
+				&#151; &nbsp;Rounds&nbsp; &#151;
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Start
+			</td>
+			<td id="shortcut_key">
+				G
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				End
+			</td>
+			<td id="shortcut_key">
+				E
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Next
+			</td>
+			<td id="shortcut_key">
+				Spacebar
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Delay
+			</td>
+			<td id="shortcut_key">
+				D
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Ready
+			</td>
+			<td id="shortcut_key">
+				R
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Jump In
+			</td>
+			<td id="shortcut_key">
+				J
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Damage/Healing
+			</td>
+			<td id="shortcut_key">
+				M
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Stabilize
+			</td>
+			<td id="shortcut_key">
+				B
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Move Up
+			</td>
+			<td id="shortcut_key">
+				Control + Arrow Up
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Move Down
+			</td>
+			<td id="shortcut_key">
+				Control + Arrow Down
+			</td>
+		</tr>
+
+<!-- Roll -->
+		<tr>
+			<td colspan="2" id="shortcut_menu">
+				&#151; &nbsp;Roll&nbsp; &#151;
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Initiative
+			</td>
+			<td id="shortcut_key">
+				I
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Spot
+			</td>
+			<td id="shortcut_key">
+				S
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Listen
+			</td>
+			<td id="shortcut_key">
+				L
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Will
+			</td>
+			<td id="shortcut_key">
+				W
+			</td>
+		</tr>
+
+<!-- Help -->
+		<tr>
+			<td colspan="2" id="shortcut_menu">
+				&#151; &nbsp;Help&nbsp; &#151;
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				About
+			</td>
+			<td id="shortcut_key">
+				Shift-Ctrl-H
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Documentation
+			</td>
+			<td id="shortcut_key">
+				F1
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Tutorial
+			</td>
+			<td id="shortcut_key">
+				F2
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Contact
+			</td>
+			<td id="shortcut_key">
+				F3
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				License
+			</td>
+			<td id="shortcut_key">
+				F4
+			</td>
+		</tr>
+		<tr>
+			<td id="shortcut_function">
+				Turn Watcher Home Page
+			</td>
+			<td id="shortcut_key">
+				Shift-Ctrl-T
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+
+
+<!--
+vim: ts=2 sw=2 tw=78
+-->
+

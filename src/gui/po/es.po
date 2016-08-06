@@ -1,0 +1,518 @@
+# Turn Watcher messages translated to Spanish
+# Copyright (C) 2006-2009  Made to Order Software Corporation
+# This file is part of Turn Watcher and is covered by its license.
+# Juan Pedro <turnwatcher@m2osw.com> 2009
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: turnwatcher@m2osw.com\n"
+"POT-Creation-Date: 2006-04-02 22:51-0700\n"
+"PO-Revision-Date: 2006-04-03 00:07-0700\n"
+"Last-Translator: Juan Pedro <turnwatcher@m2osw.com>\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: AboutWindow.cpp:169
+msgid "translator-credits"
+msgstr "Juan Pedro"
+
+#: CharacterListUI.cpp:62
+msgid "Name"
+msgstr "Nombre"
+
+#: CharacterListUI.cpp:63
+msgid "Type"
+msgstr "Tipo"
+
+#: CharacterListUI.cpp:65
+msgid "Position"
+msgstr "Posición"
+
+#: CharacterListUI.cpp:67
+msgid "Init"
+msgstr "Inic."
+
+#: CharacterListUI.cpp:68 EditWindow.cpp:70
+msgid "Spot"
+msgstr "Detectar"
+
+#: CharacterListUI.cpp:69 EditWindow.cpp:73
+msgid "Listen"
+msgstr "Escuchar"
+
+#: CharacterListUI.cpp:70 EditWindow.cpp:76
+msgid "Will"
+msgstr "Voluntad"
+
+#: CharacterListUI.cpp:72
+msgid "Hit Points"
+msgstr "Puntos de golpe"
+
+#: CharacterListUI.cpp:73
+msgid "Status"
+msgstr "Estado"
+
+#: DamageWindow.cpp:46 DamageWindow.cpp:50 DamageWindow.cpp:107
+msgid " "
+msgstr " "
+
+#: DamageWindow.cpp:48 EditWindow.cpp:64
+msgid "Character Name"
+msgstr "Nombre del personaje"
+
+#: DamageWindow.cpp:53
+msgid "Current Hit Points"
+msgstr "Puntos de golpe actuales"
+
+#: DamageWindow.cpp:59
+msgid "Enter new damage/health"
+msgstr "Indica los pg infligidos/sanados"
+
+#: DamageWindow.cpp:65
+msgid "Bring to _Full"
+msgstr "Traer pg al máximo"
+
+#: DamageWindow.cpp:66
+msgid "Add _Health"
+msgstr "Sanar"
+
+#: DamageWindow.cpp:67
+msgid "Add _Damage"
+msgstr "Infligir Daño"
+
+#: DamageWindow.cpp:106
+msgid "Multiple Characters Selected!"
+msgstr "¡Múltiples personajes seleccionados!"
+
+#: DamageWindow.cpp:115
+#, c-format
+msgid "<b>%d</b>"
+msgstr "<b>%d</b>"
+
+#: DuplicateWindow.cpp:45
+msgid "Enter number of duplicates:"
+msgstr "Indica el número de duplicados"
+
+#: EditWindow.cpp:67
+msgid "Initiative"
+msgstr "Iniciativa"
+
+#: EditWindow.cpp:79
+msgid "Max Hit Points"
+msgstr "Puntos de golpe máximos"
+
+#: EditWindow.cpp:82
+msgid "Current Damage"
+msgstr "Daños actuales"
+
+#: EditWindow.cpp:85
+msgid "Character"
+msgstr "Personaje"
+
+#: EditWindow.cpp:86
+msgid "Monster"
+msgstr "Monstruo"
+
+#: EditWindow.cpp:88
+msgid "Character Type"
+msgstr "Tipo de personaje"
+
+#: JumpInWindow.cpp:124
+msgid "Character Waiting"
+msgstr "Personaje a la espera"
+
+#: MainWindow.cpp:135
+msgid "Enter Character"
+msgstr "Indica el personaje"
+
+#: MainWindow.cpp:136 MainWindow.cpp:1356
+msgid "Jump In"
+msgstr "Entrar en combate"
+
+#: MainWindow.cpp:137
+msgid "Damage Window"
+msgstr "Ventana de Daño"
+
+#: MainWindow.cpp:138
+msgid "Enter Number of Duplicates"
+msgstr "Indica el número de duplicados"
+
+#: MainWindow.cpp:160
+msgid "Turn Watcher (tm)"
+msgstr "Turn Watcher (tm)"
+
+#: MainWindow.cpp:166 MainWindow.cpp:1002
+msgid "Ready"
+msgstr "Preparado"
+
+#: MainWindow.cpp:254
+msgid "Clear Characters?"
+msgstr "¿Eliminar personajes?"
+
+#: MainWindow.cpp:255
+msgid "Are you sure you want to clear out all of your characters?"
+msgstr "¿Estás seguro de que quieres eliminar todos tus personajes?"
+
+#: MainWindow.cpp:256
+msgid "WARNING: This cannot be undone!"
+msgstr "ADVERTENCIA: ¡Esta acción no puede deshacerse!"
+
+#: MainWindow.cpp:263
+msgid "Cleared out all characters"
+msgstr "Todos los personajes han sido eliminados"
+
+#: MainWindow.cpp:286
+msgid "Select Turn Watcher file to import"
+msgstr "Selecciona el archivo de Turn Watcher a importar"
+
+#: MainWindow.cpp:294 MainWindow.cpp:378
+msgid "Turn Watcher v1 files"
+msgstr "Fichero Turn Watcher v1"
+
+#: MainWindow.cpp:301 MainWindow.cpp:385
+msgid "Any files"
+msgstr "Todos los archivos"
+
+#: MainWindow.cpp:312
+msgid "Merge characters?"
+msgstr "¿Quieres fusionar los personajes?"
+
+#: MainWindow.cpp:314
+msgid "Do you want to merge with your existing characters?"
+msgstr "¿Quieres fusionarlos con tus personajes existentes?"
+
+#: MainWindow.cpp:315
+msgid ""
+"Clicking \"No\" will clear out your exiting characters\n"
+"WARNING: This action cannot be undone!"
+msgstr ""
+"Hacer click en \"No\" eliminará tus personajes existentes\n"
+"ADVERTENCIA: ¡Esta acción no puede deshacerse!"
+
+#: MainWindow.cpp:350
+msgid "Imported new characters"
+msgstr "Nuevos personajes importados"
+
+#: MainWindow.cpp:369
+msgid "Select file to export to"
+msgstr "Selecciona el archivo a exportar"
+
+#: MainWindow.cpp:462
+msgid " (copy)"
+msgstr " (copia)"
+
+#: MainWindow.cpp:678
+msgid "_File"
+msgstr "_archivo"
+
+#: MainWindow.cpp:679
+msgid "_Import"
+msgstr "_Importar"
+
+#: MainWindow.cpp:680
+msgid "_Export"
+msgstr "_Exportar"
+
+#: MainWindow.cpp:681
+msgid "_Clear"
+msgstr "_Eliminar"
+
+#: MainWindow.cpp:682
+msgid "_Quit"
+msgstr "_Salir"
+
+#: MainWindow.cpp:690 MainWindow.cpp:694
+msgid "_Edit"
+msgstr "_Editar"
+
+#: MainWindow.cpp:691
+msgid "_Undo"
+msgstr "_Deshacer"
+
+#: MainWindow.cpp:692
+msgid "_Redo"
+msgstr "_Rehacer"
+
+#: MainWindow.cpp:693
+msgid "_Add"
+msgstr "_agregar"
+
+#: MainWindow.cpp:695
+msgid "_Delete"
+msgstr "_Suprimir"
+
+#: MainWindow.cpp:696
+msgid "Duplica_te"
+msgstr "_Duplicar"
+
+#: MainWindow.cpp:701
+msgid "_View"
+msgstr "_Vista"
+
+#: MainWindow.cpp:702
+msgid "Show _Toolbar"
+msgstr "_Mostrar la Barra de Herramientas"
+
+#: MainWindow.cpp:703
+msgid "Toolbar on _Bottom"
+msgstr "_Barra de Herramientas abajo"
+
+#: MainWindow.cpp:712
+msgid "_Roll"
+msgstr "_Tiradas/Controles"
+
+#: MainWindow.cpp:713
+msgid "_Initiative"
+msgstr "_Iniciativa"
+
+#: MainWindow.cpp:714
+msgid "_Spot"
+msgstr "_Avistar"
+
+#: MainWindow.cpp:715
+msgid "_Listen"
+msgstr "_Escuchar"
+
+#: MainWindow.cpp:716
+msgid "_Will"
+msgstr "_Voluntad"
+
+#: MainWindow.cpp:728
+msgid "R_ounds"
+msgstr "T_urnos"
+
+#: MainWindow.cpp:729
+msgid "_Start"
+msgstr "Empe_zar"
+
+#: MainWindow.cpp:730
+msgid "_End"
+msgstr "_Terminar"
+
+#: MainWindow.cpp:731
+msgid "_Next"
+msgstr "_Siguiente"
+
+#: MainWindow.cpp:732
+msgid "_Delay"
+msgstr "_Retrasar acción"
+
+#: MainWindow.cpp:733
+msgid "_Ready"
+msgstr "_Preparar acción"
+
+#: MainWindow.cpp:734
+msgid "_Jump In"
+msgstr "_Entrar en combate"
+
+#: MainWindow.cpp:735
+msgid "Da_mage"
+msgstr "Daño/Cu_ración"
+
+#: MainWindow.cpp:737
+msgid "_Stabilize"
+msgstr "Esta_bilizar"
+
+#: MainWindow.cpp:739
+msgid "Move _Up"
+msgstr "Mover hacia _arriba"
+
+#: MainWindow.cpp:740
+msgid "Move _Down"
+msgstr "Mover hacia aba_jo"
+
+#: MainWindow.cpp:742
+msgid "_Ultra Initiative"
+msgstr "_Control de Iniciativa cada turno"
+
+#: MainWindow.cpp:743
+msgid "S_kip Dead Characters"
+msgstr "Saltar los personajes _muertos"
+
+#: MainWindow.cpp:749
+msgid "_Help"
+msgstr "_Ayuda"
+
+#: MainWindow.cpp:750
+msgid "_About"
+msgstr "_Sobre Turn Watcher"
+
+#: MainWindow.cpp:751
+msgid "_Documentation"
+msgstr "_Documentación"
+
+#: MainWindow.cpp:752
+msgid "_Tutorial"
+msgstr "Tut_orial"
+
+#: MainWindow.cpp:753
+msgid "_Contact"
+msgstr "_Contacto"
+
+#: MainWindow.cpp:754
+msgid "_License"
+msgstr "_Licencia"
+
+#: MainWindow.cpp:755
+msgid "_Turn Watcher Home Page"
+msgstr "_Sitio web de Turn Watcher"
+
+#: MainWindow.cpp:982
+msgid "Round: "
+msgstr "Turno: "
+
+#: MainWindow.cpp:1005
+msgid "Ultra"
+msgstr "Cada turno"
+
+#: MainWindow.cpp:1005
+msgid "Normal"
+msgstr "Normal"
+
+#: MainWindow.cpp:1072 MainWindow.cpp:1127
+msgid "Add Character"
+msgstr "Agregar un personaje"
+
+#: MainWindow.cpp:1099 MainWindow.cpp:1205
+msgid "New Character"
+msgstr "Nuevo personaje"
+
+#: MainWindow.cpp:1137 MainWindow.cpp:1292
+msgid "Character \""
+msgstr "¡El personaje \""
+
+#: MainWindow.cpp:1137 MainWindow.cpp:1292
+msgid "\" already exists! Please choose a different name."
+msgstr "\" ya existe! Por favor, selecciona otro nombre."
+
+#: MainWindow.cpp:1236
+msgid "Add Duplicate Character(s)"
+msgstr "Agregar un personaje duplicado"
+
+#: MainWindow.cpp:1274 MainWindow.cpp:1305
+msgid "Edit Character"
+msgstr "Editar un personaje"
+
+#: MainWindow.cpp:1322
+msgid "Delete Character(s)"
+msgstr "Borrar los personajes"
+
+#: MainWindow.cpp:1374
+msgid "Enter Damage / Health"
+msgstr "Indicar los pg infligidos ó curados"
+
+#: MainWindow.cpp:1374
+msgid "Enter Mass Damage / Health"
+msgstr "Indicar daño o curación masivos"
+
+#: MainWindow.cpp:1401
+msgid "Damage"
+msgstr "Daño"
+
+#: MainWindow.cpp:1406
+msgid "Health"
+msgstr "Salud"
+
+#: MainWindow.cpp:1411
+msgid "Full Health"
+msgstr "Salud al máximo"
+
+#: MainWindow.cpp:1441
+msgid "Stabilize selected characters"
+msgstr "Esta_bilizar los personajes seleccionados"
+
+#: MainWindow.cpp:1492
+msgid "Set Ultra Initiative Mode"
+msgstr "Activar Ultra Iniciativa"
+
+#: MainWindow.cpp:1493
+msgid "Set Normal Initiative Mode"
+msgstr "Activar Iniciativa Normal"
+
+#: MainWindow.cpp:1759
+msgid "Start Rounds"
+msgstr "Empezar el combate"
+
+#: MainWindow.cpp:1766
+msgid "End Rounds"
+msgstr "Acabar el combate"
+
+#: MainWindow.cpp:1772
+msgid "Next In Initiative Order"
+msgstr "Siguiente en el orden de iniciativa"
+
+#: MainWindow.cpp:1778
+msgid "Delay Character"
+msgstr "Retrasar el personaje"
+
+#: MainWindow.cpp:1785
+msgid "Ready an Action"
+msgstr "Preparar una acción"
+
+#: MainWindow.cpp:1820
+msgid "Roll Initiative"
+msgstr "Hacer control de Iniciativa"
+
+#: MainWindow.cpp:1829
+msgid "Roll Spot"
+msgstr "Hacer control de avistar"
+
+#: MainWindow.cpp:1839
+msgid "Roll Listen"
+msgstr "Hacer control de Escuchar"
+
+#: MainWindow.cpp:1849
+msgid "Roll Will"
+msgstr "Hacer control de Voluntad"
+
+#: NagWindow.cpp:47
+msgid "Get Turn Watcher Now!"
+msgstr "¡Adquiere Turn Watcher ahora mismo!"
+
+#: character.cpp:532
+msgid "Delayed"
+msgstr "Acción Retrasada"
+
+#: character.cpp:533
+msgid "Readied"
+msgstr "Acción Preparada"
+
+#: character.cpp:534
+msgid "Stabilized"
+msgstr "Estabilizado"
+
+#: character.cpp:535
+msgid "Disabled"
+msgstr "Inerme"
+
+#: character.cpp:536
+msgid "Dying"
+msgstr "Agonizante"
+
+#: character.cpp:537
+msgid "Dead"
+msgstr "Muerto"
+
+#: character.cpp:544
+msgid "Just Dropped"
+msgstr "Derribado"
+
+#: splash.cpp:135
+msgid "Turn Watcher Splashscreen"
+msgstr "Pantalla de presentación de Turn Watcher"
+
+#: transactions.h:168
+msgid "Remove Character Group"
+msgstr "Eliminar un grupo de personajes"
+
+#: transactions.h:716
+msgid "Move Initiative Characters"
+msgstr "Cambiar la iniciativa de los personajes"
+
+#: transactions.h:1009
+msgid "Undelay Transaction"
+msgstr "Suprimir la acción retrasada"

@@ -1,0 +1,17 @@
+/* (c) 2005-2006 Made to Order Software, Corp. All right reserved */
+
+h4 {
+	margin-left: 10px;
+}
+p {
+	text-align: justify;
+	margin: 10px;
+}
+li {
+	text-align: justify;
+	margin-right: 10px;
+	margin-bottom: 15px;
+}
+ol {
+	margin-top: 15px;
+}

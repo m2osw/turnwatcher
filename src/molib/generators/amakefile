@@ -1,0 +1,185 @@
+#!/usr/bin/amake
+#
+# Object:	Use to compile all of the development tools
+# Copyright:	Copyright (c) 2005-2007 Made to Order Software Corp.
+#		All Rights Reserved.
+#
+#		This software and its associated documentation contains
+#		proprietary, confidential and trade secret information
+#		of Made to Order Software Corp. and except as provided by
+#		written agreement with Made to Order Software Corp.
+#
+#		a) no part may be disclosed, distributed, reproduced,
+#		   transmitted, transcribed, stored in a retrieval system,
+#		   adapted or translated in any form or by any means
+#		   electronic, mechanical, magnetic, optical, chemical,
+#		   manual or otherwise,
+#
+#		and
+#
+#		b) the recipient is not entitled to discover through reverse
+#		   engineering or reverse compiling or other such techniques
+#		   or processes the trade secrets contained therein or in the
+#		   documentation.
+#
+#
+
+
+
+SHELL:=/bin/sh
+
+# The name of this make file
+NAME:=dev-generators
+
+# Destination directories
+BINDIR:=../bin
+LIBDIR:=../lib
+
+# C++ generic information
+
+## AMake
+CSUFFIXES:=.c++ .ci .h
+CINCLUDEPATH:=.:../include
+
+## Compiler
+# command
+C++:=g++
+
+# flags
+#    WATCH OUT: the -O2 flag will destroy the special
+#		sections for automatic initialization
+#		(like those in the image library)
+#		we may have to work a bit more on these
+#		to tell the compiler not to optimize
+#		these special entries...
+C++FLAGS:=-g3 -ggdb -Wall -Werror -DMO_DISPLAY_X11 \
+		$(CINCLUDEPATH:P:*=-I*) -L/usr/local/pqxx/lib
+#if system(LINUX)
+C++FLAGS:=$(C++FLAGS) -DMO_USE_POSTGRES -DLINUX
+#endif
+#if system(IRIX)
+C++FLAGS:=$(C++FLAGS) -DMO_DISPLAY_HAS_MOTIF -DIRIX
+#endif
+
+## Linker
+
+# command
+LD:=ld
+
+# flags
+LDFLAGS:=
+#if system(IRIX)
+LDFLAGS:=$(LDFLAGS) -woff 131
+#elif system(LINUX)
+LDFLAGS:=$(LDFLAGS) --warn-common
+#endif
+
+# Targets
+SRC:=$(shell ls *.c++)
+OBJ:=$(SRC:*.c++=object/*.o)
+OBJ_DBG:=$(SRC:*.c++=object/*_dbg.o)
+OBJ_THREAD:=$(SRC:*.c++=object/*_thread.o)
+OBJ_THREAD_DBG:=$(SRC:*.c++=object/*_thread_dbg.o)
+GENERATORS:=$(SRC:*.c++=$(BINDIR)/*)
+GENERATORS_DBG:=$(GENERATORS:*=*_dbg)
+GENERATORS_THREAD:=$(GENERATORS:*=*_thread)
+GENERATORS_THREAD_DBG:=$(GENERATORS:*=*_thread_dbg)
+
+
+# files included
+#SRCINC:=$(shell ls *.ci)
+
+
+#
+# Tools may need specific libraries and objects to link properly;
+# Within the following variables we have the libs and mo objects;
+#	Syntax:  C++LIBS<toolname>:=<lib> ...
+#
+# NOTE: the libs may need to have a debug version!
+#
+
+
+# Directory created and necessary for this makefile
+ALLDIRS:=object backup ../bin
+DIRS:=$(ALLDIRS:U)
+
+# All the targets to be built
+ALL:=$(GENERATORS) $(GENERATORS_DBG) $(GENERATORS_THREAD) $(GENERATORS_THREAD_DBG)
+
+# What we can clean
+TARGETS:=$(GENERATORS) $(GENERATORS_DBG) $(GENERATORS_THREAD) $(GENERATORS_THREAD_DBG)
+CLEAN:=object
+CLOBBER:=backup
+
+# Files with documents
+DOCFILES:=$(SRC) $(SRCINC)
+
+# Files to save
+TOPACK:=$(shell ls *.c++) amakefile Makefile.am
+
+
+#include "../etc/makefile.mk"
+
+#
+# Create the tools
+#
+$(GENERATORS): $(OBJ::$(.TAIL:*=object/*.o)) $(BINDIR)
+	@echo Creating $(.TARGET) from $(.FIRSTSRC)
+	$(C++) $(C++FLAGS) -Wl,-rpath,"$(LIBDIR)",-rpath,. -o $(.TARGET) \
+		$(.FIRSTSRC) $($(.TAIL:*=C++LIBS*):*=-l*) \
+		$($(.TAIL:*=LDEXTRA*):*=*)
+
+$(GENERATORS_DBG): $(OBJ_DBG::$(.TAIL:*=object/*.o)) $(BINDIR)
+	@echo Creating $(.TARGET) from $(.FIRSTSRC)
+	$(C++) $(C++FLAGS) -DMO_DEBUG -Wl,-rpath,"$(LIBDIR)",-rpath,. \
+		-o $(.TARGET) $(.FIRSTSRC) $($(.TAIL:*_dbg=C++LIBS*):*=-l*) \
+		$($(.TAIL:*=LDEXTRA*):*=*)
+
+$(GENERATORS_THREAD): $(OBJ_THREAD::$(.TAIL:*=object/*.o)) $(BINDIR)
+	@echo Creating $(.TARGET) from $(.FIRSTSRC)
+	$(C++) $(C++FLAGS) -DMO_THREAD -Wl,-rpath,"$(LIBDIR)",-rpath,. -o $(.TARGET) \
+		$(.FIRSTSRC) $($(.TAIL:*_thread=C++LIBS*):*=-l*) \
+		$($(.TAIL:*=LDEXTRA*):*=*) \
+		-lpthread
+
+$(GENERATORS_THREAD_DBG): $(OBJ_THREAD_DBG::$(.TAIL:*=object/*.o)) $(BINDIR)
+	@echo Creating $(.TARGET) from $(.FIRSTSRC)
+	$(C++) $(C++FLAGS) -DMO_DEBUG -DMO_THREAD -Wl,-rpath,"$(LIBDIR)",-rpath,. \
+		-o $(.TARGET) $(.FIRSTSRC) \
+		$($(.TAIL:*_thread_dbg=C++LIBS*):*=-l*) \
+		$($(.TAIL:*=LDEXTRA*):*=*) \
+		-lpthread
+
+#
+# Create an object file then make a copy of the source in the
+# corresponding backup directory.
+#
+# NOTE: copies are made read-only since these should only be used
+#	for diff & read-only edit purposes
+#
+$(OBJ) $(OBJ_DBG) $(OBJ_THREAD) $(OBJ_THREAD_DBG): \
+		$(.TARGET:object/*.o=*.c++:*_thread*=**:*_dbg.c++=*.c++:I:-config.h) object backup
+	$(C++) -c $(.TARGET::*_dbg.o=-DMO_DEBUG>) $(.TARGET::*_thread*=-DMO_THREAD>) \
+		$(C++FLAGS) -o $(.TARGET) $(.FIRSTSRC:*_thread*=**:*_dbg.c++=*.c++)
+	cp -f $(.FIRSTSRC:*_thread*=**:*_dbg.c++=*.c++) backup/$(.FIRSTSRC)
+	chmod 440 backup/$(.FIRSTSRC)
+
+#
+# Extract the source files as required
+#
+#$(SRC) $(SRCINC): $(.TARGET:*=RCS/*,v)
+#	co $(.TARGET:T)
+
+#
+# Extract documentations
+#
+$(DOCS): $(.TARGET:$(DOCDIR)/*.doc=\\*/*.c++)
+	$(GETDOC) <$(.ALLSRC::*.c++=*.c++) >$(.TARGET)
+
+#
+# Run the different tests
+#
+run_tst_xml: .PHONY
+	#$(BINDIR)/tst_xml data/simple.xml
+	$(BINDIR)/tst_xml -i -d data/simple_db.xml
+
