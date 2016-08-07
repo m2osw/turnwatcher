@@ -16,7 +16,7 @@
 ## COMPLETENESS OR PERFORMANCE.
 ##===============================================================================
 
-project( turnwatcher )
+project( turnwatcher VERSION 1.5.2 )
 
 option( DEMO_VERSION "Turn on demo-only mode" FALSE )
 if( DEMO_VERSION )
