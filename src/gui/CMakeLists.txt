@@ -16,7 +16,7 @@
 ## COMPLETENESS OR PERFORMANCE.
 ##===============================================================================
 
-project( turnwatcher )
+project( turnwatcher VERSION 2.0.1 )
 
 option( DEMO_VERSION "Turn on demo-only mode" FALSE )
 if( DEMO_VERSION )
@@ -48,10 +48,17 @@ configure_file(
 
 include( 00-Common )
 find_package( SigCpp )
-find_package( Qt4 4.8.1 REQUIRED QtCore QtGui )
-include( ${QT_USE_FILE} )
-add_definitions( ${QT_DEFINITIONS} )
+find_package( GtkMM  )
+find_package( Qt5Core    REQUIRED )
+find_package( Qt5Widgets REQUIRED )
 set( CMAKE_AUTOMOC TRUE )
+
+include_directories( SYSTEM
+	${Qt5Core_INCLUDE_DIRS}
+	${Qt5Widgets_INCLUDE_DIRS}
+	${SIGC_INCLUDE_DIRS}
+	${GTKMM_INCLUDE_DIRS}
+	)
 
 include_directories(
 		${CMAKE_SOURCE_DIR}
@@ -62,8 +69,6 @@ include_directories(
 		${PROJECT_SOURCE_DIR}/ui
 		${PROJECT_SOURCE_DIR}/transactions
 		${molib_SOURCE_DIR}/include
-		${QT_INCLUDE_DIRS}
-		${SIGC_INCLUDE_DIRS}
 		)
 
 set( BASE_HEADER_FILES
@@ -213,10 +218,10 @@ set( TRANSACTION_SOURCE_FILES
 ##
 ## Qt4 Stuff
 ##
-QT4_WRAP_UI( UIC_FILES
+QT5_WRAP_UI( UIC_FILES
 	ui/MainWindow.ui
 	)
-QT4_ADD_RESOURCES( RES_FILES
+QT5_ADD_RESOURCES( RES_FILES
     res/resources.qrc
     )
 
@@ -285,6 +290,7 @@ list( APPEND SOURCE_FILES ${HEADER_FILES} ${CMAKE_FILES} )
 link_directories(
 	${ARCH_PREBUILT_DIRS}
 	${SIGC_LIBRARY_DIRS}
+	${GTKMM_LIBRARY_DIRS}
 	${PROJECT_SOURCE_DIR}
 	)
 

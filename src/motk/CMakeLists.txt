@@ -16,8 +16,6 @@
 ## COMPLETENESS OR PERFORMANCE.
 ##===============================================================================
 
-include( gtkmm )
-
 macro( motk_AddEvents )
 	foreach( motk_file ${ARGN} )
 		get_filename_component( motk_file ${motk_file} ABSOLUTE )
