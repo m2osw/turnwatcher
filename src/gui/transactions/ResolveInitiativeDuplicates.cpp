@@ -16,6 +16,9 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 #include "transactions/ResolveInitiativeDuplicates.h"
 
 namespace Transactions
@@ -23,8 +26,7 @@ namespace Transactions
 
 
 ResolveInitiativeDuplicates::ResolveInitiativeDuplicates()
-    : InitiativeBase( true /*emit_signals*/ )
-    , f_chars(GetCharacterMgr().lock()->GetCharacters())
+	: f_chars(GetCharacterMgr().lock()->GetCharacters())
 {
 }
 

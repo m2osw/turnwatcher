@@ -16,6 +16,8 @@
 ## COMPLETENESS OR PERFORMANCE.
 ##===============================================================================
 
+include( gtkmm )
+
 macro( motk_AddEvents )
 	foreach( motk_file ${ARGN} )
 		get_filename_component( motk_file ${motk_file} ABSOLUTE )
@@ -32,16 +34,6 @@ macro( motk_AddEvents )
 		list( APPEND SOURCES ${PROJECT_BINARY_DIR}/${motk_basefile}.c++ )
 	endforeach()
 endmacro()
-
-if( MO_WINDOWS )
-	include( iconv )
-	include( tar )
-	include_directories(
-		${molib_SOURCE_DIR}/include/win32
-        ${ICONV_INCLUDE_DIR}
-		${TAR_INCLUDE_DIR}
-	)
-endif()
 
 project( motk )
 
@@ -76,9 +68,6 @@ set( SOURCES
 
 motk_AddEvents( Menu_event.async )
 add_library( ${PROJECT_NAME} STATIC ${HEADERS} ${SOURCES} )
-target_link_libraries( ${PROJECT_NAME}
-        ${ICONV_INCLUDE_DIR}
-        ${GTKMM_LIBRARIES}
-    )
+target_link_libraries( ${PROJECT_NAME} ${GTKMM_LIBRARIES} )
 
 # vim: ts=4 sw=4 noexpandtab

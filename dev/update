@@ -1,0 +1,97 @@
+#!/bin/sh
+#
+# File:		$Source: /mnt/cvs/root/m2osw/development/commercial/turnwatcher/mainline/dev/update,v $
+# Object:	Do a cvs update hidding all the uglyness
+# Version:	$Revision: 1.6 $
+# Last Edit:	$Date: 2006/08/20 23:58:37 $
+#
+# Copyright:	Copyright (c) 2005-2006 Made to Order Software Corp.
+#
+#		All Rights Reserved.
+#
+#		This software and its associated documentation contains
+#		proprietary, confidential and trade secret information
+#		of Made to Order Software, Corp. and except as provided by
+#		written agreement with Made to Order Software, Corp.
+#
+#		a) no part may be disclosed, distributed, reproduced,
+#		   transmitted, transcribed, stored in a retrieval system,
+#		   adapted or translated in any form or by any means
+#		   electronic, mechanical, magnetic, optical, chemical,
+#		   manual or otherwise,
+#
+#		and
+#
+#		b) the recipient is not entitled to discover through reverse
+#		   engineering or reverse compiling or other such techniques
+#		   or processes the trade secrets contained therein or in the
+#		   documentation.
+#
+# $Id: update,v 1.6 2006/08/20 23:58:37 alexis Exp $
+#
+# $Log: update,v $
+# Revision 1.6  2006/08/20 23:58:37  alexis
+# Added a test to remove cvs server messages (newer version obliged)
+#
+# Revision 1.5  2006/03/29 09:38:43  alexis
+# Hid two more directories in the docs
+#
+# Revision 1.4  2006/01/20 16:45:11  alexis
+# Added the -d flag on the cvs update command line
+#
+# Revision 1.3  2006/01/14 09:41:53  alexis
+# Added .xvpics to the list of files to ignore
+# Reformatted the grep's so they all are in a top-down list
+#
+# Revision 1.2  2005/12/23 09:16:03  alexis
+# Hide the files created by automake
+# Added a copyright
+#
+#
+#
+
+
+cvs update -d 2>&1 \
+	| grep -v 'cvs update:' \
+	| grep -v 'cvs server: Updating' \
+	| grep -v '^? update$' \
+	| grep -v '\.swp$' \
+	| grep -v '\.xvpics$' \
+	| grep -v 'Makefile.in' \
+	| grep -v '^? doc.server' \
+	| grep -v '^? doc.tmp' \
+	| grep -v '^? BUILD' \
+	| grep -v '^? aclocal.m4' \
+	| grep -v '^? archive' \
+	| grep -v '^? autom4te.cache' \
+	| grep -v '^? build-arch-stamp' \
+	| grep -v '^? configure' \
+	| grep -v '^? debian/build' \
+	| grep -v '^? debian/build-beta' \
+	| grep -v '^? debian/build-demo' \
+	| grep -v '^? debian/files' \
+	| grep -v '^? debian/turnwatcher' \
+	| grep -v '^? debian/turnwatcher-beta' \
+	| grep -v '^? debian/turnwatcher-beta.postinst.debhelper' \
+	| grep -v '^? debian/turnwatcher-beta.postrm.debhelper' \
+	| grep -v '^? debian/turnwatcher-beta.substvars' \
+	| grep -v '^? debian/turnwatcher-demo' \
+	| grep -v '^? debian/turnwatcher-demo.postinst.debhelper' \
+	| grep -v '^? debian/turnwatcher-demo.postrm.debhelper' \
+	| grep -v '^? debian/turnwatcher-demo.substvars' \
+	| grep -v '^? debian/turnwatcher.postinst.debhelper' \
+	| grep -v '^? debian/turnwatcher.postrm.debhelper' \
+	| grep -v '^? debian/turnwatcher.substvars' \
+	| grep -v '^? dev/config/config.guess' \
+	| grep -v '^? dev/config/config.sub' \
+	| grep -v '^? dev/config/depcomp' \
+	| grep -v '^? dev/config/install-sh' \
+	| grep -v '^? dev/config/ltmain.sh' \
+	| grep -v '^? dev/config/missing' \
+	| grep -v '^? dev/old-linux' \
+	| grep -v '^? src/config.h.in' \
+	| grep -v '^? sswf-dotar' \
+	| grep -v '^? sswf-mingw-build.atelnet' \
+	| grep -v '^? tmp'
+
+

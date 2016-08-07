@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+RM=/bin/rm
+TW_BROWSER=/usr/bin/TurnWatcherBrowser
+SHAREDIR=/usr/share/turnwatcher
+INSTDIR=/usr/lib/turnwatcher
+PANGO_MODULES="${INSTDIR}/etc/pango/pango.modules"
+GTK_MODULES="${INSTDIR}/etc/gtk-2.0/gtk.immodules"
+GDK_LOADERS="${INSTDIR}/etc/gtk-2.0/gdk-pixbuf.loaders"
+
+case "$1" in
+	remove)
+		${RM} -f ${TW_BROWSER} ${PANGO_MODULES} ${GTK_MODULES} ${GDK_LOADERS} ${SHAREDIR}/*
+		;;
+esac

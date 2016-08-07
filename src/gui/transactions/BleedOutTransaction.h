@@ -16,10 +16,14 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 #pragma once
 
 #include "character.h"
 #include "transaction.h"
+#include "CharacterListUI.h"
 #include "transactions/UITransactionBase.h"
 
 namespace Transactions
@@ -31,7 +35,7 @@ class BleedOutTransaction :
 	public UITransactionBase
 {
 public:
-	BleedOutTransaction( Combatant::Character::pointer_t ch );
+	BleedOutTransaction( Combatant::Character::Pointer ch );
 	virtual void doit();
 	virtual void undo();
 
@@ -39,7 +43,7 @@ private:
     int				                f_prevDamage;
     int				                f_newDamage;
     bool				            f_prevJustDropped;
-    Combatant::Character::pointer_t	f_character;
+    Combatant::Character::Pointer	 f_character;
 };
 
 }

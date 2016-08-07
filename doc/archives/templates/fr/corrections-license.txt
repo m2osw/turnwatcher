@@ -1,0 +1,326 @@
+5)   http://www.turnwatcher.com/documentation/fr/license.html
+
+
+
+Licence du logiciel de l'utilisateur
+Documentation de Turn Watcher™
+  Sommaire     Raccourcis clavier     Nous contacter     Page d'acceuil  
+
+ 
+
+Cette page présente notre licence utilisateur en français. Il ne s'agit pas, néanmoins, d'une traduction officielle. Si vous avez des doutes, merci de lire la version originale en anglais.
+Contract de licence utilisateur pour
+Turn Watcher de Made to Order Software Corporation
+
+IMPORTANT — À LIRE ATTENTIVEMENT: Cette licence de Made to Order Software Corporation ("EULA") est un contract légal entre vous (un individu ou une entitée commerciale) et Made to Order Software Corporation (m2osw) pour le produit Turn Watcher, qui inclut un logiciel d'ordinateur et peut inclure différents médias, des matériaux imprimés et "en ligne" ou de la documentation électronique ("Produit"). 
+
+Le Produit inclut également toutes les mises à jour et suppléments ajoutés au Produit original vous étant fourni par m2osw. 
+7777qui vous sont fournis par m2osw.
+
+
+
+
+
+Tous les logiciels fournis avec le Produit qui ont une licence d'utilisateur séparée sont couverts par cette licence séparée et aucune autre. L'installation, la copie, le téléchargement, l'accès, ou l'emploie du Produit de quelque façon que ce soit signifie votre acceptation des termes limités de l'EULA. Si vous n'êtes pas d'accord sur les limites de cette EULA, n'installez pas ou n'employez pas le Produit; vous pouvez, cependant, le renvoyer chez votre fournisseur contre un remboursement.
+Licence du Produit
+
+Le Produit est protégé par les lois de copyright et les traités internationaux de copyright, aussi bien que d'autres lois et traités à propos des propriétés intellectuelles. Cette EULA vous donne la permission d'utiliser le Produit. Le Produit ne vous est pas vendu.
+
+
+
+
+
+
+   1. Ce qui est permis.
+
+      Cette EULA vous donne les droits suivants:
+         1. Utilisations du Produit. Vous pouvez installer, employer, accéder, afficher, lancer,
+	 ou encore interagir avec ("Lancer") 
+
+
+77777tu pourrais mettre ici une virgule et ajouter "faire" sinon la phrase est vraiment diffcile à lire 
+
+
+une seule copie du Produit, ou de n'importe quelle version antérieure sur un système d'opération 
+
+8888 d'exploitation
+
+
+
+supporté par le Produit, sur un seul ordinateur, poste de travail, terminal, PC portable, bipper, "téléphone intelligent," ou tout autre dispositif électronique ("Ordinateur") à la fois.
+
+L'utilisateur principal de l'ordinateur sur lequel le Produit est installé peut faire autant de copies que nécessaire selon ses besoins et ceci sur tout ordinateur en sa possession pour son usage exclusif.
+
+
+
+
+
+
+         2. Sauvegardes et réseaux. Vous pouvez également stocker ou
+	    installer des copies du Produit sur un dispositif de stockage,
+	    tel qu'un serveur de réseau, utilisé pour Lancer le Produit
+	    sur vos autres ordinateurs au moyen d'un réseau local;
+	    cependant, vous devez acquérir et dédié une licence
+	    pour chaque ordinateur sur lequel le Produit est Lancer 
+
+8888 lancé
+
+
+
+de façon concurrente 
+
+
+777simultanée
+
+
+à partir de tout 
+
+777ou de n'importe quel
+
+
+dispositif de stockage. Une licence unique du Produit ne peut être partagée ou employée de façon concurrente 
+777 idem similtanée
+
+
+sur différents ordinateurs.
+         3. Réservation des droits. Tous les droits qui ne sont pas expressément accordés sont réservés par m2osw.
+
+
+
+
+
+
+   2. Description de vos autres droits et limitations.
+         1. Produit pas pour la vente. Si le Produit est marqué "Pas pour la vente" ou "Logiciel de Démonstration" 
+
+888démonstration (pas de majuscule)
+
+
+ou simplement "Démo", alors, nonobstant les autres sections de cette EULA, votre usage du Produit est limité à démontrer son fonctionement dans le but de l'évaluer. Le Produit ne peut en aucun cas être revendu, ou autrement transferé pour une valeur monétaire, quelqu'elle soit.
+
+
+         2. Limitations sur la décompilation or le désassemblage. Vous n'avez pas le droit de décompiler ou de désassembler le Produit. La seule exception est le cas où une telle activité est expressément autorisée par la loi applicable et ce malgré cette limitation.
+         3. Séparation des composants. Le Produit est licensié
+
+888licencié
+
+
+
+ comme un seul produit. Ses 
+
+888 ces
+
+
+éléments ne peuvent être séparés pour l'usage sur plus d'un ordinateur à la fois. Certains éléments du Produit viennent de logiciels libres. Le code et les composants de ces logiciels libres peuvent être obtenus séparément et employés librement sans tenir compte de cette limitation.
+
+
+
+
+
+         4. Marques déposées. Cette EULA ne vous accorde aucun droit d'utilisation ou autre avec aucune des marques déposées ou marques de services de m2osw.
+         5. Location. Cette EULA ne vous donne pas le droit de louer ou prêtez le Produit. m2osw a d'autres licences disponibles à cet effet.
+         6. Services de support. Dans certain cas, m2osw peut vous offir le support nécessaire à l'utilisation du Produit ("Services de support").
+
+ L'utilisation des Services de support est défini par les régulations de m2osw.
+ Ces régulations sont disponibles "en ligne", et/ou sur d'autres médias fournis
+ par m2osw. Tout supplément au Produit vous étant fourni 
+
+7777qui vous serait fourni
+
+
+par m2osw dans le cadre des Service de support seront 
+sera (le sujet est "tout supplément au produit" ) consideré 88s 
+
+
+comme faisant partie du Produit et seront 
+idem
+
+par là-même sujet(-s)
+
+
+
+ aux modalités et aux conditions de cette EULA mise à part s'il s'agit d'un logiciel libre. 
+
+
+Les logiciels libres vous seront fourni 
+
+8888 fournis
+
+
+
+avec leur licence spécifique. Vous autorisez m2osw à utiliser toutes
+informations techniques que vous lui fournissez dans le cadre de ses
+affaires. Ces informations seront utilisées de façon à ne jamais vous
+identifier de façon personnelle.
+
+
+
+
+
+
+         7. Transfert du Produit. Le propriétaire actuel du Produit peut faire un transfert permanent de cette EULA et du Produit à un nouvel utilisateur (un individu ou une entité commerciale). Ce transfert doit inclure le Produit complet (tous ses éléments y compris, les médias, les copies de sauvegarde, les imprimés, toutes mises à jour, et cette EULA). Un tel transfert ne peut pas être par confiscation ou tout autre transfert indirect. Le nouvel utilisateur qui accepte le Produit par le biais d'un transfert doit accepter de se conformer aux limites de cette EULA. Le propriétaire actuel doit détruire toutes les copies du Produit qu'il ne peut pas transférer (par exemple les copies sur les ordinateurs du propriétaire actuel) lorsque le transfert se produit.
+         8. Résiliation. Sans préjudice à tous autres droits, m2osw a le droit de terminer 
+
+777d'interrompre
+
+
+cette EULA si vous ne vous conformez pas aux modalités et aux conditions de cette EULA. Quand cela se passe, vous devez détruire toutes les copies du Produit et de tous ses éléments.
+   3. Mise à jour.
+
+      Si le Produit est marqué comme étant une mise à jour, vous devez au
+      préalable avoir accepté l'EULA de m2osw du Produit qui peut être mise
+      à jour avec ce Produit de mise à jour avant d'avoir le droit de proceder 
+888procéder
+
+
+
+
+
+
+avec 
+
+7878à
+
+
+cette mise à jour et d'utiliser le Produit mise à jour. Un Produit de mise à jour remplace et/ou supplémente (et peut annuler) le Produit qui vous a donné le droit de faire cette mise à jour. Vous ne pouvez utiliser le Produit mise à jours qu'en acceptant les limitations de cette EULA. Si le Produit est une mise à jour d'un nombre limité des éléments du Produit étant mise à jour, le Produit mise à jour est toujours consideré comme étant un seul produit et les éléments de la mise à jour ne peuvent pas être utilisés en dehors du Produit ou sur plusieurs ordinateurs en même temps ni être transferés de façon séparé.
+
+
+   4. Copyright.
+
+      Tous les titres et copyrights du Produit (y compris mais non limité à
+      toutes les images, photographies, animations, vidéos, sons, musiques,
+      textes, et "modules d'extension" incorporés dans le Produit), les
+      documents imprimés d'accompagnement, et toutes les copies du Produit
+      sont et restent la propriété de m2ow ou de ses fournisseurs. Tous
+      titres et propriétés intellectuelles du contenu qui peuvent être
+      consultés quand vous utilisez le Produit est la propriété des
+      propriétaires respectifs et peuvent être 
+
+777sont
+
+
+      protègés par les lois de copyright ou d'autres lois et traités
+      de propriété intellectuelle. Cette EULA ne vous accorde aucun droit
+      d'employer ce contenu. Si ce Produit est fourni avec une documentation
+      disponible uniquement sous forme électronique, vous avez le droit
+      d'imprimer autant de copies que vous voulez pour votre usage personel.
+      Vous n'êtes pas autorisé à copier les documents imprimés accompagnant
+      le Produit.
+
+   5. Recevoir le Produit sur différents médias.
+
+      Vous pouvez recevoir le Produit sur plusieurs médias. Indépendamment du type ou de la taille du ou des médias que vous recevez avec le Produit, vous ne pouvez utiliser qu'un de ces médias, celui qui est approprié à votre ordinateur. Vous ne pouvez pas prêter, louer, ou transferer de quelque mannière que ce soit les autres médias à un autre utilisateur, mise à part dans le cas d'un transfert permanent du Produit (de la manière prévue ci-dessus).
+   6. Copies de sauvegarde.
+
+      Vous pouvez garder les médias originaux sur lesquels le Produit a été fourni par m2osw seulement dans le but de sauvegarder ou d'archiver votre Produit. Vous pouvez faire des copies supplémentaires de sauvegarde des médias originaux seulement dans le but de sauvegarder ou d'archiver votre Produit. Vous détruirez ou transférerez toutes ces copies en tant qu'élément du Produit dans le cas d'un transfert permanent (de la manière prévue ci-dessus). Mise à part comme il est défini dans cette EULA de façon explicite, vous n'êtes pas autorisé à faire des copies du Produit, aussi bien du logiciel que des documents imprimés accompagnant le Produit.
+   7. Droits restreints pour le Gouvernement des États-Unis.
+
+
+
+
+
+
+      Tout logiciel d'ordinateur fourni au gouvernement des États-Unis
+      conformément aux sollicitations publiées le premier décembre 1995
+      ou après est fourni avec les droits et restrictions commerciaux
+      décrits dans cette EULA. Tout logiciel d'ordinateur fournis au
+      gouvernement conformément aux sollicitations publiées avant le
+      premier décembre 1995 est fournis
+
+88fourni
+
+
+ avec les droits restreints de la manière prévue dans FAR, 48 CFR 52.227-14 (juin 1987) ou FAR, 48 CFR 252.227-7013 (octobre 1988) selon le cas.
+   8. Restrictions à l'exportation.
+
+      Vous convenez que vous n'exporterez ou ne réexporterez pas le Produit,
+      ou une partie de celui-ci, quelqu'elle soit, ou 
+
+777ni 
+
+      un processus ou service qui est le résultat direct de l'utilisation du Produit
+      (tout ceci est désigné de façon collective sous le nom les "Composants Restreints"),
+      dans n'importe quel pays, a une personne ou entité sujet aux restrictions à
+      l'exportation des États-Unis. Vous acceptez spécifiquement de ne pas exporter
+      ou ne pas réexporter n'importe lequel des Composants Restreints (i) dans tout
+      pays avec lequels les États-Unis ont un embargo ou ont limité l'exportation
+      de marchandises ou de services, qui incluent actuellement, mais ne sont pas
+      nécessairement limités aux pays suivants : Cuba, l'Iran, la Libye, la Corée
+      du Nord, le Soudan et la Syrie; ou à un individu d'un de ces pays, où qu'il
+      soit, si celui-ci prévoit de transmettre ou de transporter les Composants
+      Restreints dans un de ces pays; 
+
+
+(ii) à toute personne ou entité que vous savez ou avez des raisons pour savoir qu'elle utilisera les Composants Restreints pour la conception, le développement ou la production d'armes nucléaires, chimiques ou biologiques; ou (iii) à toute personne ou entité qui a été interdite de participer à tout export des États-Unis quelque soit l'agence fédérale du gouvernement des États-Unis qui ait bannie cette personne ou entité. Vous jurez que ni le BXA ni n'importe quelle autre agence fédérale des États-Unis n'a suspendu, retiré ou répudié vos privilèges d'exportation.
+   9. Aucune garantie de tolérance ou de non-défaillance.
+
+      Le Produit n'est pas garanti sans défaut de tolérance et n'est pas conçu, créé, ou prévu pour être utilisé ou être revendu en tant qu'équipement qui doit être utilisé dans des environnements dangereux exigeant l'exécution fiable, comme dans l'opération d'une installation nucléaire, de la navigation d'un avion ou de systèmes de communication, le contrôl de trafic aérien, dans laquelle l'échec de notre Produit pourrait directement causer la mort, des blessures, ou des dommages physiques ou environnementaux graves.
+  10. Lois régissant l'EULA.
+
+      Si vous acquèrez ce Produit aux États-Unis, cette EULA est régie par les lois de l'état de la Californie. Si le Produit est acquis en dehors des États-Unis, alors la loi locale peut être appliquée.
+
+
+
+
+
+
+  11. Garantie limitée.
+
+      m2ow garantie que (a) le Produit exécutera selon les informations
+      écrites fournies avec le Produit, et ce, pendant une période de
+      quatre-vingt-dix (90) jours à partir de la date à laquelle vous
+      avez reçu le Produit, 
+
+777 ne serait ce point s'executera que tu voulais écrire?
+
+et (b) tout support fournis par m2osw sera similaire à ce qui est
+       décrit dans les informations écrites fournies par m2osw,
+
+
+7777 ici je mettrais un point et commencerai une nouvelle phrase
+
+
+
+ et les ingénieurs de soutien de m2osw offriront tous les efforts commercialement raisonnables de sorte à résoudre tout problème que vous pouriez avoir. Certains états et certaines juridictions ne nous permettent pas de limiter la durée d'une garantie implicite, il se peut donc que cette garantie limitée ne s'appliquer pas à vous. Avec toute l'étendue de la loi en vigueur, les garanties implicites pour ce Produit sont limitées à quatre-vingt-dix (90) jours.
+  12. Recourt client.
+
+      La responsabilité de m2osw et de ses fournisseurs et votre recourt légal exclusif, aux choix de m2osw, sont soit (a) le remboursement du prix payé, si vous avez payé quelque chose, ou (b) la réparation ou le remplacement du Produit qui ne fonctionne pas comme spécifié dans la garantie limitée de m2osw. Pour tout remplacement, vous devrez envoyer à m2osw votre Produit accompagné du reçu faisant preuve d'achat. La garantie limitée est annulée si les problèmes avec l'utilisation du Produit est 
+
+888sont
+
+
+le résultat d'un accident, d'abus, ou d'une utilisation inapropriée. N'importe quel Produit de rechange sera garantie pour la plus longue période entre le reste de la période originale de garantie ou pendant trente (30) jours. En dehors des États-Unis, ni ce recourt ni aucun support du Produit offert par m2osw ne seront disponibles sans preuve d'achat d'un fournisseur autorisé.
+  13. Aucunes autres garanties.
+
+      Avec toute l'étendue de la loi en vigueur, m2osw et ses fournisseurs démentent toute autre garantie ou condition, de façon explicite ou implicite, y compris, mais non limités aux, garanties implicites de valeur marchande, utilisations dans un but particulier, titres, et non-infraction, en ce qui concerne le Produit, et le support ou le manque de support. Cette garantie limitée change vos droits légaux. Il est possible que vous ayez d'autres droits. Ceci change selon les états, les juridictions et les pays.
+  14. Limitations des responsabilité.
+
+      Avec toute l'étendue de la loi en vigueur, dans aucun cas, m2osw
+      ou ses fournisseurs ne pourront être portés responsables des
+      dommages spéciaux, fortuits, indirects, ou conséquents quels
+      qu'ils soient (comprenant, sans limitation, les dommages
+      pour la perte de bénéfices commerciaux, une interruption
+      de vos affaires, perte d'information de votre société, ou
+      toute autre perte monétaire) provenant de l'utilisation
+      de ou de l'impossibilité d'utiliser le Produit ou pour
+      le support ou le manque de support, même si m2osw a été
+      conseillé 
+
+777informé
+
+de la possibilité de tels dommages. Dans tous les cas, l'entière responsabilité de m2osw par rapport a 
+888à
+
+
+tous les paragraphes de cette EULA sera limitée au plus grand des deux montants suivant : le montant réellement payé pour obtenir votre copie du Produit ou US $5,00; sauf si vous avez accepté un autre contract avec m2osw, alors les limites de cet autre contract seront éventuellement en vigueur. Étant donné que certains états, certaines juridictions et certains pays ne permettent pas l'exclusion ou la limitation de notre responsabilité, il est possible que cette limitation ne s'applique pas à vous.
+
+
+
+
+  © 2006  — Made to Order Software Corporation — Tous droits réservés
+
+------------------------------------
+
+
+
+

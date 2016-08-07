@@ -1,0 +1,145 @@
+#!/bin/sh
+#
+# File:		dev/get_version
+# Object:	Retrieve the version from different files
+#
+# Copyright:	Copyright (c) 2005-2008 Made to Order Software Corp.
+#
+#		All Rights Reserved.
+#
+#		This software and its associated documentation contains
+#		proprietary, confidential and trade secret information
+#		of Made to Order Software Ltd. and except as provided by
+#		written agreement with Made to Order Software Ltd.
+#
+#		a) no part may be disclosed, distributed, reproduced,
+#		   transmitted, transcribed, stored in a retrieval system,
+#		   adapted or translated in any form or by any means
+#		   electronic, mechanical, magnetic, optical, chemical,
+#		   manual or otherwise,
+#
+#		and
+#
+#		b) the recipient is not entitled to discover through reverse
+#		   engineering or reverse compiling or other such techniques
+#		   or processes the trade secrets contained therein or in the
+#		   documentation.
+#
+# $Id: get_version,v 1.4 2006/09/08 07:09:53 alexis Exp $
+#
+# $Log: get_version,v $
+# Revision 1.4  2006/09/08 07:09:53  alexis
+# Added tests of all the hard coded versions so they all correspond
+#
+# Revision 1.3  2006/08/21 00:02:41  alexis
+# Retrieve the changelog version too
+# Verify that the changelog & configure versions are equal
+#
+# Revision 1.2  2005/12/30 17:49:52  alexis
+# Now also compute the major & minor versions
+#
+# Revision 1.1  2005/12/23 09:05:53  alexis
+# A script to gather the current Turn Watcher version from the configure script
+#
+#
+#
+#
+
+# Read the command line options
+
+. dev/get_options
+
+
+
+# Get the version from the configure.ac script (main authority!)
+#export VERSION=`grep "AC_INIT" configure.ac | sed -e 's/.*\[\([0-9\.]\+\)\].*/\1/g'`
+export VERSION=`grep "AC_INIT" configure.ac | sed -e 's/.*\[\([0-9.]*\)\].*/\1/'`
+
+if $VERBOSE
+then
+	echo $VERSION
+fi
+
+export VERSION_MAJOR=`echo $VERSION | sed -e 's/\..*//'`
+export VERSION_MINOR=`echo $VERSION | sed -e 's/.*\.//'`
+
+
+# Get the build version from the debian/changelog file
+export FULL_VERSION=`sed -e '1,1 s/.*(//' -e '1,1 s/).*//' -e '2,$ d' debian/changelog`
+export BUILD_VERSION_STRING=`echo $FULL_VERSION | sed -e 's/.*-//'`
+export BUILD_VERSION=`echo $BUILD_VERSION_STRING | sed -e 's/m2osw//'`
+
+
+# Verify that the debian/changelog and configure.ac scripts are equal
+CHANGELOG_VERSION=`echo $FULL_VERSION | sed -e 's/-.*//'`
+if test "$VERSION" != "$CHANGELOG_VERSION"
+then
+	echo "turnwatcher: error: configure.ac says version: $VERSION"
+	echo "turnwatcher: error: debian/changelog says version: $CHANGELOG_VERSION (in full: $FULL_VERSION)"
+	echo "turnwatcher: error: all versions need to be equal. Please fix and try again."
+	exit 1;
+fi
+
+current_dir=`pwd`
+sub_dir=`basename $current_dir`
+case "$sub_dir" in
+version_*)
+	dir_version=`echo $sub_dir | sed -e 's/version_//'`
+	if test "$dir_version" != "$VERSION"
+	then
+		echo "turnwatcher: error: configure.ac & debian/changelog have version $VERSION"
+		echo "turnwatcher: error: directory you are working in has version $dir_version"
+		echo "turnwatcher: error: all versions need to be equal. Please fix and try again."
+		exit 1;
+	fi
+	;;
+
+mainline)
+	if test -d ../version_$VERSION
+	then
+		echo "turnwatcher: error: configure.ac & debian/changelog have version $VERSION"
+		echo "turnwatcher: error: a directory with that version exists!"
+		echo "turnwatcher: error: mainline is required to have a new version."
+		echo "turnwatcher: error: Please fix and try again."
+		exit 1;
+	fi
+	;;
+
+*)
+	echo "turnwatcher: error: configure.ac & debian/changelog have version $VERSION"
+	echo "turnwatcher: error: directory you are working in has version $dir_version"
+	echo "turnwatcher: error: all versions need to be equal. Please fix and try again."
+	exit 1;
+
+esac
+
+
+# There is another duplicate of the MOLIB version which is hard coded in
+# ./Makefile.am (the top Makefile)
+#
+# We cannot have a variable there because it's read with the aclocal
+# script way before the Makefile is generated and variable would not be
+# properly handled there.
+#
+# Ignore comments
+# Ignore lines which do not include /usr/lib/mo
+# Remove whatever is before and after the version
+CONFIGURE_MOVERSION=`sed -e 's/#.*//' -e 's/dnl[ \t].*//' -e 's/dnl$//' configure.ac | grep 'MO_VERSION=' | sed -e 's/MO_VERSION=//'`
+ACLOCAL_MOVERSION=`sed -e 's/#.*//' Makefile.am | grep usr.lib.mo | sed -e 's/.*usr.lib.mo.//' -e 's%/.*%%'`
+
+if test "$CONFIGURE_MOVERSION" != "$ACLOCAL_MOVERSION"
+then
+	echo "turnwatcher: error: configure.ac says mo library version: $CONFIGURE_MOVERSION"
+	echo "turnwatcher: error: ACLOCAL variable in ./Makefile.am says version: $ACLOCAL_MOVERSION"
+	echo "turnwatcher: error: all versions need to be equal. Please fix and try again."
+	exit 1;
+fi
+
+
+if $SHOW_FULL_VERSION
+then
+	echo "turnwatcher: full version: $FULL_VERSION"
+	echo "turnwatcher: molib version: $CONFIGURE_MOVERSION"
+fi
+
+

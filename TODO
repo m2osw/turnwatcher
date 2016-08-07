@@ -1,2 +1,178 @@
-Wed Nov 13 10:29:58 PST 2013
-Created.
+# $Id: TODO,v 1.26 2006/08/29 17:01:01 doug Exp $
+#
+
+What we want to do in the following versions
+(also see Bug Tracker which includes that info)
+
+  1.2  Add effects
+  1.3  Add monsters
+  1.4  Add soft columns
+
+
+
+Changes request:
+
+ 0) Timer feature between turns. Some sort of window poping up. [same as point 14]
+
+ 0.5) Separate effects window.
+
+ 0.6) Add custom icons.
+
+ 0.7) Add heads-up display...
+
+ 1) NEW FEATURE: look into a Live CD Turn Watcher version; if
+    it is doable, we may gain many more clients who would otherwise
+    not want to replace their Win98 with Linux (best choice but we
+    cannot force our customers to take it...)
+
+ 2) CRASH:
+
+	Clean all characters
+	Create 1 character
+	Start
+	Delete that 1 character
+	Next
+	Crash
+
+ 3) Help menu -- once we have monsters in HTML, we should add a link to it
+
+ 4) Make the software work under Win98
+
+ 5) The Import dialog came up with no filter at first. Now
+    that I selected one, it comes back with that one filter.
+
+    It looks like whenever you change folder, the filter
+    selection gets lost. This is certainly a gdk bug, ideas?
+
+    [Reported by Eric?]
+
+ 6) The menu separators are missing under MS-Windows (A Gtk
+    problem?) They are added to the <xml> string but nothing
+    appears.
+
+
+ 8) Fix the .turnwatcher1 known file type extension in Win32
+    so it is visible right away once the install finishes.
+    (Also, implement that feature in KDE/Gnome)
+
+ 9) Automate the license.cpp generation (we have a script, it should
+    be called by the Makefile.am whenever the source doc/LICENSE.txt
+    file changes)
+
+9.5) NEW FEATURE: Add abilities and modifiers. Support temp hit points.
+
+10) NEW FEATURE: manually adding the initiative (i.e. force
+    the initiative order so people can still throw dice but
+    use the computer in non-ultra initiative for rounds to
+    follow and manage the ready/delay and other states)
+
+11) NEW FEATURE: make the Import work with just the selected
+    characters/monsters (i.e. need multi-selection!)
+
+12) NEW FEATURE: soft columns, adding new die rolls
+
+13) NEW FEATURE: soft columns where the die/dice rolls is specified
+    manually (i.e. 3d8+1) -- this allows us to break from the d20
+    only scheme
+
+13) NEW FEATURE: status changed to some sort of effect column
+    with information about the effect of spells, poisons, potions,
+    scrolls, wands, etc. [adding a new type Effect and add a row
+    instead of a column]
+
+14) NEW FEATURE: add a realtime timer so people can easilly know
+    whether they are really focusing on the combat rather than
+    talking about stuff... We need a start/pause and a way to
+    setup the amount of time a round should take. [by Karl]
+
+15) NEW FEATURE: Distinguish between lethal and non lethal damage.
+
+16) NEW FEATURE: Separate initiative modifier into HD + con modifier + feats
+
+17) NEW FEATURE: Allow mass change to modifiers
+
+
+#
+# $Log: TODO,v $
+# Revision 1.26  2006/08/29 17:01:01  doug
+# Added effects keyboard shortcuts. Also, can add effects from effects book
+# on main UI.
+#
+# Revision 1.25  2006/06/06 01:18:54  alexis
+# Added info about a crash when no chars. in the list while running (Started).
+#
+# Revision 1.24  2006/03/12 23:54:57  doug
+# Abilities work correctly with checkbox now. Also fixed damage bug
+# where just dropped wasn't being turned on.
+#
+# Revision 1.23  2006/02/25 19:33:17  alexis
+# Added the Live CD idea info
+#
+# Revision 1.22  2006/02/09 19:25:26  doug
+# Added new feature requests.
+#
+# Revision 1.21  2006/02/09 19:16:51  doug
+# Added new feature request: lethal and non-lethal damage
+#
+# Revision 1.20  2006/02/09 07:14:30  alexis
+# Point 7 removed, I changed the life savers with other icons for all the
+# entries except the tutorial.
+#
+# Revision 1.19  2006/02/08 20:22:28  alexis
+# Replaced the auto-decrement HP of dead people by adding a realtime timer
+#
+# Revision 1.18  2006/01/25 00:11:31  alexis
+# Added a comment about adding a menu entry for monsters.
+# Removed the entries for the Demo version which now is finished.
+#
+# Revision 1.17  2006/01/24 21:17:25  alexis
+# Removed a few points in regard to the Demo version
+# Added the auto-decrement hp when < 0
+#
+# Revision 1.16  2006/01/20 21:49:36  alexis
+# Latest changes by Alexis... 8-)
+#
+# Revision 1.15  2006/01/10 07:46:58  alexis
+# Added info about the Demo version
+#
+# Revision 1.14  2005/12/29 02:30:33  alexis
+# Added the Help menu icon comment
+#
+# Revision 1.13  2005/12/27 01:20:19  alexis
+# Added the 4 points for the demo version.
+#
+# Revision 1.12  2005/12/25 03:20:14  alexis
+# Delete what I have done
+# Added problem with 640x480
+# Added problem with Win98
+#
+# Revision 1.11  2005/12/19 18:36:01  doug
+# More TODO things.
+#
+# Revision 1.10  2005/12/17 04:13:56  doug
+# Updated to current status.
+#
+# Revision 1.9  2005/12/16 17:30:09  alexis
+# Deleted point 7, the position column works
+#
+# Revision 1.8  2005/12/13 23:22:04  alexis
+# Saving the last changes
+#
+# Revision 1.7  2005/12/11 21:44:56  alexis
+# Simplified the bug in regard to the About window
+#
+# Revision 1.6  2005/12/10 09:18:03  doug
+# More changes.
+#
+# Revision 1.5  2005/12/06 20:46:04  alexis
+# Added point 11 and tweaked point 10
+#
+# Revision 1.4  2005/12/06 20:38:28  alexis
+# Removed the silly ^M
+#
+# Revision 1.3  2005/12/06 20:37:52  alexis
+# Added an ID and the Log (last log: Added point 10)
+#
+#
+#
+

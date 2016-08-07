@@ -1,0 +1,27 @@
+
+reorder.html
+
+Pa8gina anterior ---Pa8gina siguiente---
+
+
+Con Turn Watcher usted puede aumentar o8 importar los personajes durante un combate. Los nuevos personajes se encontrara8n a final de la lista del punto de vista Iniciativa. 
+Usted podra8 desplazar uno o8 varios de estos personajes arriba o8 abajo de la lista de Iniciativa clicando sobre los personajes despue8s  seleccionado Desplazar hacia arriba o8 hacia abajo en el menu8 Raunds.
+Idea : Utilice  las teclas flechas dirigidas hacia arriba o8 hacia abajo con una de las teclas de control apoye para Desplazar los personajes en la lista 
+de Iniciativa  hacia arriba o/abajo. 
+
+
+---------
+
+
+hitpoints.htm (le morceau qui manquait )
+
+Cuando un personaje moribundo es estabilizado , seleccione Estabilizar en el menu8 Raunds. El statuto sera8 cambiado del moribundo a estabilizado. Turn Watcher dejara8 de hacer sangrar al personaje a menos que el resista de nuevo a los dan8os.usted podra de igual manera sanar al personaje de modo que el tenga cero (0) o8 mas puntos de vida y asi evitar el sangrado.
+Cuando un personaje llega a menos de diez (- 10)  puntos de vida , Turn Watcher lo da por muerto de manera automa8tica y el es atontado. Note que por defecto , Turn Watcher no da8 el turno  a un personaje muerto. Usted puede eliminar un personaje muerto de su lista , clicando encima y clicando en el boto8n borrar de la barra de implementos.
+
+Idea : deja traduit mais manque :
+- un espace dans "ayudade" => "ayuda de" 
+- un espace entre "saltar" et "los" dans "saltarlos" 
+et un "t" dans "mueros" pour que ça fasse Muertos
+
+
+----------------

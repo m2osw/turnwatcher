@@ -440,9 +440,6 @@ virtual long MatchPriority(void) const
 
 virtual long MatchType(const void *buffer, unsigned long size) const
 {
-#if 0
-    // TODO: this needs to point to something!
-    //
 	png_infop		info;
 
 	if(size < sizeof(info->signature)) {
@@ -451,7 +448,6 @@ virtual long MatchType(const void *buffer, unsigned long size) const
 	if(!png_check_sig(static_cast<png_byte *>(const_cast<void *>(buffer)), sizeof(info->signature))) {
 		return 0;
 	}
-#endif
 
 	return 100;
 }

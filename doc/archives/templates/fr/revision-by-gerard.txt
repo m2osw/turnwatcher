@@ -1,0 +1,455 @@
+
+
+8888888888888 = erreur
+77777777777777 = suggestion
+
+
+1)
+http://www.turnwatcher.com/documentation/fr/description.html
+
+Turn Watcher™, qu'est-ce c'est?
+
+Pendant que vous menez un jeu, vous, le maître de jeu, êtes supposé gérer
+les combats sans difficulté et avec abilité. Nous savons tous que certaines
+rencontres sont plutôt simples à jouer, mais que ce passe-t-il quand elles
+deviennent plus compliquées? Comment savez-vous où vous en êtes avec les
+points de vie de l'orc 
+888888888888orcque
+
+
+
+numéro 12? Comment savez-vous qu'un personnage va mourir d'une saignée dans
+3 rounds? Comment vous rapellez-vous de l'ordre des personnages quand ils
+vous demandent pour avoir un délai? 
+
+
+77777777777quand ils vous demandent un délai
+
+Comment gardez-vous les informations à propos des actions de delai?
+Avez-vous un bon moyen pour lancer les dés en secret pour tester une
+abilité ou une sauvegarde pour tous vos joueurs d'un seul coup? Ou
+une façon simple de relancer les dés d'initiative pour tout le monde
+au début de chaque round?
+
+Si vous vous êtes déjà demandé s'il y avait un meilleur moyen pour
+gérer vos combats, alors Turn Watcher est la solution que vous cherchiez!
+Turn Watcher accepte un nombre illimité de personnages et de monstres
+et gère leur initiative 
+777777777777si les personnages peuvent avoir )plusieurs intitiaves
+alors il faut mettre le pluriel leurs initiatives
+
+
+
+et leurs points de vie, vous libérant de sorte à ce que vous puissiez 
+pour que vous puissiez
+
+
+
+
+jouer pleinement et sans difficulté inutile.
+
+Turn Watcher:
+
+    * lance les dés d'initiative pour tous les joueurs et les monstres,
+    résout les execos 
+
+88888888 aexeco ??? pour le ae je suis sur pour le reste à verifier
+
+
+
+et ordonne la liste en fonction des résultats — et tout ceci d'un seul clique!
+
+77777777ou clic (un clic , je clique )
+
+
+
+    * vous permet de changer l'ordre des personnages et des monstres du
+      point de vue de l'initiative en vous laissant les marquer pour un
+      délai ou une préparation; vous pouvez aussi réarranger l'ordre quand
+      vous ajoutez un autre combattant sans avoir à arrêter le combat.
+    * compte les rounds de combat pour vous.
+    * liste les point de vie et le status des personnages et des monstres,
+      et saigne les personnages mourrant de façon automatique jusqu'au
+      moment où ils sont marqués morts à -10 points de vie.
+    * lance les dés en secret pour tester les abilités et les sauvegardes
+      de vos joueurs.
+
+
+    * vous permet d'annuler et de refaire toutes les actions.
+
+
+----------------------------------------
+2)
+http://www.turnwatcher.com/documentation/fr/get_started.html
+
+Commançons...
+
+
+88888888888commençons
+
+
+C'est facile de voir que Turn Watcher est un outil très utile dans votre
+armurie de maître de jeu. Les bases sont:
+
+   1. Créer une liste de personnages joueurs impliqué dans un combat 
+
+7777777 moi je mettrai plutot soit personnage soit joueur mais pas
+        les deux histoire de simplifier.....
+
+(vous pouvez ré-utiliser cette liste encore et encore au fur et à mesure de vos rencontres).
+   2. Créer des listes de monstres.
+   3. Importer la liste des PJs et l'une des listes de monstres pour votre rencontre.
+   4. Démarrer votre combat!
+
+Ajouter des personnages joueurs
+
+7777777 idem remarque précédente
+
+
+
+La toute première fois que vous démarrez Turn Watcher, vous verrez une liste vide.
+
+La première chose à faire c'est entrer 
+
+787878 c'est d'entrer les ...
+
+les statistiques pour chacun de vos personnages joueurs (PJs).
+
+
+
+
+ Nous vous recommandons de vous préparer (de créer vos listes) avant votre partie si possible.
+
+777 puisque c'est une recommandation le "si possible" n'est pas nécessaire
+
+
+ Il ne vous est pas nécessaire d'entrer les statistiques à chaque partie puisque Turn Watcher s'en rapelle de façon automatique. 
+
+77777777 les mémorise (automatiquement)
+
+
+
+
+Vous pouvez aussi mettre à jour cette information quand les personnages changent de niveau.
+
+Pour commencer votre liste de personnages, cliquez sur le bouton Ajouter sur la barre de menu. Le dialogue Ajouter un personnage apparait. Entrez son nom, ses ajustements d'Initiative, de Détection, d'Écoute et de Sauvegarde. Ensuite, tapez le nombre maximum de points de vie. Enfin, choisissez Personnage dans le menu et cliquez sur OK.
+
+Répétez ces étapes jusqu'à ce que vous ayez entrer tous les personnages dans Turn Watcher.
+
+Idée: Tapez la touche TAB pour avancer d'un champ à l'autre.
+
+77777777 pour passer d'un champs à l'autre
+
+
+
+Doug entre les statistiques pour Shiena, une barbare humaine. Il clique sur le bouton Ajouter et tape Shiena dans le champ réservé pour le nom du personnage. Il avance dans la case 
+
+7777 à la case
+
+suivante avec la touche TAB et tape les ajustements pour son Initiative, sa Détection, son Écoute, sa sauvegarde et enfin ses points de vie. Il laisse les Dommages actuels à 0 et s'assure que le Type de personnages est bien Personnage. Pour finir, il clique sur OK.
+Exporter une liste de personnages joueurs
+
+Une fois que vous avez entré tous les PJs qui participent à votre compagne
+
+
+88888888campagne
+
+
+ dans Turn Watcher, vous pouvez Exporter votre liste. Choisissez Exporter dans le menu Fichier. Tapez un nom de fichier et cliquez sur the 
+
+
+88888le
+
+
+bouton Sauver.
+
+Doug maîtrise une campagne avec quatre joueurs. Il entre les statistiques de chacun des quatres personnages et Export 
+
+8888exporte
+
+dans un fichier nommé Campagne du Dragon (Dragon Campaign).
+Créer les rencontres
+
+Effacez tous les personnages et monstres de votre liste en sélectionnant Abandonner dans le menu Fichier. Assurez-vous de bien exporter vos personnages joueurs avant de tout effacer.
+
+Ajouter des monstres pour vos rencontres est similaire à ajouter des PJs, mais il vous faut choisir Monstre au lieu de Personnage dans le menu du bas.
+
+Pour chaque rencontre, ajouter le ou les differents monstres qui attaqueront les PJs. Exporter chaque groupe de monstres dans un fichier avec un nom approprié pour cette rencontre.
+
+Idée: Pour rapidement dupliquer un monstre, cliquez sur lui dans la liste et sélectionnez Dupliquer dans le menu Édition. Turn Watcher vous demandera 
+
+a 
+888 supprimer le a 
+
+combien de fois vous désirez dupliquer ce monstre. Et vous pouvez même faire ça durant un combat!
+
+Doug a prévu une rencontre avec quatre ghouls...
+
+    * Il clique le bouton Ajouter et type Ghoul 1 dans le champ Nom du personnage,
+    * Il entre les ajustements d'une ghoul: Initiative, Détecter, Écouter et Sauvegarde; puis les points de vie maximum. Il s'assure que le Type de personnage est bien mis sur Monstre. Et pour finir il clique sur OK pour mettre la Ghoul dans la liste.
+    * Il sélectionne Ghoul 1 dans la liste en cliquant dessus et choisi Dupliquer dans le menu Édition.
+    * Dans la fenêtre, il entre le nombre 3 et clique sur OK.
+
+Maintenant, il a quatre ghouls pour attaquer ses joueurs.
+Exporter une liste de monstres pour une rencontre
+
+Maintenant que vous avez une liste de monstres, vous pouvez la sauver dans en fichier en utilisant Exporter dans le menu Fichier. Dans le dialogue de sauvegarde tapez un nom de fichier et cliquez sur Sauver.
+
+Doug choisit Exporter dans le menu Fichier et il exporte ça liste de 4 Ghouls dans un file 
+
+
+8888888 un fichier
+
+
+nommé Rencontre avec les Ghouls (Ghoul Encounter). Ensuite il sélectionne Clear aussi dans le menu Fichier, et il recommence avec les monstres de la rencontre suivante.
+
+Répètez ces épates 
+
+
+888888étapes
+
+
+pour chaque rencontre que vous avez des prévu 
+
+88888888déja prévu?
+
+
+
+dans votre prochaine partie.
+
+Idée: Créez quelques listes de monstres pour des rencontres improvisées à utiliser 
+
+
+pour aggrémenter vos parties.
+
+---------------------
+3)
+http://www.turnwatcher.com/documentation/fr/hitpoints.html
+
+Gérer les points de vie
+
+Quand un personnage reçois des dommages en combat, cliquez sur lui dans
+la liste, puis cliquez sur le bouton Dommages dans la barre d'outils.
+Tapez les dommages et cliquez sur le bouton Dommages. Notez que cette
+action ne change absolument pas l'ordre dans lequel les personnages
+se trouvent.
+
+Quand un personnage reçois des soins, cliquez également sur le bouton
+Dommages de la barre d'outils. Ensuite, entrez le nombre de points de
+vie que les soins profèrent et finallement, cliquez sur le bouton
+Soins. Un personnage peut aussi être ramené à son nombre maximum de
+points de vie en cliquant sur le bouton Maximum.
+
+Idée: Vous pouvez soumettre des dommages ou des soins à un groupe en
+cliquant sur tous les personnages affectés et puis sur le bouton Dommages.
+
+Quand un personnage est Mourant (c'est à dire que ses points de vie sont
+entre -1 et -9), Turn Watcher le saigne d'un point de vie à chaque round,
+et ce de façon automatique (jusqu'au moment ou il est Stabilisé ou meurt
+-- voir ci-dessous).
+
+Quand un personnage Mourant est stabilisé, sélectionnez Stabiliser dans le menu Rounds. Le status sera changé de Mourant à Stabilisé. Turn Watcher arrêtera de saigner le personnage à moins qu'il subisse à nouveau des dommages. Vous pouvez également soigner le personnage de sorte à ce qu'il ait zero (0) ou plus de points de vie de sorte à éviter le saignement.
+
+Quand un personnage arrive à moins dix (-10) points de vie, Turn Watcher le marque comme Mort de façon automatique et il est grisé. Notez que par défaut, Turn Watcher ne donne pas de tour à un personnage mort. Vous pouvez éliminer un personnage mort de votre liste en cliquant dessus et en cliquant sur le bouton Effacer de la barre d'outils.
+
+Idée: Vous pouvez changer Turn Watcher de sorte à donner un tour aux personnages morts. Ceci fonctionne à l'aide du drapeau Sauter les personnages morts dans le menu Rounds.
+
+------------------------------
+4) http://www.turnwatcher.com/documentation/fr/index.html
+
+ Documentation de Turn Watcher™
+  Sommaire     Raccourcis clavier     Nous contacter     Page d'acceuil  
+
+ 
+Sommaire
+
+    * À propos de Turn Watcher™?
+
+    * Instructions d'utilisation
+          o Au début
+          o Votre premier combat!
+          o Gérer les points de vie
+          o Actions Retardées et Préparées
+          o Lancés d'habilité et de sauvegarde secrets
+          o Changer l'ordre des personnages
+          o Initiative à l'ancienne (Optionelle)
+
+    * Raccourcis clavier
+    * Matériels et logiciels requis
+
+    * Licence
+    * Copyright
+    * Auteurs et contributions
+    * Contacter Made to Order Software
+
+
+
+Langages di
+
+--------------------
+3) et 4)  O fautes détectées :-)
+--------------------------
+
+6)
+
+
+ Changer l'ordre des personnages
+Documentation de Turn Watcher™
+  Sommaire     Raccourcis clavier     Nous contacter     Page d'acceuil  
+Page précédente 	Page suivante
+
+ 
+Changer l'ordre des personnages
+
+Avec Turn watcher vous pouvez ajouter ou importer des personnages pendant un combat. Les nouveau 
+
+888888888888888nouveaux
+
+
+personnages se trouveront à la fin de la liste du point de vue initiative. Vous pouvez déplacer un ou plusieurs de ces personnages en haut ou en bas de la liste d'initiative en cliquant sur les personnages puis en sélectionnant Déplacer vers le haut ou Déplacer vers le bas dans le menu Rounds.
+
+Idée: Utilisez les touches flêchées vers le haut ou vers le bas avec une des touches de Controle 
+88888888888contrôle
+
+
+
+appuyée 
+888888888888888appyuer
+pour déplacer les personnages dans la liste d'initiative vers le haut ou vers le bas.
+---------------------------
+
+7)http://www.turnwatcher.com/documentation/fr/shortcuts.html
+
+
+
+Raccourcis clavier
+Documentation de Turn Watcher™
+  Sommaire     Raccourcis clavier     Nous contacter     Page d'acceuil  
+
+ 
+Raccourcis clavier
+
+Vous pouvez utiliser les raccourcis clavier pour accéder à la plupart des fonctions de Turn Watcher, plutôt que d'utiliser les menus ou la barre d'outils.
+—  Fichier  —
+Importer 	Ctrl-I
+Exporter 	Ctrl-E
+Quitter 	Ctrl-Q
+—  Édition  —
+Annuler 	Ctrl-Z
+Refaire 	Ctrl-Y
+Ajouter 	Ctrl-A
+Effacer 	Ctrl-J
+Dupliquer 	Ctrl-L
+—  Affichage  —
+Montrer la barre d'outils 	Ctrl-T
+Barre d'outils en bas 	Ctrl-B
+—  Rounds  —
+Démarrer 	G
+Terminer 	E
+Suivant 	Barre d'espace
+Délai 	D
+Préparation 	R
+Entrer en combat 	J
+Dommages/Soins 	M
+Stabiliser 	B
+Déplacer vers le haut 	Control + Arrow Up
+Déplacer vers le bas 	Control + Arrow Down
+Initiative à l'ancienne 	Ctrl-U
+Sauter les personnages morts 	Ctrl-D
+—  Lancés  —
+Initiative 	I
+
+
+7) 0 fautes :-)
+--------------------------------------
+
+
+
+5)   http://www.turnwatcher.com/documentation/fr/license.html
+
+
+
+Licence du logiciel de l'utilisateur
+Documentation de Turn Watcher™
+  Sommaire     Raccourcis clavier     Nous contacter     Page d'acceuil  
+
+ 
+
+Cette page présente notre licence utilisateur en français. Il ne s'agit pas, néanmoins, d'une traduction officielle. Si vous avez des doutes, merci de lire la version originale en anglais.
+Contract de licence utilisateur pour
+Turn Watcher de Made to Order Software Corporation
+
+IMPORTANT — À LIRE ATTENTIVEMENT: Cette licence de Made to Order Software Corporation ("EULA") est un contract légal entre vous (un individu ou une entitée commerciale) et Made to Order Software Corporation (m2osw) pour le produit Turn Watcher, qui inclut un logiciel d'ordinateur et peut inclure différents médias, des matériaux imprimés et "en ligne" ou de la documentation électronique ("Produit"). Le Produit inclut également toutes les mises à jour et suppléments ajoutés au Produit original vous étant fourni par m2osw. Tous les logiciels fournis avec le Produit qui ont une licence d'utilisateur séparée sont couverts par cette licence séparée et aucune autre. L'installation, la copie, le téléchargement, l'accès, ou l'emploie du Produit de quelque façon que ce soit signifie votre acceptation des termes limités de l'EULA. Si vous n'êtes pas d'accord sur les limites de cette EULA, n'installez pas ou n'employez pas le Produit; vous pouvez, cependant, le renvoyer chez votre fournisseur contre un remboursement.
+Licence du Produit
+
+Le Produit est protégé par les lois de copyright et les traités internationaux de copyright, aussi bien que d'autres lois et traités à propos des propriétés intellectuelles. Cette EULA vous donne la permission d'utiliser le Produit. Le Produit ne vous est pas vendu.
+
+   1. Ce qui est permis.
+
+      Cette EULA vous donne les droits suivants:
+         1. Utilisations du Produit. Vous pouvez installer, employer, accéder, afficher, lancer, ou encore interagir avec ("Lancer") une seule copie du Produit, ou de n'importe quelle version antérieure sur un système d'opération supporté par le Produit, sur un seul ordinateur, poste de travail, terminal, PC portable, bipper, "téléphone intelligent," ou tout autre dispositif électronique ("Ordinateur") à la fois. L'utilisateur principal de l'ordinateur sur lequel le Produit est installé peut faire autant de copies que nécessaire selon ses besoins et ceci sur tout ordinateur en sa possession pour son usage exclusif.
+         2. Sauvegardes et réseaux. Vous pouvez également stocker ou installer des copies du Produit sur un dispositif de stockage, tel qu'un serveur de réseau, utilisé pour Lancer le Produit sur vos autres ordinateurs au moyen d'un réseau local; cependant, vous devez acquérir et dédié une licence pour chaque ordinateur sur lequel le Produit est Lancer de façon concurrente à partir de tout dispositif de stockage. Une licence unique du Produit ne peut être partagée ou employée de façon concurrente sur différents ordinateurs.
+         3. Réservation des droits. Tous les droits qui ne sont pas expressément accordés sont réservés par m2osw.
+   2. Description de vos autres droits et limitations.
+         1. Produit pas pour la vente. Si le Produit est marqué "Pas pour la vente" ou "Logiciel de Démonstration" ou simplement "Démo", alors, nonobstant les autres sections de cette EULA, votre usage du Produit est limité à démontrer son fonctionement dans le but de l'évaluer. Le Produit ne peut en aucun cas être revendu, ou autrement transferé pour une valeur monétaire, quelqu'elle soit.
+         2. Limitations sur la décompilation or le désassemblage. Vous n'avez pas le droit de décompiler ou de désassembler le Produit. La seule exception est le cas où une telle activité est expressément autorisée par la loi applicable et ce malgré cette limitation.
+         3. Séparation des composants. Le Produit est licensié comme un seul produit. Ses éléments ne peuvent être séparés pour l'usage sur plus d'un ordinateur à la fois. Certains éléments du Produit viennent de logiciels libres. Le code et les composants de ces logiciels libres peuvent être obtenus séparément et employés librement sans tenir compte de cette limitation.
+         4. Marques déposées. Cette EULA ne vous accorde aucun droit d'utilisation ou autre avec aucune des marques déposées ou marques de services de m2osw.
+         5. Location. Cette EULA ne vous donne pas le droit de louer ou prêtez le Produit. m2osw a d'autres licences disponibles à cet effet.
+         6. Services de support. Dans certain cas, m2osw peut vous offir le support nécessaire à l'utilisation du Produit ("Services de support"). L'utilisation des Services de support est défini par les régulations de m2osw. Ces régulations sont disponibles "en ligne", et/ou sur d'autres médias fournis par m2osw. Tout supplément au Produit vous étant fourni par m2osw dans le cadre des Service de support seront considerés comme faisant partie du Produit et seront par là-même sujets aux modalités et aux conditions de cette EULA mise à part s'il s'agit d'un logiciel libre. Les logiciels libres vous seront fourni avec leur licence spécifique. Vous autorisez m2osw à utiliser toutes informations techniques que vous lui fournissez dans le cadre de ses affaires. Ces informations seront utilisées de façon à ne jamais vous identifier de façon personnelle.
+         7. Transfert du Produit. Le propriétaire actuel du Produit peut faire un transfert permanent de cette EULA et du Produit à un nouvel utilisateur (un individu ou une entité commerciale). Ce transfert doit inclure le Produit complet (tous ses éléments y compris, les médias, les copies de sauvegarde, les imprimés, toutes mises à jour, et cette EULA). Un tel transfert ne peut pas être par confiscation ou tout autre transfert indirect. Le nouvel utilisateur qui accepte le Produit par le biais d'un transfert doit accepter de se conformer aux limites de cette EULA. Le propriétaire actuel doit détruire toutes les copies du Produit qu'il ne peut pas transférer (par exemple les copies sur les ordinateurs du propriétaire actuel) lorsque le transfert se produit.
+         8. Résiliation. Sans préjudice à tous autres droits, m2osw a le droit de terminer cette EULA si vous ne vous conformez pas aux modalités et aux conditions de cette EULA. Quand cela se passe, vous devez détruire toutes les copies du Produit et de tous ses éléments.
+   3. Mise à jour.
+
+      Si le Produit est marqué comme étant une mise à jour, vous devez au préalable avoir accepté l'EULA de m2osw du Produit qui peut être mise à jour avec ce Produit de mise à jour avant d'avoir le droit de proceder avec cette mise à jour et d'utiliser le Produit mise à jour. Un Produit de mise à jour remplace et/ou supplémente (et peut annuler) le Produit qui vous a donné le droit de faire cette mise à jour. Vous ne pouvez utiliser le Produit mise à jours qu'en acceptant les limitations de cette EULA. Si le Produit est une mise à jour d'un nombre limité des éléments du Produit étant mise à jour, le Produit mise à jour est toujours consideré comme étant un seul produit et les éléments de la mise à jour ne peuvent pas être utilisés en dehors du Produit ou sur plusieurs ordinateurs en même temps ni être transferés de façon séparé.
+   4. Copyright.
+
+      Tous les titres et copyrights du Produit (y compris mais non limité à toutes les images, photographies, animations, vidéos, sons, musiques, textes, et "modules d'extension" incorporés dans le Produit), les documents imprimés d'accompagnement, et toutes les copies du Produit sont et restent la propriété de m2ow ou de ses fournisseurs. Tous titres et propriétés intellectuelles du contenu qui peuvent être consultés quand vous utilisez le Produit est la propriété des propriétaires respectifs et peuvent être protègés par les lois de copyright ou d'autres lois et traités de propriété intellectuelle. Cette EULA ne vous accorde aucun droit d'employer ce contenu. Si ce Produit est fourni avec une documentation disponible uniquement sous forme électronique, vous avez le droit d'imprimer autant de copies que vous voulez pour votre usage personel. Vous n'êtes pas autorisé à copier les documents imprimés accompagnant le Produit.
+   5. Recevoir le Produit sur différents médias.
+
+      Vous pouvez recevoir le Produit sur plusieurs médias. Indépendamment du type ou de la taille du ou des médias que vous recevez avec le Produit, vous ne pouvez utiliser qu'un de ces médias, celui qui est approprié à votre ordinateur. Vous ne pouvez pas prêter, louer, ou transferer de quelque mannière que ce soit les autres médias à un autre utilisateur, mise à part dans le cas d'un transfert permanent du Produit (de la manière prévue ci-dessus).
+   6. Copies de sauvegarde.
+
+      Vous pouvez garder les médias originaux sur lesquels le Produit a été fourni par m2osw seulement dans le but de sauvegarder ou d'archiver votre Produit. Vous pouvez faire des copies supplémentaires de sauvegarde des médias originaux seulement dans le but de sauvegarder ou d'archiver votre Produit. Vous détruirez ou transférerez toutes ces copies en tant qu'élément du Produit dans le cas d'un transfert permanent (de la manière prévue ci-dessus). Mise à part comme il est défini dans cette EULA de façon explicite, vous n'êtes pas autorisé à faire des copies du Produit, aussi bien du logiciel que des documents imprimés accompagnant le Produit.
+   7. Droits restreints pour le Gouvernement des États-Unis.
+
+      Tout logiciel d'ordinateur fourni au gouvernement des États-Unis conformément aux sollicitations publiées le premier décembre 1995 ou après est fourni avec les droits et restrictions commerciaux décrits dans cette EULA. Tout logiciel d'ordinateur fournis au gouvernement conformément aux sollicitations publiées avant le premier décembre 1995 est fournis avec les droits restreints de la manière prévue dans FAR, 48 CFR 52.227-14 (juin 1987) ou FAR, 48 CFR 252.227-7013 (octobre 1988) selon le cas.
+   8. Restrictions à l'exportation.
+
+      Vous convenez que vous n'exporterez ou ne réexporterez pas le Produit, ou une partie de celui-ci, quelqu'elle soit, ou un processus ou service qui est le résultat direct de l'utilisation du Produit (tout ceci est désigné de façon collective sous le nom les "Composants Restreints"), dans n'importe quel pays, a une personne ou entité sujet aux restrictions à l'exportation des États-Unis. Vous acceptez spécifiquement de ne pas exporter ou ne pas réexporter n'importe lequel des Composants Restreints (i) dans tout pays avec lequels les États-Unis ont un embargo ou ont limité l'exportation de marchandises ou de services, qui incluent actuellement, mais ne sont pas nécessairement limités aux pays suivants : Cuba, l'Iran, la Libye, la Corée du Nord, le Soudan et la Syrie; ou à un individu d'un de ces pays, où qu'il soit, si celui-ci prévoit de transmettre ou de transporter les Composants Restreints dans un de ces pays; (ii) à toute personne ou entité que vous savez ou avez des raisons pour savoir qu'elle utilisera les Composants Restreints pour la conception, le développement ou la production d'armes nucléaires, chimiques ou biologiques; ou (iii) à toute personne ou entité qui a été interdite de participer à tout export des États-Unis quelque soit l'agence fédérale du gouvernement des États-Unis qui ait bannie cette personne ou entité. Vous jurez que ni le BXA ni n'importe quelle autre agence fédérale des États-Unis n'a suspendu, retiré ou répudié vos privilèges d'exportation.
+   9. Aucune garantie de tolérance ou de non-défaillance.
+
+      Le Produit n'est pas garanti sans défaut de tolérance et n'est pas conçu, créé, ou prévu pour être utilisé ou être revendu en tant qu'équipement qui doit être utilisé dans des environnements dangereux exigeant l'exécution fiable, comme dans l'opération d'une installation nucléaire, de la navigation d'un avion ou de systèmes de communication, le contrôl de trafic aérien, dans laquelle l'échec de notre Produit pourrait directement causer la mort, des blessures, ou des dommages physiques ou environnementaux graves.
+  10. Lois régissant l'EULA.
+
+      Si vous acquèrez ce Produit aux États-Unis, cette EULA est régie par les lois de l'état de la Californie. Si le Produit est acquis en dehors des États-Unis, alors la loi locale peut être appliquée.
+  11. Garantie limitée.
+
+      m2ow garantie que (a) le Produit exécutera selon les informations écrites fournies avec le Produit, et ce, pendant une période de quatre-vingt-dix (90) jours à partir de la date à laquelle vous avez reçu le Produit, et (b) tout support fournis par m2osw sera similaire à ce qui est décrit dans les informations écrites fournies par m2osw, et les ingénieurs de soutien de m2osw offriront tous les efforts commercialement raisonnables de sorte à résoudre tout problème que vous pouriez avoir. Certains états et certaines juridictions ne nous permettent pas de limiter la durée d'une garantie implicite, il se peut donc que cette garantie limitée ne s'appliquer pas à vous. Avec toute l'étendue de la loi en vigueur, les garanties implicites pour ce Produit sont limitées à quatre-vingt-dix (90) jours.
+  12. Recourt client.
+
+      La responsabilité de m2osw et de ses fournisseurs et votre recourt légal exclusif, aux choix de m2osw, sont soit (a) le remboursement du prix payé, si vous avez payé quelque chose, ou (b) la réparation ou le remplacement du Produit qui ne fonctionne pas comme spécifié dans la garantie limitée de m2osw. Pour tout remplacement, vous devrez envoyer à m2osw votre Produit accompagné du reçu faisant preuve d'achat. La garantie limitée est annulée si les problèmes avec l'utilisation du Produit est le résultat d'un accident, d'abus, ou d'une utilisation inapropriée. N'importe quel Produit de rechange sera garantie pour la plus longue période entre le reste de la période originale de garantie ou pendant trente (30) jours. En dehors des États-Unis, ni ce recourt ni aucun support du Produit offert par m2osw ne seront disponibles sans preuve d'achat d'un fournisseur autorisé.
+  13. Aucunes autres garanties.
+
+      Avec toute l'étendue de la loi en vigueur, m2osw et ses fournisseurs démentent toute autre garantie ou condition, de façon explicite ou implicite, y compris, mais non limités aux, garanties implicites de valeur marchande, utilisations dans un but particulier, titres, et non-infraction, en ce qui concerne le Produit, et le support ou le manque de support. Cette garantie limitée change vos droits légaux. Il est possible que vous ayez d'autres droits. Ceci change selon les états, les juridictions et les pays.
+  14. Limitations des responsabilité.
+
+      Avec toute l'étendue de la loi en vigueur, dans aucun cas, m2osw ou ses fournisseurs ne pourront être portés responsables des dommages spéciaux, fortuits, indirects, ou conséquents quels qu'ils soient (comprenant, sans limitation, les dommages pour la perte de bénéfices commerciaux, une interruption de vos affaires, perte d'information de votre société, ou toute autre perte monétaire) provenant de l'utilisation de ou de l'impossibilité d'utiliser le Produit ou pour le support ou le manque de support, même si m2osw a été conseillé de la possibilité de tels dommages. Dans tous les cas, l'entière responsabilité de m2osw par rapport a tous les paragraphes de cette EULA sera limitée au plus grand des deux montants suivant : le montant réellement payé pour obtenir votre copie du Produit ou US $5,00; sauf si vous avez accepté un autre contract avec m2osw, alors les limites de cet autre contract seront éventuellement en vigueur. Étant donné que certains états, certaines juridictions et certains pays ne permettent pas l'exclusion ou la limitation de notre responsabilité, il est possible que cette limitation ne s'applique pas à vous.
+
+
+
+	
+  © 2006  — Made to Order Software Corporation — Tous droits réservés
+Détecter 	S
+Écouter 	L
+Sauvegarde 	W
+
+
+	
+  © 2006  — Made to Order Software Corporation — Tous droits réservés
+
+------------------------------------
+
+
+
+

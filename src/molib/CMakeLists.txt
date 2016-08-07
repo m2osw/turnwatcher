@@ -32,30 +32,10 @@ add_custom_target( mo_controlled_h ALL DEPENDS ${MO_CONTROLLED_H} )
 #configure_file( ${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
 #add_definitions( -DHAVE_CONFIG )
 
+include( tiff )
+
 project( molib )
-
-if( MO_WINDOWS )
-	include( iconv )
-	include( jpeglib )
-	include( regex )
-#	include( tiff  )
-	include( tar   )
-	include( zlib  )
-    add_definitions( -DMO_WIN32 )
-	include_directories(
-		${PROJECT_SOURCE_DIR}/include/win32
-		${ICONV_INCLUDE_DIR}
-		${JPEGLIB_INCLUDE_DIR}
-		${REGEX_INCLUDE_DIR}
-#		${TIFF_INCLUDE_DIR}
-		${TAR_INCLUDE_DIR}
-		${ZLIB_INCLUDE_DIR}
-		)
-endif()
-
-include_directories(
-		${PROJECT_SOURCE_DIR}/include
-		)
+include_directories( ${PROJECT_SOURCE_DIR}/include ${TIFF_INCLUDE_DIR} )
 
 set( HEADERS_DIR include/mo )
 set( HEADERS
@@ -118,7 +98,7 @@ set( HEADERS
 	)
 
 if( MO_WINDOWS )
-	list( APPEND HEADERS ${HEADERS_DIR}/details/mo_win32_handle.h )
+	list( APPEND HEADERS ${HEADERS_DIR}/mo/details/mo_win32_handle.h )
 endif()
 
 set( SOURCES_DIR src )
@@ -143,31 +123,31 @@ set( SOURCES
 		${SOURCES_DIR}/image_gif.cpp
 		${SOURCES_DIR}/image_jpeg.cpp
 		${SOURCES_DIR}/image_png.cpp
-#		${SOURCES_DIR}/image_ppm.cpp
-#		${SOURCES_DIR}/image_raw.cpp
-#		${SOURCES_DIR}/image_sgi.cpp
-#		${SOURCES_DIR}/image_targa.cpp
-#		${SOURCES_DIR}/image_tiff.cpp
+		${SOURCES_DIR}/image_ppm.cpp
+		${SOURCES_DIR}/image_raw.cpp
+		${SOURCES_DIR}/image_sgi.cpp
+		${SOURCES_DIR}/image_targa.cpp
+		${SOURCES_DIR}/image_tiff.cpp
 		${SOURCES_DIR}/list.cpp
 		${SOURCES_DIR}/luhn.cpp
 		${SOURCES_DIR}/memfile.cpp
 		${SOURCES_DIR}/menu_item.cpp
 		${SOURCES_DIR}/menu_manager.cpp
-#		${SOURCES_DIR}/module.cpp
+		${SOURCES_DIR}/module.cpp
 		${SOURCES_DIR}/mutex.cpp
 		${SOURCES_DIR}/name.cpp
-#		${SOURCES_DIR}/passwd.cpp
-#		${SOURCES_DIR}/process.cpp
+		${SOURCES_DIR}/passwd.cpp
+		${SOURCES_DIR}/process.cpp
 		${SOURCES_DIR}/props.cpp
 		${SOURCES_DIR}/props_xml.cpp
 		${SOURCES_DIR}/random.cpp
 		${SOURCES_DIR}/regexpr.cpp
 		${SOURCES_DIR}/simple_editor.cpp
-#		${SOURCES_DIR}/socket.cpp
+		${SOURCES_DIR}/socket.cpp
 		${SOURCES_DIR}/str.cpp
 		${SOURCES_DIR}/stream.cpp
 		${SOURCES_DIR}/string.cpp
-#		${SOURCES_DIR}/tar.cpp
+		${SOURCES_DIR}/tar.cpp
 		${SOURCES_DIR}/text_stream.cpp
 		${SOURCES_DIR}/thread.cpp
 		${SOURCES_DIR}/transaction.cpp
@@ -181,12 +161,6 @@ set( SOURCES
 
 add_library( ${PROJECT_NAME} STATIC ${HEADERS} ${SOURCES} )
 
-target_link_libraries( ${PROJECT_NAME}
-		${ICONV_LIBRARY}
-		${JPEGLIB_LIBRARY}
-#		${TIFF_LIBRARY}
-		${REGEX_LIBRARY}
-		${ZLIB_LIBRARY}
-		)
+target_link_libraries( ${PROJECT_NAME} ${TIFF_LIBRARY}  )
 
 # vim: ts=4 sw=4 noexpandtab

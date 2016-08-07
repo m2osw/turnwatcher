@@ -16,116 +16,108 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 #pragma once
 
-#include "character.h"
 #include "transactions/InitiativeBase.h"
 
 namespace Transactions
 {
 
-class CharacterEntryTransaction
-		: public InitiativeBase
+class CharacterEntryTransaction :
+	public InitiativeBase
 {
 protected:
-		Combatant::Character::pointer_t			f_character;
-		TransactionGroup::pointer_t				f_group;
+	Combatant::Character::Pointer		f_character;
+	TransactionGroup::Pointer		f_group;
 
-		CharacterEntryTransaction( Combatant::Character::pointer_t character, const bool emit_signals = true );
+	CharacterEntryTransaction( Combatant::Character::Pointer character );
 
-		void localStartInit();
-		void localStopInit();
+	void localStartInit();
+	void localStopInit();
 
-		void insertChar( Combatant::Character::pointer_t ch );
-		void removeChar( Combatant::Character::pointer_t ch );
+	void insertChar( Combatant::Character::Pointer ch );
+	void removeChar( Combatant::Character::Pointer ch );
 };
 
 
-class AddCharacterTransaction
-		: public Transaction
-		, public CharacterEntryTransaction
+class AddCharacterTransaction :
+	public Transaction,
+	public CharacterEntryTransaction
 {
 public:
-		AddCharacterTransaction( Combatant::Character::pointer_t character, const bool emit_signals = true );
-		virtual void doit();
-		virtual void undo();
+	AddCharacterTransaction( Combatant::Character::Pointer character );
+	virtual void doit();
+	virtual void undo();
 };
 
 
-class RemoveCharacterTransaction
-		: public Transaction
-		, public CharacterEntryTransaction
+class RemoveCharacterTransaction :
+	public Transaction,
+	public CharacterEntryTransaction
 {
 public:
-		RemoveCharacterTransaction( Combatant::Character::pointer_t character, const bool emit_signals = true );
-
-		virtual void doit();
-		virtual void undo();
-};
-
-
-class EditCharacterTransaction
-		: public Transaction
-		, public CharacterEntryTransaction
-{
-		Combatant::Character::pointer_t	f_prevVal;
-		Combatant::Character::pointer_t	f_newVal;
-
-public:
-		EditCharacterTransaction( Combatant::Character::pointer_t ch,
-								  Combatant::Character::pointer_t prevVal,
-								  Combatant::Character::pointer_t newVal,
-								  const bool emit_signals = true );
-
-		virtual void doit();
-		virtual void undo();
-};
-
-
-
-class RemoveSelectedTransaction
-        : public Transaction
-		, public CharacterEntryTransaction
-{
-public:
-		RemoveSelectedTransaction( const Combatant::Character::list_t& selected_chars, const bool emit_signals = true );
-
-		virtual void doit();
-		virtual void undo();
-
-private:
-		Combatant::Character::list_t		f_selectedChars;
-		TransactionGroup				f_group;
-};
-
-
-class ClearCharactersTransaction
-		: public Transaction
-		, public UITransactionBase
-{
-public:
-		ClearCharactersTransaction( const bool emit_signals = true );
-
-		virtual void doit();
-		virtual void undo();
-
-private:
-		TransactionGroup		f_group;
-};
-
-
-class SignalCharactersTransaction
-	: public Transaction
-{
-public:
-	SignalCharactersTransaction() {}
+	RemoveCharacterTransaction( Combatant::Character::Pointer character );
 
 	virtual void doit();
 	virtual void undo();
 };
 
 
+class EditCharacterTransaction :
+	public Transaction,
+	public CharacterEntryTransaction
+{
+	Combatant::Character::Pointer	f_prevVal;
+	Combatant::Character::Pointer	f_newVal;
+
+public:
+	EditCharacterTransaction(
+			Combatant::Character::Pointer ch,
+			Combatant::Character::Pointer prevVal,
+			Combatant::Character::Pointer newVal );
+
+	virtual void doit();
+	virtual void undo();
+};
+
+
+
+class RemoveSelectedTransaction :
+	public Transaction,
+	public CharacterEntryTransaction
+{
+public:
+	RemoveSelectedTransaction( const Combatant::Character::List& selected_chars );
+
+	virtual void doit();
+	virtual void undo();
+
+private:
+	Combatant::Character::List	f_selectedChars;
+	TransactionGroup		f_group;
+};
+
+
+class ClearCharactersTransaction :
+	public Transaction,
+	public UITransactionBase
+{
+public:
+	ClearCharactersTransaction();
+
+	virtual void doit();
+	virtual void undo();
+
+private:
+	TransactionGroup	f_group;
+};
+
+
 }
 // namespace Transactions
 
-// vim: ts=4 sw=4 noexpandtab syntax=cpp.doxygen
+// vim: ts=8 sw=8
+

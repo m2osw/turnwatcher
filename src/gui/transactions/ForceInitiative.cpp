@@ -25,7 +25,7 @@ namespace Transactions
 {
 
 
-ForceInitiative::ForceInitiative( Combatant::Character::pointer_t jumpInChar, const int currentInit )
+ForceInitiative::ForceInitiative( Combatant::Character::Pointer jumpInChar, const int currentInit )
 	: f_prevInit( currentInit )
 {
 	f_nextInit = GetInitMgr().lock()->FindInitiativeOrder( jumpInChar );

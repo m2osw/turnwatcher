@@ -16,6 +16,10 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
+// STL
 //
 #include <iostream>
 
@@ -68,7 +72,7 @@ void LabelTableScroller::OnTableFocus()
 	{
 		// do nothing, is visible
 #ifdef DEBUG
-		std::cerr << "Visible" << std::endl;
+		std::cout << "Visible" << std::endl;
 #endif
 	}
 	else
@@ -77,7 +81,7 @@ void LabelTableScroller::OnTableFocus()
 		{
 			vadj->set_value( pos_of_widget );
 #ifdef DEBUG
-			std::cerr << "Move it" << std::endl;
+			std::cout << "Move it" << std::endl;
 #endif
 		}
 	}

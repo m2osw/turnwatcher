@@ -16,6 +16,9 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 #pragma once
 
 #include "transactions/UITransactionBase.h"
@@ -29,7 +32,7 @@ class StabilizeTransaction
 	, public UITransactionBase
 {
 public:
-	StabilizeTransaction( const Combatant::Character::list_t& chars, const bool stabilize );
+	StabilizeTransaction( const Combatant::Character::List& chars, const bool stabilize );
 	virtual void doit();
 	virtual void undo();
 
@@ -38,12 +41,12 @@ private:
 
 	struct PrevState
 	{
-		Combatant::Character::pointer_t	f_character;
+		Combatant::Character::Pointer	f_character;
 		bool				f_stabilized;
 		bool				f_justDropped;
 
 		PrevState() : f_stabilized(false), f_justDropped(false) {}
-		PrevState( Combatant::Character::pointer_t ch )
+		PrevState( Combatant::Character::Pointer ch )
 		{
 			assert(ch);
             f_character = ch;

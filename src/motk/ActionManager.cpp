@@ -16,6 +16,13 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 // LOCAL
 #include "Common.h"
 #include "ActionManager.h"
@@ -105,7 +112,7 @@ Gtk::IconSource	ActionManager::CreateIconSource( const ButtonImage* image )
 	catch( const Glib::Exception& x )
 	{
 #ifdef DEBUG
-		std::cerr << x.what() << std::endl;
+		std::cout << x.what() << std::endl;
 #endif
 		throw;
 	}

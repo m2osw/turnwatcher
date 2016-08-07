@@ -1,0 +1,357 @@
+<?xml version="1.0"?>
+
+<p id="menu_para" align="center">
+	The following menus are available in <b>Turn Watcher&#x2122;</b>:
+</p>
+
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="menu_file"></a>
+
+
+<p>
+	<div id="menu_box">
+		<div id="menu_summary">
+			<a href="#menu_file">File</a>
+				&nbsp;&nbsp;&nbsp;<a href="#menu_edit">Edit</a>
+				&nbsp;&nbsp;&nbsp;<a href="#menu_rounds">Rounds</a>
+				&nbsp;&nbsp;&nbsp;<a href="#menu_roll">Roll</a>
+				&nbsp;&nbsp;&nbsp;<a href="#menu_help">Help</a>
+		</div>
+	</div>
+</p>
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="file_import"></a>
+
+<!-- FILE MENU -->
+<h2 align="center">File</h2>
+<p id="menu_para">
+	<img id="menu_picture" src="../images/menu-file.png"/>
+
+	The File menu let's you manage your lists of characters. You
+	can <a href="#file_import">Import</a>, <a href="#file_export">Export</a>
+	and <a href="#file_clear">Clear</A> your lists. And once you are
+	finished with the software, you can <a href="#file_quit">Quit</a>.
+</p>
+
+
+<li id="steps">Import (Ctrl+I)</li>
+<p id="menu_description">
+	Import a previously exported list of characters and monsters.
+	This menu entry opens the import dialog with a list of directories
+	and files. By default, the <b>Turn Watcher&#x2122;</b>
+	filter will be turned on so you will only see files compatible
+	with <b>Turn Watcher&#x2122;</b>.
+</p>
+<p id="menu_description">
+	You can browse your hard drives by double clicking on
+	directories on the left or the right list. Once you find
+	the file you want to import, double click on it.
+</p>
+<p id="menu_description">
+	In the import window, you can drag and drop a directory from
+	the list on the right to the list on the left. The directory
+	will then be accessible with just a double click each time you
+	open the importer.
+</p>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="file_export"></a>
+
+<p align="center">
+	<a href="large_import.html"><img id="enlarge" src="../images/import.png" width="269" height="209"/></a>
+	<br/>
+	<i>Click to enlarge</i>
+</p>
+
+
+<li id="steps">Export (Ctrl+E)</li>
+<p id="menu_description">
+	The current list of characters and monsters is
+	automatically saved for you every 5 seconds (unless
+	it didn't change). If you quit and come back, you
+	will see the same characters already there. In other
+	words, you do not need to worry about saving your
+	characters.
+</p>
+<p id="menu_description">
+	Yet, at times, it is necessary to have different
+	sets of characters (for Dungeons Masters who handle
+	different parties of characters.) For this purpose,
+	you can Export the current list of characters and
+	monsters for later importing of that list.
+</p>
+<p id="menu_description">
+	This menu entry opens the export dialog with a place to
+	type the name of a file. By default, it only shows you
+	in which directory the file will be saved. You can also
+	click on the <b>Browse for other folders</b> button
+	to browse your hard disk in case you want to save your
+	file in a very specific place. The browser of the
+	Export dialog is the same as the browser of the Import
+	dialog.
+</p>
+<p id="menu_description">
+	The Export function creates a <b>Turn Watcher&#x2122;</b>
+	file with the extension <b>turnwatcher1</b> (<b>tw1</b>
+	under Microsoft Windows.)
+</p>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="file_clear"></a>
+
+<p align="center">
+	<a href="large_export.html"><img id="enlarge" src="../images/export.png" width="269" height="209"/></a>
+	<br/>
+	<i>Click to enlarge and see the expanded export dialog</i>
+</p>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="file_quit"></a>
+
+<li id="steps">Clear</li>
+<p id="menu_description">
+	Clear the list of characters and monsters. This is very useful if you
+	are changing compain and you want to enter new characters in
+	<b>Turn Watcher&#x2122;</b>.
+</p>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="edit"></a>
+
+<p id="warning">
+	Warning: you cannot undo the clearing of your lists; you want to
+	first <a href="menus.html#export">Export</a> your actual list if
+	you are to re-use it later.
+</p>
+
+
+<li id="steps">Quit (Ctrl+Q)</li>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="menu_edit"></a>
+
+<p id="menu_description">
+	Select this menu entry to quit the application. Your list of
+	characters and monsters will automatically be saved so the next
+	time you start your application, you get all of your characters
+	and monsters back the way they were when you quit.
+</p>
+
+<br/>
+<br/>
+
+<!-- EDIT MENU -->
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="edit_undo"></a>
+
+<h2 align="center">Edit</h2>
+<p id="menu_para">
+	<img id="menu_picture" src="../images/menu-edit.png"/>
+
+	The Edit menu offers the
+	<a href="#edit_undo">Undo</a> and
+	<a href="#edit_redo">Redo</a> features which let you
+	under and redo pretty much anything you do with
+	<b>Turn Watcher&#x2122;</b>. The Edit menu also let's you
+	<a href="#edit_add">Add</a>, <a href="#edit_edit">Edit</a> and
+	<a href="#edit_delete">Delete</a> characters and monsters from
+	your current list.
+</p>
+
+
+<li id="steps">Undo (Ctrl+Z)</li>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="edit_redo"></a>
+
+<p id="menu_description">
+	<b>Turn Watcher&#x2122;</b> records all your actions so you
+	can undo them later. This includes all the management of
+	the characters, the dice rolls, the rounds tracker, etc.
+</p>
+<p id="menu_description">
+	The edit menu will show you a label which includes what will
+	be undone. For instance, if you roll initiative, the menu
+	will tell you <i>Undo Initiative Roll</i>.
+</p>
+
+
+<li id="steps">Redo (Ctrl+Y)</li>
+<p id="menu_description">
+	Any action that you can undo can also be redone. This is
+	very useful if you select undo a few more times than you
+	wanted.
+</p>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="edit_add"></a>
+
+<p id="menu_description">
+	Like the Undo action, the Redo action will tell you what it
+	can redo.
+</p>
+
+<p id="warning">
+	Warning: you lose the capability of redoing things as soon
+	as you do any action other than undo or redo.
+</p>
+
+<mo:include src="edit_add"/>
+<mo:include src="edit_edit"/>
+<mo:include src="edit_delete"/>
+
+
+
+
+<br/>
+<br/>
+
+<!-- ROUNDS MENU -->
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="rounds_start"></a>
+
+<h2 align="center">Rounds</h2>
+<p id="menu_para">
+	<img id="menu_picture" src="../images/menu-rounds.png"/>
+
+	The Rounds menu lets you manage a round. Before to be in Round mode,
+	you need to <a href="#rounds_start">Start</a>. Once started, you can go
+	<a href="#rounds_next">Next</a>, <a href="#rounds_delay">Delay</a> a
+	character or a monster, have them <a href="#rounds_jumpin">Jump In</a>
+	later, and enter <a href="#rounds_damage">Damage</a> to your
+	characters and monsters.
+</p>
+
+
+<mo:include src="rounds_start"/>
+<mo:include src="rounds_end"/>
+<mo:include src="rounds_next"/>
+<mo:include src="rounds_delay"/>
+<mo:include src="rounds_jump_in"/>
+<mo:include src="rounds_damage"/>
+
+
+
+
+<br/>
+<br/>
+
+<!-- ROLL MENU -->
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="roll_initiative"></a>
+
+<h2 align="center">Roll</h2>
+<p id="menu_para">
+	<img id="menu_picture" src="../images/menu-roll.png"/>
+
+	The Roll menu lets you roll dice for
+	<a href="#roll_initiative">Initiative</a>, <a href="#roll_spot">Spot</a>,
+	<a href="#roll_listen">Listen</a> and <a href="#roll_will">Will</a>.
+</p>
+
+
+<mo:include src="roll_initiative"/>
+<mo:include src="roll_spot"/>
+<mo:include src="roll_listen"/>
+<mo:include src="roll_will"/>
+
+
+
+
+<br/>
+<br/>
+
+<!-- HELP MENU -->
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="help_about"></a>
+
+<h2 align="center">Help</h2>
+<p id="menu_para">
+	<img id="menu_picture" src="../images/menu-help.png"/>
+
+	Get online help for <b>Turn Watcher&#x2122;</b>.
+</p>
+
+
+<li id="steps">About (Ctrl+H)</li>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="help_documentation"></a>
+
+<p id="menu_description">
+	Shows information about the <a href="authors.html">Authors and
+	Contributors</a>, the <a href="license.html">License</a>
+	and the version of <b>Turn Watcher&#x2122;</b>.
+</p>
+
+
+<li id="steps">Documentation (F1)</li>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="help_contact"></a>
+
+<p id="menu_description">
+	Opens the local version of this documentation. The local version
+	of the documentation will always reflect the features you have
+	available in your current version of <b>Turn Watcher&#x2122;</b>
+	unless otherwise noted. You can also read the
+	<a href="http://www.turnwatcher.com/documentation/">online version</a>
+	when you have Internet access.
+</p>
+
+
+<li id="steps">Contact (F2)</li>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="help_license"></a>
+
+<p id="menu_description">
+	Brings you directly to the <a href="contact.html">Contact</a> page.
+</p>
+
+
+<li id="steps">License (F3)</li>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="help_license"></a>
+
+<p id="menu_description">
+	Opens your default browser and shows you the <b>Turn Watcher&#x2122;</b>
+	<a href="license.html">software license</a>.
+</p>
+
+
+<li id="steps">Turn Watcher Home Page (Ctrl+P)</li>
+<p id="menu_description">
+	Opens your default browser and shows you the
+	<a href="http://www.turnwatcher.com"><b>Turn Watcher&#x2122;</b> website</a>.
+	There you can find more recent information about
+	<b>Turn Watcher&#x2122;</b> such as the known bugs and work arounds,
+	patches and most importantly what is coming up in the next
+	version of <b>Turn Watcher&#x2122;</b>.
+</p>
+
+
+
+
+
+
+
+
+<!--
+vim: ts=2
+-->

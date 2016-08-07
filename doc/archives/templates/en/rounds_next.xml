@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+
+
+<li id="steps">Next (Space)</li>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="rounds_delay"></a>
+
+<p id="menu_description">
+	After you hit <a href="#rounds_start">Start</a> and then Initiative,
+	your characters and monsters are sorted in the order they will fight.
+	Use this action to know who's turn it is. <b>Turn Watcher&#x2122;</b>
+	shows whose turn it is with an arrow on the left of the character
+	or monster name. Once everyone had a turn, <b>Turn Watcher&#x2122;</b>
+	automatically rolls initiative for you and starts a new round.
+</p>
+
+
+
+
+
+
+
+<!--
+vim: ts=2
+-->

@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+include /usr/share/cdbs/1/rules/buildcore.mk
+include /usr/share/cdbs/1/class/autotools.mk
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+DEB_CONFIGURE_EXTRA_FLAGS 	= --enable-thread=yes CXXFLAGS="-O3 -g0"
+DEB_CONFIGURE_SCRIPT_ENV  	=
+DEB_MAKE_INVOKE           	= make
+DEB_MAKE_CHECK_TARGET     	=
+DEB_INSTALL_CHANGELOGS_ALL	= 
+DEB_INSTALL_DOCS_ALL      	= 
+DEB_DH_MAKESHLIBS_ARGS    	= -V
+DEB_DH_SHLIBDEPS_ARGS     	= 
+DEB_DH_STRIP_ARGS         	= 
+DEB_DH_ALWAYS_EXCLUDE     	= CVS
+
+clean::
+	rm -rf autom4te.cache
+

@@ -1,0 +1,159 @@
+#!/bin/sh
+
+# We need to know which Win32/Linux versions to
+# copy to the ISO and then create it!
+
+if test "$1" = "--ennies"
+then
+	shift
+	ENNIES=true
+else
+	ENNIES=false
+fi
+
+
+
+
+if test "$1" = "-h" -o "$1" = "--help"
+then
+	echo "Usage: $0 [--ennies] [-<opts>]"
+	echo
+	echo "The --ennies option requests the ENnies README file instead of the default"
+	echo
+	echo "The available options are:"
+	echo "  --verbose"
+	echo
+	echo "DO NOT FORGET TO UPDATE THE REST IN THIS SCRIPT"
+	echo "WHEN MOVING THE SCRIPT FROM ONE BRANCH TO ANOTHER"
+	echo "(we may want a branch version somewhere?)"
+	echo "-- I think that this has been fixed now (AW) --"
+	echo
+	exit 1;
+fi
+
+
+#if test "$1" != ""
+#then
+#	echo
+#	echo "ERROR: turnwatcher: this script only accepts two parameters, the versions"
+#	echo
+#	exit 1;
+#fi
+
+. dev/get_version
+
+CDDIR=$TMPDIR/turnwatcher-cdrom
+
+YEAR=`date +'%Y'`
+
+
+# Make sure it is clean first
+chmod -R 777 $CDDIR
+rm -rf $CDDIR
+mkdir -p $CDDIR/{Documentation,Demo}
+
+# Autorun.inf
+cp dev/cdrom/autorun.inf $CDDIR/.
+
+# Full Version
+cp $PACKAGES_DIR/turnwatcher-install-${FULL_VERSION}_2-win32-i686.exe $CDDIR/Setup.exe
+cp $PACKAGES_DIR/turnwatcher-install-${FULL_VERSION}_2-win32-i686.exe $CDDIR/.
+cp $PACKAGES_DIR/turnwatcher_${FULL_VERSION}_i386.deb $CDDIR/.
+cp $PACKAGES_DIR/turnwatcher-${FULL_VERSION}.i386.rpm $CDDIR/.
+cp $PACKAGES_DIR/turnwatcher-${FULL_VERSION}_i386.tar.gz $CDDIR/.
+
+# Demo Version
+cp $PACKAGES_DIR/turnwatcher-install-${FULL_VERSION}_2-demo-win32-i686.exe $CDDIR/Demo/TWDemo.exe
+cp $PACKAGES_DIR/turnwatcher-install-${FULL_VERSION}_2-demo-win32-i686.exe $CDDIR/Demo/.
+cp $PACKAGES_DIR/turnwatcher_${FULL_VERSION}_i386.deb $CDDIR/Demo/.
+cp $PACKAGES_DIR/turnwatcher-${FULL_VERSION}.i386.rpm $CDDIR/Demo/.
+cp $PACKAGES_DIR/turnwatcher-${FULL_VERSION}_i386.tar.gz $CDDIR/Demo/.
+
+# Readme for the demo
+sed -e "s/%FULL_VERSION%/$FULL_VERSION/" \
+		dev/cdrom/demo-README.txt >$CDDIR/Demo/README.txt
+
+
+# ENnies ONLY Readme file...
+if $ENNIES
+then
+	readme=ENnies-README.txt
+else
+	readme=README.txt
+fi
+sed -e "s/%FULL_VERSION%/$FULL_VERSION/" \
+		dev/cdrom/$readme >$CDDIR/README.txt
+
+
+# Icon
+cp src/turnwatcher.ico $CDDIR/TurnWatcher.ico
+
+# License/Copyright
+cp doc/LICENSE.rtf $CDDIR/.
+cp doc/LICENSE.txt $CDDIR/.
+sed -e "s/%YEAR%/${YEAR}/g" dev/cdrom/COPYRIGHT >$CDDIR/COPYRIGHT
+sed -e "s/%YEAR%/${YEAR}/g" dev/cdrom/BIBLIOGRAPHY >$CDDIR/BIBLIOGRAPHY
+
+# Documentation
+cp -rf doc/{en,fr,es,js,images,styles} $CDDIR/Documentation/.
+# (hidding errors, that's because it will delete the CVS dir. before
+# find tries to cd inside it)
+find $CDDIR -name 'CVS' -exec rm -rf {} \; 2>/dev/null
+find $CDDIR -name '.svn' -exec rm -rf {} \; 2>/dev/null
+
+
+
+if $VERBOSE
+then
+	du -s $CDDIR
+fi
+
+
+# Now generate the .iso file
+#chown -R root.root $CDDIR -- we use -gid/-uid of 0/0 on mkisofs cmdline
+chmod 444 `find $CDDIR -type f -print`
+chmod 555 `find $CDDIR -type d -print`
+chmod 555 `find $CDDIR -type f -name '*.exe' -print`
+touch --date=`date +'%D'` `find $CDDIR -print`
+
+OUTPUT=${PACKAGES_DIR}/turnwatcher-${FULL_VERSION}.iso
+
+mkisofs -rational-rock -joliet -hide-joliet-trans-tbl -gid 0 -uid 0 \
+	-biblio ${CDROM}/BIBLIOGRAPHY \
+	-sysid "${FULL_VERSION}" \
+	-appid "Turn Watcher ${FULL_VERSION} Installation Disc including Documentation" \
+	-publisher "Copyright (c) ${YEAR}  Made to Order Software Corporation -- All rights reserved -- email: turnwatcher@m2osw.com" \
+	-preparer "Alexis Wilke alexis@m2osw.com" \
+	-volid "Turn Watcher ${FULL_VERSION}" \
+	-volset "1" -volset-size "1" \
+	-copyright ${CDROM}/COPYRIGHT -translation-table \
+	-output ${OUTPUT} ${CDDIR} \
+	>$TMPDIR/build-iso.txt 2>&1
+
+echo "turnwatcher: info: check out $TMPDIR/build-iso.txt for the mkisofs output."
+
+# If the person does not have the packages checked out it won't work
+# correctly
+if ! test -d ${PACKAGES_DIR}/.svn
+then
+	echo "turnwatcher: warning: it looks as if you did not have packages checked out."
+	echo "turnwatcher: warning: this script cannot check in a new package until you do:"
+	echo "turnwatcher: warning:    svn update packages/turnwatcher"
+	# NOTE: this is wrong when in a sub-folder branch stuff as created by Doug...
+	echo "turnwatcher: warning: under your 'sources' directory (`cd ../../../ && pwd`)."
+	echo "turnwatcher: warning: the new packages can be found in ${PACKAGES_DIR}."
+else
+	# If it is not the first time, the add will fail, but with --quiet nothing is printed
+	if $CHECKIN_PACKAGES
+	then
+		echo "turnwatcher: info: checking-in the resulting ISO package..."
+		(
+			svn --quiet add ${OUTPUT}
+			svn commit --non-interactive -N \
+					-m "Turn Watcher tarball -- automatic build on `date`" \
+					${OUTPUT}
+		) >>$TMPDIR/build-iso.txt 2>&1
+	fi
+fi
+
+

@@ -16,13 +16,19 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 #pragma once
 
 #include "common.h"
 #include "effect.h"
 #include "character.h"
 #include "transaction.h"
+#include "CharacterListUI.h"
 #include "transactions/UITransactionBase.h"
+
+#ifdef WANT_EFFECTS
 
 namespace Transactions
 {
@@ -33,21 +39,23 @@ class EffectHandler :
 	public UITransactionBase
 {
 public:
-	EffectHandler( Combatant::Character::pointer_t ch );
+	EffectHandler( Combatant::Character::Pointer ch );
 	virtual void doit();
 	virtual void undo();
 
 private:
-	Combatant::Character::pointer_t	f_prevChar;
-	Combatant::Character::pointer_t	f_newChar;
+	Combatant::Character::Pointer	f_prevChar;
+	Combatant::Character::Pointer	f_newChar;
 	TransactionGroup		f_group;
 
-	void ApplyEffect( Effects::Effect::pointer_t effect );
+	void ApplyEffect( Effects::Effect::Pointer effect );
 };
 
 
 }
 // namespace Transactions
+
+#endif // WANT_EFFECTS
 
 // vim: ts=8 sw=8
 

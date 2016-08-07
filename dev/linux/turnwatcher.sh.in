@@ -1,0 +1,90 @@
+#!/bin/sh
+#===============================================================================
+#
+# File:		mainline/dev/linux/turnwatcher.sh
+#
+# Copyright:	Copyright (c) 2005-2008 Made to Order Software Corp.
+#
+#		All Rights Reserved.
+#
+#		This software and its associated documentation contains
+#		proprietary, confidential and trade secret information
+#		of Made to Order Software Corp. and except as provided by
+#		written agreement with Made to Order Software Corp.
+#
+#		a) no part may be disclosed, distributed, reproduced,
+#		   transmitted, transcribed, stored in a retrieval system,
+#		   adapted or translated in any form or by any means
+#		   electronic, mechanical, magnetic, optical, chemical,
+#		   manual or otherwise,
+#
+#		and
+#
+#		b) the recipient is not entitled to discover through reverse
+#		   engineering or reverse compiling or other such techniques
+#		   or processes the trade secrets contained therein or in the
+#		   documentation.
+#
+#===============================================================================
+#
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+bindir=@bindir@
+## NOTE: double ## are removed from the final packages
+## Do not use MO_PKGLIBDIR or it won't work with the tarball
+pkglibdir=${prefix}/lib/mo/@MO_VERSION@
+
+BINARY=${bindir}/turnwatcher-bin
+export GDK_PIXBUF_MODULE_FILE=${pkglibdir}/etc/gtk-2.0/gdk-pixbuf.loaders
+export PANGO_SYSCONFDIR=${pkglibdir}/etc/pango/
+export PANGO_LIBDIR=${pkglibdir}/lib/pango
+
+if test -x ${BINARY} -a -f ${BINARY}
+then
+	# This cd is necessary for the tarball install
+	cd ${pkglibdir}/lib
+	${BINARY} $*
+fi
+
+## $Log: turnwatcher.sh.in,v $
+## Revision 1.3  2006/09/22 07:22:18  alexis
+## Fixed the script (more or less back the way it was before!) so it works
+## from within a tarball too.
+## Made all the variables depend on the prefix
+##
+## Revision 1.2  2006/09/10 01:28:07  alexis
+## PANGO_LIBDIR is used for development and is not necessary here
+##
+## Revision 1.1  2006/09/10 00:53:37  alexis
+## This is the old turnwatcher.sh transformed to include dynamic variables
+## (i.e. the configure script generates them)
+##
+## Revision 1.1  2006/08/28 04:18:11  alexis
+## The CHANGES.txt includes what I have changed to the Debian environment
+## in this project.
+## The acinclude.m4 are tweaked macros for the pkg-config tool
+## The turnwatcher.* are files which existed before, moved to linux/.
+##
+## Revision 1.6  2006/08/14 05:27:39  alexis
+## Fixed the company's name; copyright year and added the -x test for the binary
+##
+## Revision 1.5  2006/04/23 19:38:46  doug
+## Pointing to the wrong spot!
+##
+## Revision 1.4  2006/04/23 19:09:16  doug
+## Adding new version of pango lib which respects env var config.
+## Now asking GDK to look to our own etc for gdk pixbuf modules (esp
+## for the dist tarball).
+##
+## Revision 1.3  2006/04/05 06:25:47  doug
+## Now creates a workable tarball.
+##
+## Revision 1.2  2006/03/30 22:37:14  doug
+## Stuff is installed in /usr/lib/turnwatcher not /usr/share/turnwatcher.
+##
+## Revision 1.1  2006/03/30 19:19:08  doug
+## Added desktop and menus. Now uses a script to start turnwatcher.
+##
+##
+## vim: ts=8

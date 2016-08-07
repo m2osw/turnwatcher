@@ -1,0 +1,55 @@
+
+
+Fichier		Fichero (---)
+
+Importer   	Importar
+Exporter   	Exportar
+Quiter     	Salir (Dejar)
+Edition    	Editar (Edicio8o)
+Refaire    	Rehacer
+Ajouter    	Agregar (Aumentar)
+Effacer    	Suprimir (Barrar)
+duppliquer 	Duplicar
+Affichage  	Vista (Afichaje - Anunciado)
+Rounds     	Raunds
+Demarrer   	Empezar (Comenzar)
+Terminer   	Terminar
+Suivant    	Siguiente
+Delai      	Retrasar (Plazo)
+Lance      	Dudes (Tiros)
+Initiative 	Iniciativa
+Ecouter		Escuchar
+Sauvegarde	Salvaguardar (Salvagardia)
+
+Barre d'espace		Barra especiadora
+Dommage/soins		Dan8os/Sanados (dan8os cuidados)
+Preparation		Preparar (Preparacio8n)
+Entrer en combat	Entrar en combate
+Stabiliser		Estabilizar (Establizar)
+Deplacer vers le haut	Levantar (Desplazar hacia arriba)
+Deplacer vers le bas	Bajar (Desplazar hacia abajo)
+
+
+Initiative a l'ancienne		Iniciativa  a la antigua
+
+Sauter les personnages morts	 Saltar los personajes muertos
+Montrer la barre d'outil   	 Monstrar la barra de implementos [herramientas]
+Barre d'outils en bas      	 Barra de implementos abajo [herramientas de abajo]
+
+
+
+
+
+Alexis,
+
+Manquait la traduction de la phrase preliminaire sur shortcuts dans le
+dernier envoi.
+La voici :
+Usted puede utilizar los teclados acortados para acceder a la mayor
+parte de funciones de Turn Watcher, ante que utilizar los menu8s o8 la
+barra de implementos
+
+
+Gerard
+
+

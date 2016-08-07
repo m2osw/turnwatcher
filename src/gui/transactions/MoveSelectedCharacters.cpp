@@ -25,7 +25,7 @@
 namespace Transactions
 {
 
-MoveSelectedCharacters::MoveSelectedCharacters( const Combatant::Character::list_t& selected_chars, const bool up )
+MoveSelectedCharacters::MoveSelectedCharacters( const Combatant::Character::List& selected_chars, const bool up )
 	: f_up(up)
 	, f_selectedChars(selected_chars)
 	, f_group(gettext("Move Character in Rounds"))
@@ -40,7 +40,7 @@ void MoveSelectedCharacters::AddPositions()
 	{
         assert(ch);
 		const int newPos = f_up? ch->getPosition() + 1: ch->getPosition() - 1;
-        Transaction::pointer_t tr( new MoveCharacterInInitiative( newPos, ch, false ) );
+		Transaction::Pointer tr( new MoveCharacterInInitiative( newPos, ch, false ) );
 		f_group.addTransaction( tr );
 	}
 }

@@ -16,11 +16,16 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 #include "transactions/EffectHandler.h"
 #include "transactions/CharacterEntry.h"
 
 #include <algorithm>
 #include <sigc++/functors/mem_fun.h>
+
+#ifdef WANT_EFFECTS
 
 using namespace Effects;
 
@@ -28,7 +33,7 @@ namespace Transactions
 {
 
 
-EffectHandler::EffectHandler( Combatant::Character::pointer_t ch ) :
+EffectHandler::EffectHandler( Combatant::Character::Pointer ch ) :
 	f_prevChar(ch),
 	f_group(gettext("Handle Effects"))
 {
@@ -37,19 +42,19 @@ EffectHandler::EffectHandler( Combatant::Character::pointer_t ch ) :
 
 	// Now gets a copy automatically, not reference
 	//
-    Effect::list_t	effects;
+	Effect::List	effects;
 	f_newChar->getEffects( effects );
 	//
 	std::for_each( effects.begin(), effects.end(), sigc::mem_fun( *this, &EffectHandler::ApplyEffect ) );
 	//
 	f_newChar->setEffects( effects );
 
-    Transaction::pointer_t tr( new EditCharacterTransaction( f_prevChar, f_prevChar, f_newChar ) );
+	Transaction::Pointer tr( new EditCharacterTransaction( f_prevChar, f_prevChar, f_newChar ) );
 	f_group.addTransaction( tr );
 }
 
 
-void EffectHandler::ApplyEffect( Effect::pointer_t effect )
+void EffectHandler::ApplyEffect( Effect::Pointer effect )
 {
 	if( effect->startIn() > 0 )
 	{
@@ -84,6 +89,8 @@ void EffectHandler::undo()
 
 }
 // namespace Transactions
+
+#endif // WANT_EFFECTS
 
 // vim: ts=8 sw=8
 

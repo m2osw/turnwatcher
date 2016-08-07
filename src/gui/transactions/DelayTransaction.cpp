@@ -25,7 +25,7 @@ namespace Transactions
 {
 
 DelayTransactionBase::DelayTransactionBase(
-            Combatant::Character::pointer_t character,
+			Combatant::Character::Pointer character,
 			Combatant::Status status,
 			Combatant::Status new_status ) :
 	f_character(character),

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+
+<li id="steps">End (E)</li>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="rounds_next"></a>
+
+<p id="menu_description">
+	End a combat. This command takes you out the combat mode. Note that
+	you can always come back in later. Though you can end a combat at
+	any time, it is suggested that you end it at the end of a round. This
+	way you can <a href="#rounds_start">Start</a> again later as if the
+	combat never stopped.
+</p>
+
+
+
+
+
+
+<!--
+vim: ts=2
+-->

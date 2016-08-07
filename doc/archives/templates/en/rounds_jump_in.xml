@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+
+<li id="steps">Jump In (J)</li>
+<p id="menu_description">
+	Use this command to have a character or monster jump back in combat.
+	Only delayed characters and monsters can jump in. <b>Turn Watcher&#x2122;</b>
+	automatically computes whose turn it is next. It is shown with
+	a sword on the left of the character or monster name.
+</p>
+<p id="menu_description">
+	When a character or monster wants to delay their attack, they need
+	to speak up at the time their regular turn comes up. At that time
+	you can click on Delay. At any time after that, the characters who
+	were delayed can jump in.
+</p>
+<p id="menu_description">
+	When only one character or monster is delayed, that one is the one
+	jumping in. Otherwise a list of all the characters and monsters
+	currently delayed appears and you need to select which one wants
+	to jump in.
+</p>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="rounds_damage"></a>
+
+<p id="warning">
+	Warning: Any character or monster who is delayed needs to jump in
+	when you reach the last character or monster in the list (not
+	including dead ones). If you click Next on the last character or
+	monster, you go to the next round and the delayed characters lose
+	their turn in this round.
+	<br/>
+	<br/>
+	Of course, if you inadvertendly click Next too many times, you
+	can always use Ctrl-Z to come back.
+</p>
+
+
+
+
+
+
+
+<!--
+vim: ts=2
+-->

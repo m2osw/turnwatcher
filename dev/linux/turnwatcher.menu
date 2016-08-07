@@ -1,0 +1,7 @@
+?package(turnwatcher):\
+       needs="X11" \
+       section="Applications/Games" \
+       title="Turn Watcher" \
+       command="/usr/bin/turnwatcher" \
+       hints="Adventure,Table Top" \
+       icon="/usr/share/pixmaps/turnwatcher.png"

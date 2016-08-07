@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+
+<li id="steps">Edit (Ctrl+J)</li>
+<p id="menu_description">
+	Lets you edit an existing character or monster to change their
+	characteristics. The Edit option is grayed out whenever no
+	character is selected.
+</p>
+<p id="menu_description">
+	This menu option opens an edit dialog which
+	looks just like the <a href="#edit_add">Add</a>
+	dialog. Make the necessary changes and
+	then click OK.
+</p>
+<p id="menu_description">
+	It is common to use this option when a player's
+	character goes up or down a level or when you notice an invalid
+	value in a monster you previously defined.
+</p>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="edit_delete"></a>
+
+<p align="center">
+	<a href="character.html"><img id="enlarge" src="../images/edit-character.png" width="269" height="209"/></a>
+	<br/>
+	<i>Click to enlarge and read about the entries in that dialog</i>
+</p>
+
+
+
+
+
+
+<!--
+vim: ts=2
+-->

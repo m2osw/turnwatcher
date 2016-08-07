@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="menu_help"></a>
+
+<li id="steps">Will (W)</li>
+<p id="menu_description">
+	As a Dungeon Master, it is often that you want to roll dice for a will
+	without having to tell your players. This option lets you do just that.
+	A simple click or key stroke and you know whether one or more of your
+	players did save themselves from that evil device, this dragon breath,
+	etc.
+</p>
+
+
+
+
+
+
+
+<!--
+vim: ts=2
+-->

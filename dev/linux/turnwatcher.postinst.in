@@ -1,0 +1,71 @@
+#!/bin/sh
+#===============================================================================
+#
+# File:		mainline/dev/linux/turnwatcher.postinst.in
+#
+# Copyright:	Copyright (c) 2005-2007 Made to Order Software Corp.
+#
+#		All Rights Reserved.
+#
+#		This software and its associated documentation contains
+#		proprietary, confidential and trade secret information
+#		of Made to Order Software Corp. and except as provided by
+#		written agreement with Made to Order Software Corp.
+#
+#		a) no part may be disclosed, distributed, reproduced,
+#		   transmitted, transcribed, stored in a retrieval system,
+#		   adapted or translated in any form or by any means
+#		   electronic, mechanical, magnetic, optical, chemical,
+#		   manual or otherwise,
+#
+#		and
+#
+#		b) the recipient is not entitled to discover through reverse
+#		   engineering or reverse compiling or other such techniques
+#		   or processes the trade secrets contained therein or in the
+#		   documentation.
+#
+#===============================================================================
+#
+set -e
+
+INSTDIR=@MO_PKGLIBDIR@
+export LD_LIBRARY_PATH=${INSTDIR}/lib
+
+BINDIR=${INSTDIR}/bin
+ETCDIR=${INSTDIR}/etc
+ETCGTKDIR=${ETCDIR}/gtk-2.0
+ETCPANGODIR=${ETCDIR}/pango
+GTKLIBDIR=${INSTDIR}/lib
+GTKDATADIR=${GTKLIBDIR}/gtk-2.0/@GTK_VERSION@
+GTKIMMODULESDIR=${GTKDATADIR}/immodules
+GTKLOADERSDIR=${GTKDATADIR}/loaders
+GTKPANGODIR=${GTKLIBDIR}/pango/@PANGO_VERSION@/modules
+CONFMOD=/usr/share/debconf/confmodule
+
+if test -x $CONFMOD -a -f /$CONFMOD
+then
+	. $CONFMOD
+fi
+
+
+case "$1" in
+	configure) 
+		mkdir -p ${ETCGTKDIR} ${ETCPANGODIR}
+		${BINDIR}/gtk-query-immodules-2.0	${GTKIMMODULESDIR}/*.so	> ${ETCGTKDIR}/gtk.immodules
+		${BINDIR}/gdk-pixbuf-query-loaders	${GTKLOADERSDIR}/*.so	> ${ETCGTKDIR}/gdk-pixbuf.loaders
+		${BINDIR}/pango-querymodules		${GTKPANGODIR}/*.so	> ${ETCPANGODIR}/pango.modules
+		;;
+esac
+
+#DEBHELPER#
+
+# Log:
+# Oct 22, 2006
+# Changes taken from version 1.1
+# Straighten the variable names and use.
+# Made the INSTDIR a configure variable (MO_PKGLIBDIR).
+# Moved the DEBHELPER after the configure so it works properly in all cases.
+# Added a test & variable for the confmodule
+#
+# vim: ts=8 sw=8

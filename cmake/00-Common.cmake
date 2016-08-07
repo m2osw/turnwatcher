@@ -32,7 +32,7 @@ if( UNIX )
 		set( MO_ARCH_PREFIX        linux )
 		set( MO_CANONALIZED_PREFIX linux )
 		set( CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -ggdb -g3 -O0 " )
-		set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -fPIC" )
+		set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x" )
 	endif (${CMAKE_SYSTEM_NAME} MATCHES "Linux")
 
 	# Darwin

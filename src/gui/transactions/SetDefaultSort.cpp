@@ -16,26 +16,33 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 #include "transactions/SetDefaultSort.h"
 
 namespace Transactions
 {
 
 
-SetDefaultSortTransaction::SetDefaultSortTransaction()
+SetDefaultSortTransaction::SetDefaultSortTransaction( UI::CharacterListUI* charListUI )
+	: f_charListUI(charListUI)
 {
-	f_prevSort = GetCharacterModel().lock()->getCurrentSort( f_prevSortType );
+	assert(f_charListUI);
+	f_prevSort = f_charListUI->getCurrentSort( f_prevSortType );
 }
 
 
 void SetDefaultSortTransaction::doit()
 {
-	GetCharacterModel().lock()->setDefaultSort();
+	assert(f_charListUI);
+	f_charListUI->setDefaultSort();
 }
 
 void SetDefaultSortTransaction::undo()
 {
-	GetCharacterModel().lock()->setCurrentSort( f_prevSort, f_prevSortType );
+	assert(f_charListUI);
+	f_charListUI->setCurrentSort( f_prevSort, f_prevSortType );
 }
 
 

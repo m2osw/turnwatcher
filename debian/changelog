@@ -1,8 +1,205 @@
-turnwatcher (1.5-1) unstable; urgency=low
+turnwatcher (1.4-m2osw2) gutsy; urgency=low
 
-  * Initial release of open source version.
-  * Lots of refactoring of the code for a more stable application, but no new features.
-  * Both molib and motk are included, all sporting GPL licenses.
-  * Massively improved debian support.
+  * Fixes to the Spanish version
 
- -- R. Douglas Barbieri <doug@dooglio.net>  Fri, 08 Nov 2013 15:58:37 -0800
+ -- R. Douglas Barbieri <doug@m2osw.com>  Sun, 25 Jan 2009 22:31:48 -0700
+
+turnwatcher (1.4-m2osw1) gutsy; urgency=low
+
+  * Now when importing characters, the public name is filled in with either
+  the PC name or "Monster" if it is a monster.
+  * Added "soft-columns" so the GM may add and delete columns in the main UI.
+  The GM may also add informational columns as well as roll-based columns.
+  * Fixed the Stabilize feature.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Tue, 25 Oct 2008 22:31:48 -0700
+
+turnwatcher (1.3-m2osw2) feisty; urgency=low
+
+  * Fixed the Linux 32bit package that was missing libraries
+
+ -- Alexis Wilke <alexis@m2osw.com>  Thu, 16 Mar 2008 15:33:00 -0800
+
+turnwatcher (1.3-m2osw1) feisty; urgency=low
+
+  * Added player HUD window for dual monitor system.
+  * Numerous bug fixes.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Thu, 13 Mar 2008 13:25:00 -0700
+
+turnwatcher (1.2-m2osw2) unstable; urgency=low
+
+  * Created the Win32 version
+  * Fixed a crash with the Export feature
+  * Fixed the default flags in the menus
+  * Fixed a bug with the effects when no monsters are selected
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Mon,  27 Jul 2007 22:33:18 -0800
+
+turnwatcher (1.2-m2osw1) unstable; urgency=low
+
+  * Added support to track effects (spells, poison, paralysis, etc.)
+  * Auto-resort to initiative after a spot, listen or will roll
+  * Better support to load characters and monsters during combat
+  * Started adding tooltips
+  * Fixed the dice roller to support any number of faces
+  * Fixed the default number of faces read in when a user entered
+    dice specification
+  * Fixed issues with the Splashscreen under Linux
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Mon,  10 Jan 2007 17:33:18 -0800
+
+turnwatcher (1.1-m2osw7) unstable; urgency=low
+
+  * Finished up the English documentation
+  * Fixed crashing bug when list of characters is empty in initiative
+  * Fixed hanging bug when all characters are dead and Next is clicked
+  * Translated the new Define Initiative Dice dialog to French
+  * Fixed the default Gtk dialog translations so they occur as expected
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Fri, 09 Feb 2007 22:19:06 -0800
+
+turnwatcher (1.1-m2osw6) unstable; urgency=low
+
+  * Added support for users to determine the dice to roll initiative
+  * Updated our CD-ROM image to match the new build
+
+ -- Alexis Wilke <alexis@m2osw.com>  Fri, 26 Jan 2007 00:09:25 -0800
+
+turnwatcher (1.1-m2osw5) unstable; urgency=low
+
+  * Fixed the demo version so we can publish it.
+  * Fixed the location of the Splash & About images for the win32 install.
+
+ -- Alexis Wilke <alexis@m2osw.com>  Thu, 18 Jan 2007 00:05:50 -0800
+
+turnwatcher (1.1-m2osw4) unstable; urgency=low
+
+  * Added highlighting feature to Spot/Listen/Will checks, and auto-sort.
+  * User may now enter initiative manually.
+  * Spot/Listen/Will modifiers are now added into the roll properly, and are
+    correctly editable in the character/monster edit window.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Mon,  1 Jan 2007 18:48:56 -0800
+
+turnwatcher (1.1-m2osw3) unstable; urgency=low
+
+  * Fixed the tarball installation script (gtk/pango versions)
+  * Fixed the RPM package dependencies
+  * Added the missing About window image
+  * Fixed the Debian, Gnome & KDE menus
+  * Fixed the startup of the user browser for documentation
+
+ -- Alexis Wilke <alexis@m2osw.com>  Mon, 25 Dec 2006 22:42:09 -0800
+
+turnwatcher (1.1-m2osw2) unstable; urgency=low
+
+  * Fixed the Undo/Redo functionality in link with the Duplicate feature.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Tue,  7 Nov 2006 23:37:14 -0800
+
+turnwatcher (1.1-m2osw1) unstable; urgency=low
+
+  * Bumped to version 1.1.
+  * Numerous fixes and enhancements.
+  * Added character stats and modifiers.
+  * Finilized the French and Spanish translations
+  * Synchronized the Linux & Windows versions
+  * Moved all the Gtk and other libraries in a new sandbox
+    (/usr/lib/mo/1.0.0/*) which will be common to all our software
+    also this is better automated.
+
+ -- Alexis Wilke <alexis@m2osw.com>  Thu, 10 Aug 2006 00:10:19 -0700
+
+turnwatcher (1.0-m2osw9) unstable; urgency=low
+
+  * New version of pango lib which accepts env vars to control where to
+    get the configuration files. Added env vars to install.sh.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Sun, 23 Apr 2006 11:56:49 -0700
+
+turnwatcher (1.0-m2osw8) unstable; urgency=low
+
+  * Add four more libraries (libjpeg, libpng, libtiff and libz) for local
+    installation.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Thu, 20 Apr 2006 10:54:30 -0700
+
+turnwatcher (1.0-m2osw7) unstable; urgency=low
+
+  * Corrected bug in install script for gtk modules control file.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Wed, 19 Apr 2006 08:36:48 -0700
+
+turnwatcher (1.0-m2osw6) unstable; urgency=low
+
+  * Added I18N for fr and es.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Sat, 15 Apr 2006 19:18:45 -0700
+
+turnwatcher (1.0-m2osw5) unstable; urgency=low
+
+  * Fixed documentation problems (was broken on IE).
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Tue,  4 Apr 2006 11:43:07 -0700
+
+turnwatcher (1.0-m2osw4) unstable; urgency=low
+
+  * Fixed documentation link in application. Now opens the browser properly.
+  * Changed build name to m2osw.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Fri, 31 Mar 2006 11:09:04 -0800
+
+turnwatcher (1.0-m2osw3) unstable; urgency=low
+
+  * Added desktops and script to launch the binary. Makes sure
+    that the app is being run from the proper directory
+    (/usr/share/turnwatcher/lib).
+  * Added XML improvements in libmo.
+  * Removed libmo as a dependency.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Thu, 30 Mar 2006 14:16:11 -0800
+
+turnwatcher (1.0-m2osw2) unstable; urgency=low
+
+  * Added libltdl3 as a dependency
+  * Removed sort-store--now only need list-store. This should eliminate the
+    crash
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Wed, 22 Mar 2006 17:17:00 -0800
+
+turnwatcher (1.0-m2osw1) unstable; urgency=low
+
+  * This package works correctly for Linspire. It requires our custom build of
+    gtk-qt-engine however.
+  * This package works correctly for [K]ubuntu.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Wed,  1 Feb 2006 11:34:54 -0800
+
+turnwatcher (1.0-4) unstable; urgency=low
+
+  * Was installing into the wrong place! Now puts 3rd party binaries into the
+    correct place (/usr/lib/turnwatcher/bin). Also installs all supplemental
+    files. Also added post-inst script to initialize gtk.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Fri, 20 Jan 2006 10:47:38 -0800
+
+turnwatcher (1.0-3) unstable; urgency=low
+
+  * Put the foreign keyword back into the configure.ac file. Now works
+    correctly with automake version 1.9.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Thu,  5 Jan 2006 13:16:25 -0800
+
+turnwatcher (1.0-2) unstable; urgency=low
+
+  * Now compiles against latest molib release. Fixed problem where private
+    data directory was not being created.
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Thu,  5 Jan 2006 11:50:43 -0800
+
+turnwatcher (1.0-1) unstable; urgency=low
+
+  * Initial release
+
+ -- R. Douglas Barbieri <doug@m2osw.com>  Wed,  4 Jan 2006 15:35:54 -0800

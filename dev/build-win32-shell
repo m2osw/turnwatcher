@@ -1,0 +1,309 @@
+#!/bin/sh
+#
+# File:		dev/build-win32-shell
+# Object:	Build the win32 installer (script run on Win32)
+#
+# Copyright:	Copyright (c) 2005-2007 Made to Order Software Corp.
+#
+#		All Rights Reserved.
+#
+#		This software and its associated documentation contains
+#		proprietary, confidential and trade secret information
+#		of Made to Order Software Ltd. and except as provided by
+#		written agreement with Made to Order Software Ltd.
+#
+#		a) no part may be disclosed, distributed, reproduced,
+#		   transmitted, transcribed, stored in a retrieval system,
+#		   adapted or translated in any form or by any means
+#		   electronic, mechanical, magnetic, optical, chemical,
+#		   manual or otherwise,
+#
+#		and
+#
+#		b) the recipient is not entitled to discover through reverse
+#		   engineering or reverse compiling or other such techniques
+#		   or processes the trade secrets contained therein or in the
+#		   documentation.
+#
+# Log:
+# Cleanup to remove old stuff to do with creating the sandbox and such.
+#
+# Big change! This time this script is run using SSH from cygwin!
+# This also means we do not have/need the top TurnWatcher environment.
+# Yet we do have to be the whole sandbox...
+#
+# Revision 1.13  2006/06/01 09:17:49  alexis
+# Many tweaks to support the newer version (i.e. motk, etc.)
+#
+# Revision 1.12  2006/01/31 22:18:27  alexis
+# Fixed the installer banner
+#
+# Revision 1.11  2006/01/24 18:51:40  alexis
+# Tweaks to use the tw-setup.exe instead of the final-setup.bat
+#
+# Revision 1.10  2006/01/20 16:40:53  alexis
+# Added the screensaver to the install directory
+#
+# Revision 1.9  2006/01/14 11:34:50  alexis
+# Fixed the --enable-debug flag (--enable was missing)
+# Fixed the splash name so -demo appears when we use the demo
+#
+# Revision 1.8  2005/12/30 17:51:49  alexis
+# Fixed the handling of the version and renamed the win32 package
+# (i.e. the version now includes the build #)
+#
+#
+#
+set -e
+
+echo
+echo "turnwatcher: Win32 build shell script started."
+
+# System wide variables
+export HOME="/home/m2osw_user/turnwatcher"
+export MSYSTEM=MINGW
+export PATH="/mingw/bin:/mingw/nsis-2.21:/bin"
+export MODULES="$HOME/modules"
+export PKG_CONFIG_PATH="/mingw/lib/pkgconfig"
+
+# Go to our home directory; it was already "refreshed" by
+# the main script to not include old stuff
+#cd $HOME -- we're already here
+
+
+
+
+echo "turnwatcher: Decompacting Turn Watcher."
+bzip2 -d modules/turnwatcher.tar.bz2
+tar -xf modules/turnwatcher.tar
+
+cp -f modules/resources.rc src/.
+
+
+
+# Configure & compile the library
+echo "turnwatcher: Compiling Turn Watcher."
+
+if @DEBUG@
+then
+	dbg=--enable-debug
+else
+	dbg=
+fi
+if @BETA@
+then
+	beta=--enable-beta
+else
+	beta=
+fi
+if @DEMO@
+then
+	demo=--enable-demo
+else
+	demo=
+fi
+if @LEGACY_UI@
+then
+	legacy_ui=--enable-legacyui
+else
+	legacy_ui=
+fi
+echo "./configure $demo $beta $dbg $legacy_ui --enable-mingw32 --prefix=/mingw"
+./configure $demo $beta $dbg $legacy_ui --enable-mingw32 --prefix=/mingw 2>&1
+# Print the config.h for info
+echo "=------------------------------ src/config.h"
+cat src/config.h
+echo "=------------------------------"
+echo make
+make 2>&1 || { echo "turnwatcher: error: 'make' failed"; exit 1; }
+
+
+
+# TODO:
+# Somehow, the linker doesn't finish at once, instead, I get some background
+# process going and it takes a little while for the link to be finished. So
+# at this time I just sleep. I wish there was a better solution (not
+# background process going for instance!!!)
+# This may be fixed now, but the MSYS/Mingw environment did not change much!
+sleep 10
+
+
+echo make install
+make install 2>&1 || { echo "turnwatcher: error: 'make install' failed"; exit 1; }
+
+
+
+##
+## Create the TurnWatcher installer
+##
+echo
+echo "turnwatcher: Organizing the Turn Watcher installation data."
+
+mkdir -p BUILD
+cd BUILD
+
+# Need these files for the makensis to work
+cp ../modules/turnwatcher.nsi ../modules/turnwatcher-screensaver.exe .
+
+if @DEMO@ || @BETA@
+then
+	img_splash=turnwatcher-splash-demo.png
+	img_about=turnwatcher-about-demo.png
+	img_install=turnwatcher-install-demo.bmp
+else
+	img_splash=turnwatcher-splash.png
+	img_about=turnwatcher-about.png
+	img_install=turnwatcher-install.bmp
+fi
+
+cp ../modules/$img_install turnwatcher-install.bmp
+
+
+mkdir -p \
+	bin \
+	etc \
+	lib/gtk-2.0 \
+	{lib,share}/locale/{de,es,fr}/LC_MESSAGES \
+	share/themes/TurnWatcher/gtk-2.0 \
+	share/turnwatcher/images
+
+# Decompress the docs at the right place
+bzip2 -d ../modules/turnwatcher-docs.tar.bz2
+tar -C share/turnwatcher -xf ../modules/turnwatcher-docs.tar
+
+# Copy the splash/about images at the right place
+cp ../modules/$img_splash share/turnwatcher/images/.
+cp ../modules/$img_about share/turnwatcher/images/.
+# Copy the icon at the right place (this is necessary for Linux, probably useless for Win32)
+cp ../src/pixmaps/turnwatcher.png share/turnwatcher/.
+
+
+
+
+# Copy the Gtk[mm] and other sandbox setup files
+
+for f in /mingw/share/locale/{de,es,fr}/LC_MESSAGES/*.mo
+do
+	case "`basename $f`" in
+	*/atk*.mo | */gettext*.mo | glib*.mo | g[td]k*.mo | libiconv*.mo)
+		# Remove LC_MESSAGES
+		fullpath=`dirname $f`
+		language=`dirname $fullpath`
+		cp $f lib/locale/`basename $language`/LC_MESSAGES/.
+		cp $f share/locale/`basename $language`/LC_MESSAGES/.
+		;;
+	esac
+done
+
+cp -r /mingw/share/themes share
+cp -r /mingw/lib/gtk-2.0/2.* lib/gtk-2.0
+cp -r /mingw/lib/pango lib
+cp -r /mingw/etc/{gtk-2.0,pango} etc
+
+rm lib/gtk-2.0/*/*/*.{a,la} lib/pango/*/modules/*.{a,la}
+
+
+
+# Copy the Turn Watcher setup files
+cp -r ../src/po/?? share/locale
+
+
+# We want Turn Watcher and the setup executables
+cp /mingw/bin/turnwatcher.exe bin
+cp /mingw/bin/tw-setup.exe bin
+cp /mingw/bin/gdk-pixbuf-query-loaders.exe bin
+cp /mingw/bin/gtk-query-immodules-2.0.exe bin
+cp /mingw/bin/pango-querymodules.exe bin
+
+
+
+# Determines the necessary DLLs automatically
+# (this needs to be done AFTER we copied all the DLLs
+# in the destination directories, of course)
+get_dll_names() {
+	# Check any DLL (i.e. including the modules used by Pango
+	# and other Gtk systems)
+	rm -rf libs.tmp
+	for f in `find . -regex '.*\.\(dll\|exe\)'`
+	do
+		objdump -x $f \
+			| grep "DLL Name:" \
+			| sed -e 's/.*: //' \
+			| tr 'A-Z' 'a-z' \
+			| sort -u >>libs.tmp
+	done
+}
+
+get_dll_names
+lines=`wc -l libs.tmp | sed -e 's/[^0-9]//g'`
+
+
+added_lib=true
+while $added_lib
+do
+	added_lib=false
+	pos=1
+	while test $pos -le $lines
+	do
+		# Get library number $pos
+		name=`sed -e "$pos b" -e "d" libs.tmp`
+		pos=`expr $pos + 1`
+		if test ! -e bin/$name -a -e /mingw/bin/$name
+		then
+			cp /mingw/bin/$name bin/$name
+			added_lib=true
+		fi
+	done
+	if $added_lib
+	then
+		# Add the libraries that this library
+		# references
+		get_dll_names
+		lines=`wc -l libs.tmp | sed -e 's/[^0-9]//g'`
+		# Restart in case we got new libs
+	fi
+done
+
+
+# Check for unknown libraries, just output a warning...
+for name in `cat libs.tmp`
+do
+	if ! test -e bin/$name
+	then
+		# System DLLs we do not install our specific version!
+		if ! test  "$name" = "advapi32.dll" \
+			-o "$name" = "comctl32.dll" \
+			-o "$name" = "comdlg32.dll" \
+			-o "$name" = "kernel32.dll" \
+			-o "$name" = "gdi32.dll" \
+			-o "$name" = "imm32.dll" \
+			-o "$name" = "msvcrt.dll" \
+			-o "$name" = "ole32.dll" \
+			-o "$name" = "shell32.dll" \
+			-o "$name" = "shfolder.dll" \
+			-o "$name" = "user32.dll" \
+			-o "$name" = "winspool.dll" \
+			-o "$name" = "ws2_32.dll" \
+			-o "$name" = "wsock32.dll"
+		then
+			echo "turnwatcher: warning: unknown DLL \"$name\"."
+		fi
+	fi
+done
+
+# Get our own theme (i.e. Win32 with a large toolbar, large fonts, etc.)
+cp ../modules/turnwatcher.gtkrc share/themes/TurnWatcher/gtk-2.0/gtkrc
+
+# Make our theme the default
+echo "gtk-theme-name = \"TurnWatcher\"" >etc/gtk-2.0/gtkrc
+
+
+# Create the installer
+makensis turnwatcher.nsi
+
+
+
+# Get out of the BUILD sub-directory
+cd ..
+
+

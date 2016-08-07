@@ -1,0 +1,209 @@
+#!/bin/bash
+#
+# File:		mainline/dev/build
+# Object:	Do a complete build of the software package
+#
+# Copyright:	Copyright (c) 2005-2008 Made to Order Software Corp.
+#
+#		All Rights Reserved.
+#
+#		This software and its associated documentation contains
+#		proprietary, confidential and trade secret information
+#		of Made to Order Software Corp. and except as provided by
+#		written agreement with Made to Order Software Corp.
+#
+#		a) no part may be disclosed, distributed, reproduced,
+#		   transmitted, transcribed, stored in a retrieval system,
+#		   adapted or translated in any form or by any means
+#		   electronic, mechanical, magnetic, optical, chemical,
+#		   manual or otherwise,
+#
+#		and
+#
+#		b) the recipient is not entitled to discover through reverse
+#		   engineering or reverse compiling or other such techniques
+#		   or processes the trade secrets contained therein or in the
+#		   documentation.
+#
+#
+# Log:
+# Made changes to the flags so only $DEBIAN is required (it is forced to true
+# if at least one of $REDHAT or $TARBALL is true)
+# Call the new redhat and tarball scripts (instead of having those in
+# the debian/rules script!)
+#
+# Added changes from version 1.1
+# (support for debian, tarballs, redhat streamlined with the sandbox)
+#
+# Revision 1.3  2006/06/01 09:18:50  alexis
+# Added support to build all the versions at once
+#
+# Revision 1.2  2005/12/30 17:53:22  alexis
+# Handle the increasing build #
+#
+# Revision 1.1  2005/12/20 19:58:56  alexis
+# A start with the automated build system
+#
+#
+#
+#
+
+
+#
+# Use this script to build any currently supported architecture.
+#
+
+
+# Read the command line options
+. dev/get_options
+
+
+
+#
+# For each new build, we read the current build version and
+# increase it by one automatically. This is later used in
+# the about and different installers and resources.
+#
+
+#
+# Now the build version is read from the debian/changelog
+# which we need to properly maintain by hand. Note that this
+# way it will include information about what changed between
+# versions, etc.
+#
+# Make sure it is up to date (would need to actually LOCK this file)
+##cvs update dev/build-version
+##old_version=`cat dev/build-version`
+##new_version=`expr $old_version + 1`
+##echo $new_version >dev/build-version
+##cvs commit \
+##	-m "increased version by automatic build on $HOSTNAME" \
+##	dev/build-version >/dev/null || \
+##	{ echo "turnwatcher: error: couldn't update the build version file; process stopped."; exit 1; }
+##
+##BUILD_VERSION=$new_version
+##
+## MOVED TO dev/get_version INSTEAD
+
+# Get all the different versions
+. dev/get_version
+
+# With the version of the MO we can infer the path we need to use to access the
+# tools from the MO and others (such as the dlf tool!)
+export PATH="/usr/lib/mo/$CONFIGURE_MOVERSION/bin:$PATH"
+
+
+# Update the version file in the source directory if necessary
+mkdir -p $TMPDIR
+cat >$TMPDIR/build_version.h <<EOF
+// Auto-generated file -- Build Version
+#ifndef BUILD_VERSION
+#define	BUILD_VERSION		$BUILD_VERSION
+#define	BUILD_VERSION_STRING	"$BUILD_VERSION_STRING"
+#endif
+EOF
+if ! cmp -s $TMPDIR/build_version.h src/build_version.h
+then
+	cp $TMPDIR/build_version.h src/build_version.h
+	svn commit \
+		-m "build version as defined in dev/changelog (auto-commit on $HOSTNAME)" \
+		src/build_version.h >/dev/null || \
+		{ echo "turnwatcher: error: could not update the build version header in src; process stopped."; exit 1; }
+fi
+
+
+#
+# Check each architecture variable, those which are
+# defined get to be rebuilt.
+# We call sub-scripts with . <name> so the variables
+# don't get lost.
+#
+
+# should we have a flag for this one instead?
+if $WIN32 || $DEBIAN || $MACOSX
+then
+	. dev/build-autoreconf
+fi
+
+if $ALL
+then
+	v="DEMO FULL"
+	# Remove BETA since we do not support that version anymore
+	# and thus we really don't need to build it!
+else
+	v="USER_SELECT"
+fi
+
+for vers in $v
+do
+	case "$vers" in
+	"FULL")
+		DEMO=false
+		BETA=false
+		;;
+	"DEMO")
+		DEMO=true
+		BETA=false
+		;;
+	"BETA")
+		DEMO=false
+		BETA=true
+		;;
+	"USER_SELECT")
+		# leave flags alone
+		;;
+	*)
+		echo "ERROR: turnwatcher: Unknown version '$vers'"
+		exit 1
+	esac
+
+	# Setup other flags depending on the selection
+	# (we cannot have that in the case because of the USER_SELECT option!)
+	if $BETA
+	then
+		echo "WARNING: beta version SKIPPED."
+		continue
+		DEMO_NAME=-beta
+		EXTRA_CONFIGURE_OPTIONS="--enable-beta=yes"
+	elif $DEMO
+	then
+		DEMO_NAME=-demo
+		EXTRA_CONFIGURE_OPTIONS="--enable-demo=yes"
+	else
+		DEMO_NAME=
+		EXTRA_CONFIGURE_OPTIONS=
+	fi
+
+	if $WIN32
+	then
+		. dev/build-win32
+	fi
+	if $MACOSX
+	then
+		. dev/build-macosx
+	fi
+	if $DEBIAN
+	then
+		. dev/build-debian
+	fi
+
+	# In order to build the RedHat and Tarball packages we need
+	# the debian package. If missing, the script will fail.
+	if $REDHAT
+	then
+		. dev/build-rpm
+	fi
+
+	if $TARBALL
+	then
+		. dev/build-tarball
+	fi
+done
+
+
+
+# Build is done, let's beep once
+echo -e "\007"
+
+
+# vim: ts=8

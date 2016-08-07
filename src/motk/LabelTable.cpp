@@ -16,6 +16,9 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 // STL
 //
 #include <iostream>
@@ -313,28 +316,28 @@ void LabelTable::OnChildSetFocus( Gtk::Widget* focus, int rowPos )
 
 #ifdef DEBUG
 	const Gtk::WidgetFlags flags = focus->get_flags();
-	std::cerr << "=======================" << std::endl;
+	std::cout << "=======================" << std::endl;
 	printf( "focus=%p, flags=%x\n", focus, flags );
-	if( flags & Gtk::TOPLEVEL 		) { std::cerr << "TOPLEVEL 		" << std::endl; }
-	if( flags & Gtk::NO_WINDOW 		) { std::cerr << "NO_WINDOW 		" << std::endl; }
-	if( flags & Gtk::REALIZED 		) { std::cerr << "REALIZED 		" << std::endl; }
-	if( flags & Gtk::MAPPED 		) { std::cerr << "MAPPED 		" << std::endl; }
-	if( flags & Gtk::VISIBLE 		) { std::cerr << "VISIBLE 		" << std::endl; }
-	if( flags & Gtk::SENSITIVE 		) { std::cerr << "SENSITIVE 		" << std::endl; }
-	if( flags & Gtk::PARENT_SENSITIVE 	) { std::cerr << "PARENT_SENSITIVE 	" << std::endl; }
-	if( flags & Gtk::CAN_FOCUS 		) { std::cerr << "CAN_FOCUS 		" << std::endl; }
-	if( flags & Gtk::HAS_FOCUS 		) { std::cerr << "HAS_FOCUS 		" << std::endl; }
-	if( flags & Gtk::CAN_DEFAULT 		) { std::cerr << "CAN_DEFAULT 		" << std::endl; }
-	if( flags & Gtk::HAS_DEFAULT 		) { std::cerr << "HAS_DEFAULT 		" << std::endl; }
-	if( flags & Gtk::HAS_GRAB 		) { std::cerr << "HAS_GRAB 		" << std::endl; }
-	if( flags & Gtk::RC_STYLE 		) { std::cerr << "RC_STYLE 		" << std::endl; }
-	if( flags & Gtk::COMPOSITE_CHILD	) { std::cerr << "COMPOSITE_CHILD	" << std::endl; }
-	if( flags & Gtk::NO_REPARENT 		) { std::cerr << "NO_REPARENT 		" << std::endl; }
-	if( flags & Gtk::APP_PAINTABLE 		) { std::cerr << "APP_PAINTABLE 	" << std::endl; }
-	if( flags & Gtk::RECEIVES_DEFAULT 	) { std::cerr << "RECEIVES_DEFAULT 	" << std::endl; }
-	if( flags & Gtk::DOUBLE_BUFFERED 	) { std::cerr << "DOUBLE_BUFFERED 	" << std::endl; }
-	if( flags & Gtk::NO_SHOW_ALL		) { std::cerr << "NO_SHOW_ALL		" << std::endl; }
-	std::cerr << "=======================" << std::endl << std::endl;
+	if( flags & Gtk::TOPLEVEL 		) { std::cout << "TOPLEVEL 		" << std::endl; }
+	if( flags & Gtk::NO_WINDOW 		) { std::cout << "NO_WINDOW 		" << std::endl; }
+	if( flags & Gtk::REALIZED 		) { std::cout << "REALIZED 		" << std::endl; }
+	if( flags & Gtk::MAPPED 		) { std::cout << "MAPPED 		" << std::endl; }
+	if( flags & Gtk::VISIBLE 		) { std::cout << "VISIBLE 		" << std::endl; }
+	if( flags & Gtk::SENSITIVE 		) { std::cout << "SENSITIVE 		" << std::endl; }
+	if( flags & Gtk::PARENT_SENSITIVE 	) { std::cout << "PARENT_SENSITIVE 	" << std::endl; }
+	if( flags & Gtk::CAN_FOCUS 		) { std::cout << "CAN_FOCUS 		" << std::endl; }
+	if( flags & Gtk::HAS_FOCUS 		) { std::cout << "HAS_FOCUS 		" << std::endl; }
+	if( flags & Gtk::CAN_DEFAULT 		) { std::cout << "CAN_DEFAULT 		" << std::endl; }
+	if( flags & Gtk::HAS_DEFAULT 		) { std::cout << "HAS_DEFAULT 		" << std::endl; }
+	if( flags & Gtk::HAS_GRAB 		) { std::cout << "HAS_GRAB 		" << std::endl; }
+	if( flags & Gtk::RC_STYLE 		) { std::cout << "RC_STYLE 		" << std::endl; }
+	if( flags & Gtk::COMPOSITE_CHILD	) { std::cout << "COMPOSITE_CHILD	" << std::endl; }
+	if( flags & Gtk::NO_REPARENT 		) { std::cout << "NO_REPARENT 		" << std::endl; }
+	if( flags & Gtk::APP_PAINTABLE 		) { std::cout << "APP_PAINTABLE 	" << std::endl; }
+	if( flags & Gtk::RECEIVES_DEFAULT 	) { std::cout << "RECEIVES_DEFAULT 	" << std::endl; }
+	if( flags & Gtk::DOUBLE_BUFFERED 	) { std::cout << "DOUBLE_BUFFERED 	" << std::endl; }
+	if( flags & Gtk::NO_SHOW_ALL		) { std::cout << "NO_SHOW_ALL		" << std::endl; }
+	std::cout << "=======================" << std::endl << std::endl;
 #endif
 }
 

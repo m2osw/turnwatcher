@@ -1,0 +1,155 @@
+#!/bin/sh
+#
+# File:		dev/build-rpm
+# Object:	Build the RPM packages
+#
+# Copyright:	Copyright (c) 2006-2009 Made to Order Software Corp.
+#
+#		All Rights Reserved.
+#
+#		This software and its associated documentation contains
+#		proprietary, confidential and trade secret information
+#		of Made to Order Software Corp. and except as provided by
+#		written agreement with Made to Order Software Corp.
+#
+#		a) no part may be disclosed, distributed, reproduced,
+#		   transmitted, transcribed, stored in a retrieval system,
+#		   adapted or translated in any form or by any means
+#		   electronic, mechanical, magnetic, optical, chemical,
+#		   manual or otherwise,
+#
+#		and
+#
+#		b) the recipient is not entitled to discover through reverse
+#		   engineering or reverse compiling or other such techniques
+#		   or processes the trade secrets contained therein or in the
+#		   documentation.
+#
+# Log:
+# Oct 23, 2006
+# Created.
+#
+set -e
+
+###
+# The method to create the RPM is to first build the debian packages
+# (in this script we assume that was already done) and then extract
+# the files from the .deb and run rpm-build to create the corresponding
+# .rpm files.
+###
+
+# First make sure there is an RPM builder tool!
+if ! test -f /usr/lib/rpm/rpmrc;
+then
+	echo "turnwatcher: error: RPM tools do not seem to be installed on your system.";
+	echo "turnwatcher: error: no RPM packages will be created.";
+	exit 1;
+fi
+
+# Get the options & version
+. dev/get_options
+. dev/get_version
+
+# Define the architecture
+ARCH=`uname -m`
+case "$ARCH" in
+i386|i686)
+	ARCH=i386
+	;;
+x86_64)
+	ARCH=amd64
+	;;
+*)
+	echo "turnwatcher:error: unsupported architecture."
+	exit 1
+	;;
+esac
+
+# Define the output filename
+OUTPUT=turnwatcher-${FULL_VERSION}.${ARCH}.rpm
+DESTINATION=turnwatcher${DEMO_NAME}-${FULL_VERSION}.${ARCH}.rpm
+
+# Make sure that the corresponding debian files are available
+INPUT=turnwatcher${DEMO_NAME}_${FULL_VERSION}_${ARCH}.deb
+
+if ! test  -f $PACKAGES_DIR/${INPUT}
+then
+	echo "turnwatcher: error: debian package ${INPUT} not found.";
+	echo "turnwatcher: error: corresponding RPM package will not be created.";
+	exit 1;
+fi
+
+
+# At this time there is no clean way to append to the list of macrofiles...
+# so I used a grep + sed to generate our own macrofiles: in our own rpmrc file
+
+
+MO_PKGLIBDIR="/usr/lib/mo/$CONFIGURE_MOVERSION"
+GTK_VERSION=`cd $MO_PKGLIBDIR/lib/gtk-2.0; ls -d [1-9]*`
+PANGO_VERSION=`cd $MO_PKGLIBDIR/lib/pango; ls -d [1-9]*`
+
+
+
+# Create the package
+echo "turnwatcher: info: building the release RPM (see tmp/rpm${DEMO_NAME}.output)"
+
+(
+	rm -rf tmp/turnwatcher
+	mkdir -p tmp/turnwatcher
+	cd tmp/turnwatcher
+	echo "turnwatcher: info: using package $INPUT as the source"
+	ar x ../../$PACKAGES_DIR/$INPUT
+	tar xzf data.tar.gz
+	rm control.tar.gz debian-binary data.tar.gz
+	sed -e "s%@RPM_BUILD_DIR@%`pwd`%" ../../dev/linux/turnwatcher.rpmmacros.in >turnwatcher.rpmmacros
+	echo "`egrep '^macrofiles[ \t]*:' /usr/lib/rpm/rpmrc | sed -e 's%:~/.rpmmacros%%'`:./turnwatcher.rpmmacros" >rpm.rc
+	sed -e "s/@BUILD_VERSION_STRING@/$BUILD_VERSION_STRING/" \
+		-e "s/@VERSION@/$3$VERSION/" \
+		-e "s/@GTK_VERSION@/$GTK_VERSION/" \
+		-e "s/@PANGO_VERSION@/$PANGO_VERSION/" \
+		-e "s%@MO_PKGLIBDIR@%$MO_PKGLIBDIR%" \
+			../../dev/linux/turnwatcher-rpm.spec.in >turnwatcher.spec
+	rpmbuild -bb --target ${ARCH}-linux --rcfile rpm.rc turnwatcher.spec
+	mv -f $OUTPUT ../../$PACKAGES_DIR/$DESTINATION
+	cd ../..
+) >tmp/rpm${DEMO_NAME}.output
+
+
+
+# Check whether it worked
+if ! test -f $PACKAGES_DIR/$DESTINATION
+then
+	echo
+	echo "turnwatcher: error: RPM package ${DESTINATION} not rebuilt."
+	echo "turnwatcher: error: look for why this happened and then try again."
+	echo
+	exit 1
+fi
+
+
+# If the person does not have the packages checked out it won't work
+# correctly
+if ! test -d $PACKAGES_DIR/.svn
+then
+	echo "turnwatcher: warning: it looks as if you did not have packages checked out."
+	echo "turnwatcher: warning: this script cannot check in the new one until you do:"
+	echo "turnwatcher: warning:    svn update packages/turnwatcher"
+	# NOTE: this is wrong when in a sub-folder branch stuff as created by Doug...
+	echo "turnwatcher: warning: under your 'sources' directory (`cd ../../../ && pwd`)."
+	echo "turnwatcher: warning: the new packages can be found in ${PACKAGES_DIR}."
+else
+	# If it is not the first time, the add will fail, but with -Q nothing is printed
+	if $CHECKIN_PACKAGES
+	then
+		echo "turnwatcher: info: checking-in the resulting RPM packages..."
+		(
+			svn --quiet add $PACKAGES_DIR/$DESTINATION
+			svn commit --non-interactive -N \
+					-m "Turn Watcher RPM -- automatic build on `date`" \
+					$PACKAGES_DIR/$DESTINATION
+		) >>$TMPDIR/build-rpm.txt 2>&1
+	fi
+fi
+
+
+

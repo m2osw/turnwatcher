@@ -26,48 +26,53 @@ namespace Transactions
 {
 
 
-SortTransaction::SortTransaction( const molib::mo_name_t id, const int dc )
-	: f_sortId(id)
+SortTransaction::SortTransaction( UI::CharacterListUI* ui, const molib::mo_name_t id, const int dc )
+	: f_charListUI(ui)
+	, f_sortId(id)
 	, f_dc(dc)
 {
-	f_prevDC	 = GetAppSettings().lock()->LastDC();
-	f_prevSortId = GetCharacterModel().lock()->getSoftSort();
+	assert(f_charListUI);
+	f_prevDC	 = f_charListUI->getDC();
+	f_prevSortId = f_charListUI->getSoftSort();
 }
 
 
 void SortTransaction::doit()
 {
-	GetAppSettings().lock()->LastDC        ( f_dc     );
-	GetCharacterModel().lock()->setSoftSort( f_sortId );
+	assert(f_charListUI);
+	f_charListUI->setSoftSort( f_sortId );
+	f_charListUI->setDC      ( f_dc     );
 }
 
 
 void SortTransaction::undo()
 {
-	GetAppSettings().lock()->LastDC        ( f_prevDC     );
-	GetCharacterModel().lock()->setSoftSort( f_prevSortId );
+	assert(f_charListUI);
+	f_charListUI->setSoftSort( f_prevSortId );
+	f_charListUI->setDC      ( f_prevDC     );
 }
 
 
 
-ClearSortTransaction::ClearSortTransaction()
+ClearSortTransaction::ClearSortTransaction( UI::CharacterListUI* ui ) :
+	f_charListUI( ui )
 {
-	f_prevDC = GetAppSettings().lock()->LastDC();
-	f_sortId = GetCharacterModel().lock()->getSoftSort();
+	f_sortId = f_charListUI->getSoftSort();
+	f_prevDC = f_charListUI->getDC();
 }
 
 
 void ClearSortTransaction::doit()
 {
-	GetAppSettings().lock()->LastDC        ( -1 );
-	GetCharacterModel().lock()->setSoftSort( molib::moName("NONE") );
+	f_charListUI->setSoftSort( molib::moName("NONE") );
+	f_charListUI->setDC( -1 );
 }
 
 
 void ClearSortTransaction::undo()
 {
-	GetAppSettings().lock()->LastDC        ( f_prevDC );
-	GetCharacterModel().lock()->setSoftSort( f_sortId );
+	f_charListUI->setSoftSort( f_sortId );
+	f_charListUI->setDC( f_prevDC );
 }
 
 

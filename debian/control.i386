@@ -1,14 +1,14 @@
 Source: turnwatcher
 Priority: optional
 Maintainer: R. Douglas Barbieri <doug@m2osw.com>
-Build-Depends: debhelper (>= 8.0.0), cmake
+Build-Depends: debhelper (>= 4.0.0), base-files (>= 3.1.0), binutils (>= 2.15-5), coreutils (>= 5.2.1), gcc (>= 3.3.5-1 ), libc6 (>= 2.3.2 ), libfontconfig1 (>= 2.3.2), libgcc1 (>= 1), libjpeg62 (>= 6b-9), libmo (>= 1.0.0-2 ), libpng12-0 (>= 1.2.8rel-1), libstdc++5 (>= 3.2) | libstdc++6 (>= 3.4), libtiff4 (>= 3.6.1-3), libx11-6 (>= 1), libxcursor1 (>= 1.1.3), libxext6 (>= 1), libxi6 (>= 1), libxrandr2 (>= 1), libxrender1 (>= 0.9.0), zlib1g (>= 1), libgtkmm-2.4-dev (>= 2.8.0-0), libglibmm-2.4-dev (>= 2.8.0-0)
 Standards-Version: 3.6.1
 Section: x11
 
 Package: turnwatcher
 Section: x11
 Architecture: i386
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: libc6 (>= 2.3.2.ds1-4), libfontconfig1 (>= 2.3.0), libgcc1 (>= 1:3.4.1-3), libstdc++6 (>= 4.0.0), libx11-6 | xlibs (>> 4.1.0), libxcursor1 (>> 1.1.2), libxext6 | xlibs (>> 4.1.0), libxft2 (>> 2.1.1), libxi6 | xlibs (>> 4.1.0), libxrandr2 | xlibs (>> 4.3.0), libxrender1, libltdl3 (>> 1.5)
 Replaces: turnwatcher-beta, turnwatcher-demo
 Conflicts: turnwatcher-beta, turnwatcher-demo
 Description: Turn Watcher (tm) RPG GM Initiative Tracker
@@ -22,7 +22,7 @@ Description: Turn Watcher (tm) RPG GM Initiative Tracker
 Package: turnwatcher-demo
 Section: x11
 Architecture: i386
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: libc6 (>= 2.3.2.ds1-4), libfontconfig1 (>= 2.3.0), libgcc1 (>= 1:3.4.1-3), libstdc++6 (>= 4.0.0), libx11-6 | xlibs (>> 4.1.0), libxcursor1 (>> 1.1.2), libxext6 | xlibs (>> 4.1.0), libxft2 (>> 2.1.1), libxi6 | xlibs (>> 4.1.0), libxrandr2 | xlibs (>> 4.3.0), libxrender1, libltdl3 (>> 1.5)
 Replaces: turnwatcher-beta, turnwatcher
 Conflicts: turnwatcher-beta, turnwatcher
 Description: Turn Watcher (tm) RPG GM Initiative Tracker (Demo)
@@ -37,7 +37,7 @@ Description: Turn Watcher (tm) RPG GM Initiative Tracker (Demo)
 Package: turnwatcher-beta
 Section: x11
 Architecture: i386
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: libc6 (>= 2.3.2.ds1-4), libfontconfig1 (>= 2.3.0), libgcc1 (>= 1:3.4.1-3), libstdc++6 (>= 4.0.0), libx11-6 | xlibs (>> 4.1.0), libxcursor1 (>> 1.1.2), libxext6 | xlibs (>> 4.1.0), libxft2 (>> 2.1.1), libxi6 | xlibs (>> 4.1.0), libxrandr2 | xlibs (>> 4.3.0), libxrender1, libltdl3 (>> 1.5)
 Replaces: turnwatcher-demo, turnwatcher
 Conflicts: turnwatcher-demo, turnwatcher
 Description: Turn Watcher (tm) RPG GM Initiative Tracker (Beta)

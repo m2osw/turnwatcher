@@ -16,6 +16,9 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 #include "UiBase.h"
 
 #include <iostream>
@@ -86,7 +89,7 @@ MergeId	UIBase::AddUI( const Glib::ustring& ui )
 	catch( ... )
 	{
 #ifdef DEBUG
-		std::cerr << "Caught exception!" << std::endl;
+		std::cout << "Caught exception!" << std::endl;
 #endif
 	}
 

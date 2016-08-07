@@ -1,0 +1,335 @@
+#!/bin/bash
+
+# At this time this script is supposed to be
+# started from the main folder.
+
+
+ORG_PAGES="
+	authors
+	checks_n_saves
+	contact
+	copyright
+	delay
+	description
+	effects_tracking
+	get_started
+	hitpoints
+	index
+	license
+	player_hud
+	reorder
+	shortcuts
+	start
+	technical
+	ultra_initiative
+	"
+
+
+
+MAIN_FOLDER=.
+TEMPORARY=$MAIN_FOLDER/../tmp
+
+# We use destinations as follow:
+#	DESTINATION for the site turnwatcher.m2osw.com (i.e. on Alexis' machine
+#			so we can develop & test before to put the new page on
+#			the main server.)
+#
+#	LOCAL_DESTINATION for the doc. we install with the software
+#
+#	SERVER_DESTINATION for the "real server" (i.e. www.turnwatcher.com)
+#
+DESTINATION=/usr/clients/www/turnwatcher.m2osw.com/public_html/documentation
+LOCAL_DESTINATION=$MAIN_FOLDER
+SERVER_DESTINATION=$MAIN_FOLDER/server/www.turnwatcher.com/public_html/documentation
+
+# This is somewhat broken since it goes from one repository to another!
+JAVASCRIPT=../../../../www/javascript/mainline
+if ! test -d $JAVASCRIPT
+then
+	# In a branch, we need one more ..
+	JAVASCRIPT=../../../../../www/javascript/mainline
+fi
+LANGUAGES="en fr es"
+PAGES="$ORG_PAGES"
+# We tweak the following with sed below...
+BASE="http://www.turnwatcher.com/documentation/"
+VERBOSE=false
+HELP=false
+ENTRIES_PER_PAGE=1
+DEBUG=0
+
+
+while test $# -gt 0
+do
+	case $1 in
+	-h|--help) shift; HELP=true;;
+	-v|--verbose) shift; VERBOSE=true;;
+	-p|--page) shift; PAGES="$1"; shift;;
+	-l|--lang) shift; LANGUAGES="$1"; shift;;
+	-d|--debug) shift; DEBUG=1;;
+	*) echo "ERROR: invalid option '$1'"; HELP=true; shift;;
+	esac
+done
+
+
+if $HELP
+then
+	echo
+	echo "Usage: $0 [-opt]"
+	echo
+	echo "  Where -opt is one or more of the following:"
+	echo
+	echo "    -d or --debug        run the compile with DEBUG set to 1"
+	echo "    -h or --help         print out this help screen"
+	echo "    -l or --lang <name>  do only that language"
+	echo "    -p or --page <name>  do only that page"
+	echo "    -v or --verbose      print out the name of the files being worked on"
+	echo
+	exit 1;
+fi
+
+
+# Test that the user didn't ask for a non-existant page
+if test "$PAGES" != "$ORG_PAGES"
+then
+	found=false
+	for o in $ORG_PAGES
+	do
+		for p in $PAGES
+		do
+			if test "$p" = "$o"
+			then
+				found=true
+				break
+			fi
+		done
+	done
+	if ! $found
+	then
+		echo "ERROR: page \"$PAGES\" is not defined in:
+$ORG_PAGES"
+		exit 1;
+	fi
+fi
+
+
+
+mkdir -p $TEMPORARY
+mkdir -p $DESTINATION/{en,es,fr}
+mkdir -p $LOCAL_DESTINATION/{en,es,fr}
+mkdir -p $SERVER_DESTINATION/{en,es,fr}
+
+
+#
+# Generate the web pages
+#
+if $VERBOSE
+then
+	echo "Working on pages \"$PAGES\" in languages \"$LANGUAGES\""
+fi
+for lang in $LANGUAGES
+do
+	for page in $PAGES
+	do
+		if $VERBOSE
+		then
+			echo "  page $page in $lang"
+		fi
+		xmlc -DBASE=$BASE -DLANG=$lang -DFILE=$page -DPAGE=`echo $page | sed -e 'sX/X_Xg'` \
+					-DLINK_PAGE=$page -DDEBUG=$DEBUG \
+					-I $MAIN_FOLDER/templates -I $MAIN_FOLDER/templates/$lang \
+					-I $MAIN_FOLDER/templates/en -t $TEMPORARY root \
+				| sed -e '/^[ \t]*$/ d' \
+				| sed -e '1 d' | sed -e '$ d' \
+				| sed -e '1 s/^[ \t]*//' >$SERVER_DESTINATION/$lang/$page.html
+		chmod -f 664 $SERVER_DESTINATION/$lang/$page.html
+		chgrp -f www $SERVER_DESTINATION/$lang/$page.html
+
+		sed -e 's%<base href=".*"/>%<base href="http://turnwatcher.m2osw.com/documentation/'$lang'/'$page'.html"/>%' \
+			$SERVER_DESTINATION/$lang/$page.html >$DESTINATION/$lang/$page.html
+		chmod -f 664 $DESTINATION/$lang/$page.html
+		chgrp -f www $DESTINATION/$lang/$page.html
+
+		sed -e '/<base href=.*\/>/ d' \
+			$SERVER_DESTINATION/$lang/$page.html >$LOCAL_DESTINATION/$lang/$page.html
+		#cp $LOCAL_DESTINATION/$lang/$page.html $INSTALL_DESTINATION/$lang/$page.html
+
+		if ! test -f $SERVER_DESTINATION/$page.html.$lang
+		then
+			ln -s $lang/$page.html $SERVER_DESTINATION/$page.html.$lang
+		fi
+		if ! test -f $DESTINATION/$page.html.$lang
+		then
+			ln -s $lang/$page.html $DESTINATION/$page.html.$lang
+		fi
+	done
+
+  # While we debug, look only at the English version!
+  #break
+done
+
+
+
+#
+# Copy the images too
+#
+if $VERBOSE
+then
+	echo "Working on images"
+fi
+for img in images/* #images/??/*
+do
+	if test ! -d $img
+	then
+		# Copy only if it changed
+		dir=`dirname $DESTINATION/$img`
+		if ! test -d $dir
+		then
+			mkdir -p $dir
+			chmod -f 775 $dir
+			chgrp -f www $dir
+		fi
+		if ! cmp -s $img $DESTINATION/$img
+		then
+			cp $img $DESTINATION/$img
+			chmod -f 664 $DESTINATION/$img
+			chgrp -f www $DESTINATION/$img
+		fi
+
+		dir=`dirname $SERVER_DESTINATION/$img`
+		if ! test -d $dir
+		then
+			mkdir -p $dir
+			chmod -f 775 $dir
+			chgrp -f www $dir
+		fi
+		if ! cmp -s $img $SERVER_DESTINATION/$img
+		then
+			cp $img $SERVER_DESTINATION/$img
+			chmod -f 664 $SERVER_DESTINATION/$img
+			chgrp -f www $SERVER_DESTINATION/$img
+		fi
+	fi
+done
+
+
+
+
+#
+# Copy the styles
+#
+if $VERBOSE
+then
+	echo "Working on styles"
+fi
+for style in styles/*.css
+do
+	if test ! -d $style
+	then
+		# Copy only if it changed
+		dir=`dirname $DESTINATION/$style`
+		if ! test -d $dir
+		then
+			mkdir -p $dir
+			chmod -f 775 $dir
+			chgrp -f www $dir
+		fi
+		if ! cmp -s $style $DESTINATION/$style
+		then
+			cp $style $DESTINATION/$style
+			chmod -f 664 $DESTINATION/$style
+			chgrp -f www $DESTINATION/$style
+		fi
+
+		dir=`dirname $SERVER_DESTINATION/$style`
+		if ! test -d $dir
+		then
+			mkdir -p $dir
+			chmod -f 775 $dir
+			chgrp -f www $dir
+		fi
+		if ! cmp -s $style $SERVER_DESTINATION/$style
+		then
+			cp $style $SERVER_DESTINATION/$style
+			chmod -f 664 $SERVER_DESTINATION/$style
+			chgrp -f www $SERVER_DESTINATION/$style
+		fi
+	fi
+done
+
+
+#
+# Copy the external javascripts too
+#
+if $VERBOSE
+then
+	echo "Working on javascripts"
+fi
+for js in $JAVASCRIPT/*/*.js
+do
+	if test ! -d $js
+	then
+		# Copy only if it changed
+		name=`echo "$js" | sed -e "s|$JAVASCRIPT|js|"`
+
+		grep -v "Revision:" $js >$TEMPORARY/a.js
+
+		dir=`dirname $LOCAL_DESTINATION/$name`
+		if ! test -d $dir
+		then
+			mkdir -p $dir
+			chmod -f 775 $dir
+			chgrp -f www $dir
+		fi
+		grep -v "Revision:" $LOCAL_DESTINATION/$name >$TEMPORARY/b.js
+		if ! cmp -s $TEMPORARY/a.js $TEMPORARY/b.js
+		then
+			cp $js $LOCAL_DESTINATION/$name
+			chmod -f 664 $LOCAL_DESTINATION/$name
+			chgrp -f www $LOCAL_DESTINATION/$name
+		fi
+
+		dir=`dirname $DESTINATION/$name`
+		if ! test -d $dir
+		then
+			mkdir -p $dir
+			chmod -f 775 $dir
+			chgrp -f www $dir
+		fi
+		if test -f $DESTINATION/$name
+		then
+			grep -v "Revision:" $DESTINATION/$name >$TEMPORARY/b.js
+		else
+			echo "" >$TEMPORARY/b.js
+		fi
+		if ! cmp -s $TEMPORARY/a.js $TEMPORARY/b.js
+		then
+			cp $js $DESTINATION/$name
+			chmod -f 664 $DESTINATION/$name
+			chgrp -f www $DESTINATION/$name
+		fi
+
+		dir=`dirname $SERVER_DESTINATION/$name`
+		if ! test -d $dir
+		then
+			mkdir -p $dir
+			chmod -f 775 $dir
+			chgrp -f www $dir
+		fi
+		if test -f $SERVER_DESTINATION/$name
+		then
+			grep -v "Revision:" $SERVER_DESTINATION/$name >$TEMPORARY/b.js
+		else
+			echo "" >$TEMPORARY/b.js
+		fi
+		if ! cmp -s $TEMPORARY/a.js $TEMPORARY/b.js
+		then
+			cp $js $SERVER_DESTINATION/$name
+			chmod -f 664 $SERVER_DESTINATION/$name
+			chgrp -f www $SERVER_DESTINATION/$name
+		fi
+	fi
+done
+
+
+

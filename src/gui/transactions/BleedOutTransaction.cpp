@@ -25,7 +25,7 @@ namespace Transactions
 {
 
 
-BleedOutTransaction::BleedOutTransaction( Combatant::Character::pointer_t ch )
+BleedOutTransaction::BleedOutTransaction( Combatant::Character::Pointer ch )
 	: f_character(ch)
 {
 	const bool bleedOutDying = GetAppSettings().lock()->BleedOutDying();

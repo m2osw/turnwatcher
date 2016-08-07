@@ -15,9 +15,9 @@
 ## WARRANTIES, EXPRESS, IMPLIED OR OTHERWISE, REGARDING ITS ACCURACY,
 ## COMPLETENESS OR PERFORMANCE.
 ##===============================================================================
-cmake_minimum_required( VERSION 3.5 )
+cmake_minimum_required( VERSION 2.8 )
 
-project( turnwatcher_project )
+project( turnwatcher_project_1_5 )
 
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"   )
 set( CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"   )

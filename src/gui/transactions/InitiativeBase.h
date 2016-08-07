@@ -16,6 +16,9 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 #pragma once
 
 #include "transaction.h"
@@ -30,11 +33,11 @@ namespace Transactions
 //===============================================================================
 
 
-class InitiativeBase
-    : public UITransactionBase
+class InitiativeBase :
+	public UITransactionBase
 {
 protected:	
-	InitiativeBase( const bool emit_signals );
+	InitiativeBase();
 
 	void persistStatuses();
 	void changeStatuses( const bool doit );
@@ -47,24 +50,23 @@ protected:
 	int		f_prevRoundNum;
 	int		f_currInit;
 	int		f_prevInit;
-	bool	f_emitSignals;
 
-	Initiative::InitiativeData::pointer_t f_prevInitData;
-	Initiative::InitiativeData::pointer_t f_currInitData;
+	Initiative::InitiativeData::Pointer f_prevInitData;
+	Initiative::InitiativeData::Pointer f_currInitData;
 
-	void swapInitData( Initiative::InitiativeData::pointer_t data );
+	void swapInitData( Initiative::InitiativeData::Pointer data );
 	void setPositions();
 	void updateInitCharacters();
 
 private:
 	struct CharacterStatus
 	{
-		Combatant::Character::pointer_t	f_char;
+		Combatant::Character::Pointer	f_char;
         Combatant::Status		        f_prevStatus;
         Combatant::Status				f_newStatus;
 
         CharacterStatus(
-                Combatant::Character::pointer_t ch,
+                Combatant::Character::Pointer ch,
                 Combatant::Status prevStatus,
                 Combatant::Status newStatus
                 )
@@ -75,17 +77,17 @@ private:
 		{}
 	};
 
-	typedef std::vector<CharacterStatus> list_t;
-	list_t	f_statuses;
+	typedef std::vector<CharacterStatus> List;
+	List	f_statuses;
 };
 
 
-class StartInitTransaction
-    : public Transaction
-    , public InitiativeBase
+class StartInitTransaction :
+	public Transaction,
+	public InitiativeBase
 {
 public:
-    StartInitTransaction() : InitiativeBase( true /*emit_signals*/ )
+	StartInitTransaction()
 	{
 		f_roundNumber = 1;
 		f_currInit    = 0;
@@ -107,12 +109,12 @@ public:
 };
 
 
-class StopInitTransaction
-    : public Transaction
-    , public InitiativeBase
+class StopInitTransaction :
+	public Transaction,
+	public InitiativeBase
 {
 public:
-    StopInitTransaction() : InitiativeBase( true /*emit_signals*/ )
+	StopInitTransaction()
 	{
 		persistStatuses();
 	}

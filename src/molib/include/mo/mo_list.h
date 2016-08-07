@@ -309,7 +309,7 @@ public:
 	// Looks like we'll have to just copy "by hand."
 	//
 	/// Like moListBase::GetCopy() but return the proper object type.
-	const T&		GetCopy(moListBase::position_t position) const { return dynamic_cast<T>(L::GetCopy(position)); }
+	T			GetCopy(moListBase::position_t position) const { return dynamic_cast<T>(L::GetCopy(position)); }
 #endif
 	/// Like moListBase::operator = () but return the proper list type.
 	L&			operator = (const moListBase& list) { return dynamic_cast<L&>(L::operator = (list)); }

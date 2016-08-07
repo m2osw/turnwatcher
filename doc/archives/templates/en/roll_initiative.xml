@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+
+
+<li id="steps">Initiative (I)</li>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="roll_spot"></a>
+
+<p id="menu_description">
+	The Initiative is tedious to manage by hand especially when you have many
+	players and even more monsters. The computer will not only roll the dice
+	for you, it will list the players in the order they will fight in a round
+	and the space bar will then get you from one character to the next in the
+	correct order.
+</p>
+
+
+
+
+<!--
+vim: ts=2
+-->

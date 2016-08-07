@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+
+
+<li id="steps">Spot (S)</li>
+
+<!-- because of the layers, we need this name before the actual entry -->
+<a name="roll_listen"></a>
+
+<p id="menu_description">
+	As a Dungeon Master, it is often that you want to roll dice for a spot
+	without having to tell your players. This option lets you do just that.
+	A simple click or key stroke and you know whether one or more of your
+	players did spot some invisible monster, magical illusion, etc.
+</p>
+
+
+
+
+
+
+
+<!--
+vim: ts=2
+-->

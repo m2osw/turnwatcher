@@ -21,10 +21,8 @@
 #ifndef MO_TYPES_H
 #define MO_TYPES_H
 
-#include <sys/types.h>
-#if !defined(MO_WIN32)
-#	include	<semaphore.h>
-#endif
+#include	<sys/types.h>
+#include	<semaphore.h>
 
 #endif //MO_TYPES_H
 

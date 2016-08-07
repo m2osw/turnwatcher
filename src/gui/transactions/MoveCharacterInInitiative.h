@@ -16,6 +16,9 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 #pragma once
 
 #include "transactions/InitiativeBase.h"
@@ -29,7 +32,7 @@ class MoveCharacterInInitiative:
 	public InitiativeBase
 {
 public:
-	MoveCharacterInInitiative( const int new_pos, Combatant::Character::pointer_t ch, const bool set_positions = true );
+	MoveCharacterInInitiative( const int new_pos, Combatant::Character::Pointer ch, const bool set_positions = true );
 
 	virtual void doit();
 	virtual void undo();
@@ -37,7 +40,7 @@ public:
 private:
 	int					f_newPos;
 	bool					f_setPositions;
-	Combatant::Character::pointer_t		f_char;
+	Combatant::Character::Pointer		f_char;
 };
 
 

@@ -25,7 +25,7 @@ namespace Transactions
 {
 
 
-DamageTransaction::DamageTransaction( Combatant::Character::pointer_t character, const int damage ) :
+DamageTransaction::DamageTransaction( Combatant::Character::Pointer character, const int damage ) :
 	f_character(character)
 {
 	f_damageAmount = damage;

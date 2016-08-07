@@ -16,6 +16,13 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
+#ifdef HAVE_CONFIG_H
+#include <config.h>
+#endif
+
 // Local
 //
 #include "MenuManager.h"
@@ -24,7 +31,6 @@
 //
 #include <string>
 #include <algorithm>
-#include <iostream>
 
 // SIGC++
 // 
@@ -68,7 +74,7 @@ MenuManager::MenuManager() :
 MenuManager::~MenuManager()
 {
 #ifdef DEBUG
-	std::cerr << "MenuManager::~MenuManager()" << std::endl;
+    printf( "MenuManager::~MenuManager()\n" );
 #endif
 }
 
@@ -88,8 +94,8 @@ const char *MenuManager::GetClassName(void) const
  */
 void MenuManager::OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const Glib::ustring& event )
 {
-#ifdef DEBUG
-    std::cerr << "MenuManager::OnButtonClicked(): " << event << endl;
+#ifdef _DEBUG
+    cout << "MenuManager::OnButtonClicked(): " << event << endl;
 #endif
 
     MenuBroadcast::PostDynamicEvent( moApplication::Instance(), event.c_str() );
@@ -155,6 +161,10 @@ void MenuManager::PopulateMenuBar()
 	ui += "\t</menubar>\n";
 	ui += "</ui>\n";
 
+#if defined(_DEBUG) && 0
+	cout << "MENU UI:\n" << ui << endl;
+#endif
+
 	UIBase::AddUI( ui );
 }
 
@@ -192,8 +202,8 @@ void MenuManager::PopulateToolBar()
 	ui += "\t</toolbar>\n";
 	ui += "</ui>\n";
 
-#if defined(DEBUG)
-	std::cerr << "TOOLBAR UI:\n" << ui << endl;
+#if defined(MO_DEBUG)
+	cout << "TOOLBAR UI:\n" << ui << endl;
 #endif
 
 	UIBase::AddUI( ui );
@@ -393,8 +403,8 @@ void MenuManager::Item( const molib::moWCString& path, molib::moMenuItemSPtr ite
 	if( !toolbar.IsEmpty() )
 	{
 		const int weight = atoi( toolbar.c_str() );
-#ifdef DEBUG
-		std::cerr << "toolbar=" << toolbar.c_str() << ", weight=" << weight << endl;
+#ifdef MO_DEBUG
+		cout << "toolbar=" << toolbar.c_str() << ", weight=" << weight << endl;
 #endif
 		f_toolbarItems[weight] = item;
 	}
@@ -413,8 +423,8 @@ void MenuManager::Separator( const molib::moWCString& path, molib::moMenuItemSPt
 	if( !toolbar.IsEmpty() )
 	{
 		const int weight = atoi( toolbar.c_str() );
-#ifdef DEBUG
-		std::cerr << "SEPARATOR toolbar=" << toolbar.c_str() << ", weight=" << weight << endl;
+#ifdef MO_DEBUG
+		cout << "SEPARATOR toolbar=" << toolbar.c_str() << ", weight=" << weight << endl;
 #endif
 		f_toolbarItems[weight] = item;
 	}

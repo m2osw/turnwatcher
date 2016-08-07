@@ -42,7 +42,7 @@ int UITransactionBase::getCount() const
 }
 
 
-const Combatant::Character::list_t& UITransactionBase::getCharacters()
+const Combatant::Character::List& UITransactionBase::getCharacters()
 {
 	auto charMgr( GetCharacterMgr().lock() );
 	assert(charMgr);

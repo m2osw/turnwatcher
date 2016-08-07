@@ -16,14 +16,14 @@
 ## COMPLETENESS OR PERFORMANCE.
 ##===============================================================================
 
-#set( turnwatcher_PACKAGE_NAME  "${PROJECT_NAME}" )
-#set( turnwatcher_VERSION_MAJOR 2                 )
-#set( turnwatcher_VERSION_MINOR 0                 )
-#set( turnwatcher_VERSION_PATCH 0                 )
+set( turnwatcher_PACKAGE_NAME  "${PROJECT_NAME}" )
+set( turnwatcher_VERSION_MAJOR 1                 )
+set( turnwatcher_VERSION_MINOR 5                 )
+set( turnwatcher_VERSION_PATCH 0                 )
 
 #add_subdirectory( convert )
 add_subdirectory( molib   )
-#add_subdirectory( motk    )
+add_subdirectory( motk    )
 add_subdirectory( gui     )
 #add_subdirectory( package )
 
