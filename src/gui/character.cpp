@@ -37,12 +37,14 @@ namespace
 {
 	molib::moRandom		g_random;
 
+#if 0
 	char* my_itoa( const int val )
 	{
 		static char buf[64];
 		sprintf( buf, "%d", val );
 		return buf;
 	}
+#endif
 
 	int roll_dice( int faces = 20 )
 	{

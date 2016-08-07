@@ -26,7 +26,7 @@
 #include 	"mo/mo_dirent.h"
 
 #ifdef _MSC_VER
-#pragma warning(disable: 4996)
+#   pragma warning(disable: 4996)
 #endif
 
 

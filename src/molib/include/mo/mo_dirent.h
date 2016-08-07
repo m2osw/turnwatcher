@@ -53,6 +53,18 @@
 
 #ifdef MO_WIN32
 #	include	<direct.h>
+#   define getcwd _getcwd
+
+#   include <io.h>
+#   define isatty _isatty
+#   define access _access
+#   define open _open
+
+#   undef S_ISDIR
+#   undef S_ISFIFO
+#   undef S_ISCHR
+#   undef S_ISBLK
+#   undef S_ISREG
 #endif
 
 #ifndef S_ISDIR

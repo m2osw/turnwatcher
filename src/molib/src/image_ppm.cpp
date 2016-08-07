@@ -379,7 +379,7 @@ bool Save(moOStream& file, const moImage& im)
 {
 	moWCString	*p;
 	char		buf[256], format, c;	/* Flawfinder: ignore */
-	const char	*cmt; //, *start;
+    const char	*cmt = 0; //, *start;
 	long		size, x, cnt, r;
 	const moRGBA	*s;
 
@@ -416,7 +416,7 @@ bool Save(moOStream& file, const moImage& im)
 	p = im.Parameters().Get("COMMENT");
 	if(p != 0) {
 		file.Write("# ", 2);
-		//start = cmt = p->SavedMBData();
+        cmt = p->SavedMBData();
 		while(*cmt != '\0') {
 			if(*cmt == '\r' && cmt[1] == '\n') {
 				cmt++;

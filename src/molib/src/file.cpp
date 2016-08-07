@@ -38,7 +38,7 @@
 #endif
 
 #ifdef MO_WIN32
-#include <time.h>
+#	include <time.h>
 #endif
 
 
@@ -2059,6 +2059,8 @@ moWCString moFile::FullPath(const moWCString& filename, bool real_path)
 	}
 #endif
 	moWCString dir = fname.FilenameDirname();
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wunused-result"
 	if(chdir(dir.c_str()) != 0) {
 		// just in case, go back to the right place
 #ifdef WIN32
@@ -2090,6 +2092,7 @@ moWCString moFile::FullPath(const moWCString& filename, bool real_path)
 #else
 	chdir(olddir.get());
 #endif
+#pragma GCC diagnostic pop
 
 	moWCString result = moWCString(fullpath, -1, mowc::MO_ENCODING_UTF8).FilenameChild(fname.FilenameBasename());
 #ifndef WIN32
