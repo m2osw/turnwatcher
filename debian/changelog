@@ -1,3 +1,10 @@
+turnwatcher (1.5-2) xenial; urgency=high
+
+  * Initial release compiled under Ubuntu Xenial (16.04).
+  * No features or bug fixes--this is maintenance release only.
+
+ -- R. Douglas Barbieri <doug@dooglio.net>  Sun, 07 Aug 2016 23:37:48 -0700
+
 turnwatcher (1.5-1) unstable; urgency=low
 
   * Initial release of open source version.
