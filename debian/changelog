@@ -1,3 +1,9 @@
+turnwatcher (1.6-1) xenial; urgency=high
+
+  * Uploading new version to launchpad ppa.
+
+ -- R. Douglas Barbieri <doug@dooglio.net>  Mon, 08 Aug 2016 01:48:48 -0700
+
 turnwatcher (1.5-2) xenial; urgency=high
 
   * Initial release compiled under Ubuntu Xenial (16.04).
