@@ -1,3 +1,9 @@
+turnwatcher (1.6-4) xenial; urgency=high
+
+  * Removed the symlink control file and replaced with the amd64 file.
+
+ -- R. Douglas Barbieri <doug@dooglio.net>  Mon, 08 Aug 2016 13:55:41 -0700
+
 turnwatcher (1.6-3) xenial; urgency=high
 
   * Updated copyright and versioning information in the AboutBox class.
