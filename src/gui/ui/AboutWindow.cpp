@@ -1,5 +1,5 @@
 //===============================================================================
-// Copyright (c) 2005-2013 by Made to Order Software Corporation
+// Copyright (c) 2005-2016 by Made to Order Software Corporation
 // 
 // All Rights Reserved.
 // 
@@ -38,7 +38,7 @@ AboutWindow::AboutWindow()
 	set_name( application->GetName().c_str() );
 #endif
 
-	set_version( (application->GetVersion() + "." BUILD_VERSION_STRING).c_str() );
+	set_version( application->GetVersion().c_str() );
 	set_website( WEBSITE_URL );
 	set_translator_credits( gettext("translator-credits") );
 
@@ -52,9 +52,9 @@ AboutWindow::AboutWindow()
 		"If you are not a registered beta tester, please uninstall this application and contact "
 		"Made to Order Software Corporation to purchase a licensed copy.\n\n"
 #endif
-		"Uses Gtk+ 2.15, Gtkmm 2.12, iconv, intl, PNG and zlib.\n"
-		"Licensed under the GNU Public License v2.\n"
-		"https://sourceforge.net/projects/turnwatcher/\n"
+		"Uses Gtkmm 2.4, iconv, intl, PNG and zlib.\n"
+		"Licensed under the GNU Public License v2 by Made to Order Software Corp.\n"
+		"https://github.com/m2osw/turnwatcher/\n"
 		;
 
 // TODO: we need to fix the comment for demo versions to work properly
@@ -74,7 +74,7 @@ AboutWindow::AboutWindow()
 	set_artists( artists );
 
 	// no gettext() for this one, doesn't need translation
-	set_copyright( "Copyright (c) 2005-2013 Made to Order Software Corporation" );
+	set_copyright( "Copyright (c) 2005-2016 Made to Order Software Corporation" );
 
 	//set_license( gettext(product_license) );
 

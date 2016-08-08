@@ -54,7 +54,7 @@ namespace
 	//
 	moWCString g_progname  ( PACKAGE_NAME                                           );
 	moWCString g_version   ( PACKAGE_VERSION                                        );
-	moWCString g_copyright ( "Copyright (c) Made to Order Software Corp. 2005-2008" );
+	moWCString g_copyright ( "Copyright (c) Made to Order Software Corp. 2005-2016" );
 };
 
 

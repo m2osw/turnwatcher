@@ -17,9 +17,6 @@
 ##===============================================================================
 
 set( turnwatcher_PACKAGE_NAME  "${PROJECT_NAME}" )
-#set( turnwatcher_VERSION_MAJOR 1                 )
-#set( turnwatcher_VERSION_MINOR 5                 )
-#set( turnwatcher_VERSION_PATCH 0                 )
 
 add_subdirectory( molib   )
 add_subdirectory( motk    )

@@ -1,3 +1,9 @@
+turnwatcher (1.6-3) xenial; urgency=high
+
+  * Updated copyright and versioning information in the AboutBox class.
+
+ -- R. Douglas Barbieri <doug@dooglio.net>  Mon, 08 Aug 2016 12:44:03 -0700
+
 turnwatcher (1.6-2) xenial; urgency=high
 
   * Repaired packaging, now using a superior rules file.
