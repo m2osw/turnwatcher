@@ -1,2 +1,2 @@
-usr/bin/*
-usr/share/*
+debian/turnwatcher/usr/bin/*
+debian/turnwatcher/usr/share/*
