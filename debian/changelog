@@ -1,3 +1,9 @@
+turnwatcher (1.6-2) xenial; urgency=high
+
+  * Repaired packaging, now using a superior rules file.
+
+ -- R. Douglas Barbieri <doug@dooglio.net>  Mon, 08 Aug 2016 10:55:03 -0700
+
 turnwatcher (1.6-1) xenial; urgency=high
 
   * Uploading new version to launchpad ppa.
