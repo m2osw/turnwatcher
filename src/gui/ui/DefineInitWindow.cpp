@@ -16,6 +16,9 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 // LOCAL
 //
 #include "DefineInitWindow.h"
@@ -258,7 +261,7 @@ void DefineInitWindow::GetData()
 void DefineInitWindow::on_show()
 {
 #ifdef DEBUG
-	std::cerr << "DefineInitWindow::on_show()" << std::endl;
+	std::cout << "DefineInitWindow::on_show()" << std::endl;
 #endif
 
 	Gtk::Widget* lastFocus = f_baseTable.GetLastFocus();
@@ -273,7 +276,7 @@ void DefineInitWindow::on_show()
 void DefineInitWindow::on_hide()
 {
 #ifdef DEBUG
-	std::cerr << "DefineInitWindow::on_hide()" << std::endl;
+	std::cout << "DefineInitWindow::on_hide()" << std::endl;
 #endif
 
 	Gtk::Dialog::on_hide();

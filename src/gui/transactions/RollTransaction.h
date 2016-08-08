@@ -16,9 +16,6 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
 #pragma once
 
 #include "transactions/UITransactionBase.h"
@@ -42,19 +39,19 @@ public:
 private:
 	struct Roll
 	{
-		int				f_prevRoll;
-		int				f_currRoll;
-		int				f_prevPosition;
-		int				f_prevSubPosition;
-		int				f_prevManualPos;
-		Combatant::Character::Pointer	f_char;
+		int								f_prevRoll;
+		int								f_currRoll;
+		int								f_prevPosition;
+		int								f_prevSubPosition;
+		int								f_prevManualPos;
+		Combatant::Character::pointer_t	f_char;
 
-		Roll( const Combatant::Character::Pointer ch, const int prev_roll, const int curr_roll );
+		Roll( const Combatant::Character::pointer_t ch, const int prev_roll, const int curr_roll );
 	};
 
-	typedef std::vector<Roll>	RollList;
-	RollList			f_rolls;
-	molib::mo_name_t		f_rollId;
+	typedef std::vector<Roll>		RollList;
+	RollList						f_rolls;
+	molib::mo_name_t				f_rollId;
 
 	void RollSave();
 };
@@ -62,5 +59,4 @@ private:
 }
 // namespace Transactions
 
-// vim: ts=8 sw=8
-
+// vim: ts=4 sw=4 noexpandtab syntax=cpp.doxygen

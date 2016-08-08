@@ -16,8 +16,6 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-#pragma once
-
 // STL
 //
 #include <map>
@@ -40,6 +38,12 @@
 #include "common.h"
 #include "character.h"
 #include "TableConnections.h"
+// At this time, the demo includes everything...
+//#if !defined(DEMO_VERSION) && !defined(OLD_UI)
+#if !defined(OLD_UI)
+#include "effect.h"
+#include "EffectsEditor.h"
+#endif
 #include "ManagerBase.h"
 
 namespace UI
@@ -70,15 +74,32 @@ private:
 
 	CharacterSignal				  f_changedSignal;
 	motk::LabelTable			  f_baseTable;
+#if defined(OLD_UI)
 	motk::LabelTable			  f_combatTable;
 	motk::LabelTable			  f_statTable;
 	bool						  f_showing;
+#else
+	motk::LabelTable              f_statTable;
+	motk::LabelTable              f_savesModTable;
+	motk::LabelTable              f_skillsModTable;
+	Gtk::Notebook                 f_notebook;
+	Gtk::TextView                 f_notesEntry;
+	Glib::RefPtr<Gtk::TextBuffer> f_textBuffer;
+	EffectsEditor                 f_effectsEditor;
+#endif
 	WidgetList                    f_entryWidgets;
 	int                           f_focusEntry;
 	Combatant::Character::pointer_t f_char;
 
+#if defined(OLD_UI)
 	typedef std::map<int,Attribute::Stat::pointer_t> StatMap;
 	StatMap				f_statMap;
+#else
+	typedef std::vector<Attribute::Stat::pointer_t> StatList;
+	StatList			f_abilityList;
+	StatList			f_skillList;
+	StatList			f_saveList;
+#endif
 
 	TableConnections	f_tableConnections;
 	AdjConnections		f_adjConnections;
@@ -87,14 +108,27 @@ private:
 	Gtk::Tooltips		f_tooltips;
 
 	void 		InitBaseTable();
+#if defined(OLD_UI)
 	void		InitCombatTable();
 	void		InitStatTable();
 	void		AddStatEntry( const char* name, const molib::mo_name_t id );
 	void		AddStatNotes( const char* name, const molib::mo_name_t id );
 	void		GetStats();
+#else
+	void		GetStats( StatList& list, Attribute::Stat::Type type );
+	void		AddSavesTable ();
+	void		AddSkillsTable();
+	void 		InitModifierTable();
+	void		AddStatEntry( const char* name, const int id );
+	void 		InitStatTable();
+#endif
 	void 		FillMainBox();
 	void		ClearTable( motk::LabelTable& table );
 	void		ClearMainBox();
+#if !defined(OLD_UI)
+	void		GetTypeValues( motk::LabelTable& table, StatList& list );
+	void		SetTypeValues( motk::LabelTable& table, StatList& list );
+#endif
 	void		UpdateDlgFromChar();
 	void		UpdateCharFromDlg();
 	void		UpdateDialog();

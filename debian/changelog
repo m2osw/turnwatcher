@@ -1,3 +1,12 @@
+turnwatcher (1.5-1) unstable; urgency=low
+
+  * Initial release of open source version.
+  * Lots of refactoring of the code for a more stable application, but no new features.
+  * Both molib and motk are included, all sporting GPL licenses.
+  * Massively improved debian support.
+
+ -- R. Douglas Barbieri <doug@dooglio.net>  Fri, 08 Nov 2013 15:58:37 -0800
+
 turnwatcher (1.4-m2osw2) gutsy; urgency=low
 
   * Fixes to the Spanish version

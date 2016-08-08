@@ -204,7 +204,7 @@ void Stat::Load( moPropBagRef& propBag )
 		else if( f_name == "Level" 		) { f_id = statMgr->levelId();	f_internal = true;						}
 
 #ifdef DEBUG
-		std::cerr	<< "Legacy Id: " 	 << f_legacyId 
+		std::cout	<< "Legacy Id: " 	 << f_legacyId 
 					<< ", Legacy Type: " << f_legacyType
 					<< ", ID name= " 	 << f_name.c_str()
 					<< ", NEW ID=" 		 << moWCString(moName(f_id)).c_str()
@@ -342,7 +342,7 @@ void Value::LoadLegacy( moPropBagRef& propBag )
 	if( !f_stat )
 	{
 #ifdef DEBUG
-        std::cerr << "Legacy id " << static_cast<int>(legacy_id) << ", type " << static_cast<int>(legacy_type)
+        std::cout << "Legacy id " << static_cast<int>(legacy_id) << ", type " << static_cast<int>(legacy_type)
 				<< " was neither FOUND nor CREATED by stat manager!" << std::endl;
 #endif
 		throw moError( "Cannot find legacy id and/or legacy value prop in StatManager!" );

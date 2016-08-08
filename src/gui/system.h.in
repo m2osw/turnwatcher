@@ -1,5 +1,0 @@
-#ifndef SYSTEM_H
-#define SYSTEM_H
-
-#define turnwatcher_DATA_DIR    "@turnwatcher_DATA_DIR@"
-#endif //SYSTEM_H

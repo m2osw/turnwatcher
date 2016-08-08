@@ -66,5 +66,20 @@ namespace Common
 //       dynamically loaded. This could open up theming the icons in the application.
 #define INCLUDED_PIXMAPS
 
+// This deals with turning on/off the appropriate
+// switches for the UI
+//
+#if defined(OLD_UI)
+#   undef WANT_PANE
+#  	define WANT_EFFECTS	1
+#  	undef WANT_NOTES
+#else
+#   undef	WANT_PANE
+#	define WANT_EFFECTS	1
+//# undef WANT_EFFECTS
+#	define WANT_NOTES	1
+//# undef WANT_NOTES
+#endif
+
 // vim: ts=4 sw=4 syntax=cpp.doxygen
 

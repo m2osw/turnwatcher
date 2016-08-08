@@ -133,6 +133,26 @@ Character::~Character()
 }
 	
 	
+#if 0
+void Character::name( const ustring& val )
+{ 
+	f_name = val;
+#ifdef DEBUG
+	std::cout << "Character name changed: " << f_name.c_str() << std::endl;
+#endif
+	f_signalChanged.emit();	
+}
+
+void Character::public_name( const ustring& val )
+{
+	f_publicName = val;
+#ifdef DEBUG
+	std::cout << "Character public name changed: " << f_publicName.c_str() << std::endl;
+#endif
+	f_signalChanged.emit();
+}
+#endif
+
 void Character::OnStatsChanged()
 {
 	AddStat();
@@ -181,6 +201,7 @@ Attribute::Value::pointer_t	Character::CreateStat( Attribute::Stat::pointer_t st
 }
 
 
+#ifdef WANT_EFFECTS
 void Character::LoadEffects( moPropBagRef effectsBag )
 {
 	int count = effectsBag.Count();
@@ -215,6 +236,7 @@ void Character::SaveEffects( moPropBagRef effectsBag )
 		effectsBag.Set( buf, propBag );
 	}
 }
+#endif
 
 
 void Character::CopyStats( Character::pointer_t ch )
@@ -366,12 +388,14 @@ void Character::Load( moPropBagRef& propBag )
 		}
 	}
 	//
+#ifdef WANT_EFFECTS
 	effectsBag	.Link( propBag );
 
 	if( effectsBag.HasProp() )
 	{
 		LoadEffects( effectsBag );
 	}
+#endif
 
 	LoadStats( propBag );
 
@@ -442,9 +466,11 @@ void Character::Save( moPropBagRef& propBag )
 
 	SaveStats( propBag );
 
+#ifdef WANT_EFFECTS
 	effectsBag.NewProp();
 	SaveEffects( effectsBag );
 	propBag.Set( moIndexOrName(effectsBag.GetName()), effectsBag );
+#endif
 
 #endif // !DEMO_VERSION
 }
@@ -481,10 +507,11 @@ void Character::Copy( Character::pointer_t ch )
 	f_manualPos   = ch->f_manualPos;
 
 	CopyStats( ch );
-	//
+#ifdef WANT_EFFECTS
 	Effects::Effect::list_t effects;
 	ch->getEffects( effects );
 	setEffects( effects );
+#endif
 }
 
 
@@ -685,6 +712,10 @@ void Character::getEffects( Effects::Effect::list_t& effects )
 void	Character::setEffects( const Effects::Effect::list_t& effects )
 {
 	f_effects.clear();
+
+	Effects::Effect::list_t::const_iterator	iter = effects.begin();
+	Effects::Effect::list_t::const_iterator	end  = effects.end();
+
 	for( auto from : effects )
 	{
 		Effects::Effect::pointer_t to;
@@ -831,7 +862,15 @@ int Character::status_sort()
 
 int Character::maxHP()
 {
+#ifdef OLD_UI
 	return f_baseHP;
+#else
+	// TODO: implement this with Abilities!
+	//
+	Ability::pointer_t a = boost::dynamic_pointer_cast<Ability::pointer_t>((static_pointer_cast<Stat::pointer_t>(GetStat(Stat::Abilities,conId)));
+	assert(a);
+	return Common::CalculateHP( a->total(), f_hitDice, f_baseHP, f_tempHP );
+#endif
 }
 
 
@@ -857,7 +896,38 @@ Attribute::Value::pointer_t Character::GetStat( const mo_name_t id )
 int Character::getMod( Attribute::Value::pointer_t value, const bool with_ability )
 {
 	assert(value);
-	return value->mod();
+	int mod = value->mod();
+
+#if !defined(OLD_UI)
+	// TODO: Add this back in when we implement abilities again
+	// But, a lot has changed! There are no longer any StatBase::Type(s). And StatBase is now
+	// Value, and there are no deriviative classes...
+	//
+	if( with_ability )
+	{
+		const int ability_id = stat->abilityId();
+
+		Ability* ability = dynamic_cast<Ability*>(static_cast<StatBase*>(GetStat(Stat::Abilities, ability_id )));
+		if( ability )
+		{
+			mod += Common::StatToMod( ability->total() );
+		}
+
+		SaveStat* save = dynamic_cast<SaveStat*>(static_cast<StatBase*>(stat));
+		if( save )
+		{
+			mod += save->base();
+		}
+
+		Skill* skill = dynamic_cast<Skill*>(static_cast<StatBase*>(stat));
+		if( skill )
+		{
+			mod += skill->ranks();
+		}
+	}
+#endif	// !defined(OLD_UI)
+
+	return mod;
 }
 
 

@@ -17,24 +17,31 @@
 //===============================================================================
 
 
+
+
+
+// TODO: This is deprecated until we get abilities and soft columns...
+
 // LOCAL
 //
-#include "ui/InfoBox.h"
+#include "InfoBox.h"
+#include "CharacterListUI.h"
 
 #include <math.h>
 
 using namespace Attribute;
 
-
 namespace UI
 {
 
+namespace
+{
+	const int EDITCHARACTER_RESPONSE = 100;
+}
 
 InfoBox::InfoBox()
 {
-	auto statMgr(GetStatMgr().lock());
-	assert(statMgr);
-	//f_stats = statMgr->GetStats();
+	f_stats = GetStatMgr()->GetStats();
 	
 	// Misc stuff about the label
 	//
@@ -45,7 +52,8 @@ InfoBox::InfoBox()
 
 	// StatManager
 	//
-	statMgr->signal_changed().connect( sigc::mem_fun( *this, &InfoBox::OnReloadTables ) );
+	assert(GetStatMgr());
+	GetStatMgr()->signal_changed().connect( sigc::mem_fun( *this, &InfoBox::OnReloadTables ) );
 }
 
 
@@ -130,7 +138,7 @@ void InfoBox::OnEditCharacter()
 void InfoBox::GenerateAbilityString()
 {
 	f_infoBuffer->insert_at_cursor( "Name: " );
-	f_infoBuffer->insert_at_cursor( f_char->name() );
+	f_infoBuffer->insert_at_cursor( f_char->name().c_str() );
 	f_infoBuffer->insert_at_cursor( " " );
 	Glib::RefPtr<Gtk::TextChildAnchor> refAnchor = f_infoBuffer->create_child_anchor(f_infoBuffer->end());
 	Gtk::Button* editBtn = Gtk::manage( new Gtk::Button("Edit") );
@@ -140,33 +148,26 @@ void InfoBox::GenerateAbilityString()
 	f_infoBuffer->insert_at_cursor( "\n" );
 	editBtn->show_all();
 
-	auto statMgr( GetStatMgr().lock() );
-	assert(statMgr);
-
-	auto       iter (statMgr->GetStats().begin());
-	const auto end  (statMgr->GetStats().end()  );
+	StatList::iterator	iter = f_abilityList.begin();
+	StatList::iterator	end  = f_abilityList.end();
 
 	while( iter != end )
 	{
-		Stat::pointer_t stat ( iter->second );
-		Value::pointer_t value ( f_char->getStat( stat->id() ) );
+		Stat*		stat	= *iter;
+		Ability*	ability	= dynamic_cast<Ability*>(static_cast<StatBase*>(f_char->getStat(stat->type(), stat->id())));
 
-		const bool last = (++iter == end);
+		++iter;
+		const bool last = (iter == end);
 
-		if( !stat->ability() ) continue;
-#if 0
-		if( stat->enabled() )
+		if( ability->enabled() )
 		{
-#endif
-			AddAttribute( stat->name(), value->total() );
-			AddModifier( Common::StatToMod( value->total() ) );
-#if 0
+			AddAttribute( stat->name().c_str(), ability->total() );
+			AddModifier( Common::StatToMod( ability->total() ) );
 		}
 		else
 		{
-			AddAttribute( stat->name(), "--" );
+			AddAttribute( stat->name().c_str(), "--" );
 		}
-#endif
 
 		if( last )
 		{
@@ -182,37 +183,34 @@ void InfoBox::GenerateAbilityString()
 
 void InfoBox::GenerateBuiltinString()
 {
-	const int	init    = f_char->getMod( GetStatMgr().lock()->initId(), true /*with_ability*/ );
+	const int	init    = f_char->getMod( Stat::Misc, GetStatMgr()->initId(), true /*with_ability*/ );
 	const int	hp      = f_char->maxHP();
 	const int	damage  = f_char->damage();
 	const int	hp_left = f_char->hitpoints();
 	const int	pct     = hp? (int)(((float)hp_left / (float) hp) * 100.0): 0;
 
-	AddAttribute( "Init",              init    ); AddComma();
-	AddAttribute( "Max Hitpoints",     hp      ); AddComma();
-	AddAttribute( "Current Damage",    damage  ); AddComma();
-	AddAttribute( "Current Hitpoints", hp_left ); AddPercentage( pct>=0? pct: 0 );
+	AddAttribute( "Init", init );			AddComma();
+	AddAttribute( "Max Hitpoints", hp );		AddComma();
+	AddAttribute( "Current Damage", damage );	AddComma();
+	AddAttribute( "Current Hitpoints", hp_left );	AddPercentage( pct>=0? pct: 0 );
 	AddCR();
 }
 
 
-void InfoBox::GenerateStatString()
+void InfoBox::GenerateStatString( StatList& list )
 {
-	auto statMgr( GetStatMgr().lock() );
-	assert(statMgr);
-	auto		iter( statMgr->GetStats().begin() );
-	const auto	end ( statMgr->GetStats().end()   );
+	StatList::iterator	iter = list.begin();
+	StatList::iterator	end  = list.end();
 
 	while( iter != end )
 	{
-		Stat::pointer_t	stat ( iter->second );
+		Stat*		stat	= *iter;
+		const int	mod	= f_char->getMod( stat->type(), stat->id(), true /*with_ability*/ );
 
-		const int mod   = f_char->getMod( stat->id(), true /*with_ability*/ );
-		const bool last = (++iter == end);
+		++iter;
+		const bool last = (iter == end);
 
-		if( stat->ability() || stat->internal() ) continue;
-
-		AddAttribute( stat->name(), mod );
+		AddAttribute( stat->name().c_str(), mod );
 
 		if( last )
 		{
@@ -228,7 +226,7 @@ void InfoBox::GenerateStatString()
 
 void InfoBox::AddNotesString()
 {
-	f_infoBuffer->insert_at_cursor( f_char->notes() );
+	f_infoBuffer->insert_at_cursor( f_char->notes().c_str() );
 }
 
 
@@ -259,7 +257,8 @@ void InfoBox::UpdateDialog()
 	{
 		GenerateAbilityString();
 		GenerateBuiltinString();
-		GenerateStatString();
+		GenerateStatString( f_saveList );
+		GenerateStatString( f_skillList );
 		//
 		AddCR();
 		AddNotesString();
@@ -284,7 +283,7 @@ void InfoBox::OnSelectionChanged( Combatant::Character::pointer_t ch )
 
 	if( ch )
 	{
-		f_char			= ch;
+		f_char		= ch;
 		f_connection	= f_char->signal_changed().connect( sigc::mem_fun( *this, &InfoBox::OnReload ) );
 	}
 	else
@@ -311,7 +310,7 @@ void InfoBox::OnSelectionChanged( const Combatant::Character::list_t& selected_l
 void InfoBox::OnReloadTables()
 {
 	if( !is_visible() ) return;
-	//f_stats = GetStatMgr().lock()->GetStats();
+	f_stats = GetStatMgr().lock()->GetStats();
 	UpdateDialog();
 }
 
@@ -319,4 +318,5 @@ void InfoBox::OnReloadTables()
 }
 // namespace UI
 
-// vim: ts=4 sw=4 noexpandtab syntax=cpp.doxygen
+// vim: ts=8 sw=8
+

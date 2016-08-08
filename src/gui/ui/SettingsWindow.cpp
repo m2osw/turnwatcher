@@ -46,7 +46,9 @@ namespace
 	const moWCString	BleedOut				("BleedOut");
 	const moWCString	SkipDead				("SkipDead");
 	const moWCString	AltDeathRule			("AltDeathRule");
+#ifdef WANT_EFFECTS
 	const moWCString	NotifyExpiredEffects	("NotifyExpiredEffects");
+#endif
 	const moWCString	InitOnStart				("InitOnStart");
 	const moWCString	ManualInit				("ManualInit");
 	const moWCString	GetDC					("GetDC");
@@ -151,10 +153,12 @@ void SettingsWindow::InitTreeView()
 	row[f_columns.f_name]	= gettext("Use Alternate Death Rule (death at threshold minus character level)");
 	row[f_columns.f_active]	= appSettings->AlternateDeathRule();
 	//
+#ifdef WANT_EFFECTS
 	row = *(f_model->append());
 	row[f_columns.f_id]	= moName(NotifyExpiredEffects);
 	row[f_columns.f_name]	= gettext("Notify when effects expire on combatant's turn");
 	row[f_columns.f_active]	= appSettings->NotifyExpiredEffects();
+#endif
 	//
 	row = *(f_model->append());
 	row[f_columns.f_id]	= moName(InitOnStart);
@@ -344,7 +348,9 @@ void SettingsWindow::SaveValues()
 		if( id == (mo_name_t) moName(BleedOut)	) { appSettings->BleedOutDying( active );	}
 		if( id == (mo_name_t) moName(SkipDead)	) { appSettings->SkipDead( active );		}
 		if( id == (mo_name_t) moName(AltDeathRule)) { appSettings->AlternateDeathRule( active );	}
+#ifdef WANT_EFFECTS
 		if( id == (mo_name_t) moName(NotifyExpiredEffects)) { appSettings->NotifyExpiredEffects( active );}
+#endif
 		if( id == (mo_name_t) moName(InitOnStart)		) { appSettings->InitOnStart( active );		}
 		if( id == (mo_name_t) moName(ManualInit)			) { appSettings->ManualInit( active );		}
 		if( id == (mo_name_t) moName(GetDC)			) { appSettings->GetDC( active );		}
@@ -357,7 +363,15 @@ void SettingsWindow::SaveValues()
 void SettingsWindow::on_show()
 {
 #ifdef DEBUG
-	std::cerr << "SettingsWindow::on_show()" << std::endl;
+	std::cout << "SettingsWindow::on_show()" << std::endl;
+#endif
+
+#if 0
+	Gtk::Widget* lastFocus = f_table.GetLastFocus();
+	if( lastFocus )
+		set_focus( *lastFocus );
+
+	UpdateDialog();
 #endif
 
 	Gtk::Dialog::on_show();
@@ -367,7 +381,7 @@ void SettingsWindow::on_show()
 void SettingsWindow::on_hide()
 {
 #ifdef DEBUG
-	std::cerr << "SettingsWindow::on_hide()" << std::endl;
+	std::cout << "SettingsWindow::on_hide()" << std::endl;
 #endif
 
 	Gtk::Dialog::on_hide();

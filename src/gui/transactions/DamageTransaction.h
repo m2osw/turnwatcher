@@ -16,14 +16,10 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
 #pragma once
 
 #include "character.h"
 #include "transaction.h"
-#include "CharacterListUI.h"
 #include "transactions/UITransactionBase.h"
 
 namespace Transactions
@@ -35,12 +31,12 @@ class DamageTransaction :
 	public UITransactionBase
 {
 public:
-	DamageTransaction( Combatant::Character::Pointer character, const int damage );
+	DamageTransaction( Combatant::Character::pointer_t character, const int damage );
 	virtual void doit();
 	virtual void undo();
 
 private:
-	Combatant::Character::Pointer	f_character;
+	Combatant::Character::pointer_t	f_character;
 	bool				f_healing;
 	int				f_tempHP;
 	int				f_damageAmount;

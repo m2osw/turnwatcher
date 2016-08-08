@@ -1,0 +1,28 @@
+Formerly under a proprietary license, Turn Watcher has been ported to the GPLv2
+and the source is now hosted at https://sourceforge.net/projects/turnwatcher/
+
+Turn Watcher relies on Gtkmm 2.4, and formerly proprietary libraries molib and motk
+from Made to Order Software Corporation (http://www.m2osw.com). Local copies
+of molib and motk are now in the repository.
+
+Installation from source:
+Turn Watcher requires cmake 2.8+, and g++ 4.6+, in addition to gtkmm 2.4.
+Download the software distribution from sourceforge. Create a build folder
+and run cmake to generate the makefiles. Then run make.
+
+	$ tar xf turnwatcher-1.5.tar.gz
+	$ cd turnwatcher-1.5
+	$ mkdir build
+	$ cd build
+	$ cmake ..
+	$ make
+
+The binary will be linked into the bin folder. To run, just type "bin/turnwatcher
+from the build folder.
+
+You may also access the tip of the Mercurial codebase. Install Mercurial
+on your system if it is not already there, then run this command:
+
+$ hg clone http://hg.code.sf.net/p/turnwatcher/code turnwatcher
+
+Follow the steps above to build from source.

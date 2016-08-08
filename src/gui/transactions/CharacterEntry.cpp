@@ -16,11 +16,11 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
 #include "transactions/CharacterEntry.h"
 #include "transactions/MoveCharacterInInitiative.h"
+#include "CharacterModel.h"
+
+using namespace Combatant;
 
 namespace Transactions
 {
@@ -30,8 +30,9 @@ namespace Transactions
 // CharacterEntryTransaction
 //===============================================================================
 
-CharacterEntryTransaction::CharacterEntryTransaction( Combatant::Character::Pointer character ) :
-	f_character(character)
+CharacterEntryTransaction::CharacterEntryTransaction( Character::pointer_t character, const bool emit_signals )
+	: InitiativeBase( emit_signals )
+	, f_character(character)
 {
 }
 
@@ -54,15 +55,15 @@ void CharacterEntryTransaction::localStopInit()
 }
 
 
-void CharacterEntryTransaction::insertChar( Combatant::Character::Pointer ch )
+void CharacterEntryTransaction::insertChar( Character::pointer_t ch )
 {
-	GetCharacterMgr().lock()->Insert( ch );
+	GetCharacterMgr().lock()->Insert( ch, f_emitSignals );
 	GetAppSettings().lock()->Modified( true );
 }
 
-void CharacterEntryTransaction::removeChar( Combatant::Character::Pointer ch )
+void CharacterEntryTransaction::removeChar( Character::pointer_t ch )
 {
-	GetCharacterMgr().lock()->Remove( ch );
+	GetCharacterMgr().lock()->Remove( ch, f_emitSignals );
 	GetAppSettings().lock()->Modified( true );
 }
 
@@ -72,9 +73,8 @@ void CharacterEntryTransaction::removeChar( Combatant::Character::Pointer ch )
 //===============================================================================
 
 
-AddCharacterTransaction::AddCharacterTransaction( Combatant::Character::Pointer character ) :
-	CharacterEntryTransaction( character )//,
-	//f_firstTime(true)
+AddCharacterTransaction::AddCharacterTransaction( Character::pointer_t character, const bool emit_signals )
+	: CharacterEntryTransaction( character, emit_signals )
 {
 	f_character->makeAllRolls();
 }
@@ -103,9 +103,8 @@ void AddCharacterTransaction::undo()
 //===============================================================================
 
 
-RemoveCharacterTransaction::RemoveCharacterTransaction( Combatant::Character::Pointer character ) :
-	CharacterEntryTransaction( character )//,
-	//f_firstTime(true)
+RemoveCharacterTransaction::RemoveCharacterTransaction( Character::pointer_t character, const bool emit_signals )
+	: CharacterEntryTransaction( character, emit_signals )
 {
 }
 
@@ -134,16 +133,20 @@ void RemoveCharacterTransaction::undo()
 //===============================================================================
 
 
-EditCharacterTransaction::EditCharacterTransaction(
-		Combatant::Character::Pointer ch, Combatant::Character::Pointer prevVal, Combatant::Character::Pointer newVal )
-	: CharacterEntryTransaction( ch )
+EditCharacterTransaction::EditCharacterTransaction
+        ( Character::pointer_t ch
+        , Character::pointer_t prevVal
+        , Character::pointer_t newVal
+		, const bool emit_signals
+		)
+	: CharacterEntryTransaction( ch, emit_signals )
 	, f_prevVal(0)
 	, f_newVal (0)
 {
 	// Make separate copies
 	//
-	f_prevVal .reset( new Combatant::Character );	f_prevVal->Copy( prevVal );
-	f_newVal  .reset( new Combatant::Character );	f_newVal ->Copy( newVal  );
+    f_prevVal .reset( new Character );	f_prevVal->Copy( prevVal );
+	f_newVal  .reset( new Character );	f_newVal ->Copy( newVal  );
 }
 
 void EditCharacterTransaction::doit()
@@ -165,8 +168,8 @@ void EditCharacterTransaction::undo()
 // RemoveSelectedTransaction
 //===============================================================================
 
-RemoveSelectedTransaction::RemoveSelectedTransaction( const Combatant::Character::List& selected_chars )
-	: CharacterEntryTransaction( NULL )
+RemoveSelectedTransaction::RemoveSelectedTransaction( const Character::list_t& selected_chars, const bool emit_signals )
+	: CharacterEntryTransaction( NULL, emit_signals )
 	, f_selectedChars( selected_chars )
 	, f_group( gettext("Remove Character Group") )
 {
@@ -175,8 +178,6 @@ RemoveSelectedTransaction::RemoveSelectedTransaction( const Combatant::Character
 
 void RemoveSelectedTransaction::doit()
 {
-	//f_group.doit();
-
 	localStopInit();
 	swapInitData( f_currInitData );
 
@@ -211,11 +212,11 @@ void RemoveSelectedTransaction::undo()
 //===============================================================================
 
 
-ClearCharactersTransaction::ClearCharactersTransaction()
+ClearCharactersTransaction::ClearCharactersTransaction( const bool emit_signals )
 	: f_group(gettext("Clear Out All Characters"))
 {
-	const Combatant::Character::List& chars( GetCharacterMgr().lock()->GetCharacters() );
-	Transaction::Pointer tr( new RemoveSelectedTransaction( chars ) );
+    const Character::list_t& chars( GetCharacterMgr().lock()->GetCharacters() );
+    Transaction::pointer_t tr( new RemoveSelectedTransaction( chars, emit_signals ) );
 	f_group.addTransaction( tr );
 }
 
@@ -228,13 +229,25 @@ void ClearCharactersTransaction::doit()
 void ClearCharactersTransaction::undo()
 {
 	f_group.undo();
-	//GetCharacterMgr().lock()->signal_cleared().emit();
 }
 
+
+//===============================================================================
+// SignalCharactersTransaction
+//===============================================================================
+void SignalCharactersTransaction::doit()
+{
+    CharacterModel::Instance().lock()->Refresh();
+}
+
+
+void SignalCharactersTransaction::undo()
+{
+    CharacterModel::Instance().lock()->Refresh();
+}
 
 
 }
 // namespace Transactions
 
-// vim: ts=8 sw=8
-
+// vim: ts=4 sw=4 noexpandtab syntax=cpp.doxygen

@@ -38,7 +38,7 @@ public:
 	virtual void undo();
 
 private:
-	Combatant::Character::List	f_chars;
+    Combatant::Character::list_t	f_chars;
 };
 
 

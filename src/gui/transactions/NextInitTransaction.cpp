@@ -38,7 +38,7 @@ NextInitTransaction::NextInitTransaction() :
 	f_nextRound = f_prevRound = initMgr->RoundNumber();
 	f_nextIter  = initMgr->PeekNext( &f_nextRound );
 
-	Combatant::Character::Pointer ch( initMgr->GetInitiativeCharacter( f_nextIter ) );
+    Combatant::Character::pointer_t ch( initMgr->GetInitiativeCharacter( f_nextIter ) );
 #ifdef DEBUG
 	printf( "NextInitTransaction(): f_initIter=%d, f_nextIter=%d, f_nextRound=%d, ch=%s\n",
 			f_initIter, f_nextIter, f_nextRound, ch->name().c_str() );
@@ -46,7 +46,7 @@ NextInitTransaction::NextInitTransaction() :
 	//
 	if( ch->health() == Combatant::Dying )
 	{
-        Transaction::Pointer tr( new BleedOutTransaction( ch ) );
+        Transaction::pointer_t tr( new BleedOutTransaction( ch ) );
 		tr->doit();
 		f_group.addTransaction( tr );
 	}
@@ -58,7 +58,7 @@ NextInitTransaction::NextInitTransaction() :
 		{
 			// Character's delayed/readied action has expired
 			//
-			Transaction::Pointer tr( new UndelayTransaction( ch ) );
+            Transaction::pointer_t tr( new UndelayTransaction( ch ) );
 			tr->doit();
 			f_group.addTransaction( tr );
 		}
@@ -68,12 +68,12 @@ NextInitTransaction::NextInitTransaction() :
 	}
 
 #ifdef WANT_EFFECTS
-	Effects::Effect::List effects;
+    Effects::Effect::list_t effects;
 	ch = initMgr->GetInitiativeCharacter( f_nextIter );
 	ch->getEffects( effects );
 	if( effects.size() > 0 )
 	{
-		Transaction::Pointer tr( new EffectHandler( ch ) );
+        Transaction::pointer_t tr( new EffectHandler( ch ) );
 		tr->doit();
 		f_group.addTransaction( tr );
 	}

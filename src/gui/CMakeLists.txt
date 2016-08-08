@@ -16,7 +16,7 @@
 ## COMPLETENESS OR PERFORMANCE.
 ##===============================================================================
 
-project( turnwatcher VERSION 1.5.2 )
+project( turnwatcher )
 
 option( DEMO_VERSION "Turn on demo-only mode" FALSE )
 if( DEMO_VERSION )
@@ -27,8 +27,8 @@ else()
 endif()
 
 configure_file( 
-	"${PROJECT_SOURCE_DIR}/version.h.in"
-	"${PROJECT_BINARY_DIR}/version.h"
+	"${PROJECT_SOURCE_DIR}/config/version.h.in"
+	"${PROJECT_BINARY_DIR}/config/version.h"
 	)	
 
 set( DATADIR share/${BIN_NAME} )
@@ -43,21 +43,23 @@ add_definitions(
 		)
 
 configure_file(
-	"${PROJECT_SOURCE_DIR}/system.h.in"
-	"${PROJECT_BINARY_DIR}/system.h"
+	"${PROJECT_SOURCE_DIR}/config/system.h.in"
+	"${PROJECT_BINARY_DIR}/config/system.h"
 	)	
 
 include( 00-Common )
 include( sigc      )
-#include( boost     )
 include( gtkmm     )
-#include( qt4       )
 find_package( Freetype  )
 
 include_directories(
 		${CMAKE_SOURCE_DIR}
 		${PROJECT_SOURCE_DIR}
 		${PROJECT_BINARY_DIR}
+		${PROJECT_BINARY_DIR}/config
+		${PROJECT_SOURCE_DIR}/base
+		${PROJECT_SOURCE_DIR}/ui
+		${PROJECT_SOURCE_DIR}/transactions
 		${molib_SOURCE_DIR}/include
 		${motk_SOURCE_DIR}
 		${motk_SOURCE_DIR}/../
@@ -67,58 +69,56 @@ include_directories(
 		)
 
 set( BASE_HEADER_FILES
-	character.h
-	common.h
-	effect.h
-	resources.h
-	splash.h
-	stat.h
-	sync-menu.h
-	SingletonManager.h
-	ActionsManager.h
-	CharacterManager.h
-	InitiativeManager.h
-	StatManager.h
+    base/character.h
+    base/common.h
+    base/effect.h
+    base/LegacyApp.h
+    base/LegacyCharacter.h
+    base/stat.h
+    base/ActionsManager.h
+    base/AppSettings.h
+    base/CharacterColumns.h
+    base/CharacterManager.h
+    base/CharacterModel.h
+	base/DuplicateResolver.h
+	base/DuplicateRoll.h
+    base/InitiativeManager.h
+    base/ManagerBase.h
+    base/SoftColumns.h
+    base/StatManager.h
+    base/transaction.h
    )
 
 set( GUI_HEADER_FILES
-	AbilityEditor.h
-	AboutWindow.h
-	AppSettings.h
-	build_version.h
-	CharacterColumns.h
-	CharacterListUI.h
-	DamageWindow.h
-	DefineInitWindow.h
-	DuplicateResolver.h
-	DuplicateRoll.h
-	DuplicateWindow.h
-	EditWindow.h
-	EffectEditor.h
-	EffectsBook.h
-	EffectsEditor.h
-	EffectsList.h
-	ExpiredEffectsWindow.h
-	HUDWindow.h
-	InitWindow.h
-	InputWindow.h
-	JumpInWindow.h
-	legacy_app.h
-	legacy_character.h
-	MainWindow.h
-	NagWindow.h
-	SaveWindow.h
-	SettingsWindow.h
-	SoftColumns.h
-	StatEditor.h
-	StatusBox.h
-	StatWindow.h
-	TableConnections.h
+    ui/AbilityEditor.h
+	ui/AboutWindow.h
+	ui/CharacterView.h
+	ui/DamageWindow.h
+	ui/DefineInitWindow.h
+	ui/DuplicateWindow.h
+	ui/EditWindow.h
+	ui/EffectEditor.h
+	ui/EffectsBook.h
+	ui/EffectsEditor.h
+	ui/EffectsList.h
+	ui/ExpiredEffectsWindow.h
+	ui/HUDWindow.h
+	ui/InitWindow.h
+	ui/InputWindow.h
+	ui/JumpInWindow.h
+	ui/MainWindow.h
+	ui/RoundsHelper.h
+	ui/SaveWindow.h
+	ui/SettingsWindow.h
+    ui/Splash.h
+    ui/StatEditor.h
+	ui/StatusBox.h
+	ui/StatWindow.h
+	ui/TableConnections.h
 	)
 
 set( TRANSACTION_HEADER_FILES
-	transaction.h
-	transactions.h
+    transactions/transactions.h
 	transactions/BleedOutTransaction.h
 	transactions/CharacterEntry.h
 	transactions/DamageTransaction.h
@@ -139,59 +139,59 @@ set( TRANSACTION_HEADER_FILES
    )
 
 set( HEADER_FILES
-	${BASE_HEADER_FILES}
+    config/build_version.h
+    ${BASE_HEADER_FILES}
 	${GUI_HEADER_FILES}
 	${TRANSACTION_HEADER_FILES}
 	)
 
 set( BASE_SOURCE_FILES
-	character.cpp
-	common.cpp
-	effect.cpp
-	splash.cpp
-	stat.cpp
-	ActionsManager.cpp
-	SingletonManager.cpp
-	CharacterManager.cpp
-	InitiativeManager.cpp
-	StatManager.cpp
+    base/character.cpp
+    base/common.cpp
+    base/effect.cpp
+    base/LegacyApp.cpp
+    base/LegacyCharacter.cpp
+    base/stat.cpp
+    base/ActionsManager.cpp
+    base/AppSettings.cpp
+    base/CharacterColumns.cpp
+    base/CharacterManager.cpp
+    base/CharacterModel.cpp
+	base/DuplicateResolver.cpp
+	base/DuplicateRoll.cpp
+    base/InitiativeManager.cpp
+    base/SoftColumns.cpp
+    base/StatManager.cpp
+	base/transaction.cpp
    )
 
 set( GUI_SOURCE_FILES
-	AbilityEditor.cpp
-	AboutWindow.cpp
-	AppSettings.cpp
-	CharacterColumns.cpp
-	CharacterListUI.cpp
-	DamageWindow.cpp
-	DefineInitWindow.cpp
-	DuplicateResolver.cpp
-	DuplicateRoll.cpp
-	DuplicateWindow.cpp
-	EditWindow.cpp
-	EffectEditor.cpp
-	EffectsBook.cpp
-	EffectsEditor.cpp
-	EffectsList.cpp
-	ExpiredEffectsWindow.cpp
-	HUDWindow.cpp
-	InitWindow.cpp
-	InputWindow.cpp
-	JumpInWindow.cpp
-	legacy_app.cpp
-	legacy_character.cpp
-	MainWindow.cpp
-	NagWindow.cpp
-	SettingsWindow.cpp
-	SoftColumns.cpp
-	StatEditor.cpp
-	StatusBox.cpp
-	StatWindow.cpp
-	TurnWatcher.cpp
+    ui/AbilityEditor.cpp
+	ui/AboutWindow.cpp
+	ui/CharacterView.cpp
+	ui/DamageWindow.cpp
+	ui/DefineInitWindow.cpp
+	ui/DuplicateWindow.cpp
+	ui/EditWindow.cpp
+	ui/EffectEditor.cpp
+	ui/EffectsBook.cpp
+	ui/EffectsEditor.cpp
+	ui/EffectsList.cpp
+	ui/ExpiredEffectsWindow.cpp
+	ui/HUDWindow.cpp
+	ui/InitWindow.cpp
+	ui/InputWindow.cpp
+	ui/JumpInWindow.cpp
+	ui/MainWindow.cpp
+	ui/RoundsHelper.cpp
+	ui/SettingsWindow.cpp
+    ui/Splash.cpp
+    ui/StatEditor.cpp
+	ui/StatusBox.cpp
+	ui/StatWindow.cpp
 	)
 
 set( TRANSACTION_SOURCE_FILES
-	transaction.cpp
 	transactions/BleedOutTransaction.cpp
 	transactions/CharacterEntry.cpp
 	transactions/DamageTransaction.cpp
@@ -211,20 +211,26 @@ set( TRANSACTION_SOURCE_FILES
 	)
 
 set( SOURCE_FILES
+    TurnWatcher.cpp
 	${BASE_SOURCE_FILES}
-	${GUI_SOURCE_FILES}
+    ${GUI_SOURCE_FILES}
 	${TRANSACTION_SOURCE_FILES}
    )
+
+if( DEMO_VERSION )
+	list( APPEND HEADER_FILES NagWindow.h )
+	list( APPEND SOURCE_FILES NagWindow.cpp )
+endif()
 
 if( MO_WINDOWS )
 	enable_language( RC )
 	set( CMAKE_RC_COMPILE_OBJECT "<CMAKE_RC_COMPILER> /fo <OBJECT> <SOURCE>" )
 	set( RESOURCE_FILES
-			resources.rc
-			pixmaps/helmet.ico
+            win32/resources.rc
+			pixmaps/turnwatcher.ico
 			)
 	source_group( "Resource Files" FILES ${RESOURCE_FILES} )
-	list( APPEND HEADER_FILES resources.h )
+    list( APPEND HEADER_FILES win32/resources.h )
 	list( APPEND SOURCE_FILES ${RESOURCE_FILES} )
 endif()
 
@@ -316,7 +322,7 @@ target_link_libraries(
 
 install( TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin )
 
-set( IMAGE_DIR   ${CMAKE_SOURCE_DIR}/dev/images      )
+set( IMAGE_DIR ${CMAKE_SOURCE_DIR}/images )
 
 install( FILES
 			${IMAGE_DIR}/turnwatcher-splash.png
@@ -328,25 +334,24 @@ install( FILES
 install( FILES
 			pixmaps/turnwatcher.png
 		DESTINATION
-			share/pixmaps/${BIN_NAME}.png
+			share/pixmaps
 		)
 
 set( DOCFILES )
 foreach( subdir en fr es images styles )
 	install(	DIRECTORY ${CMAKE_SOURCE_DIR}/doc/${subdir}
 				DESTINATION ${DATADIR}/doc/${subdir}
-				PATTERN ".svn" EXCLUDE
+				PATTERN ".hg" EXCLUDE
 				PERMISSIONS OWNER_EXECUTE OWNER_WRITE OWNER_READ GROUP_EXECUTE GROUP_READ
 			)
 endforeach()
 
 if( MO_LINUX )
 	configure_file(
-		"${CMAKE_SOURCE_DIR}/dev/linux/turnwatcher.desktop.in"
+		"${CMAKE_SOURCE_DIR}/turnwatcher.desktop.in"
 		"${PROJECT_BINARY_DIR}/${BIN_NAME}.desktop"
 		)	
-	install( FILES ${PROJECT_BINARY_DIR}/${BIN_NAME}.desktop DESTINATION share/applications/kde )
-	install( FILES ${CMAKE_SOURCE_DIR}/dev/linux/turnwatcher.menu DESTINATION share/menu RENAME ${BIN_NAME} )
+	install( FILES ${PROJECT_BINARY_DIR}/${BIN_NAME}.desktop DESTINATION share/applications )
 endif()
 
 # vim: ts=4 sw=4 noexpandtab

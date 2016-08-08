@@ -32,22 +32,22 @@ class MoveSelectedCharacters
 	, public UITransactionBase
 {
 public:
-	MoveSelectedCharacters( const Combatant::Character::List& selected_chars, const bool up );
+	MoveSelectedCharacters( const Combatant::Character::list_t& selected_chars, const bool up );
 
 	virtual void doit();
 	virtual void undo();
 
 private:
-	bool				f_up;
-	Combatant::Character::List	f_selectedChars;
-	TransactionGroup		f_group;
+	bool							f_up;
+	Combatant::Character::list_t	f_selectedChars;
+	TransactionGroup				f_group;
 
-	void	AddPositions();
+	void AddPositions();
 };
 
 
 }
 // namespace Transactions
 
-// vim: ts=8 sw=8
+// vim: ts=4 sw=4 noexpandtab syntax=cpp.doxygen
 

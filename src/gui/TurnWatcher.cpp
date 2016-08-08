@@ -16,17 +16,11 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
-#ifdef HAVE_CONFIG_H
-#include <config.h>
-#endif
-
 // STL
 //
-#include <iostream>
 #include <cstdlib>
+#include <fstream>
+#include <iostream>
 
 // GTKMM
 // 
@@ -34,160 +28,148 @@
 
 // MOLIB
 //
-#include "mo/mo_base.h"
 #include "mo/mo_name.h"
 #include "mo/mo_application.h"
-#include "mo/mo_image.h"
 
 // LOCAL
 //
-#include "common.h"
-#include "legacy_app.h"
-#include "legacy_character.h"
-#include "MainWindow.h"
-#include "transaction.h"
-#include "splash.h"
-#include "SingletonManager.h"
-#include "system.h"
+#include "base/common.h"
+#include "base/LegacyApp.h"
+#include "base/LegacyCharacter.h"
+#include "ui/MainWindow.h"
+#include "ui/Splash.h"
 #include "version.h"
 
-namespace 
+using namespace molib;
+
+namespace
 {
-	molib::moWCString g_progname  ( PACKAGE_NAME                                           );
-	molib::moWCString g_version   ( PACKAGE_VERSION                                        );
-	molib::moWCString g_copyright ( "Copyright (c) Made to Order Software Corp. 2005-2008" );
+#ifdef DEBUG
+	// Gtk/gdk noise output file, in DEBUG builds only.
+	//
+    const char* OUTPUT_LOG = "turnwatcher_gtk_debug.log";
+#endif
+
+	// molib uses these to figure out where to open control files.
+	//
+	moWCString g_progname  ( PACKAGE_NAME                                           );
+	moWCString g_version   ( PACKAGE_VERSION                                        );
+	moWCString g_copyright ( "Copyright (c) Made to Order Software Corp. 2005-2008" );
 };
 
 
-void ConvertLegacyFiles()
+/// \brief Turn off all gtk warnings and errors.
+/// \note Logs gtk/gdk noise to an output file, but only in a DEBUG build.
+//
+void my_gtk_error_handler
+        ( const gchar *		log_domain
+        , GLogLevelFlags	log_level
+        , const gchar*		message
+        , gpointer 			user_data
+        )
 {
-	auto appSettings(Application::Manager::Instance().lock()->GetAppSettings().lock());
-	assert(appSettings);
-
-	Application::LegacyApp lapp;
-	if( lapp.Load() )
-	{
-        auto initMgr( Application::Manager::Instance().lock()->GetInitMgr().lock() );
-		assert(initMgr);
-		//
-		initMgr ->InRounds    ( lapp.inRounds    () );
-		initMgr ->RoundNumber ( lapp.roundNumber () );
-		initMgr ->CurrentInit ( lapp.currentInit () );
-
-		appSettings->ToolBarPos  ( lapp.toolBarPos    () );
-		appSettings->Width       ( lapp.width         () );
-		appSettings->Height      ( lapp.height        () );
-		appSettings->UserPath    ( lapp.currentFolder () );
-		appSettings->UltraInit   ( lapp.ultraInit     () );
-		appSettings->ShowToolbar ( lapp.showToolbar   () );
-		appSettings->SkipDead    ( lapp.skipDead      () );
-		//
-        Combatant::LegacyCharacter::List charList;
-		lapp.GetCharList( charList );
-		//
-		appSettings->SetLegacyCharacters( charList, NULL );
-	}
-	else
-	{
-		// Open up version 1.1 files to copy into main conf directory, since we are moving
-		// away from a versionized conf directory. In other words, instead of
-		// ~/.turnwatcher-1.X we have ~/.turnwatcher. The same under Win32.
-		//
-		auto application( molib::moApplication::Instance() );
-		application->ResetPrivateUserPath();
-		application->SetVersion( "1.1" );
-
-		molib::moWCString	confDir	 = application->GetPrivateUserPath();
-		molib::moWCString	confFile = confDir.FilenameChild( DEFAULT_FILENAME );
-		std::cout << "1.1 ConfFile: " << confFile.c_str() << std::endl;
-		appSettings->Load( confFile );
-
-        application->SetVersion( g_version );
-
-		// Reset path
-		//
-		application->ResetPrivateUserPath();
-	}
+#ifdef DEBUG
+    std::ofstream log;
+    log.open( OUTPUT_LOG, std::ios_base::app );
+    log << message << std::endl;
+    log.close();
+#endif
 }
 
 
+/// \brief "Real" main method, which converts legacy files and runs the application.
+//
 int real_main(int argc, char *argv[])
 {
 	static const char opts[] =
 			"[*];"
+			"--gtk-module string;"
+			"--g-fatal-warnings;"
+			"--gtk-debug string;"
+			"--gtk-no-debug string;"
+			"--class string;"
+			"--name string;"
+			"--gdk-debug string;"
+			"--gdk-no-debug string;"
 			;
 
-	auto application( molib::moApplication::Instance() );
+	auto application( moApplication::Instance() );
 	application->SetName		( "turnwatcher"	);
-	application->SetVersion		( g_version	);
+	application->SetVersion		( g_version	    );
 	application->SetCopyright	( g_copyright	);
 	//
 #ifndef WIN32
-	molib::moWCString appPath = molib::moWCString(DATADIR) + "/turnwatcher";
+	const moWCString appPath( moWCString(DATADIR) + "/turnwatcher" );
 	application->SetApplicationPath( appPath );
 #endif
 	application->SetOptions(opts, argc, const_cast<const char **>(argv));
 
-	// This must be done before we create the singleton manager as Actions::Manager needs
+	// Convert any legacy files if they exist.
+	//
+    Application::LegacyApp::ConvertLegacyConfig();
+
+    // This must be done before we create the singleton manager as Actions::Manager needs
 	// GTK things to be initialized--otherwise, CRASH!
 	//
-	Gtk::Main kit( argc, argv );
+    Gtk::Main kit( argc, argv );
 
-	// Get application settings
+	// Get application settings, which creates the singleton manager.
+	// Then update the user path.
 	//
-	auto appSettings(Application::Manager::Instance().lock()->GetAppSettings().lock());
+	auto appSettings(Application::AppSettings::Instance().lock());
 	assert(appSettings);
-	appSettings->UserPath( application->GetUserPath() );
-
-	// Load the configuration file
-	//
-	molib::moWCString confFile( application->GetPrivateUserPath( false /*append_version*/ ).FilenameChild( DEFAULT_FILENAME ) );
-#if defined(DEMO_VERSION)
-	appSettings->Load( confFile );
-#else
-#ifdef DEBUG
-	std::cout << "Loading confFile: " << confFile.c_str() << std::endl;
-#endif
-	if( !appSettings->Load( confFile ) )
-	{
-		ConvertLegacyFiles();
-	}
-#endif
+	appSettings->UserPath( application->GetUserPath().c_str() );
 
 	// Show the UI
 	//
-	UI::MainWindow	mainWindow( confFile );
+	UI::MainWindow	mainWindow;
 	Gtk::Main::run( mainWindow );
 
 	return 0;
 }
   
 
+/// \brief Low-level main function.
+//
 int main(int argc, char *argv[])
 {
 #ifdef DEBUG
-	std::cout << "Welcome to turnwatcher v" << VERSION << " DEBUG BUILD!" << std::endl;
+    unlink( OUTPUT_LOG );
+	std::cerr << "Welcome to turnwatcher v" << VERSION << " DEBUG BUILD!" << std::endl;
 #endif
 
+    // Set this error handler to quiet all of the gtk noise.
+    //
+    g_log_set_default_handler( my_gtk_error_handler, 0 );
+
+    // Call the "real" main method to start and run the app
+    //
 	const int r = real_main( argc, argv );
 
+    // Release everything before shutdown
+    //
+    Actions::Manager::Instance                 ().lock()->Release();
+    Application::AppSettings::Instance         ().lock()->Release();
+    Combatant::CharacterManager::Instance      ().lock()->Release();
+    Combatant::CharacterModel::Instance        ().lock()->Release();
+    Initiative::InitiativeManager::Instance    ().lock()->Release();
+    Attribute::StatManager::Instance           ().lock()->Release();
+    Transactions::TransactionManager::Instance ().lock()->Release();
+
+	moNamePool::Done();
+	moImageFileFactory::Done();
+	moApplication::Done();
+
 #ifdef DEBUG
-	// we need to tell all the singletons to go away
-	Application::Manager::LocalRelease();
-
-	molib::moNamePool::Done();
-	molib::moImageFileFactory::Done();
-	molib::moApplication::Done();
-
-	// print out the objects (moBase derived objects)
-	molib::moBase::ShowAllocatedObjects();
+    // print out the objects (moBase derived objects)
+    //
+	moBase::ShowAllocatedObjects();
 
 	// check all the malloc, realloc, free
-	molib::mo_show_allocated_buffers();
+    //
+    mo_show_allocated_buffers();
 
-#ifdef DEBUG
-	std::cout << "Successful application termination" << std::endl;
-#endif
+	std::cerr << "Successful application termination" << std::endl;
 #endif
 
 	return r;

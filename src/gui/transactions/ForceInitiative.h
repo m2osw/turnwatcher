@@ -16,14 +16,10 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
 #pragma once
 
 #include "character.h"
 #include "transaction.h"
-#include "CharacterListUI.h"
 #include "transactions/UITransactionBase.h"
 
 namespace Transactions
@@ -35,7 +31,7 @@ class ForceInitiative :
 	public UITransactionBase
 {
 public:
-	ForceInitiative( Combatant::Character::Pointer jumpInChar, const int currentInit );
+	ForceInitiative( Combatant::Character::pointer_t jumpInChar, const int currentInit );
 	virtual void doit();
 	virtual void undo();
 

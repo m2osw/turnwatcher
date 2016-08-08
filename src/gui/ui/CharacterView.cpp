@@ -233,10 +233,8 @@ void CharacterView::addSoftColumns( const bool onHud )
 	for( auto statPair : statMap )
 	{
 		auto stat( statPair.second );
-#ifdef DEBUG
 		const int order = stat->order();
-		std::cerr << "order=" << order << std::endl;
-#endif
+		std::cerr << order << std::endl;
 		f_softColumns[stat->id()] = addSoftColumn( stat );
 	}
 	
@@ -581,7 +579,7 @@ void CharacterView::emitSelectionSignal()
 void CharacterView::on_cursor_changed()
 {
 #ifdef DEBUG
-	std::cerr << "on_cursor_changed()" << std::endl;
+	std::cout << "on_cursor_changed()" << std::endl;
 #endif
 	if( !f_editingStarted )
 	{
@@ -595,7 +593,7 @@ void CharacterView::on_cursor_changed()
 void CharacterView::on_editing_started( Gtk::CellEditable*, const Glib::ustring& )
 {
 #ifdef DEBUG
-	std::cerr << "on_editing_started()" << std::endl;
+	std::cout << "on_editing_started()" << std::endl;
 #endif
 	f_editingStarted = true;
 }
@@ -604,7 +602,7 @@ void CharacterView::on_editing_started( Gtk::CellEditable*, const Glib::ustring&
 void CharacterView::on_editing_canceled()
 {
 #ifdef DEBUG
-	std::cerr << "on_editing_canceled()" << std::endl;
+	std::cout << "on_editing_canceled()" << std::endl;
 #endif
 	f_editingStarted = false;
 }

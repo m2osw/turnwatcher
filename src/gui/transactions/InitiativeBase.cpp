@@ -25,14 +25,15 @@
 namespace Transactions
 {
 
-InitiativeBase::InitiativeBase() :
-	f_inRounds	(GetInitMgr().lock()->InRounds()   ),
-	f_roundNumber	(GetInitMgr().lock()->RoundNumber()),
-	f_prevRoundNum	(GetInitMgr().lock()->RoundNumber()),
-	f_currInit	(GetInitMgr().lock()->CurrentInit()),
-	f_prevInit	(GetInitMgr().lock()->CurrentInit()),
-	f_prevInitData  (GetInitMgr().lock()->GetInitData()),
-	f_currInitData  (new Initiative::InitiativeData)
+InitiativeBase::InitiativeBase( const bool emit_signals )
+	: f_inRounds     (GetInitMgr().lock()->InRounds())
+	, f_roundNumber  (GetInitMgr().lock()->RoundNumber())
+	, f_prevRoundNum (GetInitMgr().lock()->RoundNumber())
+	, f_currInit     (GetInitMgr().lock()->CurrentInit())
+	, f_prevInit     (GetInitMgr().lock()->CurrentInit())
+	, f_prevInitData (GetInitMgr().lock()->GetInitData())
+	, f_currInitData (new Initiative::InitiativeData)
+	, f_emitSignals  (emit_signals)
 {
 	// TODO: This might be expensive--perhaps only subclasses that need it should do this
 	//
@@ -60,26 +61,26 @@ void InitiativeBase::changeStatuses( const bool doit )
 
 void InitiativeBase::startInit()
 {
-    Combatant::Character::List list( getCharacters() );
+    Combatant::Character::list_t list( getCharacters() );
 	if( list.size() == 0 )
 	{
 		stopInit();
 	}
 	else
 	{
-		GetInitMgr().lock()->Start();
+		GetInitMgr().lock()->Start( f_emitSignals );
         GetAppSettings().lock()->Modified( true );
 	}
 }
 
 void InitiativeBase::stopInit()
 {
-	GetInitMgr().lock()->Stop();
+	GetInitMgr().lock()->Stop( f_emitSignals );
     GetAppSettings().lock()->Modified( true );
 }
 
 
-void InitiativeBase::swapInitData( Initiative::InitiativeData::Pointer data )
+void InitiativeBase::swapInitData( Initiative::InitiativeData::pointer_t data )
 {
 	if( f_inRounds )
 	{
@@ -92,7 +93,7 @@ void InitiativeBase::setPositions()
 {
 	if( f_inRounds )
 	{
-		GetInitMgr().lock()->SetPositions();
+		GetInitMgr().lock()->SetPositions( f_emitSignals );
 	}
 }
 
@@ -102,7 +103,7 @@ void InitiativeBase::updateInitCharacters()
 	if( f_inRounds )
 	{
 		stopInit();
-        GetInitMgr().lock()->UpdateCharacters( GetCharacterMgr().lock()->GetCharacters() );
+        GetInitMgr().lock()->UpdateCharacters( GetCharacterMgr().lock()->GetCharacters(), f_emitSignals );
 		startInit();
 	}
 }
@@ -111,5 +112,4 @@ void InitiativeBase::updateInitCharacters()
 }
 // namespace Transactions
 
-// vim: ts=8 sw=8
-
+// vim: ts=4 sw=4 noexpandtab syntax=cpp.doxygen

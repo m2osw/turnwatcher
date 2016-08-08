@@ -1,144 +1,33 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
-#
-# Turn Watcher debian/rules that uses debhelper.
-#
-# Copyright:	Copyright (c) 2006-2008 Made to Order Software Corp.
-#
-#		All Rights Reserved.
-#
-#		This software and its associated documentation contains
-#		proprietary, confidential and trade secret information
-#		of Made to Order Software Corp. and except as provided by
-#		written agreement with Made to Order Software Corp.
-#
-#		a) no part may be disclosed, distributed, reproduced,
-#		   transmitted, transcribed, stored in a retrieval system,
-#		   adapted or translated in any form or by any means
-#		   electronic, mechanical, magnetic, optical, chemical,
-#		   manual or otherwise,
-#
-#		and
-#
-#		b) the recipient is not entitled to discover through reverse
-#		   engineering or reverse compiling or other such techniques
-#		   or processes the trade secrets contained therein or in the
-#		   documentation.
-#
-# This script was modified to only compile one version just like the Win32
-# software.
-#
+# Sample debian/rules that uses debhelper.
 # This file was originally written by Joey Hess and Craig Small.
 # As a special exception, when this file is copied by dh-make into a
 # dh-make output file, you may use that output file without restriction.
 # This special exception was added by Craig Small in version 0.37 of dh-make.
-#
-# Modified to make a template file for a multi-binary package with separated
-# build-arch and build-indep targets  by Bill Allombert 2001
-#
 
 # Uncomment this to turn on verbose mode.
-# export DH_VERBOSE=1
+#export DH_VERBOSE=1
 
-# This has to be exported to make some magic below work.
-export DH_OPTIONS
+%:
+	dh $@ 
 
-# System variables
-CXXFLAGS="-Wall -O3 -g0"
-PREFIX=/usr
+override_dh_auto_build:
+	cd build; $(MAKE)
 
-# Our directories
-TURNWATCHER_DIR=debian/turnwatcher$(DEMO_NAME)
-BUILD_DIR=debian/build$(DEMO_NAME)
+override_dh_auto_clean:
+	if [ test -d build ]; then cd build; $(MAKE) clean; fi
 
-configure: configure-stamp
-configure-stamp:
-	dh_testdir debian/turnwatcher.menu
-	mkdir -p $(BUILD_DIR)
-	cd $(BUILD_DIR) && ../../configure --prefix=$(PREFIX) $(EXTRA_CONFIGURE_OPTIONS)
-	touch configure-stamp
+override_dh_auto_configure:
+	mkdir -p build
+	cd build; cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=usr ..
 
+override_dh_auto_test:
 
-#Architecture 
-build: build-arch
-build-arch: build-arch-stamp
-build-arch-stamp: configure-stamp 
-	$(MAKE) -C $(BUILD_DIR)
-	touch build-arch-stamp
+override_dh_auto_install:
+	cd build; make install
 
-clean:
-	dh_testdir debian/turnwatcher.menu
-	dh_testroot
-	rm -f configure-stamp build-arch-stamp
-	rm -rf $(BUILD_DIR)
-	rm -rf $(TURNWATCHER_DIR)
-	rm -rf debian/turnwatcher.{postinst,postrm}
-	rm -rf debian/turnwatcher-{beta,demo}.{install,links,postinst,postrm}
-	rm -f debian/*.deb
-	dh_clean 
+override_dh_install:
+	dh_install --sourcedir=build
 
-install: install-arch
-install-arch:
-	dh_testdir debian/turnwatcher.menu
-	ln -sf build/dev/linux/turnwatcher.postinst debian/turnwatcher.postinst
-	ln -sf build/dev/linux/turnwatcher.postrm   debian/turnwatcher.postrm
-# Always do all the softlinks; so whatever version we're building it just works
-	ln -sf turnwatcher.install  debian/turnwatcher-demo.install
-	ln -sf turnwatcher.links    debian/turnwatcher-demo.links
-	ln -sf turnwatcher.postinst debian/turnwatcher-demo.postinst
-	ln -sf turnwatcher.postrm   debian/turnwatcher-demo.postrm
-	ln -sf turnwatcher.install  debian/turnwatcher-beta.install
-	ln -sf turnwatcher.links    debian/turnwatcher-beta.links
-	ln -sf turnwatcher.postinst debian/turnwatcher-beta.postinst
-	ln -sf turnwatcher.postrm   debian/turnwatcher-beta.postrm
-	dh_testroot
-	dh_clean -k -s 
-	dh_installdirs -s
-	$(MAKE) -C $(BUILD_DIR) install DESTDIR=$(CURDIR)/$(TURNWATCHER_DIR)
-
-# Must not depend on anything. This is to be called by
-# binary-arch/binary-indep
-# in another 'make' thread.
-binary-common:
-	dh_testdir debian/turnwatcher.menu
-	dh_testroot
-	dh_installchangelogs ChangeLog
-	dh_installdocs
-#	dh_installexamples
-	dh_installmenu
-#	dh_installdebconf	
-#	dh_installlogrotate	
-#	dh_installemacsen
-#	dh_installpam
-#	dh_installmime
-#	dh_installinit
-#	dh_installcron
-#	dh_installinfo
-	dh_installman
-	dh_link
-	dh_strip
-	dh_compress 
-	dh_fixperms
-#	dh_perl
-#	dh_python
-	dh_makeshlibs
-	dh_installdeb
-# Commented in linspire rules (Turn Watcher does not create .so files)
-#	dh_shlibdeps
-#	sed 's/turnwatcher-beta, //' debian/turnwatcher.substvars > debian/substvars.$$
-#	mv debian/substvars.$$ debian/turnwatcher.substvars
-#	sed 's/turnwatcher-beta, //' debian/turnwatcher-demo.substvars > debian/substvars.$$
-#	mv debian/substvars.$$ debian/turnwatcher-demo.substvars
-	dh_gencontrol
-	dh_md5sums
-# Put the files in a slightly more sensible place than the ".." dir.
-# (AW -- my point of view of course!)
-	dh_builddeb --destdir=debian
-
-# Build architecture dependant packages using the common target.
-binary-arch: build-arch install-arch
-	$(MAKE) -f debian/rules DH_OPTIONS=-a binary-common
-
-binary: binary-arch
-.PHONY: build clean binary-arch binary install install-arch configure
-
+# vim: ts=4 sw=4

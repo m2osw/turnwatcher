@@ -16,6 +16,9 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
+
+
+
 // LOCAL
 //
 #include "DamageWindow.h"
@@ -141,7 +144,7 @@ void DamageWindow::on_show()
 void DamageWindow::on_hide()
 {
 #ifdef DEBUG
-	std::cerr << "DamageWindow::on_hide()" << std::endl;
+	std::cout << "DamageWindow::on_hide()" << std::endl;
 #endif
 
 	f_spinConnection.disconnect();

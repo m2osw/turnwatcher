@@ -18,19 +18,16 @@
 
 // LOCAL
 //
-#include "ui/InfoWindow.h"
-#include "base/character.h"
-
-using namespace Combatant;
+#include "InfoWindow.h"
+#include "character.h"
 
 namespace UI
 {
 
-
 InfoWindow::InfoWindow( Glib::ustring title, Gtk::Window& parent ) :
 	Gtk::Dialog( title, parent )
 {
-	f_showInfoAction = motk::ToggleActionPtr::cast_dynamic( GetActionsMgr().lock()->GetAction( "View::ShowInfo" ) );
+	f_showInfoAction = motk::ToggleActionPtr::cast_dynamic( GetActionsMgr()->GetAction( "View::ShowInfo" ) );
 
 	set_default_size( 600, 480 );
 	for( int idx = 0; idx < MAX_PANES; ++idx )
@@ -47,7 +44,7 @@ InfoWindow::InfoWindow( Glib::ustring title, Gtk::Window& parent ) :
 		f_infoBox[idx].signal_edit().connect( sigc::mem_fun( *this, &InfoWindow::OnEditCharacter ) );
 	}
 
-	add_accel_group( GetActionsMgr().lock()->GetAccelGroup() );
+	add_accel_group( GetActionsMgr()->GetAccelGroup() );
 }
 
 InfoWindow::~InfoWindow()
@@ -55,10 +52,10 @@ InfoWindow::~InfoWindow()
 }
 
 
-void InfoWindow::OnEditCharacter( Character::pointer_t ch )
+void InfoWindow::OnEditCharacter( Combatant::CharacterSPtr _char )
 {
 	if( !is_visible() )	return;
-	f_signalEdit.emit( ch );
+	f_signalEdit.emit( _char );
 }
 
 
@@ -82,7 +79,7 @@ Gtk::ScrolledWindow* InfoWindow::CreateScroller( const int id )
 
 void InfoWindow::FillMainBox()
 {
-	//Gtk::VBox*		box;
+	Gtk::VBox*		box;
 	Gtk::ScrolledWindow*	scroller;
 
 	scroller = CreateScroller( 0 );
@@ -108,12 +105,12 @@ void InfoWindow::OnReload()
 
 void InfoWindow::OnClear()
 {
-	Character::list_t empty_list;
+	Combatant::Characters empty_list;
 	OnSelectionChanged( empty_list );
 }
 
 
-void InfoWindow::OnSelectionChanged( const Character::list_t& selected_list )
+void InfoWindow::OnSelectionChanged( const Combatant::Characters& selected_list )
 {
 	if( !is_visible() )	return;
 
@@ -121,18 +118,18 @@ void InfoWindow::OnSelectionChanged( const Character::list_t& selected_list )
 
 	if( selected_list.size() == 1 )
 	{
-		Character::pointer_t char_1( selected_list[0] );
+		Combatant::CharacterSPtr char_1 = selected_list[0];
 		f_effectsBook[0].OnUpdateCharacter( char_1 );
 		f_infoBox[0].OnSelectionChanged( char_1 );
 	}
 	else if( selected_list.size() == 2 )
 	{
-		Character::pointer_t char_1( selected_list[0] );
+		Combatant::CharacterSPtr char_1 = selected_list[0];
 		f_effectsBook[0].OnUpdateCharacter( char_1 );
 		f_infoBox[0].OnSelectionChanged( char_1 );
 
 		f_pane.pack2( *CreateScroller( 1 ), Gtk::EXPAND );
-		Character::pointer_t char_2( selected_list[1] );
+		Combatant::CharacterSPtr char_2 = selected_list[1];
 		f_effectsBook[1].OnUpdateCharacter( char_2 );
 		f_infoBox[1].OnSelectionChanged( char_2 );
 	}
@@ -211,4 +208,5 @@ bool InfoWindow::on_delete_event(GdkEventAny* event)
 // namespace UI
 
 
-// vim: ts=4 sw=4 noexpandtab syntax=cpp.doxygen
+// vim: ts=8 sw=8
+

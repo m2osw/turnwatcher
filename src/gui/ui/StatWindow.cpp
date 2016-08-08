@@ -91,7 +91,7 @@ StatWindow::~StatWindow()
 void StatWindow::on_show()
 {
 #ifdef DEBUG
-	std::cerr << "StatWindow::on_show()" << std::endl;
+	std::cout << "StatWindow::on_show()" << std::endl;
 #endif
 
 	Gtk::Dialog::on_show();
@@ -101,7 +101,7 @@ void StatWindow::on_show()
 void StatWindow::on_hide()
 {
 #ifdef DEBUG
-	std::cerr << "StatWindow::on_hide()" << std::endl;
+	std::cout << "StatWindow::on_hide()" << std::endl;
 #endif
 
 	Gtk::Dialog::on_hide();

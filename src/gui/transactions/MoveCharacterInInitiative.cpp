@@ -16,17 +16,15 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
 #include "transactions/MoveCharacterInInitiative.h"
 
 namespace Transactions
 {
 
 
-MoveCharacterInInitiative::MoveCharacterInInitiative( const int new_pos, Combatant::Character::Pointer ch, const bool set_positions )
-	: f_newPos(new_pos)
+MoveCharacterInInitiative::MoveCharacterInInitiative( const int new_pos, Combatant::Character::pointer_t ch, const bool set_positions )
+    : InitiativeBase( true /*emit_signals*/ )
+    , f_newPos(new_pos)
 	, f_char(ch)
 	, f_setPositions(set_positions)
 {

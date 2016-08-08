@@ -29,11 +29,10 @@
 
 // LOCAL
 //
-#include "base/common.h"
-#include "base/character.h"
-#include "base/ManagerBase.h"
-#include "base/stat.h"
-#include "ui/CharacterView.h"
+#include "common.h"
+#include "character.h"
+#include "ManagerBase.h"
+#include "CharacterListUI.h"
 
 namespace UI
 {
@@ -50,7 +49,7 @@ public:
 	typedef sigc::signal1<void,Combatant::Character::pointer_t> CharSignal;
 	CharSignal signal_edit() { return f_signalEdit; }
 
-	// CharacterView
+	// CharacterListUI
 	//
 	void OnReload();
 	void OnSelectionChanged( Combatant::Character::pointer_t ch );
@@ -61,7 +60,7 @@ private:
 	Combatant::Character::pointer_t		f_char;
 	Glib::RefPtr<Gtk::TextBuffer>		f_infoBuffer;
 	sigc::connection			f_connection;
-	//Attribute::StatManager::StatMap		f_stats;
+	Attribute::StatManager::StatMap		f_stats;
 
 	void		OnEditCharacter();
 
@@ -76,7 +75,7 @@ private:
 	void		AddNotesString();
 	void		GenerateAbilityString();
 	void		GenerateBuiltinString();
-	void		GenerateStatString();
+	void		GenerateStatString( StatList& list );
 	void		UpdateDialog();
 
 	// StatManager

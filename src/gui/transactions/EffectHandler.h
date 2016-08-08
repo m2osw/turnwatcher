@@ -16,16 +16,12 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
 #pragma once
 
 #include "common.h"
 #include "effect.h"
 #include "character.h"
 #include "transaction.h"
-#include "CharacterListUI.h"
 #include "transactions/UITransactionBase.h"
 
 #ifdef WANT_EFFECTS
@@ -39,16 +35,16 @@ class EffectHandler :
 	public UITransactionBase
 {
 public:
-	EffectHandler( Combatant::Character::Pointer ch );
+	EffectHandler( Combatant::Character::pointer_t ch );
 	virtual void doit();
 	virtual void undo();
 
 private:
-	Combatant::Character::Pointer	f_prevChar;
-	Combatant::Character::Pointer	f_newChar;
+	Combatant::Character::pointer_t	f_prevChar;
+	Combatant::Character::pointer_t	f_newChar;
 	TransactionGroup		f_group;
 
-	void ApplyEffect( Effects::Effect::Pointer effect );
+	void ApplyEffect( Effects::Effect::pointer_t effect );
 };
 
 

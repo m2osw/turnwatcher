@@ -25,7 +25,7 @@ namespace Transactions
 {
 
 
-StabilizeTransaction::StabilizeTransaction( const Combatant::Character::List& charList, const bool stabilize )
+StabilizeTransaction::StabilizeTransaction( const Combatant::Character::list_t& charList, const bool stabilize )
 	: f_stabilize(stabilize)
 {
 	for( auto ch : charList )

@@ -22,7 +22,6 @@
 #pragma once
 
 #include "common.h"
-#include "CharacterListUI.h"
 #include "CharacterColumns.h"
 #include "transactions/UITransactionBase.h"
 
@@ -35,7 +34,7 @@ class SortTransaction
 	, public UITransactionBase
 {
 public:
-	SortTransaction( UI::CharacterListUI* ui, const molib::mo_name_t id, const int dc = -1 );
+	SortTransaction( const molib::mo_name_t id, const int dc = -1 );
 	virtual void doit();
 	virtual void undo();
 
@@ -44,7 +43,6 @@ private:
 	int						f_prevDC;
 	molib::mo_name_t		f_sortId;
 	molib::mo_name_t		f_prevSortId;
-	UI::CharacterListUI*	f_charListUI;
 };
 
 
@@ -53,7 +51,7 @@ class ClearSortTransaction
 	, public UITransactionBase
 {
 public:
-	ClearSortTransaction( UI::CharacterListUI* ui );
+	ClearSortTransaction();
 	virtual void doit();
 	virtual void undo();
 
@@ -61,7 +59,6 @@ private:
 	int						f_dc;
 	int						f_prevDC;
 	molib::mo_name_t		f_sortId;
-	UI::CharacterListUI*	f_charListUI;
 };
 
 

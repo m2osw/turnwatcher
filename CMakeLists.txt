@@ -15,8 +15,7 @@
 ## WARRANTIES, EXPRESS, IMPLIED OR OTHERWISE, REGARDING ITS ACCURACY,
 ## COMPLETENESS OR PERFORMANCE.
 ##===============================================================================
-cmake_minimum_required( VERSION 3.5.1 )
-cmake_policy( VERSION 3.5.1 )
+cmake_minimum_required( VERSION 2.8 )
 
 project( turnwatcher_project_1_5 )
 

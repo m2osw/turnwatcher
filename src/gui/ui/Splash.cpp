@@ -55,6 +55,25 @@ SplashScreen::SplashScreen(Gtk::Window *parent) :
 		f_splash.set( splash_path.c_str() );
 	}
 
+#if 0
+	// When debugging you usually don't have a valid install and thus
+	// we want to get the image in the current directory or some
+	// local share folder. When that fails, we try with a tweaked
+	// application data (read only) directory
+	if(f_splash.get_storage_type() == Gtk::IMAGE_EMPTY
+	|| f_splash.get_storage_type() == Gtk::IMAGE_STOCK) {
+		f_splash.set("../share/turnwatcher/TurnWatcher-Splash.png");
+
+		if(f_splash.get_storage_type() == Gtk::IMAGE_EMPTY
+		|| f_splash.get_storage_type() == Gtk::IMAGE_STOCK) {
+			molib::moApplicationSPtr app = molib::moApplication::Instance();
+			molib::moWCString path = app->GetApplicationPath();
+			path = path.FilenameChild("TurnWatcher-Splash.png");
+			f_splash.set(path.c_str());
+			std::cout << "path: " << path.c_str() << std::endl;
+		}
+	}
+#endif
 	set_type_hint(Gdk::WINDOW_TYPE_HINT_SPLASHSCREEN);
 	set_title(gettext("Turn Watcher Splashscreen"));
 	set_resizable(false);

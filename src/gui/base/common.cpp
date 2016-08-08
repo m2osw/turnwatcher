@@ -397,7 +397,7 @@ void ShowDocumentation( const char *index )
 		// any browser to start?!
 		moWCString browser = FindExec( path, software );
 #ifdef DEBUG
-		std::cerr << "browser: " << browser.c_str() << std::endl;
+		std::cout << "browser: " << browser.c_str() << std::endl;
 #endif
 		if(!browser.IsEmpty()) {
 			if(strncmp(index, "http:", 5) == 0)
@@ -412,7 +412,7 @@ void ShowDocumentation( const char *index )
 					}
 					html = "file://" + html;
 #ifdef DEBUG
-					std::cerr << "documentation: " << html.c_str() << std::endl;
+					std::cout << "documentation: " << html.c_str() << std::endl;
 #endif
 					execl( browser.c_str(), browser.c_str(), html.c_str(), NULL );
 				}

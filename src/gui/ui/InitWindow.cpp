@@ -219,7 +219,7 @@ bool InitWindow::OnScrollChange( Gtk::ScrollType type, double value, bool is_cha
 {
 #ifdef DEBUG
 	const char* from = is_char? "character": "monster";
-	std::cerr << "OnScrollChange: " << value
+	std::cout << "OnScrollChange: " << value
 		  << " from " << from
 		  << " scroller." << std::endl;
 #endif

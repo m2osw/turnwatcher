@@ -33,7 +33,7 @@ namespace Transactions
 {
 
 
-EffectHandler::EffectHandler( Combatant::Character::Pointer ch ) :
+EffectHandler::EffectHandler( Combatant::Character::pointer_t ch ) :
 	f_prevChar(ch),
 	f_group(gettext("Handle Effects"))
 {
@@ -42,19 +42,19 @@ EffectHandler::EffectHandler( Combatant::Character::Pointer ch ) :
 
 	// Now gets a copy automatically, not reference
 	//
-	Effect::List	effects;
+    Effect::list_t	effects;
 	f_newChar->getEffects( effects );
 	//
 	std::for_each( effects.begin(), effects.end(), sigc::mem_fun( *this, &EffectHandler::ApplyEffect ) );
 	//
 	f_newChar->setEffects( effects );
 
-	Transaction::Pointer tr( new EditCharacterTransaction( f_prevChar, f_prevChar, f_newChar ) );
+    Transaction::pointer_t tr( new EditCharacterTransaction( f_prevChar, f_prevChar, f_newChar ) );
 	f_group.addTransaction( tr );
 }
 
 
-void EffectHandler::ApplyEffect( Effect::Pointer effect )
+void EffectHandler::ApplyEffect( Effect::pointer_t effect )
 {
 	if( effect->startIn() > 0 )
 	{

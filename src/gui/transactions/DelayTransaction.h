@@ -16,14 +16,10 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
 #pragma once
 
 #include "character.h"
 #include "transaction.h"
-#include "CharacterListUI.h"
 #include "transactions/UITransactionBase.h"
 
 namespace Transactions
@@ -35,7 +31,7 @@ class DelayTransactionBase :
 	public UITransactionBase
 {
 public:
-	DelayTransactionBase(	Combatant::Character::Pointer character,
+	DelayTransactionBase(	Combatant::Character::pointer_t character,
 				Combatant::Status status,
 			    	Combatant::Status new_status );
 
@@ -46,7 +42,7 @@ protected:
 private:
 	Combatant::Status		f_status;
 	Combatant::Status		f_newStatus;
-	Combatant::Character::Pointer	f_character;
+	Combatant::Character::pointer_t	f_character;
 };
 
 
@@ -55,7 +51,7 @@ class DelayTransaction :
 	public DelayTransactionBase
 {
 public:
-	DelayTransaction(	Combatant::Character::Pointer character,
+	DelayTransaction(	Combatant::Character::pointer_t character,
 				Combatant::Status new_status = Combatant::Delayed ) :
 		DelayTransactionBase( character, character->status(), new_status ) {}
 
@@ -68,7 +64,7 @@ class UndelayTransaction :
 		public DelayTransactionBase
 {
 public:
-	UndelayTransaction( Combatant::Character::Pointer character ) :
+	UndelayTransaction( Combatant::Character::pointer_t character ) :
 		DelayTransactionBase( character, Combatant::Normal, character->status() ) {}
 
 	virtual void doit() { undelay(); }

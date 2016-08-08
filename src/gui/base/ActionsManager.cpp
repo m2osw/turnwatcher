@@ -63,7 +63,7 @@ Manager::private_pointer_t	Manager::f_instance;
 Desensitizer::Desensitizer()
 {
 #ifdef DEBUG
-	std::cerr << "Desensitizer::Desensitizer()" << std::endl;
+	std::cout << "Desensitizer::Desensitizer()" << std::endl;
 #endif
 	PushAll();
 }
@@ -76,13 +76,13 @@ Desensitizer::Desensitizer()
 Desensitizer::~Desensitizer()
 {
 #ifdef DEBUG
-	std::cerr << "Desensitizer::~Desensitizer()" << std::endl;
+	std::cout << "Desensitizer::~Desensitizer()" << std::endl;
 #endif
 
 	PopAll();
 
 #ifdef DEBUG
-	std::cerr << "*** Done resetting sensitizers" << std::endl;
+	std::cout << "*** Done resetting sensitizers" << std::endl;
 #endif
 }
 
@@ -266,7 +266,7 @@ void Manager::AddSoftActions()
 			const Glib::ustring	event	( "Roll::" + name );
 			const Glib::ustring	accel	( stat->accel()   );
 #ifdef DEBUG
-			std::cerr << "Adding custom stat: " << name.c_str()
+			std::cout << "Adding custom stat: " << name.c_str()
 					<< ", event: " << event.c_str() 
 					<< ", accel: " << accel.c_str()
 					<< std::endl;
@@ -347,9 +347,11 @@ void Manager::CreateActions()
 	AddAction( gettext("Duplica_te"), "Edit::Duplicate"	, 0,			"<control>l" );
 	AddAction( gettext("_Purge Dead Characters"), "Edit::PurgeDead", 0,	"<control><shift>p" );
 	//
+#ifdef WANT_EFFECTS
 	AddAction( gettext("Add E_ffect")	, "Edit::AddEffect"	, Gtk::Stock::ADD	, "<control><shift>a" );
 	AddAction( gettext("Edit Effe_ct")	, "Edit::EditEffect"	, Gtk::Stock::EDIT	, "<control><shift>e" );
 	AddAction( gettext("De_lete Effect")	, "Edit::DeleteEffect"	, Gtk::Stock::DELETE	, "<control><shift>x" );
+#endif
 
 	//===============================================================================
 	// VIEW MENU
@@ -357,7 +359,9 @@ void Manager::CreateActions()
 	AddMenu  ( gettext("_View"), "View" );
 	AddToggleAction( gettext("Show _Toolbar"),      "View::ShowToolbar",     0, "<control>t" );
 	AddToggleAction( gettext("Toolbar on _Bottom"), "View::ToolbarOnBottom", 0, "<control>b" );
+#ifdef WANT_EFFECTS
 	AddToggleAction( gettext("Show _Effects Pane"), "View::ShowEffects",     0, "<control>f" );
+#endif
 #ifdef WANT_NOTES
 	AddToggleAction( gettext("Show _Info Window"), "View::ShowInfo"    ,     0, "<control>n" );
 #endif
@@ -519,16 +523,20 @@ Gtk::Widget* Manager::GetMenubar()
 	ui += "      <separator/>\n";
 	ui += "      <menuitem action='Edit::Duplicate'/>\n";
 	ui += "      <menuitem action='Edit::PurgeDead'/>\n";
+#ifdef WANT_EFFECTS
 	ui += "      <separator/>\n";
 	ui += "      <menuitem action='Edit::AddEffect'/>\n";
 	ui += "      <menuitem action='Edit::EditEffect'/>\n";
 	ui += "      <menuitem action='Edit::DeleteEffect'/>\n";
 	ui += "      <separator/>\n";
+#endif
 	ui += "    </menu>\n";
 	ui += "    <menu action='View'>\n";
 	ui += "      <menuitem action='View::ShowToolbar'/>\n";
 	ui += "      <menuitem action='View::ToolbarOnBottom'/>\n";
+#ifdef WANT_EFFECTS
 	ui += "      <menuitem action='View::ShowEffects'/>\n";
+#endif
 #ifdef WANT_NOTES
 	ui += "      <menuitem action='View::ShowInfo'/>\n";
 #endif
@@ -566,7 +574,7 @@ Gtk::Widget* Manager::GetMenubar()
 	ui += "</ui>\n";
 	//
 #ifdef DEBUG
-	std::cerr << "menu: " << ui.c_str() << std::endl;
+	std::cout << "menu: " << ui.c_str() << std::endl;
 #endif
 	//
 	f_menubarId = UIBase::AddUI( ui );
@@ -627,7 +635,7 @@ Gtk::Widget* Manager::GetMainToolbar()
 	ui += "</ui>\n";
 
 #ifdef DEBUG
-	std::cerr << "toolbar: " << ui.c_str() << std::endl;
+	std::cout << "toolbar: " << ui.c_str() << std::endl;
 #endif
 	//
 	f_mainToolbarId = UIBase::AddUI( ui );
@@ -787,7 +795,7 @@ Gtk::Widget* Manager::GetHUDMenu()
 void Manager::OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const Glib::ustring& event )
 {
 #ifdef DEBUG
-	std::cerr << "Actions::Manager::OnButtonClicked(): " << event << std::endl;
+	std::cout << "Actions::Manager::OnButtonClicked(): " << event << std::endl;
 #endif
 }
 

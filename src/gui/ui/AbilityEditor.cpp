@@ -132,6 +132,131 @@ void AbilityEditor::Revert()
 	}
 }
 
+#if 0
+void AbilityEditor::on_cursor_changed()
+{
+	std::cout << "on_cursor_changed()" << std::endl;
+	if( !f_editingStarted )
+	{
+		f_TreeView.get_cursor( f_currentPath, f_currentCol );
+	}
+}
+
+
+void AbilityEditor::on_editing_started( Gtk::CellEditable*, const Glib::ustring& )
+{
+	std::cout << "on_editing_started()" << std::endl;
+	f_editingStarted = true;
+}
+
+
+void AbilityEditor::on_editing_canceled()
+{
+	std::cout << "on_editing_canceled()" << std::endl;
+	f_editingStarted = false;
+}
+
+
+void AbilityEditor::NextTabRow( const bool forward )
+{
+	Gtk::TreeNodeChildren    children = f_store->children();
+	Gtk::TreeModel::iterator iter     = f_store->get_iter( f_currentPath );
+	Gtk::TreeModel::iterator begin    = children.begin();
+	Gtk::TreeModel::iterator end      = children.end();
+	assert(iter);
+
+	if( forward )
+	{
+		++iter;
+		if( iter == end )
+		{
+			iter = children.begin();
+		}
+	}
+	else
+	{
+		if( iter == begin )
+		{
+			iter = children.end();
+		}
+		--iter;
+	}
+
+	f_currentPath = f_refTreeModel->get_path( iter );
+}
+
+
+void AbilityEditor::NextTabColumn( const bool forward )
+{
+	TreeViewColumns           columns = f_TreeView.get_columns();
+	TreeViewColumns::iterator begin   = columns.begin();
+	TreeViewColumns::iterator end     = columns.end();
+	TreeViewColumns::iterator iter    = begin;
+	assert(iter);
+
+	for( ; iter != end; ++iter )
+	{
+		if( *iter == f_currentCol )
+		{
+			break;
+		}
+	}
+
+	assert( iter );
+
+	if( forward )
+	{
+		++iter;
+		if( iter == end )
+		{
+			iter = children.begin();
+		}
+	}
+	else
+	{
+		if( iter == begin )
+		{
+			iter = children.end();
+		}
+		--iter;
+	}
+
+	f_currentPath = f_refTreeModel->get_path( iter );
+}
+
+void AbilityEditor::DoTab( const bool forward );
+{
+	NextTabRow( forward );
+	set_cursor( f_currentPath, *f_currentCol, true /* start_editing */ );
+}
+
+
+bool AbilityEditor::on_key_press_event( GdkEventKey* event )
+{
+	//Call base class, to allow normal handling,
+	//such as allowing the row to be selected by the right-click:
+	bool return_value = Gtk::Window::on_key_press_event(event);
+
+	// Emit the OK response on ENTER
+	//
+	if( f_editingStarted )
+	{
+		switch( event->keyval )
+		{
+			case GDK_Tab:
+			case GDK_Return:
+				DoTab( true );
+				break;
+
+			case GDK_ISO_Left_Tab:
+				DoTab( false );
+				break;
+		}
+	}
+
+	return return_value;
+}
+#endif
 
 }
 // namespace UI

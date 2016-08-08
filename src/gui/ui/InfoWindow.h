@@ -24,11 +24,11 @@
 
 // MOLIB
 //
-#include "mo/mo_base.h"
+#include <mo_base.h>
 
 // MOTK
 //
-#include "motk/LabelTable.h"
+#include <LabelTable.h>
 
 // GTKMM
 //
@@ -37,11 +37,11 @@
 
 // LOCAL
 //
-#include "base/common.h"
-#include "base/ManagerBase.h"
-#include "ui/EffectsBook.h"
-#include "ui/InfoBox.h"
-#include "ui/CharacterView.h"
+#include "common.h"
+#include "EffectsBook.h"
+#include "InfoBox.h"
+#include "CharacterListUI.h"
+#include "ManagerBase.h"
 
 namespace UI
 {

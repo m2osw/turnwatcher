@@ -58,13 +58,21 @@ void JumpInWindow::selection_changed()
 void JumpInWindow::on_show()
 {
 #ifdef DEBUG
-	std::cerr << "JumpInWindow::on_show()" << std::endl;
+	std::cout << "JumpInWindow::on_show()" << std::endl;
 #endif
 
 	Gtk::Dialog::on_show();
 
 	set_focus( f_treeView );
 }
+
+
+#if 0
+void JumpInWindow::on_set_focus( Gtk::Widget* focus )
+{
+	std::cout << "on_set_focus()" << std::endl;
+}
+#endif
 
 
 bool JumpInWindow::on_key_press_event( GdkEventKey* event )

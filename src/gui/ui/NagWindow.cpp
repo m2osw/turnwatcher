@@ -37,7 +37,7 @@ namespace
 NagWindow::NagWindow(Gtk::Window& parent)
 {
 #if !defined(DEMO_VERSION) && !defined(BETA_VERSION)
-	std::cerr << "This should only be called for the demo / beta versions! Please fix this!" << std::endl;
+	std::cout << "This should only be called for the demo / beta versions! Please fix this!" << std::endl;
 	assert( 0 );
 #endif
 	set_transient_for( parent );

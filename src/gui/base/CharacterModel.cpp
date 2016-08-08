@@ -461,6 +461,7 @@ void CharacterModel::updateRow( const Gtk::TreeRow& row )
 	row[f_columns->GetMonster		()] = ch->monster();
 	row[f_columns->GetStatus		()] = ch->status_string();
 
+#if defined(WANT_EFFECTS)
 	Gtk::TreeModel::Children children = row.children();
 	while( children.begin() != children.end() )	f_store->erase( children.begin() );
 
@@ -484,6 +485,14 @@ void CharacterModel::updateRow( const Gtk::TreeRow& row )
 		{
 			++running_total;
 		}
+
+#if 0
+		// TODO: add proper effect row management
+		//
+		Gtk::TreeModel::Row	childrow = *(f_store->append( row.children() ) );
+		childrow[f_columns->GetName()]      = fct->name().c_str();
+		childrow[f_columns->GetSensitive()] = fct->roundsLeft() > 0;
+#endif
 	}
 	//
 	if( count )
@@ -504,6 +513,7 @@ void CharacterModel::updateRow( const Gtk::TreeRow& row )
 	}
 	//
 	row[f_columns->GetEffects()] = buffer;
+#endif
 
 	setArrow( InitiativeManager::Instance().lock()->CurrentInit() );
 }

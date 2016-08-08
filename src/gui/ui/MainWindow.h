@@ -18,7 +18,9 @@
 
 #pragma once
 
-#include "ui_MainWindow.h"
+// molib
+//
+#include "mo/mo_name.h"
 
 // local
 //
@@ -29,52 +31,232 @@
 #include "ui/RoundsHelper.h"
 #include "ui/Splash.h"
 #include "ui/StatusBox.h"
-#ifdef WANT_NOTES
-#include "ui/InfoWindow.h"
+#if defined(DEMO_VERSION) || defined(BETA_VERSION)
+#   include "ui/NagWindow.h"
 #endif
 
-// molib
+// gtkmm
 //
-#include "mo/mo_name.h"
-
-// Qt4
-//
-#include <QtGui>
+#include <gtkmm.h>
+#include <glibmm.h>
 
 namespace UI
 {
 
-class MainWindow
-	: public QMainWindow
-	, public Ui::MainWindow
-	, private Application::ManagerBase
+class MainWindow :
+	public Gtk::Window,
+	private Application::ManagerBase
 {
-    Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *);
-    ~MainWindow();
+	MainWindow();
+	~MainWindow();
+
 
 private:
+	class EventDisabler
+	{
+	public:
+	    EventDisabler( MainWindow* wnd) : f_mainWindow(wnd)
+		{ f_mainWindow->DisconnectEvents(); }
+	    ~EventDisabler()
+		{ f_mainWindow->ConnectEvents(); }
+
+	private:
+	    MainWindow* f_mainWindow;
+	};
+	friend class EventDisabler;
+	typedef std::map<Glib::ustring, Attribute::Stat::pointer_t>	stat_map_t;
+	typedef std::vector<sigc::connection>	connection_list_t;
+
     SplashScreen		    f_splash;
 	sigc::connection		f_splash_auto_hide;
 	bool					f_isSaving;
+#if defined(DEMO_VERSION) || defined(BETA_VERSION)
+	NagWindow				f_nagWindow;
+#endif
+	Gtk::VBox				f_mainBox;
 	CharacterView			f_charView;
+	Gtk::ScrolledWindow		f_scrolledWindow;
+	Gtk::VBox				f_bottomBox;
+#ifdef WANT_PANE
+	Gtk::VPaned				f_pane;
+#endif
+#ifdef WANT_EFFECTS
+	Gtk::Frame				f_effectsFrame;
+	Gtk::HBox				f_effectsBox;
+	EffectsBook				f_effectsBook;
+#endif
+#ifdef WANT_NOTES
+	InfoWindow				f_infoWindow;
+#endif
 	HUDWindow				f_hudView;
+	//
+	StatusBox				f_statusBox;
+	//
+	Gtk::Widget*			f_mainMenuBar;
+	Gtk::Widget*			f_mainToolBar;
+	Gtk::Widget*			f_effectsToolBar;
+	int						f_lastDupInput;
+	motk::MergeId			f_menubarId;
+	motk::MergeId			f_toolbarId;
 	int						f_lastCharNum;
 	int						f_lastEditFocus;
+	stat_map_t				f_eventMap;
+	connection_list_t		f_connections;
+#if defined(DEMO_VERSION)
+	sigc::connection		f_nagEvent;
+	time_t					f_startTime;
+	bool                    f_warnNoSave;
+#endif
 	RoundsHelper::pointer_t	f_roundsHelper;
+	//
+	// Actions for the main menu
+	//
+	// File Menu
+	//
+	motk::ActionPtr       f_actionFileImport;
+	motk::ActionPtr       f_actionFileExport;
+	motk::ActionPtr       f_actionFileClear;
+	motk::ActionPtr       f_actionFilePreferences;
+	motk::ActionPtr       f_actionFileStatManager;
+	motk::ActionPtr       f_actionFileQuit;
+	//
+	// Edit Menu
+	//
+	motk::ActionPtr       f_actionEditUndo;
+	motk::ActionPtr       f_actionEditRedo;
+	motk::ActionPtr       f_actionEditAdd;
+	motk::ActionPtr       f_actionEditEdit;
+	motk::ActionPtr       f_actionEditDelete;
+	motk::ActionPtr       f_actionEditDuplicate;
+	motk::ActionPtr       f_actionEditPurgeDead;
+	motk::ActionPtr       f_actionEditAddEffect;
+	motk::ActionPtr       f_actionEditEditEffect;
+	motk::ActionPtr       f_actionEditDeleteEffect;
+	//
+	// View Menu
+	//
+	motk::ToggleActionPtr f_actionViewShowToolbar;
+	motk::ToggleActionPtr f_actionViewToolbarOnBottom;
+#ifdef WANT_EFFECTS
+	motk::ToggleActionPtr f_actionViewShowEffects;
+#endif
+#ifdef WANT_NOTES
+	motk::ToggleActionPtr f_actionViewShowInfo;
+#endif
+	motk::ToggleActionPtr f_actionViewShowHUD;
+	//
+	motk::ActionPtr       f_actionRollInitiative;
+	motk::ToggleActionPtr f_actionRollGetDC;
+	//
+	// Rounds Menu
+	//
+	motk::ActionPtr       f_actionRoundsStart;
+	motk::ActionPtr       f_actionRoundsEnd;
+	motk::ActionPtr       f_actionRoundsNext;
+	motk::ActionPtr       f_actionRoundsDelay;
+	motk::ActionPtr       f_actionRoundsReady;
+	motk::ActionPtr       f_actionRoundsJumpIn;
+	motk::ActionPtr       f_actionRoundsDamage;
+	motk::ToggleActionPtr f_actionRoundsStabilize;
+	motk::ActionPtr       f_actionRoundsMoveUp;
+	motk::ActionPtr       f_actionRoundsMoveDown;
+	//
+	// Help Menu
+	//
+	motk::ActionPtr       f_actionHelpAbout;
+	motk::ActionPtr       f_actionHelpDocumentation;
+	motk::ActionPtr       f_actionHelpTutorial;
+	motk::ActionPtr       f_actionHelpContact;
+	motk::ActionPtr       f_actionHelpLicense;
+	motk::ActionPtr       f_actionHelpHomePage;
+
+	//
+	// Menu methods
+	//
+	// File Menu
+	//
+	void            FileImport();
+	void            FileExport();
+	void            FileClear();
+	void            FilePreferences();
+	void            FileStatManager();
+	void            FileQuit();
+	//
+	// Edit Menu
+	//
+	void            EditUndo();
+	void            EditRedo();
+	void            EditAdd();
+	void            EditEdit();
+	void            EditDelete();
+	void            EditDuplicate();
+	void            EditPurgeDead();
+	void            EditAddEffect();
+	void            EditEditEffect();
+	void            EditDeleteEffect();
+	//
+	// View Menu
+	//
+	void            ViewShowToolbar();
+	void            ViewToolbarOnBottom();
+#ifdef WANT_EFFECTS
+	void            ViewShowEffects();
+#endif
+#ifdef WANT_NOTES
+	void            ViewShowInfo();
+#endif
+	void            ViewShowHUD();
+	//
+	// Roll Menu
+	//
+	void            RollDefineInitiativeDice();
+	void            RollInitiative();
+	void            RollInitOnStart();
+	void            RollManualInit();
+	void            RollGetDC();
+	motk::ActionPtr GetAction( Attribute::Stat::pointer_t stat );
+	void            RollSoftColumns( Attribute::Stat::pointer_t stat );
+	//
+	// Rounds Menu
+	//
+	void            RoundsStart();
+	void            RoundsEnd();
+	void            RoundsNext();
+	void            RoundsDelay();
+	void            RoundsReady();
+	void            RoundsJumpIn();
+	void            RoundsDamage();
+	void            RoundsStabilize();
+	void            RoundsMoveUp();
+	void            RoundsMoveDown();
+	//
+	// Help Menu
+	//
+	void            HelpAbout();
+	void            HelpDocumentation();
+	void            HelpTutorial();
+	void            HelpContact();
+	void            HelpLicense();
+	void            HelpHomePage();
 
 	// Support methods
 	//
 	void		Load();
 	void		Save();
 	void 		CreateEffectsFrame();
+	void 		FillMainBox();
+	void		InstallMenu();
 	void		UpdateMenus();
 	void 		UpdateUI( const bool changeToolbar /*,const bool updateInit*/ );
-
-	// Manager Support
+	
+	// Gtk UI Manager support
 	//
+	void 		InitActions();
+	void 		SetStatActionsSensitivity( const bool sensitive );
+	void		ConnectEvents();
+	void		DisconnectEvents();
 	void		AddTransactCharacter( Combatant::Character::pointer_t ch, Transactions::TransactionGroup::pointer_t TRANSACTION_GROUP = 0 );
 	void		EditCharacter( Combatant::Character::pointer_t _char );
 	bool		OnTimer();
@@ -84,51 +266,26 @@ private:
 	void		OnSelectionChanged( Combatant::Character::list_t selected_list );
 	void		OnSettingsChanged();
 	void		OnEditCharacter( Combatant::Character::pointer_t _char );
-
-private slots:
-    void on_action_File_Import_triggered();
-    void on_action_File_Export_triggered();
-    void on_action_File_Clear_triggered();
-    void on_action_File_Quit_triggered();
-    void on_action_File_Preferences_triggered();
-    void on_action_File_StatEditor_triggered();
-
-    void on_action_Edit_Undo_triggered();
-    void on_action_Edit_Redo_triggered();
-    void on_action_Edit_Add_triggered();
-    void on_action_Edit_Edit_triggered();
-    void on_action_Edit_Delete_triggered();
-    void on_action_Edit_Duplicate_triggered();
-    void on_action_Edit_PurgeDeadCharacters_triggered();
-    void on_action_Edit_AddEffect_triggered();
-    void on_action_Edit_EditEffect_triggered();
-    void on_action_Edit_DeleteEffect_triggered();
-
-    void on_action_View_ShowToolbar_triggered();
-    void on_action_View_ShowEffectPane_triggered();
-    void on_action_View_ShowHUDWindow_triggered();
-
-    void on_action_Roll_Initiative_triggered();
-    void on_action_Rounds_Start_triggered();
-    void on_action_Rounds_End_triggered();
-    void on_action_Rounds_Next_triggered();
-    void on_action_Rounds_Delay_triggered();
-    void on_action_Rounds_Ready_triggered();
-    void on_action_Rounds_Jump_triggered();
-    void on_action_Rounds_Damage_triggered();
-    void on_action_Rounds_Stabilize_triggered();
-    void on_action_Rounds_MoveUp_triggered();
-    void on_action_Rounds_MoveDown_triggered();
-
-	void on_action_Help_Documentation_triggered();
-	void on_action_Help_Tutorial_triggered();
-	void on_action_Help_Contact_triggered();
-	void on_action_Help_License_triggered();
-	void on_action_Help_HomePage_triggered();
+#if defined(DEMO_VERSION)
+	void		ConnectNagEvent( const bool connect_it = true );
+	bool		OnNagEvent();
+#endif
+#if defined(DEMO_VERSION) || defined(BETA_VERSION)
+	void		ShowNagWindow( const NagWindow::NagType type );
+#endif
+	//
+	// Gtk::Widget virtual methods and slots
+	//
+	virtual void	on_hide();
+	virtual bool	on_event( GdkEvent* event );
+	virtual bool	on_key_press_event( GdkEventKey* event );
+ 	virtual bool	on_delete_event   ( GdkEventAny* event );
+	virtual bool	on_splash_auto_hide(void);
 };
-
 
 }
 // namespace UI
 
-// vim: ts=4 sw=4 noexpandtab syntax=cpp.doxygen
+
+// vim: ts=4 sw=4 syntax=cpp.doxygen
+

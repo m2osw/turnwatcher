@@ -16,9 +16,6 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
 #pragma once
 
 #include "transactions/UITransactionBase.h"
@@ -34,7 +31,7 @@ class NextInitTransaction
 	, public UITransactionBase
 {
 public:
-	typedef std::shared_ptr<NextInitTransaction> Pointer;
+	typedef std::shared_ptr<NextInitTransaction> pointer_t;
 
 	NextInitTransaction();
 

@@ -40,7 +40,7 @@ StatManager::private_pointer_t StatManager::f_instance;
 // Creates the names used to store values, plus initializes the stat list
 // with default values.
 //
-/// \sa AddDefaultColumns
+/// \sa CreateDefaultStats
 //
 StatManager::StatManager()
 	: f_initId      ("INIT_ID")
@@ -60,9 +60,7 @@ StatManager::StatManager()
 {
 	if( !Load() )
 	{
-		// Make sure default soft columns are present for an empty db...
-		//
-		AddDefaultColumns();
+		CreateDefaultStats();
 	}
 }
 
@@ -97,19 +95,18 @@ void StatManager::Release()
 //
 void StatManager::CreateDefaultStats()
 {
-#if 0
-	// To be added when abilites are supported properly in the UI
-	//
-    AddDefaultStat( gettext("Str"),        f_strId   , -1, false, true, true  );
-    AddDefaultStat( gettext("Dex"),        f_dexId   , -1, false, true, true  );
-    AddDefaultStat( gettext("Con"),        f_conId   , -1, false, true, true  );
-    AddDefaultStat( gettext("Int"),        f_intId   , -1, false, true, true  );
-    AddDefaultStat( gettext("Wis"),        f_wisId   , -1, false, true, true  );
-    AddDefaultStat( gettext("Cha"),        f_chaId   , -1, false, true, true  );
-#endif
+	f_statMap.clear();
+    AddDefaultStat( gettext("Str"),        f_strId   , -1, false, true  );
+    AddDefaultStat( gettext("Dex"),        f_dexId   , -1, false, true  );
+    AddDefaultStat( gettext("Con"),        f_conId   , -1, false, true  );
+    AddDefaultStat( gettext("Int"),        f_intId   , -1, false, true  );
+    AddDefaultStat( gettext("Wis"),        f_wisId   , -1, false, true  );
+    AddDefaultStat( gettext("Cha"),        f_chaId   , -1, false, true  );
     AddDefaultStat( gettext("Init"),       f_initId  , -1, false, true, false, NULL/*, f_dexId*/ );
     AddDefaultStat( gettext("Hit Points"), f_hpId    , -1, false, true, false, NULL/*, f_conId*/ );
     AddDefaultStat( gettext("Level"),      f_levelId , -1, false, true, false  );
+	//
+	AddDefaultColumns();
 }
 
 
@@ -348,8 +345,6 @@ bool StatManager::LoadStats( moPropBagRef& propBag )
 			return false;
 		}
 	}
-
-	CreateDefaultStats();	// Make sure default stats are present
 
 	return true;
 }

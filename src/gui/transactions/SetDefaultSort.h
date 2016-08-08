@@ -16,13 +16,10 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
 #pragma once
 
 #include "transaction.h"
-#include "CharacterListUI.h"
+#include "ManagerBase.h"
 
 namespace Transactions
 {
@@ -34,9 +31,10 @@ namespace Transactions
 
 class SetDefaultSortTransaction
 	: public Transaction
+	, protected Application::ManagerBase
 {
 public:
-	SetDefaultSortTransaction( UI::CharacterListUI* charListUI );
+	SetDefaultSortTransaction();
 
 	virtual void doit();
 	virtual void undo();
@@ -44,7 +42,6 @@ public:
 private:
 	int			f_prevSort;
 	Gtk::SortType		f_prevSortType;
-	UI::CharacterListUI*	f_charListUI;
 };
 
 

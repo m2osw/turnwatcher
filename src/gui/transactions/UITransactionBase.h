@@ -16,14 +16,11 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
 #pragma once
 
 #include "character.h"
 #include "transaction.h"
-#include "SingletonManager.h"
+#include "ManagerBase.h"
 
 namespace Transactions
 {
@@ -35,8 +32,8 @@ protected:
 	UITransactionBase();
 	virtual ~UITransactionBase();
 
-	int					getCount() const;
-	const Combatant::Character::List&	getCharacters();
+    int	getCount() const;
+    const Combatant::Character::list_t& getCharacters();
 };
 
 }

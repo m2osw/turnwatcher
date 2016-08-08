@@ -16,25 +16,28 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-
-
-
 #include "transactions/RollTransaction.h"
+
+using namespace Combatant;
 
 namespace Transactions
 {
+
 
 RollTransaction::RollTransaction( const molib::mo_name_t id )
 	: f_rollId(id)
 {
 #ifdef DEBUG
-printf( "RollTransaction(): id=%s\n", static_cast<molib::moWCString>(static_cast<molib::moName>(id)).c_str() );
+	std::cerr
+		<< "RollTransaction(): id="
+		<< static_cast<molib::moWCString>(static_cast<molib::moName>(id)).c_str()
+		<< std::endl;
 #endif
 	RollSave();
 }
 
 
-RollTransaction::Roll::Roll( const Combatant::Character::Pointer ch, const int prev_roll, const int curr_roll )
+RollTransaction::Roll::Roll( const Character::pointer_t ch, const int prev_roll, const int curr_roll )
 	: f_prevRoll(prev_roll)
 	, f_currRoll(curr_roll)
 	, f_char(ch)
@@ -70,7 +73,7 @@ void RollTransaction::doit()
 	//
 	for( auto& roll : f_rolls )
 	{
-		Combatant::Character::Pointer ch( roll.f_char );
+        Character::pointer_t ch( roll.f_char );
 		assert(ch);
 		ch->setRoll( f_rollId, roll.f_currRoll );
 
@@ -97,25 +100,24 @@ void RollTransaction::undo()
 	//
 	for( auto& roll : f_rolls )
 	{
-		Combatant::Character::Pointer ch( roll.f_char );
+        Character::pointer_t ch( roll.f_char );
 		assert(ch);
 		ch->setRoll( f_rollId, roll.f_prevRoll );
 
 		if( f_rollId == initId  )
 		{
-            ch->setPosition    ( roll.f_prevPosition    );
-            ch->setSubPosition ( roll.f_prevSubPosition );
-            ch->setManualPos   ( roll.f_prevManualPos   );
+			ch->setPosition    ( roll.f_prevPosition    );
+			ch->setSubPosition ( roll.f_prevSubPosition );
+			ch->setManualPos   ( roll.f_prevManualPos   );
 		}
 		//
 		ch->signal_changed().emit();
 	}
 
-    GetAppSettings().lock()->Modified( true );
+	GetAppSettings().lock()->Modified( true );
 }
 
 }
 // namespace Transactions
 
-// vim: ts=8 sw=8
-
+// vim: ts=4 sw=4 noexpandtab syntax=cpp.doxygen
