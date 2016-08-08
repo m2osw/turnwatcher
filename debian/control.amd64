@@ -2,7 +2,7 @@ Source: turnwatcher
 Priority: optional
 Maintainer: R. Douglas Barbieri <doug@m2osw.com>
 Build-Depends: debhelper (>= 9.0.0), cmake, pkg-config,
-  libgtkmm-2.4-dev, libwebkitgtk-dev
+  libgtkmm-2.4-dev, libwebkitgtk-dev, libjpeg-turbo8-dev
 Standards-Version: 3.6.1
 Section: x11
 
