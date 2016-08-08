@@ -218,6 +218,7 @@ namespace
 		if( b ) b->set_value( value );
 	}
 
+#if 0
 	Glib::ustring GetText( motk::LabelTable& tbl, const moName& id )
 	{
 		Gtk::Entry* e;
@@ -231,6 +232,7 @@ namespace
 		tbl.GetItem( id, e );
 		if( e ) e->set_text( text );
 	}
+#endif
 	
 	Glib::ustring GetFontName( motk::LabelTable& tbl, const moName& id )
 	{
