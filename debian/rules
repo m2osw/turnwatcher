@@ -11,23 +11,3 @@
 
 %:
 	dh $@ 
-
-override_dh_auto_build:
-	cd build; $(MAKE)
-
-override_dh_auto_clean:
-	if [ test -d build ]; then cd build; $(MAKE) clean; fi
-
-override_dh_auto_configure:
-	mkdir -p build
-	cd build; cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=usr ..
-
-override_dh_auto_test:
-
-override_dh_auto_install:
-	cd build; make install
-
-override_dh_install:
-	dh_install --sourcedir=build
-
-# vim: ts=4 sw=4
