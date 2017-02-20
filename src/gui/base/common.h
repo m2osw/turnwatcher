@@ -21,9 +21,6 @@
 #include "mo/mo_string.h"
 #include "mo/mo_props.h"
 
-#ifndef HAVE_LIBINTL_H
-#   error libintl.h is required!
-#endif
 #include <libintl.h>
 #include <glibmm.h>
 

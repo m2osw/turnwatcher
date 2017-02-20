@@ -25,7 +25,6 @@ set( CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"   )
 set( CMAKE_MODULE_PATH              "${CMAKE_SOURCE_DIR}/cmake" )
 
 include( 00-Common )
-
 #enable_testing()
 
 add_subdirectory( src )

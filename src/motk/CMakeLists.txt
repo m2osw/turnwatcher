@@ -82,5 +82,13 @@ target_link_libraries( ${PROJECT_NAME}
         ${ICONV_INCLUDE_DIR}
         ${GTKMM_LIBRARIES}
     )
+target_compile_features( ${PROJECT_NAME} PUBLIC
+        cxx_deleted_functions
+        cxx_defaulted_functions
+        cxx_noexcept
+        cxx_lambdas
+        cxx_range_for
+        cxx_override
+    )
 
 # vim: ts=4 sw=4 noexpandtab

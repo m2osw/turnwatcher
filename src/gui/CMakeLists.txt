@@ -47,7 +47,6 @@ configure_file(
 	"${PROJECT_BINARY_DIR}/config/system.h"
 	)	
 
-include( 00-Common )
 include( sigc      )
 include( gtkmm     )
 find_package( Freetype  )
