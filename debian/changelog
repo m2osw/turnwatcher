@@ -1,3 +1,9 @@
+turnwatcher (2.0-1) xenial; urgency=high
+
+  * Port away from GTKMM and to Qt5.
+
+ -- Doug Barbieri <doug@kosh>  Mon, 20 Feb 2017 15:34:28 -0800
+
 turnwatcher (1.6-4) xenial; urgency=high
 
   * Removed the symlink control file and replaced with the amd64 file.
