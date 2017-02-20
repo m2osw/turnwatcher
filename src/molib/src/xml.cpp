@@ -9092,7 +9092,7 @@ const moWCString& moXMLParser::moXMLEntity::GetSystemID(void) const
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

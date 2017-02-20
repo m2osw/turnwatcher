@@ -1415,7 +1415,7 @@ void moApplicationEvent::PostTerminate(moEventPipeBroadcast *__broadcast)
  */
 
 
-};		// namespace molib;
+}		// namespace molib;
 //
 // vim: ts=8 sw=8 syntax=cpp.doxygen
 

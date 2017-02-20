@@ -1104,7 +1104,7 @@ void moVariableList::Empty(void)
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

@@ -55,8 +55,7 @@ namespace
 	moWCString g_progname  ( PACKAGE_NAME                                           );
 	moWCString g_version   ( PACKAGE_VERSION                                        );
 	moWCString g_copyright ( "Copyright (c) Made to Order Software Corp. 2005-2016" );
-};
-
+}
 
 /// \brief Turn off all gtk warnings and errors.
 /// \note Logs gtk/gdk noise to an output file, but only in a DEBUG build.

@@ -1973,7 +1973,7 @@ unsigned long moP2(unsigned long v)
 	return static_cast<unsigned long>(-1);
 }
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

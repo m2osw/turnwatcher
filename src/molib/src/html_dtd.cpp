@@ -1995,7 +1995,7 @@ const char *	moXMLParser::g_html_loose_dtd =
 "  >\n";
 
 
-};	// namespace molib
+}	// namespace molib
 
 // vim: ts=8 sw=8
 

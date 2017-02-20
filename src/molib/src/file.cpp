@@ -3076,7 +3076,7 @@ void moAutoDelete::NoDelete(void)
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

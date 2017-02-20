@@ -135,6 +135,6 @@ int moSum(const moWCString& number)
 	return sum;
 }
 
-};	// namespace luhn
-};	// namespace molib
+}	// namespace luhn
+}	// namespace molib
 

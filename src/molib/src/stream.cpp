@@ -2048,7 +2048,7 @@ unsigned long moIOStream::Release(void) const
 #endif
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8 sw=8
 

@@ -1989,7 +1989,7 @@ void moSimpleEditor::Parse(const moWCString& input_filename, const moWCString& o
 }
 
 
-};			// namespace molib
+}			// namespace molib
 
 // vim: ts=8
 

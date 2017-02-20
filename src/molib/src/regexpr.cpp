@@ -1871,7 +1871,7 @@ moWCString moRegularExpression::Replace(const moWCString& replacement, const moW
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

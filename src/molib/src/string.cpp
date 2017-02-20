@@ -5154,7 +5154,7 @@ std::ostream& operator << (std::ostream& output_stream, const moWCString& string
 }
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

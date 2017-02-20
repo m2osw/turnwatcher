@@ -1247,5 +1247,5 @@ exit:
 
 
 // vim: ts=8
-};			// namespace molib;
+}			// namespace molib;
 

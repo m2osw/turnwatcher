@@ -1103,5 +1103,5 @@ int moXMLSavePropBag(const moWCString& filename, moPropBagRef& prop_bag, moPropI
 
 
 // vim: ts=8
-};		// namespace molib
+}		// namespace molib
 

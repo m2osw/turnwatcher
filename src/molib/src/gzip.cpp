@@ -629,7 +629,7 @@ unsigned long moGZip::gzip_mode_t::Level(void) const
 }
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

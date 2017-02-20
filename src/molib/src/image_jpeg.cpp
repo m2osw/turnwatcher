@@ -458,7 +458,7 @@ MAKE_IMAGEFILE_PUBLIC(JPEG);
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

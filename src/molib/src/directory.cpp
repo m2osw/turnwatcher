@@ -902,7 +902,7 @@ bool moDirectory::moEntry::IsSock(void) const
 }
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8 sw=8
 

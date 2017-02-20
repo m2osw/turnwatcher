@@ -1685,7 +1685,7 @@ void moTaskManager::RemoveTask(moTask& task)
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

@@ -4050,7 +4050,7 @@ fprintf(stderr, "\nFrom [%s] got result: [%s]\n", SavedMBData(), result.SavedMBD
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

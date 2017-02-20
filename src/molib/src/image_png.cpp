@@ -464,7 +464,7 @@ virtual long MatchType(const void *buffer, unsigned long size) const
 MAKE_IMAGEFILE_PUBLIC(PNG);
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

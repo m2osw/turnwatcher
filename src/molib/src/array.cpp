@@ -1516,7 +1516,7 @@ moArrayBase::moArrayError::moArrayError(const moArrayError& err)
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8 sw=8 syntax=cpp.doxygen
 

@@ -1454,7 +1454,7 @@ moBase::compare_t moVariableReducer::moVariableReducerCommand::Compare(const moB
 }
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

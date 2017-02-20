@@ -553,7 +553,7 @@ const moWCString& moWords::operator [] (int index) const
 }
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

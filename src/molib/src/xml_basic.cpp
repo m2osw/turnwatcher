@@ -2159,7 +2159,7 @@ bool moXML_Basic::moXML_Basic_UseDTD::OnEvent(moXMLParser& parser, moXMLParser::
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

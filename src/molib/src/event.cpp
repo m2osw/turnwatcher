@@ -1118,7 +1118,7 @@ SEE ALSO
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

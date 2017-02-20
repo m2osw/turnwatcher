@@ -290,7 +290,7 @@ unsigned long moRandom::Random(unsigned int count)
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

@@ -100,7 +100,7 @@
  * \section properties Protect your Property!
  *
  * Our Property Bag technology gives your developers a robust, object-oriented,
- * and easy way to persist data—be it to user data files or global
+ * and easy way to persist dataï¿½be it to user data files or global
  * configuration data. Coupled with our application management object, you can
  * save application settings easily no matter what the target environment is!
  *
@@ -269,7 +269,7 @@ void mo_set_cache(void *ptr, cache_t cache)
 }
 
 
-};		// namespace
+}		// namespace
 
 
 
@@ -616,7 +616,7 @@ unsigned long		g_allocated;		// number of buffers currently allocated
 unsigned long		g_used;			// number of used buffers
 unsigned long		g_max_used;		// maximum number of objects used at any one time
 
-};		// namespace
+}		// namespace
 
 
 

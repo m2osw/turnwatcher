@@ -359,7 +359,7 @@ mo_uudecode_error_t moUUDecode(const moWCString& in, moBuffer& out, int& mode, m
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

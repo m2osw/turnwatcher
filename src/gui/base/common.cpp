@@ -438,7 +438,7 @@ bool SaveBagToFile( const moWCString& conf_file_basename, moPropBagRef& propBag 
 }
 
 
-};		// namespace Common
+}		// namespace Common
 
 // vim: ts=4 sw=4 syntax=cpp.doxygen
 

@@ -1254,7 +1254,7 @@ printf("moFindImageFile: tested #%ld [%s] with a result of %ld\n",
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

@@ -174,7 +174,7 @@ size_t moMemFile::OutputSize(void) const
 }
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

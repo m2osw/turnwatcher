@@ -2137,7 +2137,7 @@ void moTransactionBuilder::Rollback(void)
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

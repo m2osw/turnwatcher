@@ -1719,7 +1719,7 @@ moList::moListItem::operator const moBase& (void) const
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

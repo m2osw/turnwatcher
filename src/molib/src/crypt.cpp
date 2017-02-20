@@ -4680,7 +4680,7 @@ long moCryptSize::DecodeSize(const unsigned char *src, unsigned long src_size)
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8 sw=8 syntax=cpp.doxygen
 

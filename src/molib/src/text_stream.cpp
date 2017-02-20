@@ -2077,7 +2077,7 @@ bool moTextStream::OnError(errcode_t errcode, const char *format, const va_list 
 
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8
 

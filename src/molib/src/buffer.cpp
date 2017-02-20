@@ -499,7 +499,7 @@ moBuffer::operator signed long (void) const
 }
 
 
-};			// namespace molib;
+}			// namespace molib;
 
 // vim: ts=8 sw=8 syntax=cpp.doxygen
 
