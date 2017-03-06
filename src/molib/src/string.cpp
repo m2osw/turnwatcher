@@ -25,7 +25,6 @@
 
 #include	"mo/mo_string.h"
 
-
 namespace molib
 {
 
@@ -158,6 +157,13 @@ moWCString::moWCString(const moWCString& string, int length)
 	Init();
 	f_password = string.f_password;
 	Set(string.f_string, length);
+}
+
+
+moWCString::moWCString(const QString& str )
+{
+    Init();
+    Set(str.toUtf8().data(), str.length());
 }
 
 

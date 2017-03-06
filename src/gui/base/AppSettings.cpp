@@ -104,7 +104,7 @@ AppSettings::AppSettings() :
 
 		// Get current default font for all widgets
 		//
-		const Glib::ustring font = Gtk::Settings::get_default()->property_gtk_font_name();
+		const QString font = Gtk::Settings::get_default()->property_gtk_font_name();
 		f_combatantListFont = f_altCombatantListFont = font;
 	}
 }
@@ -133,12 +133,12 @@ void AppSettings::Release()
 
 bool AppSettings::CheckVersion()
 {
-	const Glib::ustring version(turnwatcher_PACKAGE_VERSION);
+	const QString version(turnwatcher_PACKAGE_VERSION);
 	return version <= f_version;
 }
 
 
-bool AppSettings::GetVersion( moPropBagRef& bag, Glib::ustring& version )
+bool AppSettings::GetVersion( moPropBagRef& bag, QString& version )
 {
 	moPropStringRef	versionProp( f_versionPropName );
 	versionProp.Link( bag );

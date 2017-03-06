@@ -48,11 +48,11 @@ public:
 
 	Effect();
 
-	Glib::ustring	name()	const					{ return f_name; }
-	void			name( const Glib::ustring& val )		{ f_name = val;  }
+    QString	name()	const					{ return f_name; }
+    void			name( const QString& val )		{ f_name = val;  }
 
-	Glib::ustring	description() const				{ return f_description; }
-	void			description( const Glib::ustring& val )	{ f_description = val;  }
+    QString	description() const				{ return f_description; }
+    void			description( const QString& val )	{ f_description = val;  }
 
 	int				totalRounds() const				{ return f_totalRounds; }
 	void			totalRounds( const int val )	{ f_totalRounds = val;  }
@@ -84,8 +84,8 @@ public:
 	void			unapply ( std::shared_ptr<Combatant::Character> ch );
 	
 private:
-	Glib::ustring	f_name;
-	Glib::ustring	f_description;
+    QString			f_name;
+    QString			f_description;
 	int				f_totalRounds;
 	int				f_roundsUsed;
 	int				f_startIn;	// Effect takes place when this decrements to zero

@@ -19,14 +19,18 @@
 
 
 
-#ifndef __MENUMANAGER_H__
-#define __MENUMANAGER_H__
+#pragma once
 
 // STL
 //
 #include <memory>
 #include <vector>
 #include <string>
+
+// GTKMM
+//
+#include <glibmm.h>
+#include <gtkmm.h>
 
 // MOLIB
 //
@@ -36,11 +40,6 @@
 #include <mo/mo_props.h>
 #include <mo/mo_application.h>
 #include <mo/mo_menu_manager.h>
-
-// GTKMM
-//
-#include <glibmm.h>
-#include <gtkmm.h>
 
 // MOTK
 //
@@ -99,21 +98,21 @@ private:
 	menu_item_map_t		f_toolbarItems;
 
 	motk::StringStack	f_menuStack;
-	Glib::ustring		f_currentMenu;
-	Glib::ustring		f_uiInfo;
-	Glib::ustring		f_toolbarUiInfo;
-	Glib::ustring		f_tabPrefix;
+    QString		f_currentMenu;
+    QString		f_uiInfo;
+    QString		f_toolbarUiInfo;
+    QString		f_tabPrefix;
 
 	void			ClearAllBars();
 	void			ClearToolBar();
-	void 			AddMenuItem( const Glib::ustring& event );
+    void 			AddMenuItem( const QString& event );
 	void			AddToolbarUI( menu_item_map_t::value_type& item );
 	void			PopulateMenuBar();
 	void			PopulateToolBar();
 
 	// ActionManager
 	//
-	virtual void 		OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const Glib::ustring& event  );
+    virtual void 		OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const QString& event  );
 };
 
 typedef molib::moSmartPtr<MenuManager>	MenuManagerSPtr;
@@ -121,8 +120,6 @@ typedef molib::moSmartPtr<MenuManager>	MenuManagerSPtr;
 
 }
 //namespace motk
-
-#endif //__MENUMANAGER_H__
 
 // vim: ts=8 sw=8
 

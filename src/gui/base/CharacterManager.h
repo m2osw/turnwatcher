@@ -18,15 +18,10 @@
 
 #pragma once
 
-#include "common.h"
-
 // STL
 #include <map>
 #include <stack>
 #include <memory>
-
-// GTKMM
-#include <gtkmm.h>
 
 // Local includes
 //
@@ -74,7 +69,7 @@ public:
 	void					PermanentClear();
 	//
 	char_pointer_t 			FindDuplicates( char_pointer_t newChar );
-	char_pointer_t			FindCharacter( const Glib::ustring& name );
+	char_pointer_t			FindCharacter( const QString& name );
 
 	// Signals
 	//
@@ -106,7 +101,7 @@ private:
     CharacterManager& operator =( const CharacterManager& );
 
 	void 					Remove( char_list_t::iterator iter, char_pointer_t ch, const bool signal = true );
-	char_list_t::iterator	FindCharacterIter( const Glib::ustring& name );
+	char_list_t::iterator	FindCharacterIter( const QString& name );
 };
 
 }

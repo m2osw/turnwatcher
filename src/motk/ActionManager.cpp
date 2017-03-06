@@ -23,19 +23,19 @@
 #include <config.h>
 #endif
 
+// GTK/GDK MM
+#include <gtkmm/accelkey.h>
+#include <gdkmm/types.h>
+
 // LOCAL
-#include "Common.h"
 #include "ActionManager.h"
+#include "Common.h"
 
 // STL
 #include <string>
 
 // MOLIB
 #include "mo/mo_application.h"
-
-// GTK/GDK MM
-#include <gtkmm/accelkey.h>
-#include <gdkmm/types.h>
 
 using namespace molib;
 
@@ -63,13 +63,13 @@ void ActionManager::SetDefaultIconSize( Gtk::BuiltinIconSize defaultIconSize )
 }
 
 
-Glib::ustring	ActionManager::GetImagePath( const moWCString& imageName )
+QString	ActionManager::GetImagePath( const moWCString& imageName )
 {
 	molib::moApplicationSPtr app = molib::moApplication::Instance();
 	const molib::moWCString app_path = app->GetApplicationPath();
 	molib::moWCString fullPath = app_path.FilenameChild("images").FilenameChild(imageName.c_str());
 	const char* s = fullPath.MBData();
-	Glib::ustring fp(s);
+    QString fp(s);
 	delete s;
 	return fp;
 }
@@ -83,8 +83,8 @@ PixbufPtr ActionManager::GetPixbufImage( const char* const* xpm_data )
 
 PixbufPtr ActionManager::GetPixbufImage( const moWCString& imageName )
 {
-	Glib::ustring path = GetImagePath( imageName );
-	PixbufPtr pixbuf = Gdk::Pixbuf::create_from_file( path );
+    QString path = GetImagePath( imageName );
+    PixbufPtr pixbuf = Gdk::Pixbuf::create_from_file( path.toUtf8().data() );
 	return pixbuf;
 }
 
@@ -129,10 +129,10 @@ void ActionManager::AddIconSource( const Gtk::StockID& stock_id, Gtk::IconSource
 }
 
 
-void ActionManager::AddStockItem( const Glib::ustring& id, const Glib::ustring& label, const ButtonImage* image )
+void ActionManager::AddStockItem( const QString& id, const QString& label, const ButtonImage* image )
 {
-	const Gtk::StockID stock_id( id );
-	Gtk::StockItem	item( stock_id, label );
+    const Gtk::StockID stock_id( id.toUtf8().data() );
+    Gtk::StockItem	item( stock_id, label.toUtf8().data() );
 	//
 	if( !Gtk::Stock::lookup( stock_id, item ) )
 	{
@@ -146,7 +146,7 @@ void ActionManager::AddStockItem( const Glib::ustring& id, const Glib::ustring& 
 }
 
 
-void ActionManager::AddActionToGroup( ActionPtr action, const Glib::ustring& event, const Glib::ustring& accel_key )
+void ActionManager::AddActionToGroup( ActionPtr action, const QString& event, const QString& accel_key )
 {
 	if( accel_key == "" )
 	{
@@ -166,7 +166,7 @@ void ActionManager::AddActionToGroup( ActionPtr action, const Glib::ustring& eve
 	}
 	else
 	{
-		f_refActionGroup->add( action, Gtk::AccelKey( accel_key ) );
+        f_refActionGroup->add( action, Gtk::AccelKey( accel_key.toUtf8().data() ) );
 	}
 
 	f_actionSignals[event].f_action = action;
@@ -175,7 +175,7 @@ void ActionManager::AddActionToGroup( ActionPtr action, const Glib::ustring& eve
 }
 
 
-void ActionManager::ActivateSignal( const Glib::ustring& event, const bool activate )
+void ActionManager::ActivateSignal( const QString& event, const bool activate )
 {
 	ActionSignal& as = f_actionSignals[event];
 	if( activate )
@@ -190,10 +190,10 @@ void ActionManager::ActivateSignal( const Glib::ustring& event, const bool activ
 }
 
 void ActionManager::AddRadioAction(
-		const Glib::ustring& name,
-		const Glib::ustring& event,
+        const QString& name,
+        const QString& event,
 		const ButtonImage* image,
-		const Glib::ustring& accel_key )
+        const QString& accel_key )
 {
 	if( !f_actionMap[event] )
 	{
@@ -203,18 +203,18 @@ void ActionManager::AddRadioAction(
 		{
 			newAction = Gtk::RadioAction::create(
 				f_radioGroup,
-				event,
-				name );
+                event.toUtf8().data(),
+                name.toUtf8().data() );
 		}
 		else
 		{
 			newAction = Gtk::RadioAction::create(
 				f_radioGroup,
-				event,
-				Gtk::StockID(event),
-				name );
+                event.toUtf8().data(),
+                Gtk::StockID(event.toUtf8().data()),
+                name.toUtf8().data() );
 	
-			AddStockItem( event, name, image );
+            AddStockItem( event, name, image );
 		}
 
 		AddActionToGroup( newAction, event, accel_key );
@@ -226,10 +226,10 @@ void ActionManager::AddRadioAction(
 
 
 void ActionManager::AddToggleAction(
-		const Glib::ustring& name,
-		const Glib::ustring& event,
+        const QString& name,
+        const QString& event,
 		const ButtonImage* image,
-		const Glib::ustring& accel_key )
+        const QString& accel_key )
 {
 	if( !f_actionMap[event] )
 	{
@@ -238,15 +238,15 @@ void ActionManager::AddToggleAction(
 		if( image == 0 )
 		{
 			newAction = Gtk::ToggleAction::create(
-					event,
-			name );
+                    event.toUtf8().data(),
+            name.toUtf8().data() );
 		}
 		else
 		{
 			newAction = Gtk::ToggleAction::create(
-					event,
-			Gtk::StockID(event),
-			name );
+                    event.toUtf8().data(),
+            Gtk::StockID(event.toUtf8().data()),
+            name.toUtf8().data() );
 	
 			AddStockItem( event, name, image );
 		}
@@ -261,10 +261,10 @@ void ActionManager::AddToggleAction(
 
 namespace
 {
-	Glib::ustring MakeTooltip( const Glib::ustring& name, const Glib::ustring& accel_key )
+    QString MakeTooltip( const QString& name, const QString& accel_key )
 	{
-		Glib::ustring retstr1 = name + " (" + accel_key + ")";
-		Glib::ustring retstr2;
+        QString retstr1 = name + " (" + accel_key + ")";
+        QString retstr2;
 		const int len = retstr1.size();
 		for( int idx = 0; idx < len; ++idx )
 		{
@@ -281,10 +281,10 @@ namespace
 
 
 void ActionManager::AddAction(
-		const Glib::ustring& name,
-		const Glib::ustring& event,
+        const QString& name,
+        const QString& event,
 		const ButtonImage* image,
-		const Glib::ustring& accel_key )
+        const QString& accel_key )
 {
 	if( !f_actionMap[event] )
 	{
@@ -293,22 +293,22 @@ void ActionManager::AddAction(
 		if( image == 0 )
 		{
 			newAction = Gtk::Action::create(
-				event,
-				name );
+                event.toUtf8().data(),
+                name.toUtf8().data() );
 		}
 		else
 		{
 			newAction = Gtk::Action::create(
-				event,
-				Gtk::StockID(event),
-				name );
+                event.toUtf8().data(),
+                Gtk::StockID(event.toUtf8().data()),
+                name.toUtf8().data() );
 	
 			AddStockItem( event, name, image );
 		}
 
 		// Add tooltip to action
 		//
-		newAction->set_tooltip( MakeTooltip( name, accel_key ) );
+        newAction->set_tooltip( MakeTooltip( name.toUtf8().data(), accel_key ).toUtf8().data() );
 
 		// Add to group
 		//
@@ -320,19 +320,19 @@ void ActionManager::AddAction(
 }
 
 void ActionManager::AddAction(
-		const Glib::ustring& name,
-		const Glib::ustring& event,
+        const QString& name,
+        const QString& event,
 		const Gtk::StockID& stock_id,
-		const Glib::ustring& accel_key )
+        const QString& accel_key )
 {
 	if( !f_actionMap[event] )
 	{
 		ActionPtr newAction = Gtk::Action::create(
-					event,
+                    event.toUtf8().data(),
 					stock_id,
-					name );
+                    name.toUtf8().data() );
 
-		newAction->set_tooltip( MakeTooltip( name, accel_key ) );
+        newAction->set_tooltip( MakeTooltip( name, accel_key ).toUtf8().data() );
 		AddActionToGroup( newAction, event, accel_key );
 
 		// Flag as entered
@@ -342,14 +342,14 @@ void ActionManager::AddAction(
 
 
 void ActionManager::AddMenu(
-		const Glib::ustring& name,
-		const Glib::ustring& event )
+        const QString& name,
+        const QString& event )
 {
 	if( !f_actionMap[event] )
 	{
 		ActionPtr newAction = Gtk::Action::create(
-					event,
-					name );
+                    event.toUtf8().data(),
+                    name.toUtf8().data() );
 
 		f_refActionGroup->add( newAction );
 
@@ -372,7 +372,7 @@ motk::ActionPtr ActionManager::GetAction( const molib::moWCString& name )
 //
 /// \sa RemoveAction
 //
-void ActionManager::RemoveAction( const Glib::ustring& event )
+void ActionManager::RemoveAction( const QString& event )
 {
 	ActionSignal& as = f_actionSignals[event];
 	as.f_connection.disconnect();
@@ -391,7 +391,7 @@ void ActionManager::RemoveAction( const Glib::ustring& event )
 //
 void ActionManager::RemoveAction( ActionPtr action )
 {
-	RemoveAction( action->get_name() );
+    RemoveAction( action->get_name().c_str() );
 }
 
 

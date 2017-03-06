@@ -298,11 +298,11 @@ CharacterModel::path_t CharacterModel::getConvertedPosition( const int pos )
 }
 
 
-void CharacterModel::updateSoftColumns( const Gtk::TreeRow& row, const Glib::ustring& default_background_color )
+void CharacterModel::updateSoftColumns( const Gtk::TreeRow& row, const QString& default_background_color )
 {
 	Combatant::Character::pointer_t	ch			( row[f_columns->GetCharacter()]       );
-	const Glib::ustring				fore_color	( row[f_columns->GetForegroundColor()] );
-	const Glib::ustring				back_color	( row[f_columns->GetBackgroundColor()] );
+	const QString				fore_color	( row[f_columns->GetForegroundColor()] );
+	const QString				back_color	( row[f_columns->GetBackgroundColor()] );
 	//
 	auto map( StatManager::Instance().lock()->GetStats() );
 	//
@@ -313,7 +313,7 @@ void CharacterModel::updateSoftColumns( const Gtk::TreeRow& row, const Glib::ust
 		const int  roll ( ch->getRoll( id ) );
 		std::stringstream	ss;
 		ss << roll << std::ends;
-		const Glib::ustring text( ss.str().c_str() );
+		const QString text( ss.str().c_str() );
 #if 0
 		bool show = true;
 		//
@@ -325,7 +325,7 @@ void CharacterModel::updateSoftColumns( const Gtk::TreeRow& row, const Glib::ust
 		}
 		else
 		{
-			const molib::moWCString	notes	= ch->getNotes( id );
+			const QString	notes	= ch->getNotes( id );
 			ss << notes.c_str() << std::ends;
 		}
 		//
@@ -422,7 +422,7 @@ void CharacterModel::updateRow( const Gtk::TreeRow& row )
 			break;
 	}
 
-	Glib::ustring default_background_color = "white";
+	QString default_background_color = "white";
 	//
 	if( ch->getForcePosition() != -1 )
 	{

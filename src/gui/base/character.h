@@ -21,12 +21,9 @@
 // STL
 //
 #include <iostream>
-#include <string>
+#include <map>
 #include <memory>
-
-// GLIBmm
-//
-#include <glibmm.h>
+#include <string>
 
 // MOLIB
 //
@@ -63,19 +60,19 @@ public:
 	void				Save( molib::moPropBagRef& propBag );
     void				Copy( LegacyCharacter::pointer_t lch );
 
-	Glib::ustring		name() const		  					{ return f_name; }
-	void				name( const Glib::ustring& val )		{ f_name = val;	f_signalChanged.emit();	}
-	Glib::ustring		public_name() const		  				{ return f_publicName; }
-	void				public_name( const Glib::ustring& val ) { f_publicName = val; f_signalChanged.emit(); }
-	Glib::ustring		notes() const							{ return f_notes; }
-	void				notes( const Glib::ustring& val )		{ f_notes = val; f_signalChanged.emit(); }
+    QString		name() const		  					{ return f_name; }
+    void				name( const QString& val )		{ f_name = val;	f_signalChanged.emit();	}
+    QString		public_name() const		  				{ return f_publicName; }
+    void				public_name( const QString& val ) { f_publicName = val; f_signalChanged.emit(); }
+    QString		notes() const							{ return f_notes; }
+    void				notes( const QString& val )		{ f_notes = val; f_signalChanged.emit(); }
 	bool 				monster() const							{ return f_monster; }
 	void				monster( bool val )						{ f_monster = val; f_signalChanged.emit(); }
 
 	Health	 			health();
 	Status	 			status();
 	void				status( const Status st );
-	Glib::ustring		status_string();
+    QString		status_string();
 	int					status_sort();
 
 	int					HitDice() const				{ return f_hitDice; }
@@ -96,8 +93,8 @@ public:
 	void				setRoll( const molib::mo_name_t id, const int roll )		{ setRoll( GetStat( id ), roll ); }
 	void				setRoll( Attribute::Value::pointer_t stat, const int roll );
 	
-	Glib::ustring	getNotes( const molib::mo_name_t id )						{ return getNotes( GetStat( id ) ); }
-	Glib::ustring	getNotes( Attribute::Value::pointer_t stat );
+    QString				getNotes( const molib::mo_name_t id )						{ return getNotes( GetStat( id ) ); }
+    QString				getNotes( Attribute::Value::pointer_t stat );
 	//
 	void				setNotes( const molib::mo_name_t id, const char* notes )	{ setNotes( GetStat( id ), notes ); }
 	void				setNotes( Attribute::Value::pointer_t stat, const char* notes );
@@ -158,9 +155,9 @@ private:
 
 	// Other character information
 	//
-	Glib::ustring		f_name;			// name of character
-	Glib::ustring		f_publicName;	// public name of character that shows up on the HUD window
-	Glib::ustring		f_notes;		// Misc notes
+    QString		f_name;			// name of character
+    QString		f_publicName;	// public name of character that shows up on the HUD window
+    QString		f_notes;		// Misc notes
 	bool				f_monster;		// is this character a monster or pc?
 
 	int					f_hitDice;		// Hitdice for the character
@@ -203,8 +200,8 @@ private:
 	Attribute::Value::pointer_t	GetStat( const molib::mo_name_t id );
 	Attribute::Value::pointer_t	CreateStat( Attribute::Stat::pointer_t stat );
 
-	std::string				GetStatString( const std::string& health_str );
-	int						GetHpPercent();
+    QString				GetStatString( const QString& health_str );
+    int					GetHpPercent();
 
 	// StatManager
 	//

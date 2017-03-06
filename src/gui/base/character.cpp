@@ -16,20 +16,19 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-// MOLIB
-//
-#include "mo/mo_random.h"
-#include "mo/mo_array.h"
-#include "mo/mo_props.h"
-
 // LOCAL
 //
 #include "base/character.h"
 #include "base/AppSettings.h"
 #include "base/StatManager.h"
 
+// MOLIB
+//
+#include "mo/mo_random.h"
+#include "mo/mo_array.h"
+#include "mo/mo_props.h"
+
 using namespace molib;
-using namespace Glib;
 using namespace Application;
 using namespace Attribute;
 
@@ -140,7 +139,7 @@ void Character::name( const ustring& val )
 { 
 	f_name = val;
 #ifdef DEBUG
-	std::cout << "Character name changed: " << f_name.c_str() << std::endl;
+	std::cout << "Character name changed: " << f_name << std::endl;
 #endif
 	f_signalChanged.emit();	
 }
@@ -149,7 +148,7 @@ void Character::public_name( const ustring& val )
 {
 	f_publicName = val;
 #ifdef DEBUG
-	std::cout << "Character public name changed: " << f_publicName.c_str() << std::endl;
+	std::cout << "Character public name changed: " << f_publicName << std::endl;
 #endif
 	f_signalChanged.emit();
 }
@@ -376,7 +375,7 @@ void Character::Load( moPropBagRef& propBag )
 	publicName.Link( propBag );
 	if( publicName.HasProp() )
 	{
-		f_publicName = static_cast<moWCString>(publicName).c_str();
+        f_publicName = static_cast<moWCString>(publicName).c_str();
 	}
 	else if( name.HasProp() )
 	{
@@ -386,7 +385,7 @@ void Character::Load( moPropBagRef& propBag )
 		}
 		else
 		{
-			f_publicName = static_cast<moWCString>(name).c_str();
+            f_publicName = static_cast<moWCString>(name).c_str();
 		}
 	}
 	//
@@ -436,9 +435,9 @@ void Character::Save( moPropBagRef& propBag )
 
 	// Save properties in bag for later retrieval
 	//
-	name        .NewProp(); name        = f_name.c_str() 		;
-	publicName  .NewProp(); publicName  = f_publicName.c_str()  ;
-	notes       .NewProp(); notes       = f_notes.c_str()		;
+    name        .NewProp(); name        = f_name         		;
+    publicName  .NewProp(); publicName  = f_publicName		    ;
+	notes       .NewProp(); notes       = f_notes        		;
 	monster     .NewProp(); monster     = f_monster? 1: 0		;
 	hitDice     .NewProp(); hitDice     = f_hitDice      		;
 	baseHP      .NewProp(); baseHP      = f_baseHP       		;
@@ -791,9 +790,9 @@ void Character::status( const Status status )
 }
 
 
-std::string Character::GetStatString( const std::string& health_str )
+QString Character::GetStatString( const QString& health_str )
 {
-	std::string		stat_str;
+    QString			stat_str;
 	const Health	hl = health();
 
 	switch( hl )
@@ -826,20 +825,18 @@ int Character::GetHpPercent()
 }
 
 
-Glib::ustring Character::status_string()
+QString Character::status_string()
 {
 	const int hp_pct = GetHpPercent();
 #if 0
-	const int BUFLEN = 16;
-	char buf[BUFLEN+1];
-	snprintf( buf, BUFLEN, "%d%%", hp_pct );
-#else
 	std::stringstream ss;
 	ss << hp_pct << "%" << std::ends;
 	std::string buf = ss.str();
-#endif
 	//
-	return GetStatString( buf );
+    return GetStatString( buf.c_str() );
+#else
+    return QString("%1%%").arg(hp_pct);
+#endif
 }
 
 
@@ -953,7 +950,7 @@ void Character::setRoll( Attribute::Value::pointer_t stat, const int roll )
 }
 
 
-ustring Character::getNotes( Attribute::Value::pointer_t stat )
+QString Character::getNotes( Attribute::Value::pointer_t stat )
 {
 	assert(stat);
 	return stat->notes();

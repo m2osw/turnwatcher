@@ -30,7 +30,7 @@ RollTransaction::RollTransaction( const molib::mo_name_t id )
 #ifdef DEBUG
 	std::cerr
 		<< "RollTransaction(): id="
-		<< static_cast<molib::moWCString>(static_cast<molib::moName>(id)).c_str()
+		<< static_cast<QString>(static_cast<molib::moName>(id)).c_str()
 		<< std::endl;
 #endif
 	RollSave();

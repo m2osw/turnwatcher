@@ -19,8 +19,7 @@
 
 
 
-#ifndef __LABELTABLE_H__
-#define __LABELTABLE_H__
+#pragma once
 
 // STL
 //
@@ -50,14 +49,14 @@ public:
 	class Item : public molib::moBase
 	{
 	public:
-		Item( const molib::moName& id, const Glib::ustring& label, const bool checkbox = false );
+        Item( const molib::moName& id, const QString& label, const bool checkbox = false );
 		
-		void	AddTextColumn( const molib::moName& id, const Glib::ustring& default_value );
-		void	AddComboColumn( const molib::moName& id, const std::vector<Glib::ustring>& strings, const int default_value = 0 );
+        void	AddTextColumn( const molib::moName& id, const QString& default_value );
+        void	AddComboColumn( const molib::moName& id, const std::vector<QString>& strings, const int default_value = 0 );
 		void	AddValueColumn( const molib::moName& id, double default_value, double lower, double upper );
 		
-		Glib::ustring	GetTextColumn( const molib::moName& id );
-		int		GetComboColumn( const molib::moName& id /*std::vector<Glib::ustring>& strings*/ );
+        QString	GetTextColumn( const molib::moName& id );
+        int		GetComboColumn( const molib::moName& id /*std::vector<QString>& strings*/ );
 		double		GetValueColumn( const molib::moName& id );
 		
 	private:
@@ -73,12 +72,12 @@ public:
 	void		AddItem( ItemSPtr item );
 	ItemSPtr	GetItem( const molib::moName& id );
 #else
-	void		AddItem( const molib::moName& id, const Glib::ustring& label, const bool checkbox, ... );
+    void		AddItem( const molib::moName& id, const QString& label, const bool checkbox, ... );
 	Gtk::Widget* 	GetItem( const molib::moName& id, const int idx = 0 ) { return f_entryControls[id].f_widgets[idx]; }
 #endif
 	void		AddHeader( const char* label, ... );
 
-	void		SetLabel( const molib::moName& id, const Glib::ustring& label );
+    void		SetLabel( const molib::moName& id, const QString& label );
 
 	bool		GetCheck( const molib::moName& id );
 	void		SetCheck( const molib::moName& id, const bool check = true );
@@ -142,8 +141,6 @@ private:
 
 }
 // namespace motk
-
-#endif //__LABELTABLE_H__
 
 // vim: ts=8 sw=8
 

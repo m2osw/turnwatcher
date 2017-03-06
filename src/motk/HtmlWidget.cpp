@@ -67,9 +67,9 @@ Gtk::Widget* HtmlWidget::GetWidget()
  *
  * \param[in] url  URL to load in the Web Widget
  */
-void HtmlWidget::LoadUrl( const Glib::ustring& url )
+void HtmlWidget::LoadUrl( const QString& url )
 {
-	webkit_web_view_load_uri( f_webview, url.c_str() );
+    webkit_web_view_load_uri( f_webview, url.toUtf8().data() );
 }
 
 
@@ -157,9 +157,9 @@ void HtmlWidget::GoForward()
  *
  * \return The current URL the browser is pointing to.
  */
-Glib::ustring HtmlWidget::GetLocation()
+QString HtmlWidget::GetLocation()
 {
-	return Glib::ustring( webkit_web_view_get_uri( f_webview ) );
+    return QString( webkit_web_view_get_uri( f_webview ) );
 }
 
 
@@ -167,9 +167,9 @@ Glib::ustring HtmlWidget::GetLocation()
  *
  * \return A string with the title of the current page.
  */
-Glib::ustring HtmlWidget::GetTitle()
+QString HtmlWidget::GetTitle()
 {
-	return Glib::ustring( webkit_web_view_get_title( f_webview ) );
+    return QString( webkit_web_view_get_title( f_webview ) );
 }
 
 
@@ -177,14 +177,14 @@ Glib::ustring HtmlWidget::GetTitle()
  *
  * \return Text that can be displayed in the status bar.
  */
-Glib::ustring HtmlWidget::GetStatusText()
+QString HtmlWidget::GetStatusText()
 {
 #if 0
-	return Glib::ustring( webkit_web_view_get_status_text( f_webview ) );
+    return QString( webkit_web_view_get_status_text( f_webview ) );
 #else
 	// Not yet implemented by the webi API!
 	//
-	return Glib::ustring("");
+    return QString("");
 #endif
 }
 

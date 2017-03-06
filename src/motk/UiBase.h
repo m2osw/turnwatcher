@@ -19,16 +19,17 @@
 
 
 
-#ifndef __UIBASE_H__
-#define __UIBASE_H__
+#pragma once
+
+// GTKMM
+//
+#include <gtkmm.h>
 
 // MOLIB
 //
 #include "mo/mo_base.h"
 
-// GTKMM
-//
-#include <gtkmm.h>
+#include <QString>
 
 #define MENU_PREFIX	"MENU:"
 
@@ -38,7 +39,7 @@ namespace motk
 typedef Glib::RefPtr<Gtk::ActionGroup>			ActionGroupPtr;
 typedef Glib::RefPtr<Gtk::UIManager>			UIManagerPtr;
 typedef Glib::RefPtr<Gtk::AccelGroup>			AccelGroupPtr;
-typedef std::map<Glib::ustring,Glib::ustring>		String2String;
+typedef std::map<QString,QString>		String2String;
 typedef Gtk::UIManager::ui_merge_id			MergeId;
 typedef std::vector<MergeId>				MergeIdVector;
 
@@ -49,19 +50,19 @@ protected:
 	~UIBase();
 
 	//UIManagerPtr	GetUIManager();
-	void				ui( const Glib::ustring& name, const Glib::ustring& value );
-	Glib::ustring&			ui( const Glib::ustring& name );
+    void				ui( const QString& name, const QString& value );
+    QString&			ui( const QString& name );
 	String2String::iterator		begin_ui();
 	String2String::iterator		end_ui();
 
 	AccelGroupPtr 			GetAccelGroup();
-	Gtk::Widget*			GetWidget( const Glib::ustring& name );
+    Gtk::Widget*			GetWidget( const QString& name );
 	void				SetActionGroup( ActionGroupPtr val );
-	MergeId				AddUI( const Glib::ustring& ui );
+    MergeId				AddUI( const QString& ui );
 	void				RemoveUI( MergeId id );
 	void				Clear();
 
-	static Glib::ustring		MakePath( const Glib::ustring& path, const Glib::ustring& name );
+    static QString		MakePath( const QString& path, const QString& name );
 
 	void					CreateUIManager();
 	UIManagerPtr			GetUIManager() const { return f_refUIManager; }
@@ -75,8 +76,6 @@ private:
 
 }
 // namespace motk
-
-#endif //__UIBASE_H__
 
 // $Log: uiBase.h,v $
 // Revision 1.2  2006/03/10 05:40:43  doug

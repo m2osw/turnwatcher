@@ -206,14 +206,14 @@ void Manager::Release()
 }
 
 
-void Manager::ActivateAction( const Glib::ustring& name )
+void Manager::ActivateAction( const QString& name )
 {
 	motk::ActionPtr action = f_refActionGroup->get_action( name );
 	action->activate();
 }
 
 
-bool Manager::ToggleAction( const Glib::ustring& name )
+bool Manager::ToggleAction( const QString& name )
 {
 	motk::ToggleActionPtr action = motk::ToggleActionPtr::cast_dynamic( f_refActionGroup->get_action( name ) );
 	if( action )
@@ -223,7 +223,7 @@ bool Manager::ToggleAction( const Glib::ustring& name )
 	return action;
 }
 
-motk::ActionPtr Manager::GetAction( const Glib::ustring& name )
+motk::ActionPtr Manager::GetAction( const QString& name )
 {
 	return f_refActionGroup->get_action( name );
 }
@@ -262,9 +262,9 @@ void Manager::AddSoftActions()
 								&& stat->showOnToolbar();
 		if( addAction )
 		{
-			const Glib::ustring	name	( stat->name()    );
-			const Glib::ustring	event	( "Roll::" + name );
-			const Glib::ustring	accel	( stat->accel()   );
+			const QString	name	( stat->name()    );
+			const QString	event	( "Roll::" + name );
+			const QString	accel	( stat->accel()   );
 #ifdef DEBUG
 			std::cout << "Adding custom stat: " << name.c_str()
 					<< ", event: " << event.c_str() 
@@ -297,8 +297,8 @@ void Manager::PurgeDeletedActions()
 		auto stat( statPair.second );
 		if( stat->deleted() )
 		{
-			const Glib::ustring name	( stat->name()    );
-			const Glib::ustring event	( "Roll::" + name );
+			const QString name	( stat->name()    );
+			const QString event	( "Roll::" + name );
 			//
 			RemoveAction( event );
 		}
@@ -448,7 +448,7 @@ void Manager::CreateActions()
 }
 
 
-Glib::ustring Manager::GetSoftMenus( const bool toolitem )
+QString Manager::GetSoftMenus( const bool toolitem )
 {
 	typedef std::map<int,Attribute::Stat::pointer_t> StatMap;
 	StatMap statMap;
@@ -465,14 +465,14 @@ Glib::ustring Manager::GetSoftMenus( const bool toolitem )
 
 	f_softColumnsOrder.clear();
 	//
-	Glib::ustring ui;
+	QString ui;
 	//
 	for( auto statPair : statMap )
 	{
 		auto stat( statPair.second );
 		if( stat->showOnToolbar() )
 		{
-			Glib::ustring action = Glib::ustring("Roll::") + stat->name();
+			QString action = QString("Roll::") + stat->name();
 			//
 			if( toolitem )
 			{
@@ -497,7 +497,7 @@ Gtk::Widget* Manager::GetMenubar()
 		UIBase::RemoveUI( f_menubarId );
 	}
 
-	Glib::ustring	ui;
+	QString	ui;
 	ui  = "<ui>\n";
 	ui += "  <menubar action='MenuBar'>\n";
 	ui += "    <menu action='File'>\n";
@@ -592,7 +592,7 @@ void Manager::AlterSoftColumnsMenu()
 		UIBase::RemoveUI( f_softColumnsMenuId );
 	}
 	//
-	Glib::ustring ui  = "<ui>\n";
+	QString ui  = "<ui>\n";
 	ui += "  <menubar action='MenuBar'>\n";
 	ui += "    <menu action='Roll'>\n";
 	ui += "      <placeholder name='SoftColumns'>\n";
@@ -613,7 +613,7 @@ Gtk::Widget* Manager::GetMainToolbar()
 		UIBase::RemoveUI( f_mainToolbarId );
 	}
 	
-	Glib::ustring ui;
+	QString ui;
 	ui  = "<ui>\n";
 	ui += "  <toolbar action='MainToolbar'>\n";
 	ui += "    <toolitem action='Edit::Add'/>\n";
@@ -659,7 +659,7 @@ void Manager::AlterStopStartButtonToolbar()
 	}
 	//
 	auto initMgr = InitiativeManager::Instance().lock();
-	Glib::ustring ui  = "<ui>\n";
+	QString ui  = "<ui>\n";
 	ui += "  <toolbar action='MainToolbar'>\n";
 	ui += "    <placeholder name='StartEndButtons'>\n";
 	if( initMgr->InRounds() )
@@ -686,7 +686,7 @@ void Manager::AlterSoftColumnsToolbar()
 		UIBase::RemoveUI( f_softColumnsToolbarId );
 	}
 	//
-	Glib::ustring ui  = "<ui>\n";
+	QString ui  = "<ui>\n";
 	ui += "  <toolbar action='MainToolbar'>\n";
 	ui += "    <placeholder name='SoftColumns'>\n";
 	ui += 			GetSoftMenus( true /*toolbar*/ );
@@ -714,7 +714,7 @@ void Manager::AlterSoftColumnsToolbar()
 			Gtk::ToolButton* item = dynamic_cast<Gtk::ToolButton*>(toolbar->get_nth_item( idx ));
 			if( item )
 			{
-				Glib::ustring action_id = item->get_stock_id();
+				QString action_id = item->get_stock_id();
 				//
 				if( action_id == "Roll::Initiative" )
 				{
@@ -742,7 +742,7 @@ Gtk::Widget* Manager::GetEffectsToolbar()
 		UIBase::RemoveUI( f_effectsToolbarId );
 	}
 	
-	Glib::ustring ui;
+	QString ui;
 	ui  = "<ui>\n";
 	ui += "  <toolbar action='EffectsToolbar'>\n";
 	ui += "    <toolitem action='Edit::AddEffect'/>\n";
@@ -777,7 +777,7 @@ Gtk::Widget* Manager::GetHUDMenu()
 		UIBase::RemoveUI( f_hudMenubarId );
 	}
 
-	Glib::ustring	ui;
+	QString	ui;
 	ui  = "<ui>\n";
 	ui += "  <popup action='PopupMenu'>\n";
 	ui += "      <menuitem action='View::ShowHUD'/>\n";
@@ -792,7 +792,7 @@ Gtk::Widget* Manager::GetHUDMenu()
 }
 
 
-void Manager::OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const Glib::ustring& event )
+void Manager::OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const QString& event )
 {
 #ifdef DEBUG
 	std::cout << "Actions::Manager::OnButtonClicked(): " << event << std::endl;

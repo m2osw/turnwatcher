@@ -25,8 +25,8 @@
 
 // LOCAL
 //
-#include "Common.h"
 #include "LabelTableScroller.h"
+#include "Common.h"
 
 namespace motk
 {

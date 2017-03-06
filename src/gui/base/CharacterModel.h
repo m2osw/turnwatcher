@@ -132,7 +132,7 @@ private:
 	//void		updateAllCharacters();
 	//
 	void		internalClear      ( );
-	void		updateSoftColumns  ( const Gtk::TreeRow& row, const Glib::ustring& default_background_color );
+	void		updateSoftColumns  ( const Gtk::TreeRow& row, const QString& default_background_color );
 	void		updateRow          ( const Gtk::TreeRow& iter );
 	void		unsetArrow         ( );
 	void		setArrow           ( const int index );

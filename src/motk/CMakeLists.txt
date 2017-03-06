@@ -47,13 +47,18 @@ endif()
 
 project( motk )
 
+find_package( Qt5Core 	 REQUIRED )
+find_package( Qt5Widgets REQUIRED )
+
 include_directories(
 		${molib_SOURCE_DIR}/include
 		${molib_SOURCE_DIR}/include/mo
 		${PROJECT_SOURCE_DIR}
 		${PROJECT_BINARY_DIR}
 		${GTKMM_INCLUDE_DIRS}
-		)
+        ${Qt5Core_INCLUDE_DIRS}
+        ${Qt5Widgets_INCLUDE_DIRS}
+        )
 
 set( HEADERS
 		ActionManager.h
@@ -81,6 +86,8 @@ add_library( ${PROJECT_NAME} STATIC ${HEADERS} ${SOURCES} )
 target_link_libraries( ${PROJECT_NAME}
         ${ICONV_INCLUDE_DIR}
         ${GTKMM_LIBRARIES}
+        Qt5::Core
+        Qt5::Widgets
     )
 target_compile_features( ${PROJECT_NAME} PUBLIC
         cxx_deleted_functions

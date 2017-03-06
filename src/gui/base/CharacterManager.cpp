@@ -325,7 +325,7 @@ Combatant::Character::pointer_t CharacterManager::FindDuplicates( Combatant::Cha
 }
 
 
-Combatant::Character::pointer_t CharacterManager::FindCharacter( const Glib::ustring& name )
+Combatant::Character::pointer_t CharacterManager::FindCharacter( const QString& name )
 {
 	Combatant::Character::pointer_t found_char;
 	const auto found_iter = FindCharacterIter( name );
@@ -338,7 +338,7 @@ Combatant::Character::pointer_t CharacterManager::FindCharacter( const Glib::ust
 }
 
 
-Combatant::Character::list_t::iterator CharacterManager::FindCharacterIter( const Glib::ustring& name )
+Combatant::Character::list_t::iterator CharacterManager::FindCharacterIter( const QString& name )
 {
 	auto		iter       = f_chars.begin();
 	const auto	end        = f_chars.end();

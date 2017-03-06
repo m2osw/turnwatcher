@@ -20,17 +20,20 @@
 #include "mo/mo_application.h"
 #include "mo/mo_file.h"
 #include "mo/mo_props_xml.h"
-#include <glibmm.h>
+#include "mo/mo_string.h"
+
 #include <math.h>
+
+#include <QFileInfo>
 
 using namespace molib;
 
 namespace Common
 {
 
-moWCString GetFullPathnameForImage( const moWCString& basename )
+QString GetFullPathnameForImage( const QString& basename )
 {
-	moWCString filename;
+    moWCString filename;
 
 	// When debugging you usually don't have a valid install and thus
 	// we want to get a file in the current directory or some
@@ -44,25 +47,32 @@ moWCString GetFullPathnameForImage( const moWCString& basename )
 			":../share/turnwatcher/images:/usr/share/turnwatcher/images",
 		basename, moFile::MO_ACCESS_READ);
 	if(!filename.IsEmpty()) {
-		return filename;
+        return filename.c_str();
 	}
 
 	// test from the application folder...
 	moApplicationSPtr application = moApplication::Instance();
-	moWCString path = application->GetApplicationPath();
-	path = path.FilenameChild("images").FilenameChild(basename);
+    moWCString path = application->GetApplicationPath();
+    path = path.FilenameChild("images").FilenameChild(basename);
 
 	if( moFile::Access( path, moFile::MO_ACCESS_READ ) )
 	{
-		return path;
+        return path.c_str();
 	}
 
 	// we could not find it
-	return "";
+    return {};
 }
 
 
-moWCString GetFullPathnameForDoc( const moWCString& basename )
+bool FileExists( QString const & path )
+{
+    QFileInfo info( path );
+    return info.exists();
+}
+
+
+QString GetFullPathnameForDoc( const QString& basename )
 {
 	// TODO: what we really need here is to change the language properly!
 
@@ -74,16 +84,16 @@ moWCString GetFullPathnameForDoc( const moWCString& basename )
 	// Here is if you start from the src sub-directory
 	moWCString filename = "../doc/en";
 	filename = filename.FilenameChild( basename );
-	if( Glib::file_test( filename.c_str(), Glib::FILE_TEST_EXISTS ) )
-	{
-		return filename;
+    if( FileExists(filename.c_str()) )
+    {
+        return filename.c_str();
 	}
 	// in case you're like me and start the software form the main directory
 	filename = "doc/en";
 	filename = filename.FilenameChild( basename );
-	if( Glib::file_test( filename.c_str(), Glib::FILE_TEST_EXISTS ) )
+    if( FileExists( filename.c_str() ) )
 	{
-		return filename;
+        return filename.c_str();
 	}
 
 	// this is in case you install a tarball; we cd inside the
@@ -92,9 +102,9 @@ moWCString GetFullPathnameForDoc( const moWCString& basename )
 	filename = "../../../../share/doc/turnwatcher/html/en";
 	filename = filename.FilenameChild( basename );
 
-	if( Glib::file_test( filename.c_str(), Glib::FILE_TEST_EXISTS ) )
+    if( FileExists(filename.c_str()) )
 	{
-		return filename;
+        return filename.c_str();
 	}
 
 	// the full install will always work with this one (we hope...)
@@ -102,13 +112,13 @@ moWCString GetFullPathnameForDoc( const moWCString& basename )
 	moWCString path = application->GetApplicationPath(true);
 	path = path.FilenameChild("doc/html/en").FilenameChild(basename);
 
-	if( Glib::file_test( path.c_str(), Glib::FILE_TEST_EXISTS ) )
+    if( FileExists(path.c_str()) )
 	{
-		return path;
+        return path.c_str();
 	}
 
 	// we could not find it
-	return "";
+    return {};
 }
 
 
@@ -130,14 +140,14 @@ int CalculateHP( const int con, const int hit_dice, const int base_hp, const int
 }
 
 
-Glib::ustring WrapString( const Glib::ustring& string, const int break_chars )
+QString WrapString( const QString& string, const int break_chars )
 {
 	bool need_break = false;
-	Glib::ustring wrapped_string;
+    QString wrapped_string;
 	const int size = string.size();
 	for( int c = 0; c < size; ++c )
 	{
-		char ch = string[c];
+        QChar ch = string[c];
 		wrapped_string += ch;
 		if( c>=break_chars && (c % break_chars == 0) )
 		{
@@ -199,31 +209,42 @@ bool StringToken( moWCString& base, moWCString& element, const moWCString& token
  * \param faces		die faces (e.g. 20)
  * \param modifier	amount to add to each roll (e.g. 2d6+10)
  */
-moWCString DiceFacesModifierToStr(int dice, int faces, int modifier)
+QString DiceFacesModifierToStr(int dice, int faces, int modifier)
 {
-    if(dice <= 0) {
+    if(dice <= 0)
+    {
 	    dice = 1;
     }
-    else if(dice > 10) {
+    else if(dice > 10)
+    {
 	    dice = 10;
     }
-    if(faces < 2) {
+
+    if(faces < 2)
+    {
 	    faces = 2;
     }
-    else if(faces > 100) {
+    else if(faces > 100)
+    {
 	    faces = 100;
     }
-    if(modifier < -1000) {
+
+    if(modifier < -1000)
+    {
 	    modifier = -1000;
     }
-    else if(modifier > 1000) {
+    else if(modifier > 1000)
+    {
 	    modifier = 1000;
     }
-    if(modifier == 0) {
-	    return moWCString::Format("%dd%d", dice, faces);
+
+    if(modifier == 0)
+    {
+        return QString("%1d%2").arg(dice).arg(faces);
     }
-    else {
-	    return moWCString::Format("%dd%d%+d", dice, faces, modifier);
+    else
+    {
+        return QString("%1d%2+%3").arg(dice).arg(faces).arg(modifier);
     }
 }
 
@@ -355,7 +376,7 @@ namespace
 #endif
 
 
-void ShowDocumentation( const char *index )
+void ShowDocumentation( QString const & index )
 {
 #ifdef WIN32
 	if(strncmp(index, "http:", 5) == 0)
@@ -400,21 +421,21 @@ void ShowDocumentation( const char *index )
 		std::cout << "browser: " << browser.c_str() << std::endl;
 #endif
 		if(!browser.IsEmpty()) {
-			if(strncmp(index, "http:", 5) == 0)
+            if(index.startsWith("http:"))
 			{
 				execl( browser.c_str(), browser.c_str(), index, NULL );
 			}
 			else {
-				moWCString html = Common::GetFullPathnameForDoc(index);
-				if(!html.IsEmpty()) {
+                QString html( Common::GetFullPathnameForDoc(index) );
+                if(!html.isEmpty()) {
 					if(html[0] != '/') {
-						html = moFile::FullPath(html);
+                        html = moFile::FullPath(html).c_str();
 					}
 					html = "file://" + html;
 #ifdef DEBUG
-					std::cout << "documentation: " << html.c_str() << std::endl;
+                    std::cout << "documentation: " << html << std::endl;
 #endif
-					execl( browser.c_str(), browser.c_str(), html.c_str(), NULL );
+                    execl( browser.c_str(), browser.c_str(), html.toUtf8().data(), NULL );
 				}
 			}
 		}

@@ -100,9 +100,9 @@ void TransactionManager::Release()
 }
 
 
-Glib::ustring TransactionManager::getUndoListTop() const
+QString TransactionManager::getUndoListTop() const
 {
-	Glib::ustring	name;
+	QString	name;
 	//
 	if( !isUndoListEmpty() )
 	{
@@ -119,9 +119,9 @@ Glib::ustring TransactionManager::getUndoListTop() const
 }
 
 
-Glib::ustring TransactionManager::getRedoListTop() const
+QString TransactionManager::getRedoListTop() const
 {
-	Glib::ustring	name;
+	QString	name;
 	//
 	if( !isRedoListEmpty() )
 	{
@@ -138,12 +138,12 @@ Glib::ustring TransactionManager::getRedoListTop() const
 }
 
 
-void TransactionManager::updateStatus( const Glib::ustring& prefix, Transaction::pointer_t transaction )
+void TransactionManager::updateStatus( const QString& prefix, Transaction::pointer_t transaction )
 {
 	TransactionGroup::pointer_t group = std::dynamic_pointer_cast<TransactionGroup>(transaction);
 	if( group )
 	{
-		Glib::ustring msg;
+		QString msg;
 		if( prefix != "" )
 		{
 			msg = prefix + " ";

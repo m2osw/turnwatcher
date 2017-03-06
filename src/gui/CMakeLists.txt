@@ -47,9 +47,12 @@ configure_file(
 	"${PROJECT_BINARY_DIR}/config/system.h"
 	)	
 
+find_package( Qt5Core          REQUIRED )
+find_package( Qt5Network       REQUIRED )
+find_package( Qt5Xml           REQUIRED )
+find_package( Qt5Widgets       REQUIRED )
+
 include( sigc      )
-include( gtkmm     )
-find_package( Freetype  )
 
 include_directories(
 		${CMAKE_SOURCE_DIR}
@@ -61,11 +64,26 @@ include_directories(
 		${PROJECT_SOURCE_DIR}/transactions
 		${molib_SOURCE_DIR}/include
 		${motk_SOURCE_DIR}
-		${motk_SOURCE_DIR}/../
-		${FREETYPE_INCLUDE_DIRS}
-		${GTKMM_INCLUDE_DIRS}
+        ${motk_SOURCE_DIR}/../
 		${SIGC_INCLUDE_DIRS}
 		)
+
+include_directories( SYSTEM
+    ${Qt5Core_INCLUDE_DIRS}
+    ${Qt5Network_INCLUDE_DIRS}
+    ${Qt5Xml_INCLUDE_DIRS}
+    ${Qt5Widgets_INCLUDE_DIRS}
+)
+
+
+qt5_wrap_ui(UI_FILES
+    ui/AboutDialog.ui
+    ui/MainWindow.ui
+)
+
+qt5_add_resources(RES_FILES
+    ui/resources.qrc
+)
 
 set( BASE_HEADER_FILES
     base/character.h
@@ -83,37 +101,37 @@ set( BASE_HEADER_FILES
 	base/DuplicateRoll.h
     base/InitiativeManager.h
     base/ManagerBase.h
+	base/QStringStream.h
     base/SoftColumns.h
     base/StatManager.h
     base/transaction.h
    )
 
 set( GUI_HEADER_FILES
-    ui/AbilityEditor.h
-	ui/AboutWindow.h
-	ui/CharacterView.h
-	ui/DamageWindow.h
-	ui/DefineInitWindow.h
-	ui/DuplicateWindow.h
-	ui/EditWindow.h
-	ui/EffectEditor.h
-	ui/EffectsBook.h
-	ui/EffectsEditor.h
-	ui/EffectsList.h
-	ui/ExpiredEffectsWindow.h
-	ui/HUDWindow.h
-	ui/InitWindow.h
-	ui/InputWindow.h
-	ui/JumpInWindow.h
+    ui/AboutDialog.h
+	#ui/CharacterView.h
+	#ui/DamageWindow.h
+	#ui/DefineInitWindow.h
+	#ui/DuplicateWindow.h
+	#ui/EditWindow.h
+	#ui/EffectEditor.h
+	#ui/EffectsBook.h
+	#ui/EffectsEditor.h
+	#ui/EffectsList.h
+	#ui/ExpiredEffectsWindow.h
+	#ui/HUDWindow.h
+	#ui/InitWindow.h
+	#ui/InputWindow.h
+	#ui/JumpInWindow.h
 	ui/MainWindow.h
-	ui/RoundsHelper.h
-	ui/SaveWindow.h
-	ui/SettingsWindow.h
-    ui/Splash.h
-    ui/StatEditor.h
-	ui/StatusBox.h
-	ui/StatWindow.h
-	ui/TableConnections.h
+	#ui/RoundsHelper.h
+	#ui/SaveWindow.h
+	#ui/SettingsWindow.h
+    #ui/Splash.h
+    #ui/StatEditor.h
+	#ui/StatusBox.h
+	#ui/StatWindow.h
+	#ui/TableConnections.h
 	)
 
 set( TRANSACTION_HEADER_FILES
@@ -165,29 +183,28 @@ set( BASE_SOURCE_FILES
    )
 
 set( GUI_SOURCE_FILES
-    ui/AbilityEditor.cpp
-	ui/AboutWindow.cpp
-	ui/CharacterView.cpp
-	ui/DamageWindow.cpp
-	ui/DefineInitWindow.cpp
-	ui/DuplicateWindow.cpp
-	ui/EditWindow.cpp
-	ui/EffectEditor.cpp
-	ui/EffectsBook.cpp
-	ui/EffectsEditor.cpp
-	ui/EffectsList.cpp
-	ui/ExpiredEffectsWindow.cpp
-	ui/HUDWindow.cpp
-	ui/InitWindow.cpp
-	ui/InputWindow.cpp
-	ui/JumpInWindow.cpp
+    ui/AboutDialog.cpp
+	#ui/CharacterView.cpp
+	#ui/DamageWindow.cpp
+	#ui/DefineInitWindow.cpp
+	#ui/DuplicateWindow.cpp
+	#ui/EditWindow.cpp
+	#ui/EffectEditor.cpp
+	#ui/EffectsBook.cpp
+	#ui/EffectsEditor.cpp
+	#ui/EffectsList.cpp
+	#ui/ExpiredEffectsWindow.cpp
+	#ui/HUDWindow.cpp
+	#ui/InitWindow.cpp
+	#ui/InputWindow.cpp
+	#ui/JumpInWindow.cpp
 	ui/MainWindow.cpp
-	ui/RoundsHelper.cpp
-	ui/SettingsWindow.cpp
-    ui/Splash.cpp
-    ui/StatEditor.cpp
-	ui/StatusBox.cpp
-	ui/StatWindow.cpp
+	#ui/RoundsHelper.cpp
+	#ui/SettingsWindow.cpp
+    #ui/Splash.cpp
+    #ui/StatEditor.cpp
+	#ui/StatusBox.cpp
+	#ui/StatWindow.cpp
 	)
 
 set( TRANSACTION_SOURCE_FILES
@@ -211,6 +228,9 @@ set( TRANSACTION_SOURCE_FILES
 
 set( SOURCE_FILES
     TurnWatcher.cpp
+    ui/resources.qrc
+	${UI_FILES}
+	${RES_FILES}
 	${BASE_SOURCE_FILES}
     ${GUI_SOURCE_FILES}
 	${TRANSACTION_SOURCE_FILES}
@@ -296,11 +316,13 @@ endif()
 
 target_link_libraries(
 	${PROJECT_NAME}
-	${FREEYPE_LIBRARIES}
-	${GTKMM_LIBRARIES}
 	${SIGC_LIBRARIES}
 	${Boost_LIBRARIES}
-	molib
+    Qt5::Core
+    Qt5::Network
+    Qt5::Xml
+    Qt5::Widgets
+    molib
 	motk
 	) 
 

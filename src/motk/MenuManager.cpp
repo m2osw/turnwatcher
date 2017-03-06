@@ -92,13 +92,13 @@ const char *MenuManager::GetClassName(void) const
  *
  * This posts a dynamic menu event when a menu item is selected (clicked).
  */
-void MenuManager::OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const Glib::ustring& event )
+void MenuManager::OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const QString& event )
 {
 #ifdef _DEBUG
     cout << "MenuManager::OnButtonClicked(): " << event << endl;
 #endif
 
-    MenuBroadcast::PostDynamicEvent( moApplication::Instance(), event.c_str() );
+    MenuBroadcast::PostDynamicEvent( moApplication::Instance(), event.toUtf8().data() );
 }
 
 
@@ -123,9 +123,9 @@ void MenuManager::ClearAllBars()
  * This builds an internal ui XML description of the menu bar, indicating
  * the menu action item has already been added to the GTK uimanager.
  */
-void MenuManager::AddMenuItem( const Glib::ustring& event )
+void MenuManager::AddMenuItem( const QString& event )
 {
-	Glib::ustring& ui = f_uiInfo;
+    QString& ui = f_uiInfo;
 
 	ui += f_tabPrefix;
 	if( event == "--" )
@@ -147,7 +147,7 @@ void MenuManager::AddMenuItem( const Glib::ustring& event )
  */
 void MenuManager::PopulateMenuBar()
 {
-	Glib::ustring& ui = f_uiInfo;
+    QString& ui = f_uiInfo;
 	ui = "<ui>\n";
 	ui += "\t<menubar action='MenuBar'>\n";
 	f_currentMenu = "MenuBar";
@@ -175,7 +175,7 @@ void MenuManager::PopulateMenuBar()
 void MenuManager::AddToolbarUI( menu_item_map_t::value_type& _item )
 {
 	molib::moMenuItemSPtr item = _item.second;
-	Glib::ustring event = item->Value("Event").c_str();
+    QString event = item->Value("Event").c_str();
 	if( item->IsSeparator() )
 	{
 		f_toolbarUiInfo += "\t\t<separator/>\n";
@@ -193,7 +193,7 @@ void MenuManager::AddToolbarUI( menu_item_map_t::value_type& _item )
  */
 void MenuManager::PopulateToolBar()
 {
-	Glib::ustring& ui = f_toolbarUiInfo;
+    QString& ui = f_toolbarUiInfo;
 	ui = "<ui>\n";
 	ui += "\t<toolbar action='ToolBar'>\n";
 
@@ -218,7 +218,7 @@ void MenuManager::Menu( const molib::moWCString& path, molib::moMenuItemSPtr ite
 {
 	molib::moWCString	name  	  = item->Value("Name");
 	molib::moWCString	event 	  = item->Value("Event");
-	Glib::ustring		menu_path = UIBase::MakePath( path.c_str(), name.c_str() );
+    QString		menu_path = UIBase::MakePath( path.c_str(), name.c_str() );
 
 	AddAction( name.c_str(), menu_path );
 
@@ -231,7 +231,7 @@ void MenuManager::Menu( const molib::moWCString& path, molib::moMenuItemSPtr ite
 		f_tabPrefix += "\t";
 	}
 
-	Glib::ustring& ui = f_uiInfo;
+    QString& ui = f_uiInfo;
 	ui += f_tabPrefix;
 	ui += "<menu action='";
 	ui += menu_path;
@@ -248,7 +248,7 @@ void MenuManager::EndMenu( const molib::moWCString& path, molib::moMenuItemSPtr 
 	f_currentMenu = f_menuStack.top();
 	f_menuStack.pop();
 
-	Glib::ustring& ui = f_uiInfo;
+    QString& ui = f_uiInfo;
 	ui += f_tabPrefix;
 	ui += "</menu>\n";
 	

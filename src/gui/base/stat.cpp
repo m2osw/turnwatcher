@@ -67,12 +67,12 @@ Stat::Stat()
 
 void Stat::id               ( const mo_name_t      val ) { f_id               = val; f_statChanged.emit(); }
 void Stat::abilityId        ( const mo_name_t      val ) { f_abilityId        = val; f_statChanged.emit(); }
-void Stat::name             ( const Glib::ustring& val ) { f_name             = val; f_statChanged.emit(); }
+void Stat::name             ( const QString& val ) { f_name             = val; f_statChanged.emit(); }
 void Stat::dice             ( const int            val ) { f_dice             = val; f_statChanged.emit(); }
 void Stat::faces            ( const int            val ) { f_faces            = val; f_statChanged.emit(); }
 void Stat::modifier         ( const int            val ) { f_modifier         = val; f_statChanged.emit(); }
 void Stat::deleted          ( const bool           val ) { f_deleted          = val; f_statChanged.emit(); }
-void Stat::accel            ( const Glib::ustring& val ) { f_accel            = val; f_statChanged.emit(); }
+void Stat::accel            ( const QString& val ) { f_accel            = val; f_statChanged.emit(); }
 void Stat::showOnToolbar    ( const bool           val ) { f_showOnToolbar    = val; f_statChanged.emit(); }
 void Stat::showOnHUD        ( const bool           val ) { f_showOnHUD        = val; f_statChanged.emit(); }
 void Stat::showMonsterOnHUD ( const bool           val ) { f_showMonsterOnHUD = val; f_statChanged.emit(); }
@@ -256,12 +256,12 @@ void Stat::Save( moPropBagRef& propBag )
 	//
 	id        		= static_cast<moWCString>(moName(f_id));
 	abilityId 		= static_cast<moWCString>(moName(f_abilityId));
-	name      		= f_name.c_str();
+    name      		= f_name.toUtf8().data();
 	dice      		= f_dice;
 	faces     		= f_faces;
 	modifier  		= f_modifier;
 	deleted   		= f_deleted? 1: 0;
-	accel     		= f_accel.c_str();
+    accel     		= f_accel.toUtf8().data();
 	showMonsterOnHUD= f_showMonsterOnHUD;
 	showOnToolbar	= f_showOnToolbar;
 	showOnHUD		= f_showOnHUD;
@@ -438,7 +438,7 @@ void Value::Save( moPropBagRef& propBag )
 	stat  = static_cast<moWCString>(static_cast<moName>(f_stat->id()));
 	mod   = f_mod;
 	roll  = f_roll;
-	notes = f_notes.c_str();
+    notes = f_notes.toUtf8().data();
 	//
 	propBag += stat;
 	propBag += mod;

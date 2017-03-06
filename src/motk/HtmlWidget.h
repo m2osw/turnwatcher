@@ -42,6 +42,8 @@
 #include <glibmm.h>
 #include <webkit/webkitwebview.h>
 
+#include <QString>
+
 namespace motk
 {
 
@@ -62,22 +64,22 @@ public:
 
 	// C++ bindings
 	//
-	void			LoadUrl( const Glib::ustring& url );
+    void			LoadUrl( const QString& url );
 	void			Refresh();
 	void			StopLoad();
 	bool			CanGoBack();
 	bool			CanGoForward();
 	void			GoBack();
 	void			GoForward();
-	Glib::ustring		GetLocation();
-	Glib::ustring		GetTitle();
-	Glib::ustring		GetStatusText();
+    QString		GetLocation();
+    QString		GetTitle();
+    QString		GetStatusText();
 	void			SetSettings( const WebKitWebSettings* settings );
 	//void			SetDeviceType( WebKitWebDeviceType device );
 	//WebKitWebDeviceType	GetDeviceType();
 
 private:
-	Glib::ustring	f_url;
+    QString	f_url;
 	Gtk::Widget*	f_widget;
 	WebKitWebView*	f_webview;
 };

@@ -62,45 +62,44 @@ public:
 
 	// find a named number (this creates a new entry when the name can't be found)
 	mo_name_t		Get(const moWCString& name) const;
-	mo_name_t		operator [] (const moWCString& name) const { return Get(name); }
-	mo_name_t		operator [] (const char *name) const { return Get(moWCString(name)); }
-	mo_name_t		operator [] (const wchar_t *name) const { return Get(moWCString(name)); }
+	mo_name_t               operator [] (const moWCString& name)  const { return Get(name);             }
+	mo_name_t               operator [] (const char        *name) const { return Get(moWCString(name)); }
+	mo_name_t               operator [] (const wchar_t     *name) const { return Get(moWCString(name)); }
 
 	// find a name given a number (this can fail)
 	const moWCString&	Get(mo_name_t name) const;
 	const moWCString&	operator [] (mo_name_t name) const { return Get(name); }
 
-	static bool		IsNull(mo_name_t name) { return name == 0; }
-	static bool		IsName(mo_name_t name) { return (name & (1 << 30)) != 0; }
+	static bool		IsNull(mo_name_t name)  { return name == 0; }
+	static bool		IsName(mo_name_t name)  { return (name & (1 << 30)) != 0; }
 	static bool		IsError(mo_name_t name) { return name < 0; }
-	static bool		IsUser(mo_name_t name) { return (name & (3 << 30)) == 0; }
+	static bool		IsUser(mo_name_t name)  { return (name & (3 << 30)) == 0; }
 
 private:
-				// prevent users from creating/destroying this object
-				moNamePool(void);
-				~moNamePool();
+	// prevent users from creating/destroying this object
+	moNamePool(void);
+	~moNamePool();
 
 	class moUniqueName : public moWCString
-	{
+{
 	public:
-					moUniqueName(mo_name_t name)
-						: f_number(name) {}
-					moUniqueName(const moWCString& name, mo_name_t number)
-						: moWCString(name), f_number(number) {}
-					moUniqueName(const char *name, mo_name_t number)
-						: moWCString(name), f_number(number) {}
-					moUniqueName(const wchar_t *name, mo_name_t number)
-						: moWCString(name), f_number(number) {}
-					moUniqueName(const moUniqueName& unique_name)
-						: moWCString(unique_name), f_number(unique_name) {}
+		moUniqueName(mo_name_t name) : f_number(name) {}
+		moUniqueName(const moWCString& name, mo_name_t number)
+			: moWCString(name), f_number(number) {}
+		moUniqueName(const char *name, mo_name_t number)
+			: moWCString(name), f_number(number) {}
+		moUniqueName(const wchar_t *name, mo_name_t number)
+			: moWCString(name), f_number(number) {}
+		moUniqueName(const moUniqueName& unique_name)
+			: moWCString(unique_name), f_number(unique_name) {}
 
-					operator mo_name_t (void) const { return f_number; }
+		operator mo_name_t (void) const { return f_number; }
 
 		virtual compare_t	CompareNumbers(const moBase& object) const;
 
 	private:
 		mo_name_t		f_number;
-	};
+};
 
 	mutable moMutex		f_mutex;	// ensure serialized access
 	mutable moSortedList	f_names;	// sorted by names
@@ -118,24 +117,26 @@ template<class T, bool do_assert>
 class MO_DLL_EXPORT moNameBase
 {
 public:
-				moNameBase(const moNameBase& name) { f_name = name.f_name; }
-				moNameBase(const T name) { assert(!do_assert || moNamePool::IsName(name)); f_name = name; }
-				moNameBase(const moWCString& name) { f_name = moNamePool::GetNamePool()[name]; }
-				moNameBase(const char *name) { f_name = moNamePool::GetNamePool()[name]; }
-				moNameBase(const wchar_t *name) { f_name = moNamePool::GetNamePool()[name]; }
+	moNameBase(const moNameBase& name)  { f_name =  name.f_name;                     }
+	moNameBase(const T           name)  { assert(!do_assert || moNamePool::IsName(name));       f_name = name; }
+	moNameBase(const moWCString& name)  { f_name =  moNamePool::GetNamePool()[name]; }
+	moNameBase(const QString&    name)  { f_name =  moNamePool::GetNamePool()[name]; }
+	moNameBase(const char        *name) { f_name =  moNamePool::GetNamePool()[name]; }
+	moNameBase(const wchar_t     *name) { f_name =  moNamePool::GetNamePool()[name]; }
 
-	moNameBase&		operator = (const moNameBase& name) { f_name = name.f_name; return *this; }
-	moNameBase&		operator = (const T name) { assert(!do_assert || moNamePool::IsName(name)); f_name = name; return *this; }
-	moNameBase&		operator = (const moWCString& name) { f_name = moNamePool::GetNamePool()[name]; return *this; }
-	moNameBase&		operator = (const char *name) { f_name = moNamePool::GetNamePool()[name]; return *this; }
-	moNameBase&		operator = (const wchar_t *name) { f_name = moNamePool::GetNamePool()[name]; return *this; }
+	moNameBase& operator = (const moNameBase& name)  { f_name = name.f_name;                     return *this; }
+	moNameBase& operator = (const T           name)  { assert(!do_assert || moNamePool::IsName(name));       f_name =      name; return *this; }
+	moNameBase& operator = (const moWCString& name)  { f_name = moNamePool::GetNamePool()[name]; return *this; }
+	moNameBase& operator = (const QString&    name)  { f_name = moNamePool::GetNamePool()[name]; return *this; }
+	moNameBase& operator = (const char        *name) { f_name = moNamePool::GetNamePool()[name]; return *this; }
+	moNameBase& operator = (const wchar_t     *name) { f_name = moNamePool::GetNamePool()[name]; return *this; }
 
-				operator T (void) const { return f_name; }
-				operator T (void) { return f_name; }
-				operator const moWCString& (void) const { return moNamePool::GetNamePool()[f_name]; }
+	operator T (void) const                 { return f_name; }
+	operator T (void)                       { return f_name; }
+	operator const moWCString& (void) const { return moNamePool::GetNamePool()[f_name]; }
 
 private:
-	T			f_name;
+	T       f_name;
 };
 
 

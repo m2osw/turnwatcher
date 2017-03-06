@@ -19,8 +19,7 @@
 
 
 
-#ifndef __LABELTABLESCROLLER_H__
-#define __LABELTABLESCROLLER_H__
+#pragma once
 
 // STL
 //
@@ -54,8 +53,6 @@ private:
 
 }
 // namespace motk
-
-#endif //__LABELTABLESCROLLER_H__
 
 // $Log: LabelTable.h,v $
 //

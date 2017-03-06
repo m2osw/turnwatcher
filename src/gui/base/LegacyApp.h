@@ -60,7 +60,7 @@ class LegacyApp
 		int						window_width	() const		{ return f_windowWidth			; }
 		int						width			() const		{ return f_windowWidth			; }
 		int						height			() const		{ return f_windowHeight			; }
-		Glib::ustring			currentFolder	() const		{ return f_currentFolder		; }
+		QString			currentFolder	() const		{ return f_currentFolder		; }
 		bool					ultraInit		() const		{ return f_ultraInit			; }
 		bool					showToolbar		() const		{ return f_showToolbar			; }
 		bool					skipDead		() const		{ return f_skipDead				; }
@@ -74,13 +74,13 @@ class LegacyApp
 		int                              f_windowTop;
 		int                              f_windowHeight;
 		int                              f_windowWidth;
-		Glib::ustring                    f_currentFolder;
+		QString                    f_currentFolder;
 		bool                             f_ultraInit;
 		bool                             f_showToolbar;
 		bool                             f_skipDead;
 		Combatant::LegacyCharacter::list_t f_charList;
 
-        static void	ConvertLegacyFiles( const molib::moWCString& lversion );
+        static void	ConvertLegacyFiles( const QString& lversion );
         void	Load( molib::moPropBagRef propBag );
 };
 

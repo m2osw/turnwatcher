@@ -17,10 +17,7 @@
 //===============================================================================
 
 
-
-
-#ifndef __ACTIONMANAGER_H__
-#define __ACTIONMANAGER_H__
+#pragma once
 
 // STL
 //
@@ -48,8 +45,8 @@ typedef Glib::RefPtr<Gtk::Action>			ActionPtr;
 typedef Glib::RefPtr<Gtk::ToggleAction>		ToggleActionPtr;
 typedef Glib::RefPtr<Gtk::RadioAction>		RadioActionPtr;
 typedef Glib::RefPtr<Gtk::ActionGroup>		ActionGroupPtr;
-typedef std::map<Glib::ustring,bool>   		String2Bool;
-typedef std::stack<Glib::ustring>			StringStack;
+typedef std::map<QString,bool>   		String2Bool;
+typedef std::stack<QString>			StringStack;
 
 class ActionManager
 {
@@ -91,37 +88,37 @@ protected:
 
 	void	SetDefaultIconSize( Gtk::BuiltinIconSize defaultIconSize );
 	
-	void	AddRadioAction(	const Glib::ustring& name,
-							const Glib::ustring& event,
+    void	AddRadioAction(	const QString& name,
+                            const QString& event,
 							const ButtonImage* image_name = 0,
-							const Glib::ustring& accel_key  = "" );
+                            const QString& accel_key  = "" );
 
-	void	AddToggleAction(const Glib::ustring& name,
-							const Glib::ustring& event,
+    void	AddToggleAction(const QString& name,
+                            const QString& event,
 							const ButtonImage* image,
-							const Glib::ustring& accel_key );
+                            const QString& accel_key );
 
-	void	AddAction(		const Glib::ustring& name,
-							const Glib::ustring& event,
+    void	AddAction(		const QString& name,
+                            const QString& event,
 							const ButtonImage* image_name = 0,
-							const Glib::ustring& accel_key  = "" );
+                            const QString& accel_key  = "" );
 
-	void	AddAction(		const Glib::ustring& name,
-							const Glib::ustring& event,
+    void	AddAction(		const QString& name,
+                            const QString& event,
 							const Gtk::StockID& stock_id,
-							const Glib::ustring& accel_key = "" );
+                            const QString& accel_key = "" );
 
-	void	AddMenu(		const Glib::ustring& name,
-							const Glib::ustring& event );
+    void	AddMenu(		const QString& name,
+                            const QString& event );
 
 	motk::ActionPtr GetAction( const molib::moWCString& name );
 
-	void	RemoveAction( const Glib::ustring& event );
+    void	RemoveAction( const QString& event );
 	void	RemoveAction( ActionPtr action );
 	void	RemoveActions();
 	void	CreateActionGroup();
 
-	void	ActivateSignal( const Glib::ustring& event, const bool activate = true );
+    void	ActivateSignal( const QString& event, const bool activate = true );
 
 private:
 	Glib::RefPtr<Gtk::IconFactory>	f_iconFactory;
@@ -134,23 +131,23 @@ private:
 		sigc::connection			f_connection;
 	};
 	//
-	typedef std::map<Glib::ustring, ActionSignal> String2Signal;
+    typedef std::map<QString, ActionSignal> String2Signal;
 	String2Signal					f_actionSignals;
 	Gtk::BuiltinIconSize			f_defaultIconSize;
 
-	virtual void OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const Glib::ustring& event ) = 0;
+    virtual void OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const QString& event ) = 0;
 
-	Glib::ustring		GetImagePath( const molib::moWCString& imageName );
+    QString		GetImagePath( const molib::moWCString& imageName );
 	PixbufPtr			GetPixbufImage( const char* const* xpm_data );
 	PixbufPtr			GetPixbufImage( const molib::moWCString& imageName );
 	Gtk::IconSource		CreateIconSource( const ButtonImage* image );
 	void 				AddIconSource( const Gtk::StockID& stock_id, Gtk::IconSource icon_source );
-	void 				AddStockItem( const Glib::ustring& id,
-						const Glib::ustring& label,
+    void 				AddStockItem( const QString& id,
+                        const QString& label,
 						const ButtonImage* image = 0 );
 	void 				AddActionToGroup( ActionPtr action,
-						const Glib::ustring& event,
-						const Glib::ustring& accel_key = "" );
+                        const QString& event,
+                        const QString& accel_key = "" );
 };
 
 typedef molib::moSmartPtr<ActionManager>	ActionManagerSPtr;
@@ -158,7 +155,6 @@ typedef molib::moSmartPtr<ActionManager>	ActionManagerSPtr;
 }
 // namespace motk
 
-#endif //__ACTIONMANAGER_H__
 
 // vim: ts=4 sw=4 syntax=cpp.doxygen
 

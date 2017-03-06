@@ -28,6 +28,9 @@
 #include	"mo_str.h"
 #endif
 
+// Qt5Core support
+#include	<QString>
+
 
 namespace molib
 {
@@ -87,10 +90,13 @@ public:
 				moWCString(const mowc::wc_t *str, int length = -1, mowc::encoding_t encoding = mowc::MO_ENCODING_UTF32_INTERNAL);
 				moWCString(const wchar_t *str, int length = -1);	// encoding always as defined in the compiler!
 				moWCString(const moWCString& str, int length = -1);
-	virtual			~moWCString();
+                moWCString(const QString& str );
+    virtual		~moWCString();
 
 	virtual const char *	moGetClassName(void) const;
-	virtual size_t		SizeOf(void) const;
+    virtual size_t			SizeOf(void) const;
+
+    QString			operator ()() const;
 
 	moWCString&		operator = (const moWCString& str);
 	moWCString&		operator = (const char *str);

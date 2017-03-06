@@ -19,8 +19,7 @@
 
 
 
-#ifndef __COMMON_H__
-#define __COMMON_H__
+#pragma once
 
 #ifdef HAVE_CONFIG_H
 #include "config.h"
@@ -32,8 +31,6 @@
 //#include <libintl.h>
 
 #include <mo/mo_string.h>
-
-#endif //__COMMON_H__
 
 // vim: ts=8
 

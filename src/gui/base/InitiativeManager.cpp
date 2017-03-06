@@ -476,10 +476,10 @@ namespace
 			}
 
 			void NewPos( const int pos )				{ f_newPos = pos; }
-			void Character( const Glib::ustring& name )	{ f_char = name.c_str(); }
+			void Character( const QString& name )	{ f_char = name.c_str(); }
 
 			int NewPos() const							{ return f_newPos; }
-			const Glib::ustring	Character() const	    { return static_cast<moWCString>(f_char).c_str(); }
+			const QString	Character() const	    { return static_cast<moWCString>(f_char).c_str(); }
 
 			void Load( moPropBagRef& propBag )
 			{
@@ -500,7 +500,7 @@ namespace
 }
 
 
-Combatant::Character::pointer_t InitiativeManager::FindCharacter( const Glib::ustring& name )
+Combatant::Character::pointer_t InitiativeManager::FindCharacter( const QString& name )
 {
 	auto charMgr = CharacterManager::Instance().lock();
 	assert(charMgr);

@@ -97,8 +97,8 @@ bool DuplicateRoll::FindCharacter( Character::pointer_t ch )
 
 	if( f_char && !f_dupResolver )
 	{
-		const Glib::ustring fname( f_char->name() );
-		const Glib::ustring cname( ch->name()     );
+		const QString fname( f_char->name() );
+		const QString cname( ch->name()     );
 		char_found = (fname == cname);
 #if defined(DEBUG) && defined(TRACE)
 		if( char_found )
@@ -225,7 +225,7 @@ void DuplicateRoll::Load( moPropBagRef& propBag )
 	singleChar.Link( propBag );
 	if ( singleChar.HasProp() )
 	{
-		Glib::ustring			name( static_cast<moWCString>(singleChar).c_str() );
+		QString			name( static_cast<moWCString>(singleChar).c_str() );
 		Character::pointer_t	ch  ( CharacterManager::Instance().lock()->FindCharacter( name ) );
 #if defined(DEBUG) && defined(TRACE)
 		printf( "DuplicateRoll::Load() - searching for character %s, ", name.c_str() );

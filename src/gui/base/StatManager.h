@@ -21,8 +21,9 @@
 // STL
 //
 #include <iostream>
-#include <string>
+#include <map>
 #include <memory>
+#include <string>
 
 // LOCAL
 //
@@ -58,7 +59,7 @@ public:
 	molib::mo_name_t willId  () const	{ return f_willId;   }
 	molib::mo_name_t levelId () const	{ return f_levelId;  }
 
-	void			AddStat( const Glib::ustring& name, const molib::mo_name_t id );
+	void			AddStat( const QString& name, const molib::mo_name_t id );
 	void			AddStat( Stat::pointer_t stat );
 	Stat::pointer_t	GetStat( const molib::mo_name_t id );
 	void			DeleteStat( const molib::mo_name_t id );
@@ -139,7 +140,7 @@ private:
 
 	// Private methods
 	//
-	void AddDefaultStat(	const Glib::ustring& name,
+	void AddDefaultStat(	const QString& name,
 			const molib::mo_name_t id,
 			const int order,
 			const bool on_UI = true,

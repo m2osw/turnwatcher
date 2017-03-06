@@ -24,6 +24,10 @@
 #include <memory>
 #include <string>
 
+// libsigc++
+//
+#include <sigc++/sigc++.h>
+
 // MOLIB
 //
 #include "mo/mo_props.h"
@@ -56,8 +60,8 @@ public:
 	molib::mo_name_t	abilityId() const				{ return f_abilityId; }
 	void				abilityId( const molib::mo_name_t val );
 
-	Glib::ustring		name() const					{ return f_name; }
-	void				name( const Glib::ustring	& val );
+	QString		name() const					{ return f_name; }
+	void				name( const QString	& val );
 
 	int					dice() const					{ return f_dice; }
 	void				dice( const int val );
@@ -71,8 +75,8 @@ public:
 	bool				deleted() const					{ return f_deleted; }
 	void				deleted( const bool val );
 
-	Glib::ustring		accel() const					{ return f_accel; }
-	void				accel( const Glib::ustring	& val );
+	QString		accel() const					{ return f_accel; }
+	void				accel( const QString	& val );
 	
 	bool				showOnToolbar() const			{ return f_showOnToolbar; }
 	void				showOnToolbar( const bool val );
@@ -127,12 +131,12 @@ private:
 	int					f_legacyId;
 	int					f_legacyType;
 	molib::moName		f_abilityId;
-	Glib::ustring		f_name;
+	QString		f_name;
 	int					f_dice;				// # of dice
 	int					f_faces;			// # of faces on dice (2d10 -> f_dice = 2 and f_faces = 10)
 	int					f_modifier;			// + modifier to rolls (2d10+3 -> f_dice = 2 and f_faces = 10; f_modifier = 3)
 	bool				f_deleted;
-	Glib::ustring		f_accel;			// accelerator key
+	QString		f_accel;			// accelerator key
 	bool				f_showOnToolbar;	// Show on toolbar to allow the user to roll, otherwise text field
 	bool				f_showOnHUD;		// Show on player HUD
 	bool				f_showMonsterOnHUD;	// Show stat for monster on HUD (this allows the GM to control private stats)
@@ -162,7 +166,7 @@ public:
 	int				roll() const					{ return f_roll; }
 	void			roll( const int val ) 			{ f_roll = val;  }
 
-	Glib::ustring	notes()							{ return f_notes; }
+	QString	notes()							{ return f_notes; }
 	void			notes( const char* val )		{ f_notes = val;  }
 
 	virtual int		total() const					{ return f_mod; }
@@ -180,7 +184,7 @@ private:
 	Stat::pointer_t		f_stat;
 	int					f_mod;		// Extra modifier
 	int					f_roll;		// The last dice roll
-	Glib::ustring		f_notes;	// Used instead of roll value
+	QString		f_notes;	// Used instead of roll value
 
 	void				LoadLegacy( molib::moPropBagRef& propBag );
 };

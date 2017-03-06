@@ -80,11 +80,11 @@ void	UIBase::SetActionGroup( ActionGroupPtr val )
 }
 
 
-MergeId	UIBase::AddUI( const Glib::ustring& ui )
+MergeId	UIBase::AddUI( const QString& ui )
 {
 	try
 	{
-		f_mergeIds.push_back( f_refUIManager->add_ui_from_string( ui ) );
+        f_mergeIds.push_back( f_refUIManager->add_ui_from_string( ui.toUtf8().data() ) );
 	}
 	catch( ... )
 	{
@@ -114,13 +114,13 @@ void UIBase::RemoveUI( MergeId id )
 }
 
 
-void UIBase::ui( const Glib::ustring& name, const Glib::ustring& value )
+void UIBase::ui( const QString& name, const QString& value )
 {
 	f_uiInfoMap[name] = value;
 }
 
 
-Glib::ustring& UIBase::ui( const Glib::ustring& name )
+QString& UIBase::ui( const QString& name )
 {
 	return f_uiInfoMap[name];
 }
@@ -141,15 +141,15 @@ AccelGroupPtr 	UIBase::GetAccelGroup()
 	return f_refUIManager->get_accel_group();
 }
 
-Gtk::Widget* UIBase::GetWidget( const Glib::ustring& name )
+Gtk::Widget* UIBase::GetWidget( const QString& name )
 {
-	return f_refUIManager->get_widget( name );
+    return f_refUIManager->get_widget( name.toUtf8().data() );
 }
 
 
-Glib::ustring UIBase::MakePath( const Glib::ustring& path, const Glib::ustring& name )
+QString UIBase::MakePath( const QString& path, const QString& name )
 {
-	molib::moWCString ret_name = Glib::ustring(MENU_PREFIX + path + name).c_str();
+    molib::moWCString ret_name = QString(MENU_PREFIX + path + name);
 	
 	const int count = ret_name.Length();
 	

@@ -16,13 +16,13 @@
 // COMPLETENESS OR PERFORMANCE.
 //===============================================================================
 
-#include "base/common.h"
 #include "base/LegacyApp.h"
 #include "base/AppSettings.h"
 #include "base/CharacterManager.h"
 #include "base/InitiativeManager.h"
 #include "base/StatManager.h"
 #include "base/transaction.h"
+#include "base/common.h"
 
 #include "mo/mo_application.h"
 #include "mo/mo_props_xml.h"
@@ -39,28 +39,28 @@ namespace
 {
 	// 1.0
 	//
-	const moWCString g_mainPropBag   ("TURN_WATCHER Main Property Bag");
-	const moWCString g_charBag       ("CHARACTERS");
-	const moWCString g_inRounds      ("IN_ROUNDS");
-	const moWCString g_roundNumber   ("ROUND_NUMBER");
-	const moWCString g_currentInit   ("CURRENT_INIT");
-	const moWCString g_toolbarPos    ("TOOLBAR_POS");
-	const moWCString g_windowLeft    ("WINDOW_LEFT");
-	const moWCString g_windowTop     ("WINDOW_TOP");
-	const moWCString g_windowHeight  ("WINDOW_HEIGHT");
-	const moWCString g_windowWidth   ("WINDOW_WIDTH");
-	const moWCString g_currentFolder ("CURRENT_FOLDER");
-	const moWCString g_ultraInit     ("ULTRA_INITIATIVE");
-	const moWCString g_showToolbar   ("SHOW_TOOLBAR");
-	const moWCString g_skipDead      ("SKIP_DEAD");
+    const QString g_mainPropBag   ("TURN_WATCHER Main Property Bag");
+    const QString g_charBag       ("CHARACTERS");
+    const QString g_inRounds      ("IN_ROUNDS");
+    const QString g_roundNumber   ("ROUND_NUMBER");
+    const QString g_currentInit   ("CURRENT_INIT");
+    const QString g_toolbarPos    ("TOOLBAR_POS");
+    const QString g_windowLeft    ("WINDOW_LEFT");
+    const QString g_windowTop     ("WINDOW_TOP");
+    const QString g_windowHeight  ("WINDOW_HEIGHT");
+    const QString g_windowWidth   ("WINDOW_WIDTH");
+    const QString g_currentFolder ("CURRENT_FOLDER");
+    const QString g_ultraInit     ("ULTRA_INITIATIVE");
+    const QString g_showToolbar   ("SHOW_TOOLBAR");
+    const QString g_skipDead      ("SKIP_DEAD");
 	//
 	// 1.1+
 	//
-	const moWCString g_version  ("VERSION");
-	const moWCString g_initBag  ("INITIATIVE");
-	const moWCString g_statsBag ("STATS");
+    const QString g_version  ("VERSION");
+    const QString g_initBag  ("INITIATIVE");
+    const QString g_statsBag ("STATS");
 
-	bool GetVersion( moPropBagRef& bag, moWCString& version )
+    bool GetVersion( moPropBagRef& bag, QString& version )
 	{
 		moPropStringRef	versionProp( g_version );
 		versionProp.Link( bag );
@@ -69,7 +69,7 @@ namespace
 		//
 		if( versionProp.HasProp() )
 		{
-			version = static_cast<moWCString>(versionProp);
+            version = static_cast<moWCString>(versionProp).c_str();
 			has_version = true;
 		}
 
@@ -152,15 +152,15 @@ bool LegacyApp::Load()
 
 	// Save version for after we temporarily alter the version for the legacy load below.
 	//
-	const moWCString currentVersion( application->GetVersion().c_str() );
+    const QString currentVersion( application->GetVersion().c_str() );
 
 	// Set the old version so we can reload
 	//
 	application->ResetPrivateUserPath();
 	application->SetVersion( "1.0" );
 	//
-	const moWCString confDir  ( application->GetPrivateUserPath()         );
-	const moWCString confFile ( confDir.FilenameChild( DEFAULT_FILENAME ) );
+    const QString confDir  ( application->GetPrivateUserPath().c_str() );
+    const QString confFile ( QString("%1/%2").arg(confDir).arg(DEFAULT_FILENAME) );
 
 	// Load previous state
 	//
@@ -168,7 +168,7 @@ bool LegacyApp::Load()
 #ifdef DEBUG
 	std::cerr << "Old ConfFile: " << confFile.c_str() << std::endl;
 #endif
-	const int ret_val = moXMLLoadPropBag( confFile.c_str(), mainPropBag );
+    const int ret_val = moXMLLoadPropBag( confFile, mainPropBag );
 
 	// Load the old data
 	//
@@ -196,7 +196,7 @@ void LegacyApp::GetCharList( LegacyCharacter::list_t& charlist )
 
 /// \brief Convert tw legacy files, so we may import them.
 //
-void LegacyApp::ConvertLegacyFiles( const moWCString& lversion )
+void LegacyApp::ConvertLegacyFiles( const QString& lversion )
 {
 	auto appSettings(Application::AppSettings::Instance().lock());
 	assert(appSettings);
@@ -296,7 +296,7 @@ void LegacyApp::ConvertLegacyConfig()
 	moPropBagRef mainPropBag( "TURNWATCHER"	);
 	if( Common::LoadBagFromFile( DEFAULT_FILENAME, mainPropBag ) )
 	{
-		moWCString version;
+        QString version;
 		if( !GetVersion( mainPropBag, version ) )
 		{
             ConvertLegacyFiles( "1.0" );

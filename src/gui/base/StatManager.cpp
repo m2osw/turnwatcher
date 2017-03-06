@@ -134,7 +134,7 @@ void StatManager::AddDefaultColumns()
 // If the id already exists, then the method returns silently. This is so you can add stats
 // that aren't already in the list while maintaining current stats. Helpful for legacy conversion.
 //
-void StatManager::AddDefaultStat(	const Glib::ustring& name, 
+void StatManager::AddDefaultStat(	const QString& name, 
 									const mo_name_t id,
 									const int order,
 									const bool on_UI,
@@ -177,7 +177,7 @@ void StatManager::AddDefaultStat(	const Glib::ustring& name,
 //
 /// \sa Stat
 //
-void StatManager::AddStat( const Glib::ustring& name, const mo_name_t id )
+void StatManager::AddStat( const QString& name, const mo_name_t id )
 {
 	Stat::pointer_t stat( new Stat );
 	stat->name             ( name  );

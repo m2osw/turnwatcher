@@ -30,8 +30,8 @@
 
 // LOCAL
 //
-#include "Common.h"
 #include "LabelTable.h"
+#include "Common.h"
 
 namespace motk
 {
@@ -70,7 +70,7 @@ void LabelTable::Clear()
 
 
 #if 0
-LabelTable::Item::Item( const molib::moName& id, const Glib::ustring& label, const bool checkbox ) :
+LabelTable::Item::Item( const molib::moName& id, const QString& label, const bool checkbox ) :
 	f_id(id),
 	f_checkbox(checkbox),
 	f_label(0)
@@ -86,7 +86,7 @@ LabelTable::Item::Item( const molib::moName& id, const Glib::ustring& label, con
 }
 
 
-void LabelTable::Item::AddTextColumn( const molib::moName& id, const Glib::ustring& default_value )
+void LabelTable::Item::AddTextColumn( const molib::moName& id, const QString& default_value )
 {
  	Gtk::Entry* ent = new Gtk::Entry;
  	ent->get_text( default_value );
@@ -94,7 +94,7 @@ void LabelTable::Item::AddTextColumn( const molib::moName& id, const Glib::ustri
 }
 
 
-void LabelTable::Item::AddComboColumn( const molib::moName& id, const std::vector<Glib::ustring>& strings, const Glib::ustring& default_value )
+void LabelTable::Item::AddComboColumn( const molib::moName& id, const std::vector<QString>& strings, const QString& default_value )
 {
 	Gtk::ComboBoxText* cb = new Gtk::ComboBoxText;
 	std::for_each( strings.begin(), strings.end(), sigc::mem_fun( cb, &Gtk::ComboBoxText::append_text ) );
@@ -111,7 +111,7 @@ void LabelTable::Item::AddValueColumn( const molib::moName& id, double default_v
 }
 
 
-Glib::ustring LabelTable::Item::GetTextColumn( const molib::moName& id )
+QString LabelTable::Item::GetTextColumn( const molib::moName& id )
 {
 	Gtk::Widget* widget = f_columns[id];
 	Gtk::Entry*  ent    = dynamic_cast<Gtk::Entry*>(widget);
@@ -123,7 +123,7 @@ Glib::ustring LabelTable::Item::GetTextColumn( const molib::moName& id )
 }
 
 
-Glib::ustring LabelTable::Item::GetComboColumn( const molib::moName& id )
+QString LabelTable::Item::GetComboColumn( const molib::moName& id )
 {
 	Gtk::Widget*		widget	= f_columns[id];
 	Gtk::ComboBoxText*	cb	= dynamic_cast<Gtk::ComboBoxText*>(widget);
@@ -153,7 +153,7 @@ void LabelTable::AddColumnHeader( const char* column_name, const int left, const
 	assert(column_name);
 	Gtk::Label*  label_column  = Gtk::manage( new Gtk::Label(column_name, Gtk::ALIGN_LEFT ) );
 	label_column->set_use_markup( true );
-	label_column->set_markup( Glib::ustring("<b>") + column_name + Glib::ustring("</b>") );
+    label_column->set_markup( QString("<b>%1</b>").arg(column_name).toUtf8().data() );
 
 	attach( *(label_column), left, right, f_lastRow, f_lastRow+1, Gtk::FILL|Gtk::SHRINK, Gtk::SHRINK, x_padding, y_padding );
 }
@@ -211,17 +211,17 @@ void LabelTable::AddColumnItem( Gtk::Widget* widget, const int left, const int r
 }
 
 
-void LabelTable::AddItem( const molib::moName& id, const Glib::ustring& label, const bool checkbox, ... )
+void LabelTable::AddItem( const molib::moName& id, const QString& label, const bool checkbox, ... )
 {
 	Gtk::Widget*  label_control  = 0;
 
 	if( checkbox )
 	{
-		label_control = Gtk::manage( new Gtk::CheckButton(label) );
+        label_control = Gtk::manage( new Gtk::CheckButton(label.toUtf8().data()) );
 	}
 	else
 	{
-		label_control = Gtk::manage( new Gtk::Label(label, Gtk::ALIGN_LEFT  ) );
+        label_control = Gtk::manage( new Gtk::Label(label.toUtf8().data(), Gtk::ALIGN_LEFT  ) );
 	}
 
 	int left  = 0;
@@ -274,10 +274,10 @@ void LabelTable::AddItem( const molib::moName& id, const Glib::ustring& label, c
 }
 
 
-void LabelTable::SetLabel( const molib::moName& id, const Glib::ustring& label )
+void LabelTable::SetLabel( const molib::moName& id, const QString& label )
 {
 	Gtk::Label* lbl = dynamic_cast<Gtk::Label*>(f_entryControls[id].f_label);
-	lbl->set_label( label );
+    lbl->set_label( label.toUtf8().data() );
 }
 
 

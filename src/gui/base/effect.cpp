@@ -86,8 +86,8 @@ void	Effect::Save( moPropBagRef propBag )
 	moPropIntRef	type		( g_type		);	// true if spell effect
 	moPropIntRef	isActive	( g_isActive	);	// true if effect is active
 
-	name.NewProp();        name        = f_name.c_str();         propBag += name;
-	description.NewProp(); description = f_description.c_str();  propBag += description;
+    name.NewProp();        name        = f_name;        		 propBag += name;
+    description.NewProp(); description = f_description; 		 propBag += description;
 	totalRounds.NewProp(); totalRounds = f_totalRounds;          propBag += totalRounds;
 	startIn.NewProp();     startIn     = f_startIn;              propBag += startIn;
 	hpBoost.NewProp();     hpBoost     = f_hpBoost;              propBag += hpBoost;

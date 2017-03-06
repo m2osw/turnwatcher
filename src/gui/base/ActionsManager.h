@@ -45,7 +45,7 @@ public:
 	~Desensitizer();
 	
 private:
-	typedef std::map<Glib::ustring,bool> ActionStates;
+	typedef std::map<QString,bool> ActionStates;
 	ActionStates m_actionStates;
 
 	void PushAll();
@@ -71,9 +71,9 @@ public:
 		// Actions management
 		//
 		void							CreateActions      		( );	// Main menu/toolbar actions--do this first
-		void							ActivateAction     		( const Glib::ustring& name );
-		bool							ToggleAction       		( const Glib::ustring& name );
-		motk::ActionPtr					GetAction          		( const Glib::ustring& name );
+		void							ActivateAction     		( const QString& name );
+		bool							ToggleAction       		( const QString& name );
+		motk::ActionPtr					GetAction          		( const QString& name );
 		std::vector<motk::ActionPtr>	GetActions				( );
 		void							HandleSoftColumnChange  ( );
 		void							SetSensitive            ( const bool sensitive = true );
@@ -129,7 +129,7 @@ private:
 		typedef std::map<molib::mo_name_t,Manager::ButtonImageSPtr>	ButtonImages;
 		ButtonImages					f_images;
 		
-		typedef std::vector<Glib::ustring>	StringList;
+		typedef std::vector<QString>	StringList;
 		StringList						f_softColumnsOrder;
 
 		// Singleton only
@@ -148,11 +148,11 @@ private:
 		//
 		void							PurgeDeletedActions();
 		void							AddSoftActions();
-		Glib::ustring					GetSoftMenus( const bool toolitem );
+		QString					GetSoftMenus( const bool toolitem );
 
 		// motk::ActionManager
 		//
-		virtual void					OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const Glib::ustring& event );
+		virtual void					OnButtonClicked( Glib::RefPtr<Gtk::Action>& action, const QString& event );
 };
 
 }

@@ -57,7 +57,7 @@ public:
 		{}
 		virtual ~TransactionGroup() {}
 
-		Glib::ustring name() const		{ return f_name; }
+		QString name() const		{ return f_name; }
 		bool empty() const				{ return f_list.empty(); }
 		void clear()					{ f_list.clear(); }
 
@@ -67,7 +67,7 @@ public:
 		void doit();
 
 private:
-		Glib::ustring		f_name;
+		QString		f_name;
 		Transaction::list_t	f_list;
 };
 
@@ -92,8 +92,8 @@ public:
 		//
 		bool			isUndoListEmpty() const { return f_undoList.empty(); }
 		bool			isRedoListEmpty() const { return f_redoList.empty(); }
-		Glib::ustring	getUndoListTop() const;
-		Glib::ustring	getRedoListTop() const;
+		QString	getUndoListTop() const;
+		QString	getRedoListTop() const;
 
 		typedef sigc::signal<void>		VoidSignal;
 		VoidSignal						signal_update()	{ return f_signalUpdate; }
@@ -116,7 +116,7 @@ private:
 
 		// Private methods
 		//
-		void updateStatus( const Glib::ustring& prefix, Transaction::pointer_t transaction );
+		void updateStatus( const QString& prefix, Transaction::pointer_t transaction );
 };
 
 class TransactionGroupHelper

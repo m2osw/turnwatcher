@@ -19,8 +19,7 @@
 
 
 
-#ifndef __CHOOSER_H__
-#define __CHOOSER_H__
+#pragma once
 
 // STL
 #include <iostream>
@@ -36,6 +35,8 @@
 // GTKMM
 #include <gtkmm.h>
 #include <gdkmm.h>
+
+#include <QString>
 
 namespace motk
 {
@@ -57,7 +58,7 @@ private:
 	class Columns : public Gtk::TreeModel::ColumnRecord
 	{
 	public:
-		Gtk::TreeModelColumn<Glib::ustring>	name;
+        Gtk::TreeModelColumn<QString>	name;
 		Gtk::TreeModelColumn<molib::moBaseSPtr>	payload;
 
 		Columns()
@@ -77,7 +78,7 @@ private:
 	Gtk::TreeView::Column*	f_nameColumn;
 	Gtk::TreeView::Column*	f_payloadColumn;
 
-	Gtk::TreeView::Column* 	addTextColumn( const Glib::ustring& name  , Gtk::TreeModelColumnBase& column );
+    Gtk::TreeView::Column* 	addTextColumn( const QString& name  , Gtk::TreeModelColumnBase& column );
 
 	void			onSelectionChanged();
 
@@ -99,14 +100,5 @@ public:
 }
 // namespace motk
 
-#endif //__CHOOSER_H__
-
-
-// $Log: Chooser.h,v $
-// Revision 1.1  2006/04/23 18:45:47  doug
-// Added chooser class. Fixed debian dependencies. Added ability to change
-// icon size on construction.
-//
-//
 // vim: ts=8
 

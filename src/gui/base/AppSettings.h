@@ -46,7 +46,7 @@ public:
 	//
 	bool CheckVersion();
 	void AddEffectToPool( Effects::Effect::pointer_t effect );
-	bool GetVersion( molib::moPropBagRef& bag, Glib::ustring& version );
+	bool GetVersion( molib::moPropBagRef& bag, QString& version );
 	void AddVersion( molib::moPropBagRef& bag );
 
 #ifdef DARWIN
@@ -59,7 +59,7 @@ public:
 #endif
 
 	int					ToolBarPos()							{ return f_toolbarPos			; }
-	Glib::ustring		UserPath()								{ return f_currentFolder		; }
+	QString		UserPath()								{ return f_currentFolder		; }
 
 	int					X()										{ return f_windowX				; }
 	int					Y()										{ return f_windowY				; }
@@ -81,22 +81,22 @@ public:
 	int					PanePosition()							{ return f_panePosition			; }
 	bool				GetDC()									{ return f_getDC				; }
 	int					LastDC()								{ return f_lastDC				; }
-	Glib::ustring		Version()								{ return f_version				; }
+	QString		Version()								{ return f_version				; }
 	bool				ShowEffects()							{ return f_showEffects			; }
 	bool				ShowInfo()								{ return f_showInfo				; }
 	bool				ShowHUD()								{ return f_showHUD				; }
 	bool				Modified() const						{ return f_modified				; }
-	Glib::ustring		StatusMsg() const						{ return f_statusMsg			; }
+	QString		StatusMsg() const						{ return f_statusMsg			; }
 	int					DeathThreshold() const					{ return f_deathThreshold		; }
 	bool				NotifyExpiredEffects() const			{ return (bool) f_notifyExpiredEffects; }
-	Glib::ustring		CombatantListFont() const				{ return f_combatantListFont	; }
-	Glib::ustring		AltCombatantListFont() const			{ return f_altCombatantListFont	; }
+	QString		CombatantListFont() const				{ return f_combatantListFont	; }
+	QString		AltCombatantListFont() const			{ return f_altCombatantListFont	; }
 
-	typedef std::vector<Glib::ustring> Strings;
+	typedef std::vector<QString> Strings;
 	Strings				InitDieStrings() const					{ return f_initDieStrings		; }
 
 	void ToolBarPos 	(int			val )					{ f_toolbarPos				= val; 	}
-	void UserPath   	(const Glib::ustring& val )				{ f_currentFolder			= val; 	}
+	void UserPath   	(const QString& val )				{ f_currentFolder			= val; 	}
 
 	void X					(int	val )						{ f_windowX					= val;	}
 	void Y					(int	val )						{ f_windowY					= val;	}
@@ -122,11 +122,11 @@ public:
 	void ShowInfo   		(bool	val )						{ f_showInfo				= val; 	}
 	void ShowHUD			(bool	val )						{ f_showHUD					= val;	}
 	void Modified			(bool	val )						{ f_modified				= val; 	}
-	void StatusMsg			(const Glib::ustring& val )			{ f_statusMsg				= val; 	}
+	void StatusMsg			(const QString& val )			{ f_statusMsg				= val; 	}
 	void DeathThreshold		(const int		val )				{ f_deathThreshold			= val;	}
 	void NotifyExpiredEffects( bool val )						{ f_notifyExpiredEffects	= val; }
-	void CombatantListFont( const Glib::ustring& val )			{ f_combatantListFont		= val; }
-	void AltCombatantListFont( const Glib::ustring& val )		{ f_altCombatantListFont	= val; }
+	void CombatantListFont( const QString& val )			{ f_combatantListFont		= val; }
+	void AltCombatantListFont( const QString& val )		{ f_altCombatantListFont	= val; }
 
 	void InitDieStrings( const Strings& val )					{ f_initDieStrings		= val; }
 
@@ -139,9 +139,9 @@ private:
 
 	VoidSignal    f_changedSignal        ;
 	bool          f_modified             ;
-	Glib::ustring f_statusMsg            ;
+	QString f_statusMsg            ;
 	int           f_toolbarPos           ;
-	Glib::ustring f_currentFolder        ;
+	QString f_currentFolder        ;
 	int           f_windowX              ;
 	int           f_windowY              ;
 	int           f_windowHeight         ;
@@ -161,14 +161,14 @@ private:
 	int           f_panePosition         ;
 	int           f_getDC                ;
 	int           f_lastDC               ;
-	Glib::ustring f_version              ;
+	QString f_version              ;
 	bool          f_showEffects          ;
 	bool          f_showInfo             ;
 	bool          f_showHUD              ;
 	int           f_deathThreshold       ;
 	Strings       f_initDieStrings       ;
-	Glib::ustring f_combatantListFont    ;
-	Glib::ustring f_altCombatantListFont ;
+	QString f_combatantListFont    ;
+	QString f_altCombatantListFont ;
 
 	// Names
 	//

@@ -34,6 +34,8 @@ add_custom_target( mo_controlled_h ALL DEPENDS ${MO_CONTROLLED_H} )
 
 project( molib )
 
+find_package( Qt5Core REQUIRED )
+
 if( MO_WINDOWS )
 	include( iconv )
 	include( jpeglib )
@@ -54,6 +56,7 @@ if( MO_WINDOWS )
 endif()
 
 include_directories(
+        ${Qt5Core_INCLUDE_DIRS}
 		${PROJECT_SOURCE_DIR}/include
 		)
 
@@ -187,6 +190,7 @@ target_link_libraries( ${PROJECT_NAME}
 #		${TIFF_LIBRARY}
 		${REGEX_LIBRARY}
 		${ZLIB_LIBRARY}
+        Qt5::Core
 		)
 
 # vim: ts=4 sw=4 noexpandtab

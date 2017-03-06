@@ -57,7 +57,7 @@ protected:
 	typedef Glib::RefPtr<Gdk::Pixbuf>               pixbuf_t;
 	typedef Gtk::TreeModelColumn<int>              	col_int_t;
 	typedef Gtk::TreeModelColumn<bool>             	col_bool_t;
-	typedef Gtk::TreeModelColumn<Glib::ustring>    	col_ustring_t;
+	typedef Gtk::TreeModelColumn<QString>    	col_ustring_t;
 	typedef Gtk::TreeModelColumn<pixbuf_t>         	col_pixbuf_t;
 	typedef Gtk::TreeModelColumn<Pango::Weight>    	col_weight_t;
 	typedef Gtk::TreeModelColumn<Pango::Style>     	col_style_t;

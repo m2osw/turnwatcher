@@ -19,8 +19,8 @@
 
 
 
-#include "Common.h"
 #include "Chooser.h"
+#include "Common.h"
 
 #include <libintl.h>
 
@@ -67,10 +67,10 @@ void Chooser::onSelectionChanged()
 }
 
 
-Gtk::TreeView::Column* Chooser::addTextColumn( const Glib::ustring& name, Gtk::TreeModelColumnBase& column )
+Gtk::TreeView::Column* Chooser::addTextColumn( const QString& name, Gtk::TreeModelColumnBase& column )
 {
 	Gtk::CellRendererText* renderer = Gtk::manage( new Gtk::CellRendererText );
-	Gtk::TreeView::Column* col = Gtk::manage( new Gtk::TreeView::Column( name, *renderer ) );
+    Gtk::TreeView::Column* col = Gtk::manage( new Gtk::TreeView::Column( name.toUtf8().data(), *renderer ) );
 	col->add_attribute( renderer->property_text(), column );
 	/*col->add_attribute( renderer->property_cell_background(), f_columns.background_color );
 	col->add_attribute( renderer->property_foreground(), f_columns.foreground_color );

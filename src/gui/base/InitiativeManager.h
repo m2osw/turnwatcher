@@ -155,7 +155,7 @@ private:
 
 	// This adds the character without rebuilding the vector
 	//
-	Combatant::Character::pointer_t	FindCharacter( const Glib::ustring& name );
+	Combatant::Character::pointer_t	FindCharacter( const QString& name );
 	void							InternalAddCharacter( Combatant::Character::pointer_t ch );
 	void							InternalMoveCharacter( Combatant::Character::pointer_t ch, const int new_pos );
 	bool							InternalFindCharacter( Combatant::Character::pointer_t ch );

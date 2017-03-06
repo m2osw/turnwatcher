@@ -18,11 +18,11 @@
 
 #pragma once
 
-#include "mo/mo_string.h"
+#include <libintl.h>
+
 #include "mo/mo_props.h"
 
-#include <libintl.h>
-#include <glibmm.h>
+#include <QString>
 
 #if defined(BETA_VERSION)
 #   define WEBSITE_URL "http://www.turnwatcher.com/en/beta.html"
@@ -43,20 +43,22 @@
 
 namespace Common
 {
-	molib::moWCString	GetFullPathnameForImage( const molib::moWCString& basename );
-	molib::moWCString	GetFullPathnameForDoc( const molib::moWCString& basename );
+    QString				GetFullPathnameForImage( const QString& basename );
+    QString				GetFullPathnameForDoc( const QString& basename );
 	int					StatToMod( const int stat );
 	int					CalculateHP( const int con, const int hit_dice, const int base_hp, const int temp_hp );
-	Glib::ustring 		WrapString( const Glib::ustring& string, const int break_chars = 60 );
-	bool				StringToken( molib::moWCString& base, molib::moWCString& element, const molib::moWCString& token );
+    QString 			WrapString( const QString& string, const int break_chars = 60 );
+    bool				StringToken( QString& base, QString& element, const QString& token );
 
-	molib::moWCString	DiceFacesModifierToStr( int dice, int faces, int modifier );
+    QString				DiceFacesModifierToStr( int dice, int faces, int modifier );
 	void				StrToDiceFacesModifier( const char *str, int& dice, int& faces, int& modifier );
 
-	void				ShowDocumentation( const char *index );
+    void				ShowDocumentation( QString const & index );
 
-	bool				LoadBagFromFile ( const molib::moWCString& conf_file_basename, molib::moPropBagRef& propBag );
-	bool				SaveBagToFile   ( const molib::moWCString& conf_file_basename, molib::moPropBagRef& propBag );
+    bool				LoadBagFromFile ( const QString& conf_file_basename, molib::moPropBagRef& propBag );
+    bool				SaveBagToFile   ( const QString& conf_file_basename, molib::moPropBagRef& propBag );
+
+    bool				FileExists( QString const & path );
 }
 
 // TODO: We will want to not turn this option on at some point so that images can be
