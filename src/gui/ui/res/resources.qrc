@@ -1,0 +1,33 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>add.xpm</file>
+        <file>arrow.png</file>
+        <file>arrow.xpm</file>
+        <file>arrow_on_circle.png</file>
+        <file>d20_init.xpm</file>
+        <file>d20_listen.xpm</file>
+        <file>d20_spot.xpm</file>
+        <file>d20_will.xpm</file>
+        <file>damage.xpm</file>
+        <file>delay.xpm</file>
+        <file>delete.xpm</file>
+        <file>edit.xpm</file>
+        <file>end.xpm</file>
+        <file>helmet.xpm</file>
+        <file>hero.xpm</file>
+        <file>jump_in.xpm</file>
+        <file>monster_icon.xpm</file>
+        <file>next.xpm</file>
+        <file>octo.xpm</file>
+        <file>ready.xpm</file>
+        <file>start.xpm</file>
+        <file>theif.xpm</file>
+        <file>turnwatcher.ico</file>
+        <file>website.xpm</file>
+    </qresource>
+    <qresource prefix="/image">
+        <file>HelmLogo.png</file>
+        <file>turnwatcher.png</file>
+        <file>turnwatcher-splash.png</file>
+    </qresource>
+</RCC>

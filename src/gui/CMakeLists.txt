@@ -82,7 +82,7 @@ qt5_wrap_ui(UI_FILES
 )
 
 qt5_add_resources(RES_FILES
-    ui/resources.qrc
+    ui/res/resources.qrc
 )
 
 set( BASE_HEADER_FILES
@@ -226,9 +226,13 @@ set( TRANSACTION_SOURCE_FILES
 	transactions/UITransactionBase.cpp
 	)
 
+set( RES_SRC
+    ui/res/resources.qrc
+    )
+
 set( SOURCE_FILES
     TurnWatcher.cpp
-    ui/resources.qrc
+    ${RES_SRC}
 	${UI_FILES}
 	${RES_FILES}
 	${BASE_SOURCE_FILES}

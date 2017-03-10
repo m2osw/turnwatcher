@@ -19,16 +19,16 @@
 // Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 //===============================================================================
 
-#include "MainWindow.h"
-#include "ui_MainWindow.h"
+#include "AboutDialog.h"
+#include "ui_AboutDialog.h"
 
-MainWindow::MainWindow(QWidget *p)
-	: QMainWindow(p),
+AboutDialog::AboutDialog(QWidget *p)
+    : QDialog(p)
 {
     setupUi(this);
 }
 
-MainWindow::~MainWindow()
+AboutDialog::~AboutDialog()
 {
 }
 

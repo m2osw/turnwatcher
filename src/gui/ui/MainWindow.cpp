@@ -23,7 +23,7 @@
 #include "ui_MainWindow.h"
 
 MainWindow::MainWindow(QWidget *p)
-	: QMainWindow(p),
+    : QMainWindow(p)
 {
     setupUi(this);
 }

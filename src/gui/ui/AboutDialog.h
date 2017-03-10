@@ -20,21 +20,21 @@
 //===============================================================================
 #pragma once
 
-#include <QMainWindow>
+#include <QDialog>
 
 namespace Ui {
-class MainWindow;
+class AboutDialog;
 }
 
-class MainWindow
-	: public QMainWindow
-	, public Ui::MainWindow
+class AboutDialog
+    : public QDialog
+    , public Ui::AboutDialog
 {
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *p = 0);
-    ~MainWindow();
+    explicit AboutDialog(QWidget *p = 0);
+    ~AboutDialog();
 
 private:
 };
