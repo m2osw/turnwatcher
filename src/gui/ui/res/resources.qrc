@@ -24,6 +24,19 @@
         <file>theif.xpm</file>
         <file>turnwatcher.ico</file>
         <file>website.xpm</file>
+        <file>effect-add.png</file>
+        <file>effect-remove.png</file>
+        <file>effect-edit.png</file>
+        <file>export.png</file>
+        <file>import.png</file>
+        <file>clear.png</file>
+        <file>preferences.png</file>
+        <file>stat-manager.png</file>
+        <file>quit.png</file>
+        <file>edit-redo.png</file>
+        <file>edit-undo.png</file>
+        <file>edit-copy.png</file>
+        <file>edit-purge.svg</file>
     </qresource>
     <qresource prefix="/image">
         <file>HelmLogo.png</file>

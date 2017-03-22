@@ -37,6 +37,65 @@ public:
     ~MainWindow();
 
 private:
+#if 0
+	//
+	// Actions for the main menu
+	//
+	// File Menu
+	//
+	QAction       f_actionFileImport;
+	QAction       f_actionFileExport;
+	QAction       f_actionFileClear;
+	QAction       f_actionFilePreferences;
+	QAction       f_actionFileStatManager;
+	QAction       f_actionFileQuit;
+	//
+	// Edit Menu
+	//
+	QAction       f_actionEditUndo;
+	QAction       f_actionEditRedo;
+	QAction       f_actionEditAdd;
+	QAction       f_actionEditEdit;
+	QAction       f_actionEditDelete;
+	QAction       f_actionEditDuplicate;
+	QAction       f_actionEditPurgeDead;
+	QAction       f_actionEditAddEffect;
+	QAction       f_actionEditEditEffect;
+	QAction       f_actionEditDeleteEffect;
+	//
+	// View Menu
+	//
+	QAction       f_actionViewShowToolbar;
+	QAction       f_actionViewToolbarOnBottom;
+	QAction       f_actionViewShowEffects;
+	QAction       f_actionViewShowInfo;
+	QAction       f_actionViewShowHUD;
+	//
+	QAction       f_actionRollInitiative;
+	QAction       f_actionRollGetDC;
+	//
+	// Rounds Menu
+	//
+	QAction       f_actionRoundsStart;
+	QAction       f_actionRoundsEnd;
+	QAction       f_actionRoundsNext;
+	QAction       f_actionRoundsDelay;
+	QAction       f_actionRoundsReady;
+	QAction       f_actionRoundsJumpIn;
+	QAction       f_actionRoundsDamage;
+	QAction       f_actionRoundsStabilize;
+	QAction       f_actionRoundsMoveUp;
+	QAction       f_actionRoundsMoveDown;
+	//
+	// Help Menu
+	//
+	QAction       f_actionHelpAbout;
+	QAction       f_actionHelpDocumentation;
+	QAction       f_actionHelpTutorial;
+	QAction       f_actionHelpContact;
+	QAction       f_actionHelpLicense;
+	QAction       f_actionHelpHomePage;
+#endif
 };
 
 // vim: ts=4 sw=4 et

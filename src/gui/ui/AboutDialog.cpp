@@ -26,6 +26,8 @@ AboutDialog::AboutDialog(QWidget *p)
     : QDialog(p)
 {
     setupUi(this);
+
+    // TODO: Add code here to set the version into the dialog before showing it.
 }
 
 AboutDialog::~AboutDialog()

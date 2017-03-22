@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>660</width>
-    <height>378</height>
+    <width>874</width>
+    <height>534</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>660</width>
+     <width>874</width>
      <height>22</height>
     </rect>
    </property>
@@ -27,11 +27,32 @@
     <property name="title">
      <string>&amp;File</string>
     </property>
+    <addaction name="f_actionFileImport"/>
+    <addaction name="f_actionFileExport"/>
+    <addaction name="separator"/>
+    <addaction name="f_actionFileClear"/>
+    <addaction name="separator"/>
+    <addaction name="f_actionFilePreferences"/>
+    <addaction name="f_actionFileStatManager"/>
+    <addaction name="separator"/>
+    <addaction name="f_actionFileQuit"/>
    </widget>
    <widget class="QMenu" name="menu_Edit">
     <property name="title">
      <string>&amp;Edit</string>
     </property>
+    <addaction name="f_actionEditUndo"/>
+    <addaction name="f_actionEditRedo"/>
+    <addaction name="separator"/>
+    <addaction name="f_actionEditAdd"/>
+    <addaction name="f_actionEditEdit"/>
+    <addaction name="f_actionEditDelete"/>
+    <addaction name="f_actionEditDuplicate"/>
+    <addaction name="f_actionEditPurgeDead"/>
+    <addaction name="separator"/>
+    <addaction name="f_actionEditAddEffect"/>
+    <addaction name="f_actionEditEditEffect"/>
+    <addaction name="f_actionEditDeleteEffect"/>
    </widget>
    <widget class="QMenu" name="menu_View">
     <property name="title">
@@ -65,14 +86,173 @@
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="f_actionEditAdd"/>
+   <addaction name="f_actionEditEdit"/>
+   <addaction name="f_actionEditDelete"/>
+   <addaction name="separator"/>
   </widget>
+  <action name="f_actionFileImport">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/import.png</normaloff>:/icons/import.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Import</string>
+   </property>
+  </action>
+  <action name="f_actionFileExport">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/export.png</normaloff>:/icons/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Export</string>
+   </property>
+  </action>
+  <action name="f_actionFileClear">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/clear.png</normaloff>:/icons/clear.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Clear</string>
+   </property>
+  </action>
+  <action name="f_actionFilePreferences">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/preferences.png</normaloff>:/icons/preferences.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Preferences</string>
+   </property>
+  </action>
+  <action name="f_actionFileStatManager">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/stat-manager.png</normaloff>:/icons/stat-manager.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Stats Manager</string>
+   </property>
+  </action>
+  <action name="f_actionFileQuit">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/quit.png</normaloff>:/icons/quit.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+  </action>
+  <action name="f_actionEditUndo">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/edit-undo.png</normaloff>:/icons/edit-undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Undo</string>
+   </property>
+  </action>
+  <action name="f_actionEditRedo">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/edit-redo.png</normaloff>:/icons/edit-redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Redo</string>
+   </property>
+  </action>
+  <action name="f_actionEditAdd">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/add.xpm</normaloff>:/icons/add.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Add</string>
+   </property>
+  </action>
+  <action name="f_actionEditEdit">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/edit.xpm</normaloff>:/icons/edit.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Edit</string>
+   </property>
+  </action>
+  <action name="f_actionEditDelete">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/delete.xpm</normaloff>:/icons/delete.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Delete</string>
+   </property>
+  </action>
+  <action name="f_actionEditDuplicate">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/edit-copy.png</normaloff>:/icons/edit-copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Du&amp;plicate</string>
+   </property>
+  </action>
+  <action name="f_actionEditPurgeDead">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/edit-purge.svg</normaloff>:/icons/edit-purge.svg</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Purge Dead</string>
+   </property>
+  </action>
+  <action name="f_actionEditAddEffect">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/effect-add.png</normaloff>:/icons/effect-add.png</iconset>
+   </property>
+   <property name="text">
+    <string>Add E&amp;ffect</string>
+   </property>
+  </action>
+  <action name="f_actionEditEditEffect">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/effect-remove.png</normaloff>:/icons/effect-remove.png</iconset>
+   </property>
+   <property name="text">
+    <string>Edit Effe&amp;ct</string>
+   </property>
+  </action>
+  <action name="f_actionEditDeleteEffect">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/effect-edit.png</normaloff>:/icons/effect-edit.png</iconset>
+   </property>
+   <property name="text">
+    <string>De&amp;lete Effect</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="res/resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
