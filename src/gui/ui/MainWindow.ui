@@ -58,16 +58,35 @@
     <property name="title">
      <string>&amp;View</string>
     </property>
+    <addaction name="f_actionViewShowToolbar"/>
+    <addaction name="f_actionViewShowEffects"/>
+    <addaction name="f_actionViewShowInfo"/>
+    <addaction name="f_actionViewShowHUD"/>
    </widget>
    <widget class="QMenu" name="menu_Rounds">
     <property name="title">
      <string>&amp;Rounds</string>
     </property>
+    <addaction name="f_actionRoundsStart"/>
+    <addaction name="f_actionRoundsEnd"/>
+    <addaction name="f_actionRoundsNext"/>
+    <addaction name="separator"/>
+    <addaction name="f_actionRoundsDelay"/>
+    <addaction name="f_actionRoundsReady"/>
+    <addaction name="f_actionRoundsJumpIn"/>
+    <addaction name="separator"/>
+    <addaction name="f_actionRoundsDamage"/>
+    <addaction name="f_actionRoundsStabilize"/>
+    <addaction name="separator"/>
+    <addaction name="f_actionRoundsMoveUp"/>
+    <addaction name="f_actionRoundsMoveDown"/>
    </widget>
    <widget class="QMenu" name="menuR_oll">
     <property name="title">
      <string>R&amp;oll</string>
     </property>
+    <addaction name="f_actionRollInitiative"/>
+    <addaction name="separator"/>
    </widget>
    <widget class="QMenu" name="menu_Help">
     <property name="title">
@@ -104,6 +123,16 @@
    <addaction name="f_actionEditAdd"/>
    <addaction name="f_actionEditEdit"/>
    <addaction name="f_actionEditDelete"/>
+   <addaction name="separator"/>
+   <addaction name="f_actionRoundsStart"/>
+   <addaction name="f_actionRoundsEnd"/>
+   <addaction name="f_actionRoundsNext"/>
+   <addaction name="f_actionRoundsDelay"/>
+   <addaction name="f_actionRoundsReady"/>
+   <addaction name="f_actionRoundsJumpIn"/>
+   <addaction name="f_actionRoundsDamage"/>
+   <addaction name="separator"/>
+   <addaction name="f_actionRollInitiative"/>
    <addaction name="separator"/>
   </widget>
   <action name="f_actionFileImport">
@@ -248,6 +277,125 @@
    </property>
    <property name="text">
     <string>De&amp;lete Effect</string>
+   </property>
+  </action>
+  <action name="f_actionViewShowToolbar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Show Toolbar</string>
+   </property>
+  </action>
+  <action name="f_actionViewShowEffects">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show &amp;Effects</string>
+   </property>
+  </action>
+  <action name="f_actionViewShowInfo">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show &amp;Info</string>
+   </property>
+  </action>
+  <action name="f_actionViewShowHUD">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Show &amp;HUD</string>
+   </property>
+  </action>
+  <action name="f_actionRoundsStart">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/start.xpm</normaloff>:/icons/start.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Start</string>
+   </property>
+  </action>
+  <action name="f_actionRoundsEnd">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/end.xpm</normaloff>:/icons/end.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;End</string>
+   </property>
+  </action>
+  <action name="f_actionRoundsNext">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/next.xpm</normaloff>:/icons/next.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Next</string>
+   </property>
+  </action>
+  <action name="f_actionRoundsDelay">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/delay.xpm</normaloff>:/icons/delay.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Delay</string>
+   </property>
+  </action>
+  <action name="f_actionRoundsReady">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/ready.xpm</normaloff>:/icons/ready.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Ready</string>
+   </property>
+  </action>
+  <action name="f_actionRoundsJumpIn">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/jump_in.xpm</normaloff>:/icons/jump_in.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Jump In</string>
+   </property>
+  </action>
+  <action name="f_actionRoundsDamage">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/damage.xpm</normaloff>:/icons/damage.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Da&amp;mage</string>
+   </property>
+  </action>
+  <action name="f_actionRoundsStabilize">
+   <property name="text">
+    <string>S&amp;tabilize</string>
+   </property>
+  </action>
+  <action name="f_actionRoundsMoveUp">
+   <property name="text">
+    <string>Move &amp;Up</string>
+   </property>
+  </action>
+  <action name="f_actionRoundsMoveDown">
+   <property name="text">
+    <string>Move Do&amp;wn</string>
+   </property>
+  </action>
+  <action name="f_actionRollInitiative">
+   <property name="icon">
+    <iconset resource="res/resources.qrc">
+     <normaloff>:/icons/d20_listen.xpm</normaloff>:/icons/d20_listen.xpm</iconset>
+   </property>
+   <property name="text">
+    <string>Roll &amp;Initiative</string>
    </property>
   </action>
  </widget>
