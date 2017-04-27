@@ -13,7 +13,148 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTreeWidget" name="treeWidget">
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <attribute name="headerStretchLastSection">
+       <bool>true</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Order</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Type</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Init</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Hit Points</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Status</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Effects</string>
+       </property>
+      </column>
+      <item>
+       <property name="text">
+        <string>1</string>
+       </property>
+       <property name="text">
+        <string>Sinclair</string>
+       </property>
+       <property name="text">
+        <string>Monster</string>
+       </property>
+       <property name="icon">
+        <iconset resource="res/resources.qrc">
+         <normaloff>:/icons/monster_icon.xpm</normaloff>:/icons/monster_icon.xpm</iconset>
+       </property>
+       <property name="text">
+        <string>21</string>
+       </property>
+       <property name="text">
+        <string>35 / 35</string>
+       </property>
+       <property name="text">
+        <string>100%</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>2</string>
+       </property>
+       <property name="text">
+        <string>Dench</string>
+       </property>
+       <property name="text">
+        <string>PC</string>
+       </property>
+       <property name="icon">
+        <iconset resource="res/resources.qrc">
+         <normaloff>:/icons/hero.xpm</normaloff>:/icons/hero.xpm</iconset>
+       </property>
+       <property name="text">
+        <string>20</string>
+       </property>
+       <property name="text">
+        <string>90 / 90</string>
+       </property>
+       <property name="text">
+        <string>100%</string>
+       </property>
+       <property name="text">
+        <string>2 of 2</string>
+       </property>
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="text">
+         <string>Bull Strength</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res/resources.qrc">
+          <normaloff>:/icons/d20_listen.xpm</normaloff>:/icons/d20_listen.xpm</iconset>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="text">
+         <string>Bless</string>
+        </property>
+        <property name="icon">
+         <iconset resource="res/resources.qrc">
+          <normaloff>:/icons/d20_spot.xpm</normaloff>:/icons/d20_spot.xpm</iconset>
+        </property>
+       </item>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
@@ -92,6 +233,12 @@
     <property name="title">
      <string>&amp;Help</string>
     </property>
+    <addaction name="f_actionHelpAbout"/>
+    <addaction name="separator"/>
+    <addaction name="f_actionHelpDocumentation"/>
+    <addaction name="f_actionHelpTutorial"/>
+    <addaction name="f_actionHelpLicense"/>
+    <addaction name="f_actionHelpHomepage"/>
    </widget>
    <addaction name="menu_File"/>
    <addaction name="menu_Edit"/>
@@ -143,6 +290,9 @@
    <property name="text">
     <string>&amp;Import</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
   </action>
   <action name="f_actionFileExport">
    <property name="icon">
@@ -151,6 +301,9 @@
    </property>
    <property name="text">
     <string>&amp;Export</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
    </property>
   </action>
   <action name="f_actionFileClear">
@@ -170,6 +323,9 @@
    <property name="text">
     <string>&amp;Preferences</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
   </action>
   <action name="f_actionFileStatManager">
    <property name="icon">
@@ -178,6 +334,9 @@
    </property>
    <property name="text">
     <string>&amp;Stats Manager</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+C</string>
    </property>
   </action>
   <action name="f_actionFileQuit">
@@ -188,6 +347,9 @@
    <property name="text">
     <string>&amp;Quit</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
   </action>
   <action name="f_actionEditUndo">
    <property name="icon">
@@ -196,6 +358,9 @@
    </property>
    <property name="text">
     <string>&amp;Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
    </property>
   </action>
   <action name="f_actionEditRedo">
@@ -206,6 +371,9 @@
    <property name="text">
     <string>&amp;Redo</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
   </action>
   <action name="f_actionEditAdd">
    <property name="icon">
@@ -214,6 +382,9 @@
    </property>
    <property name="text">
     <string>&amp;Add</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
    </property>
   </action>
   <action name="f_actionEditEdit">
@@ -224,6 +395,9 @@
    <property name="text">
     <string>&amp;Edit</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+J</string>
+   </property>
   </action>
   <action name="f_actionEditDelete">
    <property name="icon">
@@ -232,6 +406,9 @@
    </property>
    <property name="text">
     <string>&amp;Delete</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
    </property>
   </action>
   <action name="f_actionEditDuplicate">
@@ -242,6 +419,9 @@
    <property name="text">
     <string>Du&amp;plicate</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+L</string>
+   </property>
   </action>
   <action name="f_actionEditPurgeDead">
    <property name="icon">
@@ -250,6 +430,9 @@
    </property>
    <property name="text">
     <string>&amp;Purge Dead</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+P</string>
    </property>
   </action>
   <action name="f_actionEditAddEffect">
@@ -260,6 +443,9 @@
    <property name="text">
     <string>Add E&amp;ffect</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+A</string>
+   </property>
   </action>
   <action name="f_actionEditEditEffect">
    <property name="icon">
@@ -268,6 +454,9 @@
    </property>
    <property name="text">
     <string>Edit Effe&amp;ct</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+E</string>
    </property>
   </action>
   <action name="f_actionEditDeleteEffect">
@@ -278,6 +467,9 @@
    <property name="text">
     <string>De&amp;lete Effect</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+X</string>
+   </property>
   </action>
   <action name="f_actionViewShowToolbar">
    <property name="checkable">
@@ -285,6 +477,9 @@
    </property>
    <property name="text">
     <string>&amp;Show Toolbar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
    </property>
   </action>
   <action name="f_actionViewShowEffects">
@@ -294,6 +489,9 @@
    <property name="text">
     <string>Show &amp;Effects</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
   </action>
   <action name="f_actionViewShowInfo">
    <property name="checkable">
@@ -302,6 +500,9 @@
    <property name="text">
     <string>Show &amp;Info</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+I</string>
+   </property>
   </action>
   <action name="f_actionViewShowHUD">
    <property name="checkable">
@@ -309,6 +510,9 @@
    </property>
    <property name="text">
     <string>Show &amp;HUD</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+H</string>
    </property>
   </action>
   <action name="f_actionRoundsStart">
@@ -319,6 +523,9 @@
    <property name="text">
     <string>&amp;Start</string>
    </property>
+   <property name="shortcut">
+    <string>G</string>
+   </property>
   </action>
   <action name="f_actionRoundsEnd">
    <property name="icon">
@@ -327,6 +534,9 @@
    </property>
    <property name="text">
     <string>&amp;End</string>
+   </property>
+   <property name="shortcut">
+    <string>E</string>
    </property>
   </action>
   <action name="f_actionRoundsNext">
@@ -337,6 +547,9 @@
    <property name="text">
     <string>&amp;Next</string>
    </property>
+   <property name="shortcut">
+    <string>Space</string>
+   </property>
   </action>
   <action name="f_actionRoundsDelay">
    <property name="icon">
@@ -345,6 +558,9 @@
    </property>
    <property name="text">
     <string>&amp;Delay</string>
+   </property>
+   <property name="shortcut">
+    <string>D</string>
    </property>
   </action>
   <action name="f_actionRoundsReady">
@@ -355,6 +571,9 @@
    <property name="text">
     <string>&amp;Ready</string>
    </property>
+   <property name="shortcut">
+    <string>R</string>
+   </property>
   </action>
   <action name="f_actionRoundsJumpIn">
    <property name="icon">
@@ -363,6 +582,9 @@
    </property>
    <property name="text">
     <string>&amp;Jump In</string>
+   </property>
+   <property name="shortcut">
+    <string>M</string>
    </property>
   </action>
   <action name="f_actionRoundsDamage">
@@ -373,10 +595,16 @@
    <property name="text">
     <string>Da&amp;mage</string>
    </property>
+   <property name="shortcut">
+    <string>M</string>
+   </property>
   </action>
   <action name="f_actionRoundsStabilize">
    <property name="text">
     <string>S&amp;tabilize</string>
+   </property>
+   <property name="shortcut">
+    <string>B</string>
    </property>
   </action>
   <action name="f_actionRoundsMoveUp">
@@ -396,6 +624,37 @@
    </property>
    <property name="text">
     <string>Roll &amp;Initiative</string>
+   </property>
+  </action>
+  <action name="f_actionHelpAbout">
+   <property name="text">
+    <string>&amp;About</string>
+   </property>
+  </action>
+  <action name="f_actionHelpDocumentation">
+   <property name="text">
+    <string>&amp;Documentation</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="f_actionHelpTutorial">
+   <property name="text">
+    <string>&amp;Tutorial</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="f_actionHelpLicense">
+   <property name="text">
+    <string>&amp;License</string>
+   </property>
+  </action>
+  <action name="f_actionHelpHomepage">
+   <property name="text">
+    <string>Turn Watcher &amp;Homepage</string>
    </property>
   </action>
  </widget>
