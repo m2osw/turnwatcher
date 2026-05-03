@@ -129,10 +129,20 @@ export interface SaveFile {
 
 // Electron API exposed via preload
 export interface ElectronAPI {
-  fileOpen: () => Promise<{ filePath: string; data: string; isLegacy: boolean } | null>
-  fileSave: (data: string, filePath?: string) => Promise<{ filePath: string; success: boolean } | null>
+  // File Import/Export
+  fileImport: () => Promise<{ filePath: string; data: string; isLegacy: boolean } | null>
+  fileExport: (data: string) => Promise<{ filePath: string; success: boolean } | null>
+
+  // Autosave (crash recovery)
+  autosaveWrite: (data: string) => Promise<boolean>
+  autosaveRead: () => Promise<string | null>
+  autosaveClear: () => Promise<boolean>
+
+  // HUD window
   hudOpen: () => Promise<void>
   hudClose: () => Promise<void>
+
+  // Native menu action listener
   onMenuAction: (callback: (action: string) => void) => () => void
 }
 

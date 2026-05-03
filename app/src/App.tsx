@@ -9,10 +9,8 @@ import {
 import { setInitiativeState, startRounds, endRounds, nextTurn } from './store/slices/initiativeSlice'
 import { setStats } from './store/slices/statsSlice'
 import { updateSettings } from './store/slices/settingsSlice'
-import {
-  setCurrentFilePath, setModified, setStatusMessage,
-  openDialog,
-} from './store/slices/uiSlice'
+import { setStatusMessage, openDialog } from './store/slices/uiSlice'
+import { forceAutosave } from './store/middleware/autosaveMiddleware'
 import { Toolbar } from './components/MainWindow/Toolbar'
 import { CharacterTable } from './components/CharacterView/CharacterTable'
 import { StatusBar } from './components/MainWindow/StatusBar'
@@ -33,11 +31,50 @@ export default function App() {
   const openDialogType = useAppSelector(state => state.ui.openDialog)
   const hash = window.location.hash
 
-  // ========== File handlers ==========
+  // ========== Restore autosave on startup ==========
 
-  const handleFileOpen = useCallback(async () => {
+  useEffect(() => {
+    async function restoreAutosave() {
+      if (!window.electronAPI?.autosaveRead) return
+      const data = await window.electronAPI.autosaveRead()
+      if (!data) return
+
+      try {
+        const saveFile: SaveFile = JSON.parse(data)
+        dispatch(setCharacters(saveFile.characters))
+        dispatch(setInitiativeState(saveFile.initiative))
+        if (saveFile.stats) {
+          dispatch(setStats(saveFile.stats))
+        }
+        if (saveFile.settings) {
+          dispatch(updateSettings(saveFile.settings as Partial<AppSettings>))
+        }
+        dispatch(ActionCreators.clearHistory())
+        dispatch(setStatusMessage('Restored previous session'))
+      } catch {
+        // Autosave was corrupted — start fresh
+        dispatch(setStatusMessage('Ready'))
+      }
+    }
+
+    restoreAutosave()
+  }, [dispatch])
+
+  // ========== Force autosave on window close / beforeunload ==========
+
+  useEffect(() => {
+    function handleBeforeUnload() {
+      forceAutosave(store.getState())
+    }
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
+  }, [])
+
+  // ========== File Import handler ==========
+
+  const handleFileImport = useCallback(async () => {
     if (!window.electronAPI) return
-    const result = await window.electronAPI.fileOpen()
+    const result = await window.electronAPI.fileImport()
     if (!result) return
 
     try {
@@ -50,20 +87,20 @@ export default function App() {
       if (saveFile.settings) {
         dispatch(updateSettings(saveFile.settings as Partial<AppSettings>))
       }
-      dispatch(setCurrentFilePath(result.filePath))
-      dispatch(setModified(false))
       dispatch(ActionCreators.clearHistory())
       dispatch(setStatusMessage(
         result.isLegacy
           ? `Imported legacy file: ${result.filePath}`
-          : `Opened: ${result.filePath}`
+          : `Imported: ${result.filePath}`
       ))
     } catch (err) {
-      dispatch(setStatusMessage(`Error loading file: ${err}`))
+      dispatch(setStatusMessage(`Error importing file: ${err}`))
     }
   }, [dispatch])
 
-  const handleFileSave = useCallback(async (saveAs: boolean = false) => {
+  // ========== File Export handler ==========
+
+  const handleFileExport = useCallback(async () => {
     if (!window.electronAPI) return
     const state = store.getState()
     const saveFile: SaveFile = {
@@ -74,13 +111,22 @@ export default function App() {
       initiative: state.initiative,
     }
     const data = JSON.stringify(saveFile, null, 2)
-    const filePath = saveAs ? undefined : state.ui.currentFilePath || undefined
-    const result = await window.electronAPI.fileSave(data, filePath)
+    const result = await window.electronAPI.fileExport(data)
     if (result) {
-      dispatch(setCurrentFilePath(result.filePath))
-      dispatch(setModified(false))
-      dispatch(setStatusMessage(`Saved: ${result.filePath}`))
+      dispatch(setStatusMessage(`Exported: ${result.filePath}`))
     }
+  }, [dispatch])
+
+  // ========== Clear handler ==========
+
+  const handleClear = useCallback(async () => {
+    dispatch(clearCharacters())
+    dispatch(endRounds())
+    dispatch(ActionCreators.clearHistory())
+    if (window.electronAPI?.autosaveClear) {
+      await window.electronAPI.autosaveClear()
+    }
+    dispatch(setStatusMessage('Session cleared'))
   }, [dispatch])
 
   // ========== Native menu action handler ==========
@@ -95,17 +141,14 @@ export default function App() {
 
     switch (action) {
       // File
-      case 'file:open':
-        handleFileOpen()
+      case 'file:import':
+        handleFileImport()
         break
-      case 'file:save':
-        handleFileSave(false)
-        break
-      case 'file:saveAs':
-        handleFileSave(true)
+      case 'file:export':
+        handleFileExport()
         break
       case 'file:clear':
-        dispatch(clearCharacters())
+        handleClear()
         break
 
       // Edit
@@ -211,7 +254,7 @@ export default function App() {
         dispatch(openDialog({ dialog: 'aboutDialog' }))
         break
     }
-  }, [dispatch, handleFileOpen, handleFileSave])
+  }, [dispatch, handleFileImport, handleFileExport, handleClear])
 
   // Register native menu listener
   useEffect(() => {

@@ -1,4 +1,5 @@
 import { app, BrowserWindow, ipcMain, dialog, Menu, MenuItemConstructorOptions } from 'electron'
+import fs from 'node:fs'
 import path from 'node:path'
 import { fileManager } from './fileManager'
 
@@ -10,6 +11,11 @@ process.env.VITE_PUBLIC = process.env.VITE_DEV_SERVER_URL
 
 let mainWindow: BrowserWindow | null = null
 let hudWindow: BrowserWindow | null = null
+
+// Autosave file path — stored in the platform's user data directory
+function getAutosavePath(): string {
+  return path.join(app.getPath('userData'), 'turnwatcher-state.json')
+}
 
 function sendToRenderer(channel: string, ...args: any[]) {
   if (mainWindow && !mainWindow.isDestroyed()) {
@@ -111,19 +117,14 @@ function buildAppMenu() {
       label: 'File',
       submenu: [
         {
-          label: 'Open...',
+          label: 'Import...',
           accelerator: 'CmdOrCtrl+O',
-          click: () => sendToRenderer('menu:action', 'file:open'),
+          click: () => sendToRenderer('menu:action', 'file:import'),
         },
         {
-          label: 'Save',
-          accelerator: 'CmdOrCtrl+S',
-          click: () => sendToRenderer('menu:action', 'file:save'),
-        },
-        {
-          label: 'Save As...',
+          label: 'Export...',
           accelerator: 'CmdOrCtrl+Shift+S',
-          click: () => sendToRenderer('menu:action', 'file:saveAs'),
+          click: () => sendToRenderer('menu:action', 'file:export'),
         },
         { type: 'separator' },
         {
@@ -332,10 +333,10 @@ function buildAppMenu() {
 }
 
 // ============================================================================
-// IPC Handlers
+// IPC Handlers — File Import/Export
 // ============================================================================
 
-ipcMain.handle('file:open', async () => {
+ipcMain.handle('file:import', async () => {
   const result = await dialog.showOpenDialog(mainWindow!, {
     filters: [
       { name: 'Turn Watcher Files', extensions: ['json', 'turnwatcher'] },
@@ -349,19 +350,56 @@ ipcMain.handle('file:open', async () => {
   return fileManager.loadFile(result.filePaths[0])
 })
 
-ipcMain.handle('file:save', async (_event, data: string, filePath?: string) => {
-  if (!filePath) {
-    const result = await dialog.showSaveDialog(mainWindow!, {
-      filters: [
-        { name: 'Turn Watcher JSON', extensions: ['json'] },
-      ],
-      defaultPath: 'encounter.json',
-    })
-    if (result.canceled || !result.filePath) return null
-    filePath = result.filePath
-  }
-  return fileManager.saveFile(filePath, data)
+ipcMain.handle('file:export', async (_event, data: string) => {
+  const result = await dialog.showSaveDialog(mainWindow!, {
+    filters: [
+      { name: 'Turn Watcher JSON', extensions: ['json'] },
+    ],
+    defaultPath: 'encounter.json',
+  })
+  if (result.canceled || !result.filePath) return null
+  return fileManager.saveFile(result.filePath, data)
 })
+
+// ============================================================================
+// IPC Handlers — Autosave (crash recovery)
+// ============================================================================
+
+ipcMain.handle('autosave:write', (_event, data: string) => {
+  try {
+    fs.writeFileSync(getAutosavePath(), data, 'utf-8')
+    return true
+  } catch {
+    return false
+  }
+})
+
+ipcMain.handle('autosave:read', () => {
+  try {
+    const filePath = getAutosavePath()
+    if (!fs.existsSync(filePath)) return null
+    const content = fs.readFileSync(filePath, 'utf-8')
+    return content
+  } catch {
+    return null
+  }
+})
+
+ipcMain.handle('autosave:clear', () => {
+  try {
+    const filePath = getAutosavePath()
+    if (fs.existsSync(filePath)) {
+      fs.unlinkSync(filePath)
+    }
+    return true
+  } catch {
+    return false
+  }
+})
+
+// ============================================================================
+// IPC Handlers — HUD Window
+// ============================================================================
 
 ipcMain.handle('hud:open', () => {
   createHUDWindow()

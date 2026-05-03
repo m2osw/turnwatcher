@@ -1,9 +1,16 @@
 import { contextBridge, ipcRenderer } from 'electron'
 
 contextBridge.exposeInMainWorld('electronAPI', {
-  fileOpen: () => ipcRenderer.invoke('file:open'),
-  fileSave: (data: string, filePath?: string) =>
-    ipcRenderer.invoke('file:save', data, filePath),
+  // File Import/Export
+  fileImport: () => ipcRenderer.invoke('file:import'),
+  fileExport: (data: string) => ipcRenderer.invoke('file:export', data),
+
+  // Autosave (crash recovery)
+  autosaveWrite: (data: string) => ipcRenderer.invoke('autosave:write', data),
+  autosaveRead: () => ipcRenderer.invoke('autosave:read'),
+  autosaveClear: () => ipcRenderer.invoke('autosave:clear'),
+
+  // HUD window
   hudOpen: () => ipcRenderer.invoke('hud:open'),
   hudClose: () => ipcRenderer.invoke('hud:close'),
 
@@ -11,7 +18,6 @@ contextBridge.exposeInMainWorld('electronAPI', {
   onMenuAction: (callback: (action: string) => void) => {
     const handler = (_event: any, action: string) => callback(action)
     ipcRenderer.on('menu:action', handler)
-    // Return cleanup function
     return () => ipcRenderer.removeListener('menu:action', handler)
   },
 })

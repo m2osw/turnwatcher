@@ -6,6 +6,7 @@ import initiativeReducer from './slices/initiativeSlice'
 import statsReducer from './slices/statsSlice'
 import settingsReducer from './slices/settingsSlice'
 import uiReducer from './slices/uiSlice'
+import { autosaveMiddleware } from './middleware/autosaveMiddleware'
 
 export const store = configureStore({
   reducer: {
@@ -21,6 +22,8 @@ export const store = configureStore({
     settings: settingsReducer,
     ui: uiReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(autosaveMiddleware),
 })
 
 export type RootState = ReturnType<typeof store.getState>
