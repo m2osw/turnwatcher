@@ -1,12 +1,18 @@
-import { useCallback } from 'react'
-import { useAppSelector, useAppDispatch } from './store'
+import { useCallback, useEffect } from 'react'
+import { useAppSelector, useAppDispatch, store } from './store'
 import { ActionCreators } from 'redux-undo'
-import { setCharacters } from './store/slices/charactersSlice'
-import { setInitiativeState } from './store/slices/initiativeSlice'
+import {
+  setCharacters, clearCharacters, purgeDead,
+  removeCharacter, duplicateCharacter, stabilizeCharacter,
+  setCharacterStatus, setStatValue,
+} from './store/slices/charactersSlice'
+import { setInitiativeState, startRounds, endRounds, nextTurn } from './store/slices/initiativeSlice'
 import { setStats } from './store/slices/statsSlice'
 import { updateSettings } from './store/slices/settingsSlice'
-import { setCurrentFilePath, setModified, setStatusMessage } from './store/slices/uiSlice'
-import { MenuBar } from './components/MainWindow/MenuBar'
+import {
+  setCurrentFilePath, setModified, setStatusMessage,
+  openDialog,
+} from './store/slices/uiSlice'
 import { Toolbar } from './components/MainWindow/Toolbar'
 import { CharacterTable } from './components/CharacterView/CharacterTable'
 import { StatusBar } from './components/MainWindow/StatusBar'
@@ -17,14 +23,18 @@ import { AboutDialog } from './components/AboutDialog/AboutDialog'
 import { PreferencesDialog } from './components/Preferences/PreferencesDialog'
 import { EffectsEditorDialog } from './components/EffectsEditor/EffectsEditorDialog'
 import { StatManagerDialog } from './components/StatManager/StatManagerDialog'
-import { SaveFile, AppSettings } from './types'
+import { SaveFile, AppSettings, Status } from './types'
+import { peekNextInit } from './utils/initiative'
+import { makeStatRoll } from './utils/dice'
+import { getStatusString } from './utils/health'
 
 export default function App() {
   const dispatch = useAppDispatch()
-  const openDialog = useAppSelector(state => state.ui.openDialog)
+  const openDialogType = useAppSelector(state => state.ui.openDialog)
   const hash = window.location.hash
 
-  // Handle file open
+  // ========== File handlers ==========
+
   const handleFileOpen = useCallback(async () => {
     if (!window.electronAPI) return
     const result = await window.electronAPI.fileOpen()
@@ -53,7 +63,6 @@ export default function App() {
     }
   }, [dispatch])
 
-  // Handle file save
   const handleFileSave = useCallback(async (saveAs: boolean = false) => {
     if (!window.electronAPI) return
     const state = store.getState()
@@ -74,6 +83,143 @@ export default function App() {
     }
   }, [dispatch])
 
+  // ========== Native menu action handler ==========
+
+  const handleMenuAction = useCallback((action: string) => {
+    const state = store.getState()
+    const selectedIds = state.ui.selectedCharacterIds
+    const characters = state.characters.present.list
+    const initiative = state.initiative
+    const settings = state.settings
+    const stats = state.stats.definitions
+
+    switch (action) {
+      // File
+      case 'file:open':
+        handleFileOpen()
+        break
+      case 'file:save':
+        handleFileSave(false)
+        break
+      case 'file:saveAs':
+        handleFileSave(true)
+        break
+      case 'file:clear':
+        dispatch(clearCharacters())
+        break
+
+      // Edit
+      case 'edit:undo':
+        dispatch(ActionCreators.undo())
+        break
+      case 'edit:redo':
+        dispatch(ActionCreators.redo())
+        break
+      case 'edit:add':
+        dispatch(openDialog({ dialog: 'editCharacter', characterId: undefined }))
+        break
+      case 'edit:edit':
+        if (selectedIds.length > 0) {
+          dispatch(openDialog({ dialog: 'editCharacter', characterId: selectedIds[0] }))
+        }
+        break
+      case 'edit:delete':
+        selectedIds.forEach(id => dispatch(removeCharacter(id)))
+        break
+      case 'edit:duplicate':
+        selectedIds.forEach(id => dispatch(duplicateCharacter(id)))
+        break
+      case 'edit:purgeDead':
+        dispatch(purgeDead())
+        break
+
+      // View
+      case 'view:toggleHUD':
+        dispatch(updateSettings({ showHUD: !settings.showHUD }))
+        break
+
+      // Rounds
+      case 'rounds:start':
+        dispatch(startRounds())
+        break
+      case 'rounds:end':
+        dispatch(endRounds())
+        break
+      case 'rounds:next': {
+        const result = peekNextInit(
+          characters,
+          initiative.currentInit,
+          settings.skipDead,
+          settings.deathThreshold,
+        )
+        dispatch(nextTurn({
+          nextInit: result.nextInit,
+          roundNumber: result.roundIncrement
+            ? initiative.roundNumber + 1
+            : initiative.roundNumber,
+        }))
+        break
+      }
+      case 'rounds:delay':
+        selectedIds.forEach(id => dispatch(setCharacterStatus({ id, status: Status.Delayed })))
+        break
+      case 'rounds:ready':
+        selectedIds.forEach(id => dispatch(setCharacterStatus({ id, status: Status.Readied })))
+        break
+      case 'rounds:jumpIn':
+        dispatch(openDialog({ dialog: 'editCharacter', characterId: undefined }))
+        break
+      case 'rounds:damage':
+        dispatch(openDialog({ dialog: 'damageDialog' }))
+        break
+      case 'rounds:stabilize':
+        selectedIds.forEach(id => dispatch(stabilizeCharacter(id)))
+        break
+      case 'rounds:moveUp':
+      case 'rounds:moveDown':
+        // TODO: implement manual position moves
+        break
+
+      // Roll
+      case 'roll:initiative':
+        dispatch(openDialog({ dialog: 'initRollDialog' }))
+        break
+      default:
+        // Handle dynamic roll:stat:STATID actions
+        if (action.startsWith('roll:stat:')) {
+          const statId = action.replace('roll:stat:', '')
+          const statDef = stats.find(s => s.id === statId)
+          if (statDef) {
+            characters.forEach(ch => {
+              if (ch.deleted) return
+              const mod = ch.stats[statId]?.mod ?? 0
+              const roll = makeStatRoll(statDef.dice, statDef.faces, mod)
+              dispatch(setStatValue({ charId: ch.id, statId, value: { roll } }))
+            })
+          }
+        }
+        break
+
+      // Dialogs
+      case 'preferences':
+        dispatch(openDialog({ dialog: 'preferences' }))
+        break
+      case 'statManager':
+        dispatch(openDialog({ dialog: 'statManager' }))
+        break
+      case 'about':
+        dispatch(openDialog({ dialog: 'aboutDialog' }))
+        break
+    }
+  }, [dispatch, handleFileOpen, handleFileSave])
+
+  // Register native menu listener
+  useEffect(() => {
+    if (!window.electronAPI?.onMenuAction) return
+    const cleanup = window.electronAPI.onMenuAction(handleMenuAction)
+    return cleanup
+  }, [handleMenuAction])
+
   // If this is the HUD window, render HUD view
   if (hash === '#/hud') {
     return <HUDView />
@@ -81,25 +227,21 @@ export default function App() {
 
   return (
     <div className="app-container">
-      <MenuBar onFileOpen={handleFileOpen} onFileSave={handleFileSave} />
       <Toolbar />
       <CharacterTable />
       <StatusBar />
 
       {/* Dialogs */}
-      {openDialog === 'editCharacter' && <EditCharacterDialog />}
-      {openDialog === 'damageDialog' && <DamageDialog />}
-      {openDialog === 'initRollDialog' && <InitRollDialog />}
-      {openDialog === 'aboutDialog' && <AboutDialog />}
-      {openDialog === 'preferences' && <PreferencesDialog />}
-      {openDialog === 'effectsEditor' && <EffectsEditorDialog />}
-      {openDialog === 'statManager' && <StatManagerDialog />}
+      {openDialogType === 'editCharacter' && <EditCharacterDialog />}
+      {openDialogType === 'damageDialog' && <DamageDialog />}
+      {openDialogType === 'initRollDialog' && <InitRollDialog />}
+      {openDialogType === 'aboutDialog' && <AboutDialog />}
+      {openDialogType === 'preferences' && <PreferencesDialog />}
+      {openDialogType === 'effectsEditor' && <EffectsEditorDialog />}
+      {openDialogType === 'statManager' && <StatManagerDialog />}
     </div>
   )
 }
-
-// Need to import store for save
-import { store } from './store'
 
 // HUD View — simplified player-facing display
 function HUDView() {
@@ -141,7 +283,6 @@ function HUDView() {
               const isCurrent = initiative.inRounds && pos === initiative.currentInit
               const displayName = ch.publicName || ch.name
 
-              // For monsters, only show stats marked showMonsterOnHUD
               return (
                 <tr key={ch.id} className={isCurrent ? 'current-init' : ''}>
                   <td>
@@ -157,12 +298,7 @@ function HUDView() {
                     const val = ch.stats[s.id]
                     return <td key={s.id}>{val?.roll ?? '—'}</td>
                   })}
-                  <td>
-                    {(() => {
-                      const { getStatusString } = require('./utils/health')
-                      return getStatusString(ch, settings.deathThreshold)
-                    })()}
-                  </td>
+                  <td>{getStatusString(ch, settings.deathThreshold)}</td>
                 </tr>
               )
             })}

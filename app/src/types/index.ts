@@ -133,6 +133,7 @@ export interface ElectronAPI {
   fileSave: (data: string, filePath?: string) => Promise<{ filePath: string; success: boolean } | null>
   hudOpen: () => Promise<void>
   hudClose: () => Promise<void>
+  onMenuAction: (callback: (action: string) => void) => () => void
 }
 
 declare global {
