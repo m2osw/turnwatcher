@@ -205,6 +205,14 @@ export default function App() {
           settings.skipDead,
           settings.deathThreshold,
         )
+        // Mirrors C++ NextInitTransaction: auto-undelay next character if needed
+        const nextChar = getCharacterAtPosition(
+          characters.filter(c => !c.deleted),
+          result.nextInit,
+        )
+        if (nextChar && (nextChar.status === Status.Delayed || nextChar.status === Status.Readied)) {
+          dispatch(setCharacterStatus({ id: nextChar.id, status: Status.Normal }))
+        }
         dispatch(nextTurn({
           nextInit: result.nextInit,
           roundNumber: result.roundIncrement

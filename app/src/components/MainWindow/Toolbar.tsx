@@ -42,6 +42,16 @@ export function Toolbar() {
       settings.skipDead,
       settings.deathThreshold,
     )
+    // Mirrors C++ NextInitTransaction: if the next character is Delayed or
+    // Readied, their action has expired — reset them to Normal before they
+    // become the active combatant.
+    const nextChar = getCharacterAtPosition(
+      characters.filter(c => !c.deleted),
+      result.nextInit,
+    )
+    if (nextChar && (nextChar.status === Status.Delayed || nextChar.status === Status.Readied)) {
+      dispatch(setCharacterStatus({ id: nextChar.id, status: Status.Normal }))
+    }
     dispatch(nextTurn({
       nextInit: result.nextInit,
       roundNumber: result.roundIncrement
