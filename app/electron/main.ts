@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, dialog, Menu, MenuItemConstructorOptions } from 'electron'
+import { app, BrowserWindow, ipcMain, dialog, Menu, MenuItemConstructorOptions, nativeTheme, screen } from 'electron'
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileManager } from './fileManager'
@@ -23,16 +23,37 @@ function sendToRenderer(channel: string, ...args: any[]) {
   }
 }
 
+// Return the zoom factor that makes the app look correctly sized for the
+// current display's DPI scaling.
+//
+// • macOS: the OS compositor already handles HiDPI scaling; Chromium receives
+//   logical pixels, so we always use 1.0 and let macOS do the rest.
+// • Windows / Linux: the OS reports a scaleFactor (e.g. 1.25 for 125% DPI).
+//   Chromium does NOT apply this automatically for Electron apps, so we set it
+//   as the initial zoomFactor so the UI is sized to match the system expectation.
+function getZoomFactor(): number {
+  if (process.platform === 'darwin') return 1.0
+  const primary = screen.getPrimaryDisplay()
+  return primary.scaleFactor ?? 1.0
+}
+
 function createMainWindow() {
+  const zoomFactor = getZoomFactor()
+
   mainWindow = new BrowserWindow({
     width: 900,
     height: 670,
     icon: path.join(__dirname, '../build/icon.png'),
     title: 'Turn Watcher',
+    // Match the OS background colour so there is no white/black flash while
+    // the renderer loads.  nativeTheme.shouldUseDarkColors reflects the
+    // current macOS / Windows / Linux dark-mode preference.
+    backgroundColor: nativeTheme.shouldUseDarkColors ? '#1e1e1e' : '#f0f0f0',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false,
+      zoomFactor,
     },
   })
 
@@ -62,10 +83,12 @@ function createHUDWindow() {
     height: 400,
     title: 'Turn Watcher - Player HUD',
     icon: path.join(__dirname, '../build/icon.png'),
+    backgroundColor: nativeTheme.shouldUseDarkColors ? '#1e1e1e' : '#f0f0f0',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false,
+      zoomFactor: getZoomFactor(),
     },
   })
 

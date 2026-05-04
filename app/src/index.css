@@ -1,28 +1,59 @@
-/* Turn Watcher — Global Styles */
+/* Turn Watcher — Global Styles
+ *
+ * Color strategy: use CSS System Color keywords wherever possible so the app
+ * automatically respects the OS light/dark mode, the user's chosen accent color,
+ * and high-contrast accessibility modes on macOS, Windows, and Linux.
+ *
+ * Only a small set of app-specific semantic colors (initiative highlight, status
+ * row tints, health colors) have no system equivalent and are defined here with
+ * a dark-mode override block.
+ *
+ * Font sizes use rem/em so macOS/Windows accessibility font-size settings are
+ * respected.  The Chromium default font size is 16 px, matching browser norms.
+ */
+
+/* ========================= App-specific semantic colors ========================= */
 
 :root {
-  --tw-bg: #f0f0f0;
-  --tw-panel-bg: #ffffff;
-  --tw-toolbar-bg: #e8e8e8;
-  --tw-border: #c0c0c0;
-  --tw-text: #1a1a1a;
-  --tw-text-muted: #666666;
-  --tw-accent: #4a7fbf;
-  --tw-accent-light: #6a9fd8;
-  --tw-danger: #c0392b;
-  --tw-warning: #e67e22;
-  --tw-success: #27ae60;
-  --tw-highlight: #3d6ea8;
-  --tw-row-current: #c8d8f0;
-  --tw-row-hover: #e8eef6;
-  --tw-monster-color: #cc6600;
-  --tw-delayed-color: #cc6600;
-  --tw-readied-color: #3366cc;
-  --tw-dead-color: #999999;
-  --tw-dying-color: #cc3333;
+  /* Row / state tints — light theme */
+  --tw-row-current-bg:    #c8d8f0;
+  --tw-row-current-text:  CanvasText;
+  --tw-row-hover:         #e8eef6;
+  --tw-selected-bg:       Highlight;
+  --tw-selected-text:     HighlightText;
+
+  /* Character status colours */
+  --tw-monster-color:     #b35c00;
+  --tw-delayed-color:     #b35c00;
+  --tw-readied-color:     #1a4fa8;
+  --tw-dead-color:        GrayText;
+  --tw-dying-color:       #c0392b;
+
+  /* Toolbar / modal geometry helpers */
+  --tw-radius-sm:   4px;
+  --tw-radius-md:   6px;
+  --tw-radius-lg:   10px;
+
   --tw-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --tw-font-mono: 'SF Mono', 'Fira Code', monospace;
+  --tw-font-mono:   ui-monospace, 'SF Mono', 'Fira Code', monospace;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Row / state tints — dark theme */
+    --tw-row-current-bg:    #2a4070;
+    --tw-row-current-text:  #e8e8e8;
+    --tw-row-hover:         rgba(255, 255, 255, 0.06);
+
+    /* Character status colours — lighter so they read on dark backgrounds */
+    --tw-monster-color:     #e07a30;
+    --tw-delayed-color:     #e07a30;
+    --tw-readied-color:     #5b8de8;
+    --tw-dying-color:       #e05555;
+  }
+}
+
+/* ========================= Reset ========================= */
 
 * {
   margin: 0;
@@ -37,29 +68,32 @@ html, body, #root {
 
 body {
   font-family: var(--tw-font-family);
-  font-size: 13px;
-  color: var(--tw-text);
-  background: var(--tw-bg);
+  font-size: 0.8125rem;   /* ≈ 13 px at default 16 px root */
+  color: CanvasText;
+  background: Canvas;
   -webkit-font-smoothing: antialiased;
+  color-scheme: light dark;  /* tells Chromium/WebKit to match OS scheme for
+                                 scrollbars, form controls, etc. */
 }
 
-/* Scrollbar styling */
+/* ========================= Scrollbars ========================= */
+
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--tw-bg);
+  background: Canvas;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--tw-border);
-  border-radius: 4px;
+  background: ButtonBorder;
+  border-radius: var(--tw-radius-sm);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #999;
+  background: GrayText;
 }
 
 /* ========================= Layout ========================= */
@@ -79,15 +113,15 @@ body {
   align-items: center;
   gap: 2px;
   padding: 4px 8px;
-  background: var(--tw-toolbar-bg);
-  border-bottom: 1px solid var(--tw-border);
+  background: ButtonFace;
+  border-bottom: 1px solid ButtonBorder;
   flex-wrap: wrap;
 }
 
 .toolbar-separator {
   width: 1px;
-  height: 28px;
-  background: var(--tw-border);
+  height: 1.75rem;
+  background: ButtonBorder;
   margin: 0 4px;
 }
 
@@ -97,23 +131,26 @@ body {
   align-items: center;
   gap: 1px;
   padding: 4px 8px;
-  background: none;
+  background: transparent;
   border: 1px solid transparent;
-  border-radius: 3px;
+  border-radius: var(--tw-radius-md);
   cursor: pointer;
-  font-size: 10px;
-  color: var(--tw-text);
-  min-width: 48px;
+  font-size: 0.625rem;    /* ≈ 10 px */
+  color: ButtonText;
+  min-width: 3rem;
+  font-family: var(--tw-font-family);
+  transition: background 0.1s, border-color 0.1s;
 }
 
 .toolbar-button:hover {
-  background: white;
-  border-color: var(--tw-border);
+  background: ButtonFace;
+  border-color: ButtonBorder;
 }
 
 .toolbar-button:active {
-  background: var(--tw-accent-light);
-  color: white;
+  background: AccentColor;
+  color: AccentColorText;
+  border-color: transparent;
 }
 
 .toolbar-button:disabled {
@@ -122,13 +159,13 @@ body {
 }
 
 .toolbar-button:disabled:hover {
-  background: none;
+  background: transparent;
   border-color: transparent;
 }
 
 .toolbar-button img {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;     /* 24 px */
+  height: 1.5rem;
   image-rendering: auto;
 }
 
@@ -137,7 +174,7 @@ body {
 .character-table-container {
   flex: 1;
   overflow: auto;
-  background: var(--tw-panel-bg);
+  background: Canvas;
 }
 
 .character-table {
@@ -153,19 +190,20 @@ body {
 }
 
 .character-table th {
-  background: var(--tw-toolbar-bg);
-  border: 1px solid var(--tw-border);
+  background: ButtonFace;
+  border: 1px solid ButtonBorder;
   padding: 4px 8px;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75rem;    /* ≈ 12 px */
   text-align: center;
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
+  color: ButtonText;
 }
 
 .character-table th:hover {
-  background: #d8d8d8;
+  filter: brightness(0.94);
 }
 
 .character-table th:first-child {
@@ -174,11 +212,12 @@ body {
 }
 
 .character-table td {
-  border: 1px solid #e0e0e0;
+  border: 1px solid ButtonBorder;
   padding: 4px 8px;
   text-align: center;
-  font-size: 13px;
+  font-size: 0.8125rem;
   white-space: nowrap;
+  color: CanvasText;
 }
 
 .character-table td:first-child {
@@ -189,16 +228,18 @@ body {
   cursor: pointer;
 }
 
-.character-table tr:hover {
+.character-table tr:hover td {
   background: var(--tw-row-hover);
 }
 
-.character-table tr.selected {
-  background: #d0dff0;
+.character-table tr.selected td {
+  background: var(--tw-selected-bg);
+  color: var(--tw-selected-text);
 }
 
-.character-table tr.current-init {
-  background: var(--tw-row-current);
+.character-table tr.current-init td {
+  background: var(--tw-row-current-bg);
+  color: var(--tw-row-current-text);
   font-weight: 600;
 }
 
@@ -207,9 +248,17 @@ body {
   font-style: italic;
 }
 
+.character-table tr.monster-row td {
+  color: var(--tw-monster-color);
+}
+
 .character-table tr.delayed-row {
   color: var(--tw-delayed-color);
   font-style: italic;
+}
+
+.character-table tr.delayed-row td {
+  color: var(--tw-delayed-color);
 }
 
 .character-table tr.readied-row {
@@ -217,12 +266,20 @@ body {
   font-style: italic;
 }
 
+.character-table tr.readied-row td {
+  color: var(--tw-readied-color);
+}
+
 .character-table tr.dead-row {
   color: var(--tw-dead-color);
   text-decoration: line-through;
 }
 
-.character-table tr.dying-row {
+.character-table tr.dead-row td {
+  color: var(--tw-dead-color);
+}
+
+.character-table tr.dying-row td {
   color: var(--tw-dying-color);
 }
 
@@ -233,14 +290,14 @@ body {
 }
 
 .character-name .init-arrow {
-  color: var(--tw-accent);
+  color: AccentColor;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .character-name .type-icon {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
 }
 
 /* ========================= Status Bar ========================= */
@@ -248,15 +305,15 @@ body {
 .status-bar {
   display: flex;
   align-items: center;
-  border-top: 1px solid var(--tw-border);
-  background: var(--tw-toolbar-bg);
-  font-size: 12px;
-  color: var(--tw-text-muted);
+  border-top: 1px solid ButtonBorder;
+  background: ButtonFace;
+  font-size: 0.75rem;
+  color: CanvasText;
 }
 
 .status-bar-section {
   padding: 3px 12px;
-  border-right: 1px solid var(--tw-border);
+  border-right: 1px solid ButtonBorder;
 }
 
 .status-bar-section:last-child {
@@ -277,14 +334,16 @@ body {
 }
 
 .modal {
-  background: var(--tw-panel-bg);
-  border-radius: 6px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  min-width: 400px;
+  background: Canvas;
+  border: 1px solid ButtonBorder;
+  border-radius: var(--tw-radius-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  min-width: 25rem;
   max-width: 90vw;
   max-height: 85vh;
   display: flex;
   flex-direction: column;
+  color: CanvasText;
 }
 
 .modal-header {
@@ -292,18 +351,25 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 12px 16px;
-  border-bottom: 1px solid var(--tw-border);
+  border-bottom: 1px solid ButtonBorder;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .modal-header button {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   cursor: pointer;
-  color: var(--tw-text-muted);
+  color: GrayText;
   padding: 0 4px;
+  border-radius: var(--tw-radius-sm);
+  line-height: 1;
+}
+
+.modal-header button:hover {
+  color: CanvasText;
+  background: ButtonFace;
 }
 
 .modal-body {
@@ -317,43 +383,41 @@ body {
   justify-content: flex-end;
   gap: 8px;
   padding: 12px 16px;
-  border-top: 1px solid var(--tw-border);
+  border-top: 1px solid ButtonBorder;
 }
 
 /* ========================= Buttons ========================= */
 
 .btn {
-  padding: 6px 16px;
-  border: 1px solid var(--tw-border);
-  border-radius: 4px;
-  background: var(--tw-panel-bg);
+  padding: 5px 16px;
+  border: 1px solid ButtonBorder;
+  border-radius: var(--tw-radius-md);
+  background: ButtonFace;
   cursor: pointer;
-  font-size: 13px;
-  color: var(--tw-text);
+  font-size: 0.8125rem;
+  color: ButtonText;
+  font-family: var(--tw-font-family);
+  transition: filter 0.1s;
 }
 
 .btn:hover {
-  background: #e8e8e8;
+  filter: brightness(0.93);
+}
+
+.btn:active {
+  filter: brightness(0.85);
 }
 
 .btn-primary {
-  background: var(--tw-accent);
-  color: white;
-  border-color: var(--tw-accent);
-}
-
-.btn-primary:hover {
-  background: var(--tw-highlight);
+  background: AccentColor;
+  color: AccentColorText;
+  border-color: transparent;
 }
 
 .btn-danger {
-  background: var(--tw-danger);
-  color: white;
-  border-color: var(--tw-danger);
-}
-
-.btn-danger:hover {
-  background: #a93226;
+  background: var(--tw-dying-color);
+  color: #ffffff;
+  border-color: transparent;
 }
 
 /* ========================= Form Controls ========================= */
@@ -366,27 +430,31 @@ body {
 }
 
 .form-group label {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--tw-text-muted);
+  color: GrayText;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-  padding: 6px 8px;
-  border: 1px solid var(--tw-border);
-  border-radius: 3px;
-  font-size: 13px;
+  padding: 5px 8px;
+  border: 1px solid ButtonBorder;
+  border-radius: var(--tw-radius-md);
+  font-size: 0.8125rem;
   font-family: var(--tw-font-family);
+  background: Field;
+  color: FieldText;
+  /* let native appearance handle most theming */
+  appearance: auto;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--tw-accent);
-  box-shadow: 0 0 0 2px rgba(74, 127, 191, 0.2);
+  border-color: AccentColor;
+  box-shadow: 0 0 0 2.5px color-mix(in srgb, AccentColor 35%, transparent);
 }
 
 .form-row {
@@ -405,16 +473,18 @@ body {
 }
 
 .checkbox-group input[type="checkbox"] {
-  width: 14px;
-  height: 14px;
+  width: 0.875rem;
+  height: 0.875rem;
+  accent-color: AccentColor;
 }
 
 /* ========================= Tabs ========================= */
 
 .tabs {
   display: flex;
-  border-bottom: 1px solid var(--tw-border);
+  border-bottom: 1px solid ButtonBorder;
   margin-bottom: 12px;
+  background: ButtonFace;
 }
 
 .tab {
@@ -422,18 +492,20 @@ body {
   border: none;
   background: none;
   cursor: pointer;
-  font-size: 13px;
-  color: var(--tw-text-muted);
+  font-size: 0.8125rem;
+  color: GrayText;
   border-bottom: 2px solid transparent;
+  font-family: var(--tw-font-family);
+  transition: color 0.1s;
 }
 
 .tab:hover {
-  color: var(--tw-text);
+  color: CanvasText;
 }
 
 .tab.active {
-  color: var(--tw-accent);
-  border-bottom-color: var(--tw-accent);
+  color: AccentColor;
+  border-bottom-color: AccentColor;
   font-weight: 600;
 }
 
@@ -444,7 +516,7 @@ body {
 }
 
 .about-content img {
-  max-width: 300px;
+  max-width: 18.75rem;
   margin-bottom: 16px;
 }
 
@@ -453,6 +525,6 @@ body {
 }
 
 .about-content p {
-  color: var(--tw-text-muted);
+  color: GrayText;
   margin-bottom: 4px;
 }
