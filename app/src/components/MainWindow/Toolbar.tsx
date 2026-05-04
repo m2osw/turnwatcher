@@ -1,10 +1,10 @@
 import { useAppDispatch, useAppSelector } from '../../store'
-import { removeCharacter, duplicateCharacter } from '../../store/slices/charactersSlice'
+import { removeCharacter } from '../../store/slices/charactersSlice'
 import { startRounds, endRounds, nextTurn } from '../../store/slices/initiativeSlice'
 import { openDialog } from '../../store/slices/uiSlice'
 import { setCharacterStatus } from '../../store/slices/charactersSlice'
 import { Status } from '../../types'
-import { peekNextInit } from '../../utils/initiative'
+import { peekNextInit, sortByInitiative } from '../../utils/initiative'
 import { makeStatRoll } from '../../utils/dice'
 import { setStatValue } from '../../store/slices/charactersSlice'
 
@@ -21,6 +21,15 @@ export function Toolbar() {
 
   const handleDelete = () => {
     selectedIds.forEach(id => dispatch(removeCharacter(id)))
+  }
+
+  const handleStart = () => {
+    const active = sortByInitiative(characters.filter(c => !c.deleted))
+    const first = active[0]
+    const startingInit = first
+      ? (first.manualPos > 0 ? first.manualPos : first.position)
+      : 1
+    dispatch(startRounds({ startingInit }))
   }
 
   const handleNext = () => {
@@ -109,19 +118,31 @@ export function Toolbar() {
 
       <div className="toolbar-separator" />
 
-      <button
-        className="toolbar-button"
-        disabled={initiative.inRounds}
-        onClick={() => dispatch(endRounds())}
-        title="End Rounds"
-      >
-        <img src="/assets/end.png" alt="End" />
-        <span>End</span>
-      </button>
+      {/* Start / End toggle */}
+      {!initiative.inRounds ? (
+        <button
+          className="toolbar-button"
+          disabled={!hasCharacters}
+          onClick={handleStart}
+          title="Start Rounds"
+        >
+          <img src="/assets/start.png" alt="Start" />
+          <span>Start</span>
+        </button>
+      ) : (
+        <button
+          className="toolbar-button"
+          onClick={() => dispatch(endRounds())}
+          title="End Rounds"
+        >
+          <img src="/assets/end.png" alt="End" />
+          <span>End</span>
+        </button>
+      )}
 
       <button
         className="toolbar-button"
-        disabled={!initiative.inRounds}
+        disabled={!initiative.inRounds || characters.filter(c => !c.deleted).length === 0}
         onClick={handleNext}
         title="Next Turn"
       >

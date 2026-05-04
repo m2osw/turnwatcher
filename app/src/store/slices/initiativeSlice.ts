@@ -11,10 +11,12 @@ const initiativeSlice = createSlice({
   name: 'initiative',
   initialState,
   reducers: {
-    startRounds(state) {
+    startRounds(state, action: PayloadAction<{ startingInit: number } | undefined>) {
       state.inRounds = true
       state.roundNumber = 1
-      state.currentInit = 1
+      // Use the provided starting position (highest-initiative character) so
+      // that "Next" advances in the correct order from the very first turn.
+      state.currentInit = action.payload?.startingInit ?? 1
     },
 
     endRounds(state) {

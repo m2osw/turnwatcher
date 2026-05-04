@@ -7,6 +7,7 @@ import {
   setCharacterStatus, setStatValue,
 } from './store/slices/charactersSlice'
 import { setInitiativeState, startRounds, endRounds, nextTurn } from './store/slices/initiativeSlice'
+import { sortByInitiative } from './utils/initiative'
 import { setStats } from './store/slices/statsSlice'
 import { updateSettings } from './store/slices/settingsSlice'
 import { setStatusMessage, openDialog } from './store/slices/uiSlice'
@@ -182,9 +183,15 @@ export default function App() {
         break
 
       // Rounds
-      case 'rounds:start':
-        dispatch(startRounds())
+      case 'rounds:start': {
+        const active = sortByInitiative(characters.filter(c => !c.deleted))
+        const first = active[0]
+        const startingInit = first
+          ? (first.manualPos > 0 ? first.manualPos : first.position)
+          : 1
+        dispatch(startRounds({ startingInit }))
         break
+      }
       case 'rounds:end':
         dispatch(endRounds())
         break
