@@ -1,10 +1,10 @@
 import { useAppDispatch, useAppSelector } from '../../store'
-import { removeCharacter, updateCharacter } from '../../store/slices/charactersSlice'
-import { startRounds, endRounds, nextTurn } from '../../store/slices/initiativeSlice'
+import { removeCharacter } from '../../store/slices/charactersSlice'
+import { endRounds, nextTurn } from '../../store/slices/initiativeSlice'
 import { openDialog } from '../../store/slices/uiSlice'
 import { setCharacterStatus } from '../../store/slices/charactersSlice'
 import { Status } from '../../types'
-import { peekNextInit, assignPositions } from '../../utils/initiative'
+import { peekNextInit, buildStartRoundsResult } from '../../utils/initiative'
 import { makeStatRoll } from '../../utils/dice'
 import { setStatValue } from '../../store/slices/charactersSlice'
 
@@ -24,17 +24,15 @@ export function Toolbar() {
   }
 
   const handleStart = () => {
-    // Assign positions based on existing INIT_ID rolls so the order is
-    // correct before we start rounds.
-    const active = characters.filter(c => !c.deleted)
-    const positioned = assignPositions(active)
-    positioned.forEach(ch => {
-      dispatch(updateCharacter({ id: ch.id, changes: { position: ch.position } }))
-    })
-    // The first character in the sorted result has the highest initiative.
-    const first = positioned[0]
-    const startingInit = first ? first.position : 1
-    dispatch(startRounds({ startingInit }))
+    const result = buildStartRoundsResult(characters, stats, settings)
+    if (result.openDialog) {
+      // Manual initiative mode: dispatch NPC rolls, then open the dialog
+      // so the DM can enter player rolls before starting rounds.
+      result.actionsToDispatch.forEach(a => dispatch(a as Parameters<typeof dispatch>[0]))
+      dispatch(openDialog({ dialog: 'initRollDialog' }))
+    } else {
+      result.actionsToDispatch.forEach(a => dispatch(a as Parameters<typeof dispatch>[0]))
+    }
   }
 
   const handleNext = () => {

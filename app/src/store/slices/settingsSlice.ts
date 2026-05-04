@@ -8,7 +8,7 @@ const initialState: AppSettings = {
   altDeath: false,
   notifyExpiredEffects: true,
   showToolbar: true,
-  rollInitOnStart: false,
+  rollInitOnStart: true,
   manualInitiative: false,
   getDC: false,
   lastDC: 10,

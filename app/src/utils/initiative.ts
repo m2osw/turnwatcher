@@ -1,8 +1,9 @@
 // Initiative sorting and management utilities
 // Mirrors C++ Initiative::InitiativeManager logic
 
-import { Character, Status } from '../types'
+import { Character, Status, StatDefinition, AppSettings } from '../types'
 import { getCurrentHP } from './health'
+import { makeStatRoll } from './dice'
 
 /**
  * Compare two characters for initiative ordering.
@@ -129,4 +130,121 @@ export function getCharacterAtPosition(characters: Character[], position: number
     const pos = ch.manualPos > 0 ? ch.manualPos : ch.position
     return pos === position
   })
+}
+
+// ============================================================================
+// Start-rounds helper — shared by Toolbar, App menu handler, and any other
+// caller that needs to kick off combat.
+// ============================================================================
+
+/**
+ * Describes what the caller should do to start rounds.
+ *
+ * If `openDialog` is true the caller should open the initiative roll dialog
+ * (manualInitiative mode) rather than dispatching the ready-made actions.
+ * In that case `actionsToDispatch` still contains the NPC auto-rolls so the
+ * caller can pre-populate the dialog's monster rolls.
+ */
+export interface StartRoundsResult {
+  /** Whether to open the initiative-roll dialog instead of auto-starting. */
+  openDialog: boolean
+  /**
+   * Redux-compatible plain action objects to dispatch.
+   * In auto mode: stat-value rolls + position updates + startRounds.
+   * In manual mode: NPC stat-value rolls only (dialog handles the rest).
+   */
+  actionsToDispatch: Array<{
+    type: string
+    payload: unknown
+  }>
+}
+
+/**
+ * Compute all Redux actions needed to roll initiative and begin combat.
+ *
+ * Rules:
+ *  • rollInitOnStart = false  → skip rolling; just re-assign positions from
+ *    whatever rolls are already stored, then start rounds immediately.
+ *  • rollInitOnStart = true, manualInitiative = false  → auto-roll every
+ *    character, assign positions, start rounds immediately.
+ *  • rollInitOnStart = true, manualInitiative = true   → auto-roll monsters
+ *    only, signal the caller to open the init-roll dialog (which handles
+ *    player entries and then starts rounds itself).
+ *
+ * This function is framework-agnostic: it returns plain action objects so
+ * it can be called from React hooks, plain callbacks, or the menu handler
+ * in App.tsx without any code duplication.
+ */
+export function buildStartRoundsResult(
+  characters: Character[],
+  statDefs: StatDefinition[],
+  settings: Pick<AppSettings, 'rollInitOnStart' | 'manualInitiative'>,
+): StartRoundsResult {
+  const initStat = statDefs.find(s => s.id === 'INIT_ID')
+  const dice  = initStat?.dice  ?? 1
+  const faces = initStat?.faces ?? 20
+
+  const active = characters.filter(c => !c.deleted)
+  const actions: Array<{ type: string; payload: unknown }> = []
+
+  if (settings.rollInitOnStart) {
+    if (!settings.manualInitiative) {
+      // Auto-roll every combatant
+      active.forEach(ch => {
+        const mod  = ch.stats['INIT_ID']?.mod ?? 0
+        const roll = makeStatRoll(dice, faces, mod)
+        actions.push({
+          type: 'characters/setStatValue',
+          payload: { charId: ch.id, statId: 'INIT_ID', value: { roll } },
+        })
+      })
+    } else {
+      // Manual mode: auto-roll monsters only; players enter their own values.
+      active.filter(ch => ch.monster).forEach(ch => {
+        const mod  = ch.stats['INIT_ID']?.mod ?? 0
+        const roll = makeStatRoll(dice, faces, mod)
+        actions.push({
+          type: 'characters/setStatValue',
+          payload: { charId: ch.id, statId: 'INIT_ID', value: { roll } },
+        })
+      })
+      // Signal the caller to open the dialog — the dialog handles positions
+      // and startRounds itself after the player entries are confirmed.
+      return { openDialog: true, actionsToDispatch: actions }
+    }
+  }
+
+  // Build updated character list reflecting the rolls we just queued so that
+  // assignPositions sorts correctly even before the actions hit the store.
+  const rolledChars = active.map(ch => {
+    const rolled = actions.find(
+      a => (a.payload as { charId: string }).charId === ch.id,
+    )
+    if (!rolled) return ch
+    const { value } = rolled.payload as { statId: string; charId: string; value: { roll: number } }
+    return {
+      ...ch,
+      stats: {
+        ...ch.stats,
+        INIT_ID: { ...(ch.stats['INIT_ID'] || { mod: 0, notes: '' }), roll: value.roll },
+      },
+    }
+  })
+
+  const positioned = assignPositions(rolledChars)
+  positioned.forEach(ch => {
+    actions.push({
+      type: 'characters/updateCharacter',
+      payload: { id: ch.id, changes: { position: ch.position } },
+    })
+  })
+
+  const first = positioned[0]
+  const startingInit = first ? first.position : 1
+  actions.push({
+    type: 'initiative/startRounds',
+    payload: { startingInit },
+  })
+
+  return { openDialog: false, actionsToDispatch: actions }
 }
