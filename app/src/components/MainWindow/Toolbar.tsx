@@ -2,9 +2,9 @@ import { useAppDispatch, useAppSelector } from '../../store'
 import { removeCharacter } from '../../store/slices/charactersSlice'
 import { endRounds, nextTurn } from '../../store/slices/initiativeSlice'
 import { openDialog } from '../../store/slices/uiSlice'
-import { setCharacterStatus } from '../../store/slices/charactersSlice'
+import { setCharacterStatus, resetAllStatuses } from '../../store/slices/charactersSlice'
 import { Status } from '../../types'
-import { peekNextInit, buildStartRoundsResult } from '../../utils/initiative'
+import { peekNextInit, buildStartRoundsResult, getCharacterAtPosition } from '../../utils/initiative'
 import { makeStatRoll } from '../../utils/dice'
 import { setStatValue } from '../../store/slices/charactersSlice'
 
@@ -51,15 +51,32 @@ export function Toolbar() {
   }
 
   const handleDelay = () => {
-    selectedIds.forEach(id => {
-      dispatch(setCharacterStatus({ id, status: Status.Delayed }))
-    })
+    // Apply Delay to the current-initiative character, then advance the turn
+    const currentChar = getCharacterAtPosition(
+      characters.filter(c => !c.deleted),
+      initiative.currentInit,
+    )
+    if (currentChar) {
+      dispatch(setCharacterStatus({ id: currentChar.id, status: Status.Delayed }))
+      handleNext()
+    }
   }
 
   const handleReady = () => {
-    selectedIds.forEach(id => {
-      dispatch(setCharacterStatus({ id, status: Status.Readied }))
-    })
+    // Apply Ready to the current-initiative character, then advance the turn
+    const currentChar = getCharacterAtPosition(
+      characters.filter(c => !c.deleted),
+      initiative.currentInit,
+    )
+    if (currentChar) {
+      dispatch(setCharacterStatus({ id: currentChar.id, status: Status.Readied }))
+      handleNext()
+    }
+  }
+
+  const handleEnd = () => {
+    dispatch(resetAllStatuses())
+    dispatch(endRounds())
   }
 
   const handleRollStat = (statId: string) => {
@@ -135,7 +152,7 @@ export function Toolbar() {
       ) : (
         <button
           className="toolbar-button"
-          onClick={() => dispatch(endRounds())}
+          onClick={handleEnd}
           title="End Rounds"
         >
           <img src="/assets/end.png" alt="End" />
@@ -155,7 +172,7 @@ export function Toolbar() {
 
       <button
         className="toolbar-button"
-        disabled={!initiative.inRounds || !hasSelection}
+        disabled={!initiative.inRounds}
         onClick={handleDelay}
         title="Delay Action"
       >
@@ -165,7 +182,7 @@ export function Toolbar() {
 
       <button
         className="toolbar-button"
-        disabled={!initiative.inRounds || !hasSelection}
+        disabled={!initiative.inRounds}
         onClick={handleReady}
         title="Ready Action"
       >
@@ -176,7 +193,7 @@ export function Toolbar() {
       <button
         className="toolbar-button"
         disabled={!initiative.inRounds}
-        onClick={() => dispatch(openDialog({ dialog: 'editCharacter', characterId: undefined }))}
+        onClick={() => dispatch(openDialog({ dialog: 'jumpIn' }))}
         title="Jump In"
       >
         <img src="/assets/jump_in.png" alt="Jump In" />

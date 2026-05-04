@@ -4,7 +4,7 @@ import { ActionCreators } from 'redux-undo'
 import {
   setCharacters, clearCharacters, purgeDead,
   removeCharacter, duplicateCharacter, stabilizeCharacter,
-  setCharacterStatus, setStatValue,
+  setCharacterStatus, resetAllStatuses, setStatValue,
 } from './store/slices/charactersSlice'
 import { setInitiativeState, endRounds, nextTurn } from './store/slices/initiativeSlice'
 import { buildStartRoundsResult } from './utils/initiative'
@@ -22,8 +22,9 @@ import { AboutDialog } from './components/AboutDialog/AboutDialog'
 import { PreferencesDialog } from './components/Preferences/PreferencesDialog'
 import { EffectsEditorDialog } from './components/EffectsEditor/EffectsEditorDialog'
 import { StatManagerDialog } from './components/StatManager/StatManagerDialog'
+import { JumpInDialog } from './components/JumpIn/JumpInDialog'
 import { SaveFile, AppSettings, Status } from './types'
-import { peekNextInit } from './utils/initiative'
+import { peekNextInit, getCharacterAtPosition } from './utils/initiative'
 import { makeStatRoll } from './utils/dice'
 import { getStatusString } from './utils/health'
 
@@ -194,6 +195,7 @@ export default function App() {
         break
       }
       case 'rounds:end':
+        dispatch(resetAllStatuses())
         dispatch(endRounds())
         break
       case 'rounds:next': {
@@ -211,14 +213,38 @@ export default function App() {
         }))
         break
       }
-      case 'rounds:delay':
-        selectedIds.forEach(id => dispatch(setCharacterStatus({ id, status: Status.Delayed })))
+      case 'rounds:delay': {
+        const currentChar = getCharacterAtPosition(
+          characters.filter(c => !c.deleted),
+          initiative.currentInit,
+        )
+        if (currentChar) {
+          dispatch(setCharacterStatus({ id: currentChar.id, status: Status.Delayed }))
+          const nextResult = peekNextInit(characters, initiative.currentInit, settings.skipDead, settings.deathThreshold)
+          dispatch(nextTurn({
+            nextInit: nextResult.nextInit,
+            roundNumber: nextResult.roundIncrement ? initiative.roundNumber + 1 : initiative.roundNumber,
+          }))
+        }
         break
-      case 'rounds:ready':
-        selectedIds.forEach(id => dispatch(setCharacterStatus({ id, status: Status.Readied })))
+      }
+      case 'rounds:ready': {
+        const currentChar = getCharacterAtPosition(
+          characters.filter(c => !c.deleted),
+          initiative.currentInit,
+        )
+        if (currentChar) {
+          dispatch(setCharacterStatus({ id: currentChar.id, status: Status.Readied }))
+          const nextResult = peekNextInit(characters, initiative.currentInit, settings.skipDead, settings.deathThreshold)
+          dispatch(nextTurn({
+            nextInit: nextResult.nextInit,
+            roundNumber: nextResult.roundIncrement ? initiative.roundNumber + 1 : initiative.roundNumber,
+          }))
+        }
         break
+      }
       case 'rounds:jumpIn':
-        dispatch(openDialog({ dialog: 'editCharacter', characterId: undefined }))
+        dispatch(openDialog({ dialog: 'jumpIn' }))
         break
       case 'rounds:damage':
         dispatch(openDialog({ dialog: 'damageDialog' }))
@@ -290,6 +316,7 @@ export default function App() {
       {openDialogType === 'preferences' && <PreferencesDialog />}
       {openDialogType === 'effectsEditor' && <EffectsEditorDialog />}
       {openDialogType === 'statManager' && <StatManagerDialog />}
+      {openDialogType === 'jumpIn' && <JumpInDialog />}
     </div>
   )
 }

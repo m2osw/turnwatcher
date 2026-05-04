@@ -121,6 +121,12 @@ const charactersSlice = createSlice({
       }
     },
 
+    resetAllStatuses(state) {
+      state.list.forEach(ch => {
+        ch.status = Status.Normal
+      })
+    },
+
     stabilizeCharacter(state, action: PayloadAction<string>) {
       const ch = state.list.find(c => c.id === action.payload)
       if (ch) {
@@ -191,6 +197,7 @@ export const {
   healCharacter,
   fullHeal,
   setCharacterStatus,
+  resetAllStatuses,
   stabilizeCharacter,
   setStatValue,
   addEffect,

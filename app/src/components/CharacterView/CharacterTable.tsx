@@ -82,7 +82,7 @@ export function CharacterTable() {
               >
                 <td>
                   <span className="character-name">
-                    {isCurrent && <span className="init-arrow">←</span>}
+                    {isCurrent && <span className="init-arrow">→</span>}
                     <img
                       className="type-icon"
                       src={ch.monster ? '/assets/monster_icon.png' : '/assets/hero.png'}

@@ -34,15 +34,18 @@ export function sortByInitiative(characters: Character[]): Character[] {
  * Higher roll = higher position number = goes first.
  */
 export function assignPositions(characters: Character[]): Character[] {
-  // Sort by initiative roll (stat INIT_ID) descending
+  // Sort by total initiative (roll + modifier) descending.
+  // When totals tie, break by modifier descending (higher mod = better).
   const sorted = [...characters].sort((a, b) => {
     const rollA = a.stats['INIT_ID']?.roll ?? 0
+    const modA  = a.stats['INIT_ID']?.mod  ?? 0
     const rollB = b.stats['INIT_ID']?.roll ?? 0
-    if (rollA !== rollB) return rollB - rollA
+    const modB  = b.stats['INIT_ID']?.mod  ?? 0
+    const totalA = rollA + modA
+    const totalB = rollB + modB
+    if (totalA !== totalB) return totalB - totalA
 
     // Tie-breaker: higher modifier goes first
-    const modA = a.stats['INIT_ID']?.mod ?? 0
-    const modB = b.stats['INIT_ID']?.mod ?? 0
     return modB - modA
   })
 
@@ -235,7 +238,9 @@ export function buildStartRoundsResult(
   positioned.forEach(ch => {
     actions.push({
       type: 'characters/updateCharacter',
-      payload: { id: ch.id, changes: { position: ch.position } },
+      // Reset manualPos to 0 so no stale JumpIn or legacy value can shadow
+      // the freshly-assigned position and cause duplicate arrows / stuck Next.
+      payload: { id: ch.id, changes: { position: ch.position, manualPos: 0 } },
     })
   })
 
