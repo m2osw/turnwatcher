@@ -1,12 +1,19 @@
-syntax: glob
-.bzr
-.hgignore
-tags
-build/
-debian/turnwatcher/
-debian/files
-debian/turnwatcher.debhelper.log
-debian/turnwatcher.substvars
-CMakeLists.txt.user*
+# C++ build artifacts
+cpp/build/
+
+# Node/Electron
+app/node_modules/
+app/dist/
+app/dist-electron/
+app/release/
+app/.vite/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
 *.swp
-*.autosave
+*.swo
+*~
