@@ -1,10 +1,10 @@
 import { useAppDispatch, useAppSelector } from '../../store'
-import { removeCharacter } from '../../store/slices/charactersSlice'
+import { removeCharacter, updateCharacter } from '../../store/slices/charactersSlice'
 import { startRounds, endRounds, nextTurn } from '../../store/slices/initiativeSlice'
 import { openDialog } from '../../store/slices/uiSlice'
 import { setCharacterStatus } from '../../store/slices/charactersSlice'
 import { Status } from '../../types'
-import { peekNextInit, sortByInitiative } from '../../utils/initiative'
+import { peekNextInit, assignPositions } from '../../utils/initiative'
 import { makeStatRoll } from '../../utils/dice'
 import { setStatValue } from '../../store/slices/charactersSlice'
 
@@ -24,11 +24,16 @@ export function Toolbar() {
   }
 
   const handleStart = () => {
-    const active = sortByInitiative(characters.filter(c => !c.deleted))
-    const first = active[0]
-    const startingInit = first
-      ? (first.manualPos > 0 ? first.manualPos : first.position)
-      : 1
+    // Assign positions based on existing INIT_ID rolls so the order is
+    // correct before we start rounds.
+    const active = characters.filter(c => !c.deleted)
+    const positioned = assignPositions(active)
+    positioned.forEach(ch => {
+      dispatch(updateCharacter({ id: ch.id, changes: { position: ch.position } }))
+    })
+    // The first character in the sorted result has the highest initiative.
+    const first = positioned[0]
+    const startingInit = first ? first.position : 1
     dispatch(startRounds({ startingInit }))
   }
 

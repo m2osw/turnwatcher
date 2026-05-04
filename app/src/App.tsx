@@ -4,10 +4,10 @@ import { ActionCreators } from 'redux-undo'
 import {
   setCharacters, clearCharacters, purgeDead,
   removeCharacter, duplicateCharacter, stabilizeCharacter,
-  setCharacterStatus, setStatValue,
+  setCharacterStatus, setStatValue, updateCharacter,
 } from './store/slices/charactersSlice'
 import { setInitiativeState, startRounds, endRounds, nextTurn } from './store/slices/initiativeSlice'
-import { sortByInitiative } from './utils/initiative'
+import { assignPositions } from './utils/initiative'
 import { setStats } from './store/slices/statsSlice'
 import { updateSettings } from './store/slices/settingsSlice'
 import { setStatusMessage, openDialog } from './store/slices/uiSlice'
@@ -184,11 +184,13 @@ export default function App() {
 
       // Rounds
       case 'rounds:start': {
-        const active = sortByInitiative(characters.filter(c => !c.deleted))
-        const first = active[0]
-        const startingInit = first
-          ? (first.manualPos > 0 ? first.manualPos : first.position)
-          : 1
+        const active = characters.filter(c => !c.deleted)
+        const positioned = assignPositions(active)
+        positioned.forEach(ch => {
+          dispatch(updateCharacter({ id: ch.id, changes: { position: ch.position } }))
+        })
+        const first = positioned[0]
+        const startingInit = first ? first.position : 1
         dispatch(startRounds({ startingInit }))
         break
       }

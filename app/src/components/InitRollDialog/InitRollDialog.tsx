@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../store'
-import { setStatValue } from '../../store/slices/charactersSlice'
+import { setStatValue, updateCharacter } from '../../store/slices/charactersSlice'
 import { startRounds } from '../../store/slices/initiativeSlice'
 import { closeDialog } from '../../store/slices/uiSlice'
 import { makeStatRoll } from '../../utils/dice'
+import { assignPositions } from '../../utils/initiative'
 import { Character } from '../../types'
 
 interface CharRoll {
@@ -51,12 +52,36 @@ export function InitRollDialog() {
   }
 
   const handleAccept = () => {
-    // Apply rolls to characters
+    // Apply rolls to characters' INIT_ID stat
     rolls.forEach(r => {
       dispatch(setStatValue({ charId: r.id, statId: 'INIT_ID', value: { roll: r.roll } }))
     })
-    // Start rounds
-    dispatch(startRounds())
+
+    // Build updated character objects with the new rolls so assignPositions
+    // can sort them correctly, then persist the resulting position values.
+    const updatedChars: Character[] = characters
+      .filter(c => !c.deleted)
+      .map(ch => {
+        const rollEntry = rolls.find(r => r.id === ch.id)
+        if (!rollEntry) return ch
+        return {
+          ...ch,
+          stats: {
+            ...ch.stats,
+            INIT_ID: { ...(ch.stats['INIT_ID'] || { mod: 0, notes: '' }), roll: rollEntry.roll },
+          },
+        }
+      })
+
+    const positioned = assignPositions(updatedChars)
+    positioned.forEach(ch => {
+      dispatch(updateCharacter({ id: ch.id, changes: { position: ch.position } }))
+    })
+
+    // Start rounds at the highest-initiative character
+    const first = positioned[0]
+    const startingInit = first ? first.position : 1
+    dispatch(startRounds({ startingInit }))
     dispatch(closeDialog())
   }
 
